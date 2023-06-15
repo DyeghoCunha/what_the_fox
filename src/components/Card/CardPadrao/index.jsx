@@ -14,7 +14,7 @@ const Card = () => {
   useEffect(() => {
     if (tiltRef.current) {
       VanillaTilt.init(tiltRef.current, {
-        max: 15,
+        max: 35,
         speed: 50,
         glare: true,
         'max-glare': 0.5
