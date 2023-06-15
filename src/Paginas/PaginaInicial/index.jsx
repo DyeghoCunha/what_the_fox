@@ -7,6 +7,7 @@ export default function PaginaInicial() {
     <div className={styles.container}>
     {/* <BannerPaginaInicial/> */}
     <CardPadrao/>
+
  
     </div>
   )
