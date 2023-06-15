@@ -1,12 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import imagem from '../image/CardTeste.png';
 import styles from './CardPadrao.module.scss';
 import miniCard from '../image/miniCard.png'
-import { Textfit } from 'react-textfit';
+import GemaOn from '../image/miniCard_Gema_On.png';
+import GemaOff from '../image/miniCard_Gema_Off.png';
 
 const Card = () => {
   const tiltRef = useRef(null);
+
+  const [favoritoOn, setFavoritoOn]= useState(true)
 
   useEffect(() => {
     if (tiltRef.current) {
@@ -18,6 +21,12 @@ const Card = () => {
       });
     }
   }, []);
+
+  function handleClick() {
+    setFavoritoOn(prev => !prev)
+  }
+
+  const favorito = true;
 
   return (
 
@@ -32,14 +41,14 @@ const Card = () => {
 
         <div className={`${styles.card_base} ${styles.card_faixa}`}>
           <div className={styles.nome_container}>
-          <svg  fill="transparent"  width="125" height="35" viewBox="0 0 135 15">
-            <path id="curve" d="M3,13.5 A10.5,1.5 0 0 1 135,13.5" />
-            <text width="135">
-              <textPath xlinkHref="#curve" className={styles.nome}>
-                Comedor de Bunda
-              </textPath>
-            </text>
-          </svg>
+            <svg fill="transparent" width="125" height="35" viewBox="0 0 135 15">
+              <path id="curve" d="M4,13.5 A10.5,1.5 0 0 1 135,13.5" />
+              <text width="135">
+                <textPath xlinkHref="#curve" className={styles.nome}>
+                  Comedor de bundas
+                </textPath>
+              </text>
+            </svg>
           </div>
         </div>
 
@@ -48,8 +57,18 @@ const Card = () => {
             <img src={miniCard} className={styles.miniCard} />
           </div>
 
+          <div className={styles.favorito}>
+
+            {favoritoOn && (
+              <img className={styles.gema} onClick={handleClick} src={GemaOn} />
+            )}
+              {!favoritoOn && (
+              <img className={styles.gema} onClick={handleClick} src={GemaOff} />
+            )}
+
+          </div>
           <div >
-            <p className={styles.frase}>Matador de Elfos e Gnomos </p>
+            <p className={styles.frase}>Me ama seu lindo </p>
           </div>
 
 
