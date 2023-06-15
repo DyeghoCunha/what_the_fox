@@ -1,0 +1,138 @@
+@import '../../../styles/variaveis';
+
+
+
+
+.container_Card {
+  width: 186px;
+  height: 260px;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  margin-left: 40px;
+  display: flex;
+
+
+
+
+  background-image: url(../image/armacaoCard.png);
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+//-------------------------------------------------------------------------
+
+
+
+
+
+
+.card_base {
+  transform: translateZ(10px);
+
+  position: absolute;
+  //background: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+/*-----------cartoes de HTML CSS e JS----------------------*/
+
+
+.card_personagem {
+  transform: translateZ(20px);
+}
+
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 200px;
+
+  position: absolute;
+  transition: 0.5s;
+}
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(50px);
+  width: 180px;
+  height: auto;
+  background-image: url(../image/faixaCard.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
+.nome_container{
+transform: translateY(5px);
+
+
+}
+
+.nome{
+  font-size: 16px;
+  fill: #644651;
+  font-family: $fonte-normal-WTF;
+}
+
+//Altera o MiniCard
+.miniCard_container {
+  transform: translateZ(30px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 1;
+  z-index: 10;
+}
+
+.miniCard {
+  width: fit-content;
+  height: fit-content;
+}
+
+.frase {
+display: flex;
+justify-content: center;
+align-items: center;
+  width: 141px;
+  height: 47px;
+ text-align: center;
+
+  bottom: 15px;
+  padding: 5px 5px;
+  left: 18px;
+  position: absolute;
+  font-family: $fonte-normal-WTF;
+  color: #644651;
+  font-size: 1.1em;
+
+
+
+}
+
+
+
+/*----- css-------------------------------------------------------------------------*/
+.circleContainer {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleText {
+  font-size: 16px;
+  display: inline-block;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}

@@ -1,0 +1,83 @@
+@import-normalize;
+@import './variaveis';
+
+
+ body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-color:  $colorTribFundo;
+ }
+
+body::-webkit-scrollbar{
+ width: 5px; 
+ height: 5px;
+ 
+}
+
+
+body::-webkit-scrollbar-thumb{
+  background-color:$colorTribCard;
+ //background-image: url(./sabreScroll.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 5px; 
+  height: 5px;
+  border-radius: 8px;
+
+  //border: 1px solid $corFundo;
+ 
+/*   box-shadow:
+    inset -2px -2px 3px rgba(0, 0, 0, 0.15),
+   inset  2px 2px 3px rgba(0, 0, 0, 0.15);
+ */
+}
+
+
+body::-webkit-scrollbar-track{
+  background: $colorTribBotao;
+/*   background: linear-gradient($corFundo, $corEscura); */
+
+}
+
+@font-face {
+  font-family: "GandhiSansRegular";
+  src: local("GandhiSansRegular"),
+   url('../assets/fontes/GandhiSans-Regular.otf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GandhiSansBold";
+  src: local("GandhiSansBold"),
+   url('../assets/fontes/GandhiSans-Bold.otf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcubierre";
+  src: local("Alcubierre"),
+   url('../assets/fontes/Alcubierre.otf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ITCSerifGothicLT-Bold";
+  src: local("ITCSerifGothicLT-Bold"),
+   url('../assets/fontes/ITCSerifGothicLT-Bold.TTF') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: "HennyPenny-Regular";
+  src: local("HennyPenny-Regular"),
+   url('../assets/fontes/HennyPenny-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
