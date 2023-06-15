@@ -38,10 +38,6 @@
 
 
 
-
-/*-----------cartoes de HTML CSS e JS----------------------*/
-
-
 .card_personagem {
   transform: translateZ(20px);
 }
@@ -49,10 +45,10 @@
 
 //Alterar o Herói
 .card_personagem_imagem {
-  width: 200px;
-
+  width: 220px;
+transform: translate(-10px, -20px);
   position: absolute;
-  transition: 0.5s;
+
 }
 
 .card_faixa {
@@ -82,7 +78,7 @@
 
 //Altera o MiniCard
 .miniCard_container {
-  transform: translateZ(30px);
+  transform: translateZ(40px);
   position: relative;
   width: 100%;
   height: 100%;

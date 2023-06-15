@@ -6,7 +6,7 @@ import miniCard from '../image/miniCard.png'
 import GemaOn from '../image/miniCard_Gema_On.png';
 import GemaOff from '../image/miniCard_Gema_Off.png';
 
-const Card = () => {
+const CardPadrao = () => {
   const tiltRef = useRef(null);
 
   const [favoritoOn, setFavoritoOn]= useState(true)
@@ -91,4 +91,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default CardPadrao;
