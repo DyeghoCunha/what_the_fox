@@ -1,1 +1,22 @@
 @import '../../styles/variaveis';
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 40px;
+  transform: translate(40%);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media query para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Cada card em uma coluna */
+    grid-template-rows: repeat(6, auto); /* Cada card em uma linha */
+    transform: none; /* Remover o deslocamento */
+    justify-content: center;
+    align-items: center;
+  }
+}

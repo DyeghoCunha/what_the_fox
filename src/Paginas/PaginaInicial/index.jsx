@@ -1,14 +1,14 @@
 import React from 'react'
 import BannerPaginaInicial from '../../components/Banner/BannerPaginaInicial'
-import CardPadrao from '../../components/Card/CardPadrao'
 import styles from './PaginaInicial.module.scss'
+import CardAzul from '../../components/Card/CardAzul'
+import Deck from '../../components/Deck'
 export default function PaginaInicial() {
   return (
     <div className={styles.container}>
     {/* <BannerPaginaInicial/> */}
-    <CardPadrao/>
-<CardPadrao/>
-
+    <CardAzul/>
+    <Deck/>
  
     </div>
   )

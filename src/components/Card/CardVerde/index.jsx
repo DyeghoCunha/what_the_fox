@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import VanillaTilt from 'vanilla-tilt';
-import imagem from '../image/CardTeste.png';
-import styles from './CardPadrao.module.scss';
-import miniCard from '../image/miniCard.png'
+
+import styles from './CardVerde.module.scss';
+import miniCard from '../../../assets/images/card2/miniCard2.png'
 import GemaOn from '../image/miniCard_Gema_On.png';
 import GemaOff from '../image/miniCard_Gema_Off.png';
 
-const CardPadrao = () => {
+const CardVerde = ({nome,frase,imagem}) => {
   const tiltRef = useRef(null);
 
   const [favoritoOn, setFavoritoOn]= useState(true)
@@ -17,7 +17,7 @@ const CardPadrao = () => {
         max: 35,
         speed: 50,
         glare: true,
-        'max-glare': 0.5
+        'max-glare': 1.5
       });
     }
   }, []);
@@ -26,8 +26,7 @@ const CardPadrao = () => {
     setFavoritoOn(prev => !prev)
   }
 
-  const favorito = true;
-
+ 
   return (
 
     <>
@@ -42,10 +41,10 @@ const CardPadrao = () => {
         <div className={`${styles.card_base} ${styles.card_faixa}`}>
           <div className={styles.nome_container}>
             <svg fill="transparent" width="125" height="35" viewBox="0 0 135 15">
-              <path id="curve" d="M4,13.5 A10.5,1.5 0 0 1 135,13.5" />
+              <path id="curve" d="M10,13.5 A10.5,1.5 0 0 1 135,13.5" />
               <text width="135">
                 <textPath xlinkHref="#curve" className={styles.nome}>
-                  Comedor de bundas
+                 {nome}
                 </textPath>
               </text>
             </svg>
@@ -57,7 +56,7 @@ const CardPadrao = () => {
             <img src={miniCard} className={styles.miniCard} />
           </div>
 
-          <div className={styles.favorito}>
+      {/*     <div className={styles.favorito}>
 
             {favoritoOn && (
               <img className={styles.gema} onClick={handleClick} src={GemaOn} />
@@ -66,9 +65,9 @@ const CardPadrao = () => {
               <img className={styles.gema} onClick={handleClick} src={GemaOff} />
             )}
 
-          </div>
+          </div> */}
           <div >
-            <p className={styles.frase}>Me ama seu lindo </p>
+            <p className={styles.frase}>{frase}</p>
           </div>
 
 
@@ -77,18 +76,9 @@ const CardPadrao = () => {
 
       </div>
 
-
-
-
-
-
-
-
-
-
     </>
 
   );
 };
 
-export default CardPadrao;
+export default CardVerde;
