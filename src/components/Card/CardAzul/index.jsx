@@ -41,8 +41,8 @@ const CardAzul = ({nome,frase,imagem}) => {
 
         <div className={`${styles.card_base} ${styles.card_faixa}`}>
           <div className={styles.nome_container}>
-            <svg fill="transparent" width="125" height="35" viewBox="0 0 135 15">
-              <path id="curve" d="M4,13.5 A10.5,1.5 0 0 1 135,13.5" />
+            <svg fill="transparent" width="125" height="35" viewBox="0 0 135 20">
+              <path id="curve" d="M25,10.5 A10.5,1.0 0 0 1 145,10.5" />
               <text width="135">
                 <textPath xlinkHref="#curve" className={styles.nome}>
                  {nome}

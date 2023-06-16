@@ -7,6 +7,8 @@ import imagem3 from '../../assets/images/card2/personagem3.png'
 import imagem4 from '../../assets/images/card2/personagem4.png'
 import imagem5 from '../../assets/images/card2/personagem5.png'
 import imagem6 from '../../assets/images/card2/personagem6.png'
+import imagem7 from '../../assets/images/card1/personagem1.png'
+import CardAzul from '../Card/CardAzul'
 
 export default function Deck() {
   const nome1 = 'SacertdóTroll'
@@ -21,10 +23,12 @@ export default function Deck() {
   const fraze4 = "Entre as sombras e o caos, meu poder se ergue, trazendo o tormento aos incautos."
   const nome6 = 'Voragolpe'
   const fraze6 = "Com minha ira desmedida, esmago tudo que se opõe ao meu caminho."
-
+  const nome7 = 'InfernoBlade'
+  const fraze7 = "Queime no brilho elétrico da minha lâmina infernal!"
 
   return (
     <section className={styles.container}>
+      <CardAzul frase={fraze7} imagem={imagem7} nome={nome7}/>
 <CardVerde frase={fraze1} imagem={imagem1} nome={nome1} />
 <CardVerde frase={fraze2} imagem={imagem2} nome={nome2} />
 <CardVerde frase={fraze3} imagem={imagem3} nome={nome3} />

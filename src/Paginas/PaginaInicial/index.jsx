@@ -6,8 +6,8 @@ import Deck from '../../components/Deck'
 export default function PaginaInicial() {
   return (
     <div className={styles.container}>
-    {/* <BannerPaginaInicial/> */}
-    <CardAzul/>
+
+   
     <Deck/>
  
     </div>
