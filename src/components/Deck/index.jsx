@@ -8,7 +8,11 @@ import imagem4 from '../../assets/images/card2/personagem4.png'
 import imagem5 from '../../assets/images/card2/personagem5.png'
 import imagem6 from '../../assets/images/card2/personagem6.png'
 import imagem7 from '../../assets/images/card1/personagem1.png'
+import imagem8 from '../../assets/images/card1/personagem2.png'
+import imagem9 from '../../assets/images/card1/personagem3.png'
+import imagem10 from '../../assets/images/card1/personagem4.png'
 import CardAzul from '../Card/CardAzul'
+import CardPremiunAzul from '../Card/CardPremiun'
 
 export default function Deck() {
   const nome1 = 'SacertdóTroll'
@@ -28,7 +32,11 @@ export default function Deck() {
 
   return (
     <section className={styles.container}>
-      <CardAzul frase={fraze7} imagem={imagem7} nome={nome7}/>
+      <CardPremiunAzul frase={fraze7} imagem={imagem7} nome={nome7}/>
+   
+      <CardAzul frase={fraze7} imagem={imagem8} nome={nome7}/>
+      <CardAzul frase={fraze7} imagem={imagem9} nome={nome7}/>
+      <CardAzul frase={fraze7} imagem={imagem10} nome={nome7}/>
 <CardVerde frase={fraze1} imagem={imagem1} nome={nome1} />
 <CardVerde frase={fraze2} imagem={imagem2} nome={nome2} />
 <CardVerde frase={fraze3} imagem={imagem3} nome={nome3} />
