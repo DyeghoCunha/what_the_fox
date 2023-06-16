@@ -1,0 +1,170 @@
+@import '../../../styles/variaveis';
+
+
+
+
+.container_Card {
+  width: 180px;
+  height: 259px;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  /*   background-image: url(../../../assets/images/card2/armacaoCard2.png);
+  background-position: center;
+  background-size: cover; */
+  z-index: 1;
+}
+
+.imgFundo {
+  position: absolute;
+  z-index: 0;
+  width: fit-content;
+  height: fit-content;
+  transform: translate(-0px, 0px);
+
+}
+
+
+//-------------------------------------------------------------------------
+
+
+
+
+
+
+.card_base {
+  transform: translateZ(10px);
+
+  position: absolute;
+  //background: rgba(255, 255, 255, 0.1);
+}
+
+
+
+.card_personagem {
+  transform: translateZ(20px);
+}
+
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 180px;
+  transform: translate(0px, -50px);
+  position: absolute;
+
+}
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 259px;
+/*   background-image: url(../../../assets/images/card2/faixaCard2.png);
+  background-size: cover;
+  background-position: center; */
+  
+position: relative; 
+ 
+}
+
+.faixaContainer{
+  position: absolute;
+  transform: translateZ(20px);
+  bottom: -57px;
+  right: -98px;
+  
+
+}
+
+.nome_container {
+transform: translateY(-10px);
+position: absolute;
+
+}
+
+.nome {
+position: absolute;
+  font-size: 15px;
+  fill: #644651;
+  font-family: $fonte-normal-WTF;
+  display: none;
+}
+
+//Altera o MiniCard
+.miniCard_container {
+  transform: translateZ(40px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 1;
+  z-index: 10;
+
+}
+
+.miniCard {
+  width: fit-content;
+  height: fit-content;
+  transform: translate(0px, 15px);
+  filter: grayscale(70%);
+}
+
+.frase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 141px;
+  height: 47px;
+  text-align: center;
+
+  bottom: -17px;
+  padding: 5px 5px;
+  left: 17px;
+  position: absolute;
+  font-family: $fonte-normal-WTF;
+  color: $cybergreen;
+  font-size: 1.6em;
+ text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+    letter-spacing: 5px;
+
+
+}
+
+.favorito {
+  position: absolute;
+  bottom: 78px;
+  left: 73px;
+  cursor: pointer;
+}
+
+
+.gema {
+
+  width: fit-content;
+  height: fit-content;
+}
+
+.circleContainer {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleText {
+  font-size: 16px;
+  display: inline-block;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
