@@ -21,7 +21,7 @@ const CardEt = ({ nome, frase, imagem }) => {
   useEffect(() => {
     if (tiltRef.current) {
       VanillaTilt.init(tiltRef.current, {
-        max: 15,
+        max: 35,
         speed: 50,
         glare: false,
         'max-glare': 0.5
