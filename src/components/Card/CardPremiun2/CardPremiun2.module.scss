@@ -1,0 +1,149 @@
+@import '../../../styles/variaveis';
+
+
+.container_Card {
+  width: 180px;
+  height: 259px;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  /*   background-image: url(../../../assets/images/card2/armacaoCard2.png);
+  background-position: center;
+  background-size: cover; */
+  z-index: 1;
+}
+
+.imgFundo {
+  position: absolute;
+  z-index: 0;
+  width: fit-content;
+  height: fit-content;
+  transform: translate(-9px, 0px);
+
+}
+
+.card_base {
+  transform: translateZ(10px);
+  position: absolute;
+}
+
+
+.card_personagem {
+  transform: translateZ(20px);
+}
+
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 190px;
+  transform: translate(-10px, -30px);
+  position: absolute;
+
+}
+
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 259px;
+  position: relative;
+transform: translateZ(45px);
+}
+
+.faixaContainer {
+  position: absolute;
+top: -8px;
+ left: -100px;
+
+
+}
+
+.nome_container {
+  transform: translateY(-5px);
+  position: absolute;
+ 
+}
+.nomeSvg_container{
+  position: absolute;
+   transform: translate(-49px, 142px) rotateZ(4deg);
+}
+.nome {
+  position: absolute;
+  font-size: 15px;
+  fill: $cyberorange;
+    text-shadow:
+    -1px -1px 0 #644651,
+    1px -1px 0 #644651,
+    -1px 1px 0 #644651,
+    1px 1px 0 #644651;
+  font-family: $fonte-normal-WTF;
+ 
+}
+
+//Altera o MiniCard
+.miniCard_container {
+  transform: translateZ(35px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 1;
+  z-index: 10;
+
+}
+
+.miniCard {
+  width: fit-content;
+  height: fit-content;
+  transform: translate(-10px, -12px);
+ 
+}
+
+.frase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 141px;
+  height: 47px;
+  text-align: center;
+
+  bottom: 28px;
+  padding: 5px 5px;
+  left: 17px;
+  position: absolute;
+  font-family: $fonte-normal-WTF;
+  color: $cyberorange;
+  font-size: 0.5em;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+  letter-spacing: 5px;
+
+
+}
+
+
+
+.circleContainer {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleText {
+  font-size: 16px;
+  display: inline-block;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}

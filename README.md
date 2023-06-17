@@ -1,70 +1,26 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+{
+    reverse:                false,  // reverse the tilt direction
+    max:                    15,     // max tilt rotation (degrees)
+    startX:                 0,      // the starting tilt on the X axis, in degrees.
+    startY:                 0,      // the starting tilt on the Y axis, in degrees.
+    perspective:            1000,   // Transform perspective, the lower the more extreme the tilt gets.
+    scale:                  1,      // 2 = 200%, 1.5 = 150%, etc..
+    speed:                  300,    // Speed of the enter/exit transition
+    transition:             true,   // Set a transition on enter/exit.
+    axis:                   null,   // What axis should be enabled. Can be "x" or "y".
+    reset:                  true,   // If the tilt effect has to be reset on exit.
+    "reset-to-start":       true,   // Whether the exit reset will go to [0,0] (default) or [startX, startY]
+    easing:                 "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+    glare:                  false,  // if it should have a "glare" effect
+    "max-glare":            1,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+    "glare-prerender":      false,  // false = VanillaTilt creates the glare elements for you, otherwise
+                                    // you need to add .js-tilt-glare>.js-tilt-glare-inner by yourself
+    "mouse-event-element":  null,   // css-selector or link to an HTML-element that will be listening to mouse events
+    "full-page-listening":  false,  // If true, parallax effect will listen to mouse move events on the whole document, not only the selected element
+    gyroscope:              true,   // Boolean to enable/disable device orientation detection,
+    gyroscopeMinAngleX:     -45,    // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
+    gyroscopeMaxAngleX:     45,     // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
+    gyroscopeMinAngleY:     -45,    // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
+    gyroscopeMaxAngleY:     45,     // This is the top limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the bottom border of the element;
+    gyroscopeSamples:       10      // How many gyroscope moves to decide the starting position.
+}

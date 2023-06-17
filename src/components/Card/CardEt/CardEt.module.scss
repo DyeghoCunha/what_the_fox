@@ -11,9 +11,6 @@
   transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
-  /*   background-image: url(../../../assets/images/card2/armacaoCard2.png);
-  background-position: center;
-  background-size: cover; */
   z-index: 1;
 }
 
@@ -36,13 +33,9 @@
 
 .card_base {
   transform: translateZ(10px);
-
   position: absolute;
-  //background: rgba(255, 255, 255, 0.1);
+
 }
-
-
-
 .card_personagem {
   transform: translateZ(25px);
 }
@@ -67,9 +60,7 @@
   top: 40px;
   left: 0px;
   width: 120px;
-  
 
-  
 }
 
 @keyframes moveAnimation {
@@ -194,10 +185,6 @@
   align-items: center;
   width: 180px;
   height: 259px;
-  /*   background-image: url(../../../assets/images/card2/faixaCard2.png);
-  background-size: cover;
-  background-position: center; */
-
   position: relative;
 
 }
@@ -231,7 +218,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+ 
   opacity: 1;
   z-index: 10;
 
@@ -241,7 +228,7 @@
   width: fit-content;
   height: fit-content;
   transform: translate(0px, 15px);
-  filter: grayscale(70%);
+
 }
 
 .frase {
