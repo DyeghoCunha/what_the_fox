@@ -22,7 +22,7 @@
   z-index: 0;
   width: fit-content;
   height: fit-content;
-  transform: translate(-0px, 0px);
+  transform: translate(-3.5px, 0px);
 
 }
 
@@ -44,7 +44,7 @@
 
 
 .card_personagem {
-  transform: translateZ(20px);
+  transform: translateZ(25px);
 }
 
 
@@ -56,37 +56,169 @@
 
 }
 
+.container_disco {
+  position: absolute;
+  
+  animation: moveAnimation 10s infinite;
+}
+
+.disco_um {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 120px;
+  
+
+  
+}
+
+@keyframes moveAnimation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  5% {
+    transform: translate3d(140px, 0, 0);
+
+  
+  }
+
+  10% {
+    transform: translate3d(140px, -50px, 0);
+  }
+
+  15% {
+    transform: translate3d(50px, -70px, 70px);
+  }
+
+  20% {
+    transform: translate3d(0, 180px, 70px);
+  }
+
+  25% {
+    transform: translate3d(120px, 80px, 10px);
+  }
+
+  35% {
+    transform: translate3d(0px, 80px, 5px);
+  }
+
+  45% {
+    transform: translate3d(0px, 70px, 20px);
+    transform: rotateX(25deg) rotateY(20deg) rotateZ(40deg);
+  }
+
+  55% {
+    transform: translate3d(0px, 70px, 10px);
+
+  }
+
+  65% {
+    transform: translate3d(0px, 70px, 10px);
+  }
+
+  66% {
+    transform: translate3d(5px, 75px, 10px);
+  }
+
+  67% {
+    transform: translate3d(0px, 70px, 10px);
+  }
+
+  68% {
+    transform: translate3d(-5px, 65px, 10px);
+  }
+
+  69% {
+    transform: translate3d(5px, 75px, 10px);
+  }
+
+  70% {
+    transform: translate3d(0px, 70px, 10px);
+  }
+
+  71% {
+    transform: translate3d(-5px, 65px, 10px);
+  }
+
+  72% {
+    transform: translate3d(0px, 72px, 10px);
+  }
+
+  73% {
+    transform: translate3d(0px, 70px, 10px);
+  }
+
+  74% {
+    transform: translate3d(0px, 68px, 10px);
+  }
+
+  75% {
+    transform: translate3d(0px, 72px, 10px);
+  }
+
+  76% {
+    transform: translate3d(0px, 70px, 10px);
+  }
+
+  77% {
+    transform: translate3d(0px, 68px, 0px);
+  }
+
+  78% {
+    transform: translate3d(0px, 72px, 0px);
+  }
+
+  79% {
+    transform: translate3d(0px, 70px, 0px);
+  }
+
+  80% {
+    transform: translate3d(0px, 68px, 0px);
+  }
+
+  95% {
+    transform: translate3d(0px, 68px, 0px);
+  }
+
+  100% {
+    transform: translate3d(-10px, 70px, 0px);
+    transform: rotateX(25deg);
+  }
+}
+
+
 .card_faixa {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 180px;
   height: 259px;
-/*   background-image: url(../../../assets/images/card2/faixaCard2.png);
+  /*   background-image: url(../../../assets/images/card2/faixaCard2.png);
   background-size: cover;
   background-position: center; */
-  
-position: relative; 
- 
+
+  position: relative;
+
 }
 
-.faixaContainer{
+.faixaContainer {
   position: absolute;
   transform: translateZ(20px);
   bottom: -57px;
-  right: -98px;
-  
+  right: -92px;
+
 
 }
 
 .nome_container {
-transform: translateY(-10px);
-position: absolute;
+  transform: translateY(-10px);
+  position: absolute;
 
 }
 
 .nome {
-position: absolute;
+  position: absolute;
   font-size: 15px;
   fill: #644651;
   font-family: $fonte-normal-WTF;
@@ -127,12 +259,12 @@ position: absolute;
   font-family: $fonte-normal-WTF;
   color: $cybergreen;
   font-size: 1.6em;
- text-shadow:
+  text-shadow:
     -1px -1px 0 black,
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
-    letter-spacing: 5px;
+  letter-spacing: 5px;
 
 
 }

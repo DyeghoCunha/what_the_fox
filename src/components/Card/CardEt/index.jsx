@@ -7,16 +7,17 @@ import fundo from '../../../assets/images/cardEt/armacaoCardEt.png'
 import faixa from '../../../assets/images/cardEt/faixaEt.png'
 import GemaOn from '../image/miniCard_Gema_On.png';
 import GemaOff from '../image/miniCard_Gema_Off.png';
+import discoDois from '../../../assets/images/cardEt/discoVoador2.png'
 
-const CardEt = ({nome,frase,imagem}) => {
+const CardEt = ({ nome, frase, imagem }) => {
   const tiltRef = useRef(null);
 
-  const [favoritoOn, setFavoritoOn]= useState(true)
+  const [favoritoOn, setFavoritoOn] = useState(true)
 
   useEffect(() => {
     if (tiltRef.current) {
       VanillaTilt.init(tiltRef.current, {
-        max: 35,
+        max: 15,
         speed: 50,
         glare: true,
         'max-glare': 0.5
@@ -28,25 +29,29 @@ const CardEt = ({nome,frase,imagem}) => {
     setFavoritoOn(prev => !prev)
   }
 
- 
+
   return (
 
     <>
 
 
       <div className={`${styles.container_Card} tilt`} ref={tiltRef}>
-<img className={styles.imgFundo} src={fundo} alt="" />
+        <img className={styles.imgFundo} src={fundo} alt="" />
         <div className={`${styles.card_base} ${styles.card_personagem}`}>
           <img className={styles.card_personagem_imagem} src={imagem} alt="" />
         </div>
+        <div className={styles.container_disco}>
+          <img className={styles.disco_um}  src={discoDois} alt="" />
 
+
+        </div>
         <div className={`${styles.card_base} ${styles.card_faixa}`}>
           <div className={styles.nome_container}>
-                <img className={styles.faixaContainer} src={faixa} alt="" />
-                <h3 className={styles.nome}>
-                 {nome}
-                </h3>
-             
+            <img className={styles.faixaContainer} src={faixa} alt="" />
+            <h3 className={styles.nome}>
+              {nome}
+            </h3>
+
           </div>
         </div>
 
@@ -55,7 +60,7 @@ const CardEt = ({nome,frase,imagem}) => {
             <img src={miniCard} className={styles.miniCard} />
           </div>
 
-      {/*     <div className={styles.favorito}>
+          {/*     <div className={styles.favorito}>
 
             {favoritoOn && (
               <img className={styles.gema} onClick={handleClick} src={GemaOn} />
