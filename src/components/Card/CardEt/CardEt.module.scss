@@ -36,6 +36,7 @@
   position: absolute;
 
 }
+
 .card_personagem {
   transform: translateZ(25px);
 }
@@ -51,8 +52,7 @@
 
 .container_disco {
   position: absolute;
-  
-  animation: moveAnimation 10s infinite;
+  animation: moveAnimation 20s infinite;
 }
 
 .disco_um {
@@ -61,122 +61,281 @@
   left: 0px;
   width: 120px;
 
+
 }
 
-@keyframes moveAnimation {
+.disco_um_luz {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationLuz 20s infinite;
+  z-index: 10;
+}
+
+
+.disco_um_vaca {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationAbducao 20s linear 0s forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 1;
+}
+
+.disco_um_humano {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationAbducao 20s linear 20s forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 1;
+}
+
+.disco_um_bicicleta {
+  transform: translate(0px, 0px);
+  position: absolute;
+  opacity: 0;
+  animation: moveAnimationAbducao 20s linear 40s forwards;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  z-index: 11;
+}
+
+
+
+@keyframes moveAnimationAbducao {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-62px, 0px, 0);
+    opacity: 0;
   }
 
   5% {
-    transform: translate3d(140px, 0, 0);
-
-  
+    transform: translate3d(140px, 0px, 0);
+    opacity: 0;
   }
 
   10% {
-    transform: translate3d(140px, -50px, 0);
+    transform: translate3d(140px, -70px, 0);
+    opacity: 0;
   }
 
   15% {
-    transform: translate3d(50px, -70px, 70px);
+    transform: translate3d(50px, -90px, 70px);
+    opacity: 0;
   }
 
   20% {
-    transform: translate3d(0, 180px, 70px);
+    transform: translate3d(-62px, 160px, 70px);
+    opacity: 0;
   }
 
   25% {
-    transform: translate3d(120px, 80px, 10px);
-  }
+    transform: translate3d(120px, -60px, 10px);
+    opacity: 0;
 
-  35% {
-    transform: translate3d(0px, 80px, 5px);
   }
 
   45% {
-    transform: translate3d(0px, 70px, 20px);
-    transform: rotateX(25deg) rotateY(20deg) rotateZ(40deg);
+    transform: translate3d(-62px, -60px, 20px) rotateX(25deg) rotateY(20deg) rotateZ(40deg);
+    opacity: 0;
   }
 
   55% {
-    transform: translate3d(0px, 70px, 10px);
-
+    transform: translate3d(-62px, -60px, 5px);
+    opacity: 0;
   }
 
-  65% {
-    transform: translate3d(0px, 70px, 10px);
+  57% {
+    transform: translate3d(-62px, -60px, 5px);
+    opacity: 1;
   }
 
   66% {
-    transform: translate3d(5px, 75px, 10px);
+    transform: translate3d(-62px, -90px, 5px);
+    opacity: 1;
   }
 
-  67% {
-    transform: translate3d(0px, 70px, 10px);
-  }
-
-  68% {
-    transform: translate3d(-5px, 65px, 10px);
-  }
-
-  69% {
-    transform: translate3d(5px, 75px, 10px);
-  }
-
-  70% {
-    transform: translate3d(0px, 70px, 10px);
-  }
-
-  71% {
-    transform: translate3d(-5px, 65px, 10px);
-  }
-
-  72% {
-    transform: translate3d(0px, 72px, 10px);
-  }
-
-  73% {
-    transform: translate3d(0px, 70px, 10px);
-  }
-
-  74% {
-    transform: translate3d(0px, 68px, 10px);
-  }
-
-  75% {
-    transform: translate3d(0px, 72px, 10px);
-  }
-
-  76% {
-    transform: translate3d(0px, 70px, 10px);
-  }
-
-  77% {
-    transform: translate3d(0px, 68px, 0px);
-  }
-
-  78% {
-    transform: translate3d(0px, 72px, 0px);
-  }
-
+  75%,
+  77%,
   79% {
-    transform: translate3d(0px, 70px, 0px);
+    transform: translate3d(-62px, -100px, 5px);
+    opacity: 1;
+  }
+
+  76%,
+  78% {
+    transform: translate3d(-62px, -90px, 5px);
+    opacity: 1;
   }
 
   80% {
-    transform: translate3d(0px, 68px, 0px);
-  }
-
-  95% {
-    transform: translate3d(0px, 68px, 0px);
+    transform: translate3d(-62px, -130px, 5px);
+    opacity: 0;
   }
 
   100% {
-    transform: translate3d(-10px, 70px, 0px);
-    transform: rotateX(25deg);
+    transform: translate3d(-62px, -130px, 0px) rotateX(25deg);
+    opacity: 0;
   }
 }
+
+
+
+@keyframes moveAnimationLuz {
+  0% {
+    transform: translate3d(-62px, 0px, 0);
+    opacity: 0;
+  }
+
+  5% {
+    transform: translate3d(140px, 0px, 0);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate3d(140px, -70px, 0);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translate3d(50px, -90px, 70px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translate3d(-62px, 160px, 70px);
+    opacity: 0;
+  }
+
+  25% {
+    transform: translate3d(120px, 60px, 10px);
+    opacity: 0;
+
+  }
+
+  35%,
+  65%,
+  75%,
+  95% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0;
+  }
+
+  45% {
+    transform: translate3d(-62px, -20px, 20px) rotateX(25deg) rotateY(20deg) rotateZ(40deg);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0;
+  }
+
+  57% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0.5;
+  }
+
+  66%,
+  68%,
+  70%,
+  72%,
+  74%,
+  77%,
+  79%,
+  80% {
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 1;
+  }
+
+  67%,
+  69%,
+  71%,
+  73%,
+  76%,
+  78% {
+    transform: translate3d(-62px, -20px, 10px);
+    transform: translate3d(-62px, -20px, 10px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate3d(-10px, 0px, 0px) rotateX(25deg);
+  }
+}
+
+
+
+@keyframes moveAnimation {
+  0% {
+    transform: translate3d(0px, 0px, 0)scale(0.5);
+
+  }
+
+  5% {
+    transform: translate3d(10px, 10px, 0) scale(0.9);
+  }
+
+  7% {
+    transform: translate3d(140px, 0, 0);
+  }
+
+  10% {
+    transform: translate3d(140px, -70px, 30px) scale(1.2);
+  }
+
+  15% {
+    transform: translate3d(50px, -90px, 70px) scale(1.4);
+  }
+
+  20% {
+    transform: translate3d(0, 150px, 70px) scale(1.6);
+  }
+
+  25% {
+    transform: translate3d(120px, 80px, 30px);
+  }
+
+  35%,
+  65%,
+  75%,
+  95% {
+    transform: translate3d(0, 70px, 10px);
+  }
+
+  45% {
+    transform: translate3d(0, 70px, 50px) rotateX(35deg) rotateY(50deg) rotateZ(30deg) scale(2.3);
+  }
+
+  55%,
+  66%,
+  68%,
+  70%,
+  72%,
+  74%,
+  77%,
+  79%,
+  80% {
+    transform: translate3d(0, 70px, 10px);
+  }
+
+  67%,
+  69%,
+  71%,
+  73%,
+  76%,
+  78% {
+    transform: translate3d(0, 70px, 10px);
+    transform: translate3d(5px, 75px, 10px);
+  }
+
+  100% {
+    transform: translate3d(10px, 10px, 0px) scale(0.2);
+  }
+}
+
 
 
 .card_faixa {
@@ -218,7 +377,7 @@
   position: relative;
   width: 100%;
   height: 100%;
- 
+
   opacity: 1;
   z-index: 10;
 
