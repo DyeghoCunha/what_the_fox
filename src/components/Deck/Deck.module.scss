@@ -2,12 +2,24 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 40px;
   justify-content: center;
   align-items: center;
 
+}
+
+.deck_Premiun {
+
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: center;
+
+
+  align-self: center;
+
+  
 }
 
 /* Media query para dispositivos móveis */

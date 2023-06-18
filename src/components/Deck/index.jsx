@@ -34,23 +34,26 @@ export default function Deck() {
   const fraze6 = "Com minha ira desmedida, esmago tudo que se opõe ao meu caminho."
   const nome7 = 'InfernoBlade'
   const fraze7 = "Queime no brilho elétrico da minha lâmina infernal!"
-  const nome11= "Xeltron"
+  const nome11 = "Xeltron"
 
   return (
     <section className={styles.container}>
-      <CardPremiun2 frase={fraze7} nome={nome7} imagem={imagem12}/>
-      <CardEt frase={fraze7} nome={nome11} imagem={imagem11} />
-      <CardPremiunAzul frase={fraze7} imagem={imagem7} nome={nome7}/>
-   
-<CardAzul frase={fraze7} imagem={imagem8} nome={nome7}/>
-<CardAzul frase={fraze7} imagem={imagem9} nome={nome7}/>
-<CardAzul frase={fraze7} imagem={imagem10} nome={nome7}/>
-<CardVerde frase={fraze1} imagem={imagem1} nome={nome1} />
-<CardVerde frase={fraze2} imagem={imagem2} nome={nome2} />
-<CardVerde frase={fraze3} imagem={imagem3} nome={nome3} />
-<CardVerde frase={fraze4} imagem={imagem4} nome={nome4} />
-<CardVerde frase={fraze5} imagem={imagem5} nome={nome5} />
-<CardVerde frase={fraze6} imagem={imagem6} nome={nome6} /> 
+
+      <div className={styles.deck_Premiun}>
+        <CardEt frase={fraze7} nome={nome11} imagem={imagem11} />
+      </div>
+      {/*      <CardPremiun2 frase={fraze7} nome={nome7} imagem={imagem12} />
+      <CardPremiunAzul frase={fraze7} imagem={imagem7} nome={nome7} />
+
+      <CardAzul frase={fraze7} imagem={imagem8} nome={nome7} />
+      <CardAzul frase={fraze7} imagem={imagem9} nome={nome7} />
+      <CardAzul frase={fraze7} imagem={imagem10} nome={nome7} />
+      <CardVerde frase={fraze1} imagem={imagem1} nome={nome1} />
+      <CardVerde frase={fraze2} imagem={imagem2} nome={nome2} />
+      <CardVerde frase={fraze3} imagem={imagem3} nome={nome3} />
+      <CardVerde frase={fraze4} imagem={imagem4} nome={nome4} />
+      <CardVerde frase={fraze5} imagem={imagem5} nome={nome5} />
+      <CardVerde frase={fraze6} imagem={imagem6} nome={nome6} /> */}
     </section>
   )
 }
