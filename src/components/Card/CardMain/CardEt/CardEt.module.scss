@@ -1,4 +1,4 @@
-@import '../../../styles/variaveis';
+@import '../../../../styles/variaveis';
 
 
 
@@ -22,12 +22,6 @@
   transform: translate(-3.5px, 0px);
 
 }
-
-
-//-------------------------------------------------------------------------
-
-
-
 
 
 
@@ -181,8 +175,6 @@
   }
 }
 
-
-
 @keyframes moveAnimationLuz {
   0% {
     transform: translate3d(-62px, 0px, 0);
@@ -266,8 +258,6 @@
   }
 }
 
-
-
 @keyframes moveAnimation {
   0% {
     transform: translate3d(0px, 0px, 0)scale(0.5);
@@ -336,8 +326,6 @@
   }
 }
 
-
-
 .card_faixa {
   display: flex;
   justify-content: center;
@@ -386,7 +374,7 @@
 .miniCard {
   width: fit-content;
   height: fit-content;
-  transform: translate(0px, 15px);
+  transform: translate(-5px, 15px);
 
 }
 

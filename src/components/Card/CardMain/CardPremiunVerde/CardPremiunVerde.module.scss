@@ -1,4 +1,4 @@
-@import '../../../styles/variaveis';
+@import '../../../../styles/variaveis';
 
 
 .container_Card {
@@ -65,11 +65,15 @@ top: -8px;
 .nome_container {
   transform: translateY(-5px);
   position: absolute;
+
  
 }
+
 .nomeSvg_container{
   position: absolute;
    transform: translate(-49px, 142px) rotateZ(4deg);
+   width: 190px;
+   
 }
 .nome {
   position: absolute;

@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 
 import styles from './CardPremiunAzul.module.scss';
-import miniCard from '../../../assets/images/card1/Premiun/miniCard5.png'
-import GemaOn from '../image/miniCard_Gema_On.png';
-import GemaOff from '../image/miniCard_Gema_Off.png';
+import miniCard from './image/cardPremiunAzul/miniCard5.png'
+import fundo from './image/cardPremiunAzul/armacaoCard5.png'
+import faixa from './image/cardPremiunAzul/faixaCard4.png'
 
 const CardPremiunAzul = ({nome,frase,imagem}) => {
   const tiltRef = useRef(null);
@@ -14,19 +14,21 @@ const CardPremiunAzul = ({nome,frase,imagem}) => {
   useEffect(() => {
     if (tiltRef.current) {
       VanillaTilt.init(tiltRef.current, {
-        max: 35,
-        speed: 50,
-        glare: true,
-        'max-glare': 0.5
+        max: 15,
+        speed: 5000,
+        glare: false,
+        reverse: false,
+        "full-page-listening": false,
+        'max-glare': 1.5
       });
     }
   }, []);
+
 
   function handleClick() {
     setFavoritoOn(prev => !prev)
   }
 
-  const favorito = true;
 
   return (
 
@@ -34,14 +36,21 @@ const CardPremiunAzul = ({nome,frase,imagem}) => {
 
 
       <div className={`${styles.container_Card} tilt`} ref={tiltRef}>
-
+        <img className={styles.imgFundo} src={fundo} alt="" />
         <div className={`${styles.card_base} ${styles.card_personagem}`}>
           <img className={styles.card_personagem_imagem} src={imagem} alt="" />
         </div>
 
         <div className={`${styles.card_base} ${styles.card_faixa}`}>
           <div className={styles.nome_container}>
-                 <h3 className={styles.nome}>{nome}</h3>
+             <h2 className={styles.nome}>
+                    {nome}
+                  </h2>
+            <img className={styles.faixaContainer} src={faixa} alt="" />
+            
+                 
+              
+           
           </div>
         </div>
 
@@ -50,7 +59,7 @@ const CardPremiunAzul = ({nome,frase,imagem}) => {
             <img src={miniCard} className={styles.miniCard} />
           </div>
 
-          {/* <div className={styles.favorito}>
+          {/*     <div className={styles.favorito}>
 
             {favoritoOn && (
               <img className={styles.gema} onClick={handleClick} src={GemaOn} />
@@ -64,24 +73,14 @@ const CardPremiunAzul = ({nome,frase,imagem}) => {
             <p className={styles.frase}>{frase}</p>
           </div>
 
-
-
         </div>
 
       </div>
-
-
-
-
-
-
-
-
-
 
     </>
 
   );
 };
+
 
 export default CardPremiunAzul;

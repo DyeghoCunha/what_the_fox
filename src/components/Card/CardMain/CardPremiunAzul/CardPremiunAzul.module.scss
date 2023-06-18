@@ -1,0 +1,128 @@
+@import '../../../../styles/variaveis';
+
+
+.container_Card {
+  width: 180px;
+  height: 259px;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.imgFundo {
+  position: absolute;
+  z-index: 0;
+  width: 200px;
+  height: 280px;
+
+  //Colocar em todas
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card_base {
+  position: absolute;
+
+}
+
+.card_personagem {
+
+  transform: translateZ(20px);
+}
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 190px;
+  transform: translate(-1px, -10px);
+  position: absolute;
+
+}
+
+
+
+.faixaContainer {
+  position: absolute;
+  bottom: -140px;
+  left: -36px;
+  z-index: 1;
+}
+
+
+
+//Altera o MiniCard
+.miniCard_container {
+  transform: translateZ(40px);
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  opacity: 1;
+  z-index: 10;
+}
+
+.miniCard {
+  width: 180px;
+  height: fit-content;
+  transform: translate(2px, 20px);
+
+}
+
+
+
+//-------------------------------------------------------------------------
+
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(60px);
+  bottom: 30px;
+  left: -5px;
+  width: 195px;
+  height: 100px;
+
+  position: absolute;
+}
+
+
+.nome_container {
+transform: translate(-60px,-10px);
+position: absolute;
+z-index: 1;
+}
+
+
+//Altera o MiniCard
+
+.nome {
+  font-size: 13px;
+  color: $cyberblue;
+  font-family: $fonte-normal-WTF;
+  letter-spacing: 2px;
+  z-index: 20;
+  position: absolute;
+  transform: translate(5px,-35px);
+}
+
+
+.frase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 141px;
+  height: 47px;
+  text-align: center;
+
+  bottom: 10px;
+  padding: 5px 5px;
+  left: 18px;
+  position: absolute;
+  font-family: $fonte-normal-WTF;
+  color: rgb(13, 164, 235);
+  font-size: 0.9em;
+}
+

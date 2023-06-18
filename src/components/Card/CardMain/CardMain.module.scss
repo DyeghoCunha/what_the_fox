@@ -14,7 +14,7 @@
  
   transform: translate(-50%, -50%);
 
-  background-image: url(../../../assets/images/card1/Premiun/armacaoCard5.png);
+  background-image: url(../image/armacaoCard.png);
   background-position: center;
   background-size: cover;
 }
@@ -54,26 +54,24 @@ transform: translate(-10px, -20px);
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateZ(60px);
-  bottom: 30px;
-  left: -5px;
-  width: 195px;
-  height: 100px;
-  background-image: url(../../../assets/images/card1/Premiun/faixaCard4.png);
+  transform: translateZ(50px);
+  width: 180px;
+  height: auto;
+  background-image: url(../image/faixaCard.png);
   background-size: cover;
   background-position: center;
   position: absolute;
 }
 
 .nome_container {
-  transform: translateY(-26px);
-position: absolute;
+  transform: translateY(4px);
+
 
 }
 
 .nome {
   font-size: 15px;
-  color: $cyberblue;
+  fill: #644651;
   font-family: $fonte-normal-WTF;
 }
 
@@ -89,10 +87,7 @@ position: absolute;
 }
 
 .miniCard {
-  position: absolute;
-  left: 15px;
-  bottom: 0px;
-  width: 160px;
+  width: fit-content;
   height: fit-content;
 }
 
@@ -109,7 +104,7 @@ position: absolute;
   left: 18px;
   position: absolute;
   font-family: $fonte-normal-WTF;
-  color: rgb(13, 164, 235);
+  color: #644651;
   font-size: 0.9em;
 
 

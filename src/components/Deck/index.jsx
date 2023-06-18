@@ -1,23 +1,14 @@
 import React from 'react'
 import styles from './Deck.module.scss'
-import CardVerde from '../Card/CardVerde'
-import imagem1 from '../../assets/images/card2/personagem1.png'
-import imagem2 from '../../assets/images/card2/personagem2.png'
-import imagem3 from '../../assets/images/card2/personagem3.png'
-import imagem4 from '../../assets/images/card2/personagem4.png'
-import imagem5 from '../../assets/images/card2/personagem5.png'
-import imagem6 from '../../assets/images/card2/personagem6.png'
-import imagem7 from '../../assets/images/card1/personagem1.png'
-import imagem8 from '../../assets/images/card1/personagem2.png'
+
+import imagem7 from '../../assets/images/personagem/goblin/goblin11.png'
+import imagem1 from '../../assets/images/card1/personagem1.png'
 import imagem9 from '../../assets/images/card1/personagem3.png'
 import imagem10 from '../../assets/images/card1/personagem4.png'
-import imagem11 from '../../assets/images/cardEt/Et.png'
+import imagem11 from '../Card/CardMain/CardEt/image/cardEt/Et.png'
 import imagem12 from '../../assets/images/personagem/goblin/goblin11.png'
 
-import CardAzul from '../Card/CardAzul'
-import CardPremiunAzul from '../Card/CardPremiun'
-import CardEt from '../Card/CardEt'
-import CardPremiun2 from '../Card/CardPremiun2'
+import CardMain from '../Card/CardMain'
 
 export default function Deck() {
   const nome1 = 'SacertdóTroll'
@@ -39,21 +30,8 @@ export default function Deck() {
   return (
     <section className={styles.container}>
 
-      <div className={styles.deck_Premiun}>
-        <CardEt frase={fraze7} nome={nome11} imagem={imagem11} />
-      </div>
-      {/*      <CardPremiun2 frase={fraze7} nome={nome7} imagem={imagem12} />
-      <CardPremiunAzul frase={fraze7} imagem={imagem7} nome={nome7} />
-
-      <CardAzul frase={fraze7} imagem={imagem8} nome={nome7} />
-      <CardAzul frase={fraze7} imagem={imagem9} nome={nome7} />
-      <CardAzul frase={fraze7} imagem={imagem10} nome={nome7} />
-      <CardVerde frase={fraze1} imagem={imagem1} nome={nome1} />
-      <CardVerde frase={fraze2} imagem={imagem2} nome={nome2} />
-      <CardVerde frase={fraze3} imagem={imagem3} nome={nome3} />
-      <CardVerde frase={fraze4} imagem={imagem4} nome={nome4} />
-      <CardVerde frase={fraze5} imagem={imagem5} nome={nome5} />
-      <CardVerde frase={fraze6} imagem={imagem6} nome={nome6} /> */}
+ <CardMain type={'CardPremiunAzul'} nome={'Flipestilquesn'} imagem={imagem1} frase={fraze6}/> 
+      
     </section>
   )
 }

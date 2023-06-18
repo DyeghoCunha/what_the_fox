@@ -1,0 +1,124 @@
+@import '../../../../styles/variaveis';
+
+
+.container_Card {
+  width: 180px;
+  height: 259px;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgFundo {
+  position: absolute;
+  z-index: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
+.card_base {
+  position: absolute;
+
+}
+
+.card_personagem {
+  transform: translateZ(20px);
+}
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 190px;
+  transform: translate(-10px, -10px);
+  position: absolute;
+
+}
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 259px;
+  position: relative;
+  transform:translateZ(30px);
+}
+
+.faixaContainer {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.nome_container {
+  transform: translate(33px,-90px);
+  position: absolute;
+
+}
+
+//Altera o MiniCard
+.miniCard_container {
+  transform: translateZ(40px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  z-index: 10;
+
+}
+
+.miniCard {
+  width: fit-content;
+  height: fit-content;
+  transform: translate(1px, -5px);
+
+}
+
+.favorito {
+  position: absolute;
+  bottom: 78px;
+  left: 73px;
+  cursor: pointer;
+}
+
+.gema {
+  width: fit-content;
+  height: fit-content;
+}
+
+.frase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 141px;
+  height: 47px;
+  text-align: center;
+
+  bottom: 25px;
+  padding: 5px 5px;
+  left: 18px;
+  position: absolute;
+  font-family: $fonte-normal-WTF;
+  color: #644651;
+  font-size: 0.65em;
+}
+
+.nomeSvg_container{
+  transform: translate(-12px, 114px) rotateZ(4deg);
+
+  text-align: center;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.nome {
+
+  font-size: 15px;
+  fill: #644651;
+  font-family: $fonte-normal-WTF;
+  border: 2px solid;
+}
+
