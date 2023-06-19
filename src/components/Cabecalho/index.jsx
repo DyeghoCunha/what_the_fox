@@ -1,5 +1,5 @@
 import styles from './Cabecalho.module.scss'
-import logo from "../../assets/images/logoWTF.png"
+import logo from "./image/logoWTF.png"
 
 import React from 'react'
 import CabecalhoLink from './CabecalhoLink'
