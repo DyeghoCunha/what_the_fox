@@ -55,7 +55,7 @@
 }
 
 .nome_container {
-  transform: translate(2px,11px);
+  transform: translate(31px,-90px);
   position: absolute;
 
 }
@@ -75,14 +75,14 @@
 .miniCard {
   width: fit-content;
   height: fit-content;
-  transform: translate(-1.5px, -5px);
+  transform: translate(-3px, -5px);
 
 }
 
 .favorito {
   position: absolute;
-  bottom: 78px;
-  left: 73px;
+  bottom: 82px;
+  left: 70px;
   cursor: pointer;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .nomeSvg_container{
-  transform: translate(7px, 14px) rotateZ(0deg);
+  transform: translate(-12px, 114px) rotateZ(4deg);
 
   text-align: center;
   display: flex;
@@ -121,13 +121,8 @@
 }
 
 .nome {
-  transform: translate(7px, -4px) rotateZ(2deg);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 10px;
+  font-size: 15px;
   fill: #644651;
   font-family: $fonte-normal-WTF;
   border: 2px solid;

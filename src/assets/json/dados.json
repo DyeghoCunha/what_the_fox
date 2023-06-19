@@ -1,0 +1,145 @@
+{
+  "goblins":[{
+    "id": 1,
+    "raca": "Goblin",
+    "classe": "Ladino",
+    "valor": 100,
+    "nome": "Grimbog Garmel",
+    "frase": "A sombra é minha aliada.",
+    "imagem": "../images/personagem/goblin/goblin1.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 2,
+    "raca": "Goblin",
+    "classe": "Guerreiro",
+    "valor": 120,
+    "nome": "Zugruk Presa-de-Aço",
+    "frase": "Minha força é imparável.",
+    "imagem": "../images/personagem/goblin/goblin2.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 3,
+    "raca": "Goblin",
+    "classe": "Mago",
+    "valor": 90,
+    "nome": "Zarloga Fulmínea",
+    "frase": "Os elementos obedecem a mim.",
+    "imagem": "../images/personagem/goblin/goblin3.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 4,
+    "raca": "Goblin",
+    "classe": "Bruxo",
+    "valor": 110,
+    "nome": "Sarkul Ossombrante",
+    "frase": "O poder das trevas é meu.",
+    "imagem": "../images/personagem/goblin/goblin4.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 5,
+    "raca": "Goblin",
+    "classe": "Cavaleiro",
+    "valor": 130,
+    "nome": "Gromash Destruidor",
+    "frase": "Nenhum inimigo escapa de mim.",
+    "imagem": "../images/personagem/goblin/goblin5.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 6,
+    "raca": "Goblin",
+    "classe": "Sacerdote",
+    "valor": 100,
+    "nome": "Morgath Iluminada",
+    "frase": "A luz da fé guia meus passos.",
+    "imagem": "../images/personagem/goblin/goblin6.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 7,
+    "raca": "Goblin",
+    "classe": "Xamã",
+    "valor": 105,
+    "nome": "Grishnak dos Voodoo",
+    "frase": "Os espíritos me guiam.",
+    "imagem": "../images/personagem/goblin/goblin7.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 8,
+    "raca": "Goblin",
+    "classe": "Druida",
+    "valor": 115,
+    "nome": "Thorgar Garra Verde",
+    "frase": "A natureza é minha aliada.",
+    "imagem": "../images/personagem/goblin/goblin8.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 9,
+    "raca": "Goblin",
+    "classe": "Bárbaro",
+    "valor": 110,
+    "nome": "Gruggar StormTemper",
+    "frase": "A fúria me consome!",
+    "imagem": "../images/personagem/goblin/goblin9.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 10,
+    "raca": "Goblin",
+    "classe": "Paladino",
+    "valor": 120,
+    "nome": "Glorfindel O Radiante",
+    "frase": "A luz guia meus passos.",
+    "imagem": "../images/personagem/goblin/goblin10.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 11,
+    "raca": "Goblin",
+    "classe": "Feiticeiro",
+    "valor": 90,
+    "nome": "Zyxar Malévolo",
+    "frase": "Meus feitiços são poderosos.",
+    "imagem": "../images/personagem/goblin/goblin11.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 12,
+    "raca": "Goblin",
+    "classe": "Necromante",
+    "valor": 110,
+    "nome": "Lyzara Mortifera",
+    "frase": "A morte é minha serva.",
+    "imagem": "../images/personagem/goblin/goblin12.png",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 13,
+    "raca": "Goblin",
+    "classe": "Assassino",
+    "valor": 95,
+    "nome": "Skrigul Sanguessuga",
+    "frase": "Nas sombras, sou letal.",
+    "imagem": "../images/personagem/goblin/goblin13.png",
+    "quantidade": 1,
+    "favorito": false
+  }]
+  }

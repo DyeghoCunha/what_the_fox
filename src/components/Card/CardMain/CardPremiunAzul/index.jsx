@@ -14,7 +14,7 @@ const CardPremiunAzul = ({nome,frase,imagem}) => {
   useEffect(() => {
     if (tiltRef.current) {
       VanillaTilt.init(tiltRef.current, {
-        max: 15,
+        max: 25,
         speed: 5000,
         glare: false,
         reverse: false,

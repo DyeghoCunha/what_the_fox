@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './CardMain.module.scss';
 
-import CardAzul from '../CardAzul';
+import CardAzul from './CardAzul';
 import CardVerde from './CardVerde';
 import CardPremiunVerde from './CardPremiunVerde';
 import CardPremiunAzul from './CardPremiunAzul';
