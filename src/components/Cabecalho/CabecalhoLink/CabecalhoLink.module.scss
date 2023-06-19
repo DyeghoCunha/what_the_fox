@@ -1,0 +1,34 @@
+@import "../../../styles/variaveis";
+
+
+.link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 20px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+  font-size: 1em;
+  font-family: $fonte-normal-WTF;
+  color: $colorLetra-Padrao-WTF;
+
+&:hover{
+
+text-shadow: 0px 0px 1px $cyberblue;
+}
+}
+
+@media screen and (max-width: 1024px) {
+.link{
+  font-size: 13px;
+}
+}
+
+/* Para smartphones com largura de 375px */
+@media screen and (max-width: 767px) {
+   .link{
+display: none;
+}
+}

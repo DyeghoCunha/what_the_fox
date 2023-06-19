@@ -1,5 +1,6 @@
 
 import PaginaInicial from './Paginas/PaginaInicial';
+import PaginaTeste from './Paginas/PaginaTeste';
 import { FavoritoProvider } from './common/context/Favoritos';
 import './styles/estilosGlobais.scss'
 
@@ -13,6 +14,7 @@ export default function AppRoutes() {
 
         <Routes>
           <Route path="/" element={<PaginaInicial />} />
+          <Route path="/teste" element={<PaginaTeste />} />
         </Routes>
       </FavoritoProvider>
     </BrowserRouter>

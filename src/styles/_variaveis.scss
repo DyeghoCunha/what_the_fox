@@ -11,26 +11,15 @@ $fonte-normal-WTF-Planta:"HennyPenny-Regular";
 $fonte-normal-WTF-Fox:"HennyPenny-Regular";
 $fonte-normal-WTF-Macaco:"HennyPenny-Regular";
 $fonte-normal-WTF-Emote:"HennyPenny-Regular";
+$fonte-normal-WTF-Busca:"HangedLetters";
 
-//Cores
-$cor-do-texto: #d9d9d9;
-$azul-escuro: #041833;
-$azul-claro: #154580;
-$azul-rodape: #04244f;
-$rosa: #c98cf1;
-$roxo: #7b78e5;
-$cinza-claro: #9d9d9d;
-$tag-color: rgba(148, 163, 184, 0.3);
-$corBackgroundBotao: #eaeef0;
+$colorLetra-Padrao-WTF: rgba(100, 70, 81, 1);
+$colorBg-WTF:rgba(238, 219, 188, 1);
 
 
-//Cor Cyber
-$corEscura: rgba(40, 36, 52, 1);
-$corClara: rgba(116, 98, 102, 1);
-$corFundo: rgba(203, 172, 156, 1);
-$corClaraLuz: rgba(223, 192, 176, 1);
-$corRoxa: rgba(123, 103, 163, 1);
-$corRoxaClara: rgba(171, 144, 159, 1);
+
+
+
 $corCyano: rgba(68, 209, 201, 1);
 $cyberpink: rgba(238, 2, 197, 1);
 $cybergreen: rgba(0, 255, 128, 1);
@@ -38,40 +27,11 @@ $cyberblue: rgba(0, 255, 255, 1);
 $cyberorange: rgba(255, 102, 0, 1);
 $cyberyellow: rgba(255, 255, 0, 1);
 $rose-cyberpunk: rgba(255, 83, 108, 1);
-/* rosa claro */
 $fucsia-cyberpunk: rgba(242, 0, 118, 1);
-/* fúcsia */
 $magenta-cyberpunk: rgba(255, 0, 219, 1);
-/* magenta */
 $pink-cyberpunk: rgba(236, 23, 136, 1);
-/* rosa escuro */
-
-//Cores para Material UI
-
-$colorTitle : rgba(128, 128, 128, 1);
-$textBgD: rgba(250, 250, 250, 1);
-
-$colorPrim : rgba(65, 211, 190, 1);
-$colorBgContent: rgba(255, 255, 255, 1);
-$colorBg : rgba(241, 241, 241, 1);
-$colorBgD: rgba(54, 53, 55, 1);
-$colorBgContentD: rgba(92, 91, 94, 1);
-
-//Cores Site StarWars
-
-$colorTextSW: rgba(87, 57, 33, 1);
-$colorBgSW: rgba(255, 230, 189, 1);
-$colorBgSW2: rgba(253, 211, 101, 1);
-$colorDarkSW: rgba(30, 40, 59, 1);
-$colorDarkSW_op: rgba(30, 40, 59, 1);
-$colorCard: rgba(255, 242, 215, 1);
 
 
-$materialCardShaddow: 0 2px 4px rgba(0, 0, 0, 0.25); // Defina a sombra do card
-
-// Cores Projeto Calculadora tributaria
-
-//$colorTribFundo: rgba(246,246,247,1);
 $colorTribCard: rgba(255,255,255,1);
 $colorTribCampoFundo: rgba(228,228,228,1);
 $colorTribBotao: rgba(25,194,125,1);
@@ -80,38 +40,3 @@ $colorTribDestaqueFade:rgba(151,71,255,0.2);
 
 $colorTribFundo2: rgba(246,246,247,1);
 $colorTribFundo: #009995;
-/* $colorTribCard: rgba(255,255,255,1);
-$colorTribCampoFundo: rgba(228,228,228,1);
-$colorTribBotao: #009995;
-$colorTribDestaque:#E47F15;
-$colorTribDestaqueFade:rgba(151,71,255,0.2); */
-
-
-/* $comercio-cor-principal: rgba(63, 81, 181, 1);
-$comercio-cor-destaque: rgba(255, 152, 0, 1);
-$comercio-cor-fundo-card: rgba(245, 245, 245, 1);
-
-$servico-cor-principal: rgba(33, 150, 243, 1);
-$servico-cor-destaque: rgba(255, 87, 34, 1);
-$servico-cor-fundo-card: rgba(255, 255, 255, 1);
-
-$industria-cor-principal: rgba(76, 175, 80, 1);
-$industria-cor-destaque: rgba(255, 193, 7, 1);
-$industria-cor-fundo-card: rgba(245, 245, 245, 1);
-
-
-$colorTribCard: rgba(255, 214, 153, 1) (amarelo claro);
-$colorTribCampoFundo: rgba(204, 255, 204, 1) (verde claro);
-$colorTribBotao: rgba(255, 102, 102, 1) (vermelho claro);
-$colorTribDestaque: rgba(0, 153, 255, 1) (azul claro);
-
-$colorTribCard2: rgba(255, 187, 153, 1) (laranja claro);
-$colorTribCampoFundo2: rgba(255, 204, 153, 1) (amarelo pálido);
-$colorTribBotao2: rgba(153, 204, 255, 1) (azul claro);
-$colorTribDestaque2: rgba(255, 153, 204, 1) (rosa claro);
-
-
-$colorTribCard3: rgba(255, 102, 0, 1) (laranja);
-$colorTribCampoFundo3: rgba(255, 153, 51, 1) (laranja claro);
-$colorTribBotao3: rgba(102, 204, 0, 1) (verde);
-$colorTribDestaque3: rgba(204, 51, 153, 1) (rosa intenso); */

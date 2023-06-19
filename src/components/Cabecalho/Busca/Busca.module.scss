@@ -1,0 +1,119 @@
+@import "../../../styles/variaveis";
+
+$corBgBotaoClaro-WTF: rgba(225, 223, 221, 1);
+
+$corBgBotaoEscuro-WTF: rgba(81, 55, 32, 1);
+$corBgBotaoFundo-WTF: rgba(120, 89, 81, 1);
+$corBgBotaoShadowClara-WTF: rgb(179, 151, 144);
+$corBgBotaoAzulClara-WTF: rgba(97, 178, 205, 1);
+$corBgBotaoAzulEscuro-WTF: rgba(20, 47, 60, 1);
+
+.container {
+  margin-right: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .input {
+    margin-right: 10px;
+    background-color: transparent;
+    text-align: center;
+    color: $colorLetra-Padrao-WTF;
+    font-family: $fonte-normal-WTF-Busca;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25),
+      inset 2px 0px 4px rgba(0, 0, 0, 0.25);
+    width: 120px;
+
+    &:hover {
+      box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25),
+        inset 2px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 2px 4px rgba(0, 0, 0, 0.25),
+        inset 2px 0px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &:focus {
+      border: 1px solid $colorLetra-Padrao-WTF;
+    }
+  }
+
+  .botao_container {
+    color: $colorLetra-Padrao-WTF;
+    position: relative;
+    width: 50px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, $corBgBotaoClaro-WTF, $corBgBotaoEscuro-WTF);
+    z-index: 2;
+     display: flex;
+      justify-content: center;
+      align-items: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background-color: $corBgBotaoFundo-WTF;
+      border-radius: 4px;
+      box-shadow: inset 0px 0px 1px 0.5px $corBgBotaoShadowClara-WTF;
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 2px;
+      background-image: linear-gradient(to bottom, $corBgBotaoAzulClara-WTF, $corBgBotaoAzulEscuro-WTF);
+      z-index: 2;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+     
+      
+    }
+
+
+
+  }
+
+}
+
+.botao {
+  font-family: $fonte-normal-WTF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9px;
+  text-align: center;
+  width: 44px;
+  height: 14px;
+  position: absolute;
+ border: none;
+  z-index: 5000;
+  color: white;
+border-radius: 2px;
+  background-image: linear-gradient(to left, $corBgBotaoAzulEscuro-WTF, $corBgBotaoAzulClara-WTF, $corBgBotaoAzulEscuro-WTF);
+cursor: pointer;
+
+&:hover{
+        box-shadow: inset 0px 1px 2px $corBgBotaoAzulClara-WTF,
+        inset 1px 0px 2px $corBgBotaoAzulClara-WTF;
+
+        color: $cyberblue;
+      }
+
+&:active{
+  background-image: linear-gradient(to left,$corBgBotaoAzulClara-WTF ,$corBgBotaoAzulEscuro-WTF ,$corBgBotaoAzulClara-WTF );
+}
+}
+
+
+
+/* Para smartphones com largura de 375px */
+@media screen and (max-width: 767px) {
+   .container{
+display: none;
+}
+}

@@ -6,8 +6,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  width: 100vw;
   background-color:  $colorTribFundo;
+  overflow-x: hidden;
  }
 
 body::-webkit-scrollbar{
@@ -78,6 +79,13 @@ body::-webkit-scrollbar-track{
   font-family: "HennyPenny-Regular";
   src: local("HennyPenny-Regular"),
    url('../assets/fontes/HennyPenny-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HangedLetters";
+  src: local("HangedLetters"),
+   url('../assets/fontes/HangedLetters.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }

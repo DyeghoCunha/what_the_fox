@@ -1,0 +1,43 @@
+@import "../../styles/variaveis";
+
+.cabecalho_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $colorBg-WTF;
+  width: 100vw;
+  height: fit-content;
+  padding: 1px 5px;
+  overflow-x: hidden;
+
+  .container_logo_e_links {
+    padding-left: 23px;
+    display: flex;
+    gap: 40px;
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+    }
+
+    .links_container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+      margin-right: 40px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    .container_logo_e_links {
+      padding-left: 10px;
+      .logo {
+        height: 35px;
+      }
+    }
+  }
+}
