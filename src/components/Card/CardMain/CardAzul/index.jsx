@@ -8,10 +8,10 @@ import GemaOff from './image/miniCard_Gema_Off.png';
 import fundo from './image/armacaoCard1.png'
 import faixa from './image/faixaCard1.png'
 
-const CardAzul = ({nome,frase,imagem}) => {
+const CardAzul = ({ nome, frase, imagem }) => {
   const tiltRef = useRef(null);
 
-  const [favoritoOn, setFavoritoOn]= useState(true)
+  const [favoritoOn, setFavoritoOn] = useState(true)
 
   useEffect(() => {
     if (tiltRef.current) {
@@ -47,10 +47,10 @@ const CardAzul = ({nome,frase,imagem}) => {
           <div className={styles.nome_container}>
             <img className={styles.faixaContainer} src={faixa} alt="" />
             <div className={styles.nomeSvg_container}>
-              <svg fill="transparent" width="125" height="35" viewBox="0 0 135 20">
-                <path id="curve" d="M10,13.5 A10.5,1.5 0 0 1 135,13.5" />
-                <text width="135">
-                  <textPath xlinkHref="#curve" className={styles.nome}>
+              <svg fill="transparent" width="185" height="58" viewBox="10 0 135 30">
+                <path id="curve" d="M11,16.5 A5.8,1.3 0 0 1 133,16.5" />
+                <text width="185" className={styles.nome}>
+                  <textPath xlinkHref="#curve" startOffset="46%" textAnchor="middle" >
                     {nome}
                   </textPath>
                 </text>
@@ -64,16 +64,16 @@ const CardAzul = ({nome,frase,imagem}) => {
             <img src={miniCard} className={styles.miniCard} />
           </div>
 
-               <div className={styles.favorito}>
+          <div className={styles.favorito}>
 
             {favoritoOn && (
               <img className={styles.gema} onClick={handleClick} src={GemaOn} />
             )}
-              {!favoritoOn && (
+            {!favoritoOn && (
               <img className={styles.gema} onClick={handleClick} src={GemaOff} />
             )}
 
-          </div> 
+          </div>
           <div >
             <p className={styles.frase}>{frase}</p>
           </div>

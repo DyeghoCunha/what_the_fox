@@ -55,7 +55,7 @@
 }
 
 .nome_container {
-  transform: translate(31px,-90px);
+  transform: translate(2px,11px);
   position: absolute;
 
 }
@@ -75,14 +75,14 @@
 .miniCard {
   width: fit-content;
   height: fit-content;
-  transform: translate(-3px, -5px);
+  transform: translate(-1.5px, -5px);
 
 }
 
 .favorito {
   position: absolute;
-  bottom: 82px;
-  left: 70px;
+  bottom: 78px;
+  left: 73px;
   cursor: pointer;
 }
 
@@ -104,15 +104,20 @@
 
   left: 20px;
   position: absolute;
-  font-family: $fonte-normal-WTF;
-  color: #644651;
+  font-family: $fonte-normal-WTF-Azul;
+  color: rgb(13, 164, 235);
   font-size: 0.85em;
   letter-spacing: 1px;
-  
+  text-shadow:
+  -1px -1px 0 rgb(6, 122, 175),
+  1px -1px 0 rgb(6, 122, 175),
+  -1px 1px 0 rgb(6, 122, 175),
+  1px 1px 0 rgb(6, 122, 175);
+letter-spacing: 1px;
 }
 
 .nomeSvg_container{
-  transform: translate(-12px, 114px) rotateZ(4deg);
+  transform: translate(7px, 14px) rotateZ(0deg);
 
   text-align: center;
   display: flex;
@@ -121,10 +126,21 @@
 }
 
 .nome {
+  transform: translate(7px, -4px) rotateZ(2deg);
 
-  font-size: 15px;
-  fill: #644651;
-  font-family: $fonte-normal-WTF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 10px;
+  fill: $cyberblue;
+  font-family: $fonte-normal-WTF-Azul;
   border: 2px solid;
+    text-shadow:
+  -1px -1px 0 rgb(6, 122, 175),
+  1px -1px 0 rgb(6, 122, 175),
+  -1px 1px 0 rgb(6, 122, 175),
+  1px 1px 0 rgb(6, 122, 175);
+letter-spacing: 1px;
 }
 

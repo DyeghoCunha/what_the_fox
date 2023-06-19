@@ -91,6 +91,7 @@
 
 .nome_container {
 transform: translate(-60px,-10px);
+
 position: absolute;
 z-index: 1;
 }
@@ -101,11 +102,22 @@ z-index: 1;
 .nome {
   font-size: 13px;
   color: $cyberblue;
-  font-family: $fonte-normal-WTF;
-  letter-spacing: 2px;
+  font-family: $fonte-normal-WTF-Azul;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 20;
   position: absolute;
-  transform: translate(5px,-35px);
+  transform: translate(-20px,-37px);
+  width: fit-content;
+  height: fit-content;
+
+height:20px;
+width: 150px;
+overflow: hidden; /* Oculta qualquer texto que exceda o espaço */
+white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+text-overflow: ellipsis;
 }
 
 
@@ -121,7 +133,7 @@ z-index: 1;
   padding: 5px 5px;
   left: 18px;
   position: absolute;
-  font-family: $fonte-normal-WTF;
+  font-family: $fonte-normal-WTF-Azul;
   color: rgb(13, 164, 235);
   font-size: 0.9em;
 }
