@@ -9,9 +9,7 @@
   transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
-  /*   background-image: url(../../../assets/images/card2/armacaoCard2.png);
-  background-position: center;
-  background-size: cover; */
+
   z-index: 1;
 }
 
@@ -53,14 +51,13 @@
   width: 180px;
   height: 259px;
   position: relative;
-transform: translateZ(45px);
+  transform: translateZ(45px);
 }
 
 .faixaContainer {
   position: absolute;
-top: -8px;
- left: -100px;
 
+transform: translate(-92px, 120px)
 
 }
 
@@ -68,26 +65,27 @@ top: -8px;
   transform: translateY(-5px);
   position: absolute;
 
- 
+
 }
 
-.nomeSvg_container{
+.nomeSvg_container {
   position: absolute;
-   transform: translate(-49px, 142px) rotateZ(4deg);
-   width: 190px;
-   
+  transform: translate(-78px, 140px) rotateZ(2deg);
+  width: 190px;
+
 }
+
 .nome {
   position: absolute;
-  font-size: 15px;
+  font-size: 10px;
   fill: $cyberorange;
-    text-shadow:
+  text-shadow:
     -1px -1px 0 #644651,
     1px -1px 0 #644651,
     -1px 1px 0 #644651,
     1px 1px 0 #644651;
   font-family: $fonte-normal-WTF-Goblin;
- 
+
 }
 
 //Altera o MiniCard
@@ -105,8 +103,8 @@ top: -8px;
 .miniCard {
   width: fit-content;
   height: fit-content;
-  transform: translate(-10px, -12px);
- 
+  transform: translate(-11px, -17px);
+
 }
 
 .frase {
@@ -117,39 +115,22 @@ top: -8px;
   height: 47px;
   text-align: center;
 
-  bottom: 28px;
-  padding: 5px 5px;
+  bottom: 35px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
   left: 17px;
   position: absolute;
   font-family: $fonte-normal-WTF-Goblin;
   color: $cyberorange;
-  font-size: 0.5em;
+  font-size: 0.6em;
   text-shadow:
     -1px -1px 0 black,
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 
-
-}
-
-
-
-.circleContainer {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circleText {
-  font-size: 16px;
-  display: inline-block;
-  transform: rotate(-90deg);
-  transform-origin: center;
 }

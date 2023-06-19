@@ -1,9 +1,9 @@
 import React from 'react'
-import BannerPaginaInicial from '../../components/Banner/BannerPaginaInicial'
 import styles from './PaginaInicial.module.scss'
 import Deck from '../../components/Decks'
 import dados from '../../assets/json/dados.json'
-
+import CardEt from '../../components/Card/CardMain/CardEt';
+import fotoEt from '../../components/Card/CardMain/CardEt/image/cardEt/Et.png'
 export default function PaginaInicial() {
 
  const goblin = dados.goblins; 
@@ -14,8 +14,10 @@ export default function PaginaInicial() {
   return (
     <div className={styles.container}>
 
-   
-    <Deck tipo={"CardPremiunAzul"} tribo={goblin}/>
+  <CardEt nome={'Alienigena'} imagem={fotoEt}/>
+
+
+  <Deck tipo={"CardPremiunVerde"} tribo={goblin}/>
  
     </div>
   )

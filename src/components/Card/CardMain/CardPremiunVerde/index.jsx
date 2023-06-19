@@ -45,10 +45,10 @@ const CardPremiunVerde = ({ nome, frase, imagem }) => {
           <div className={styles.nome_container}>
             <img className={styles.faixaContainer} src={faixa} alt="" />
             <div className={styles.nomeSvg_container}>
-              <svg fill="transparent" width="125" height="35" viewBox="0 0 135 20">
-                <path id="curve" d="M10,13.5 A10.5,1.5 0 0 1 135,13.5" />
-                <text width="135">
-                  <textPath xlinkHref="#curve" className={styles.nome}>
+              <svg fill="transparent" width="185" height="58" viewBox="10 0 135 30">
+                <path id="curve" d="M11,16.5 A5.8,1.3 0 0 1 133,16.5" />
+                <text width="185" className={styles.nome}>
+                  <textPath xlinkHref="#curve" startOffset="46%" textAnchor="middle" >
                     {nome}
                   </textPath>
                 </text>

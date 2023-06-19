@@ -38,9 +38,10 @@
 
 //Alterar o Herói
 .card_personagem_imagem {
-  width: 180px;
-  transform: translate(0px, -50px);
+  width: 120px;
+  transform: translate(30px, -20px);
   position: absolute;
+
 
 }
 
@@ -392,7 +393,7 @@
   position: absolute;
   font-family: $fonte-normal-WTF-Et;
   color: $cybergreen;
-  font-size: 1.6em;
+  font-size: 1.5em;
   text-shadow:
     -1px -1px 0 black,
     1px -1px 0 black,
@@ -401,36 +402,4 @@
   letter-spacing: 5px;
 
 
-}
-
-.favorito {
-  position: absolute;
-  bottom: 78px;
-  left: 73px;
-  cursor: pointer;
-}
-
-
-.gema {
-
-  width: fit-content;
-  height: fit-content;
-}
-
-.circleContainer {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circleText {
-  font-size: 16px;
-  display: inline-block;
-  transform: rotate(-90deg);
-  transform-origin: center;
 }
