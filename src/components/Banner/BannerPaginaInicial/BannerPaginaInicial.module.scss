@@ -1,1 +1,48 @@
 @import '../../../styles/variaveis';
+
+
+.banner_container{
+  display: grid;
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+
+}
+
+.video_container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  grid-column: 1;
+  grid-row: 1;
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+   
+}
+
+.video_small {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width:0%; /* Defina o width inicial como 50% */ //!Alterar para 50%
+
+  /* Defina a animação para ocorrer apenas uma vez */
+  animation: largura 0.5s linear 1;
+}
+
+@keyframes largura {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
+}
+}
+
+

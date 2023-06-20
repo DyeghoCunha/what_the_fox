@@ -14,7 +14,7 @@ export default function PaginaInicial() {
 
   return (
     <>
-    <Cabecalho/>
+ 
     <div className={styles.container}>
 
 

@@ -34,8 +34,11 @@ $colorBg-WTF:rgba(238, 219, 188, 1);
   background: $colorBg-WTF;
   border: 2px solid $colorBg-WTF;
   border-radius: 10%;
-  box-shadow: -4px -4px 15px $corClaraLuz,
-    4px 4px 15px rgba(0, 0, 0, 0.25);
+
+    box-shadow: -4px -4px 5px rgba(255, 255, 255, 0.25),
+    4px 4px 10px rgba(0, 0, 0, 0.20); 
+
+
   overflow: hidden;
 
 }
@@ -54,9 +57,9 @@ $colorBg-WTF:rgba(238, 219, 188, 1);
   position: absolute;
   inset: calc($botaoAltura * 0.04);
 
-  border: 12px  solid $corFundo;
+  border: 12px  solid $corBgBotaoShadowClara-WTF;
   
-  background: $corFundo;
+  background: $corBgBotaoShadowClara-WTF;
   
   border-radius: 5%;
   
@@ -65,12 +68,12 @@ $colorBg-WTF:rgba(238, 219, 188, 1);
 .click{
   
   position: absolute;
-  width: calc($botaoLargura - 0px);
-  height: calc($botaoAltura - 0px);
+  width: calc($botaoLargura - 9px);
+  height: calc($botaoAltura - 9px);
   z-index: 101;
   border-radius: 10%;
-  background-color: $corFundo;
-  border: 6px solid $corFundo;
+  background-color: $colorBg-WTF;
+  border: 6px solid $colorBg-WTF;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   display: flex;
@@ -83,8 +86,6 @@ $colorBg-WTF:rgba(238, 219, 188, 1);
   opacity: 1;
 }
 
-$corBgBotaoClaro-WTF: rgba(225, 223, 221, 1);
-$corBgBotaoAzulClara-WTF: rgba(97, 178, 205, 1);
 
 .loader span i{
   position: absolute;
@@ -125,7 +126,7 @@ $corBgBotaoAzulClara-WTF: rgba(97, 178, 205, 1);
 
 .rocket .faRocket {
   position: absolute;
-  color: $cyberyellow;
+  color: $cyberblue;
   font-size: calc($botaoAltura/1.9);
   z-index: 1;
 
@@ -133,7 +134,7 @@ $corBgBotaoAzulClara-WTF: rgba(97, 178, 205, 1);
 
 .iconeOff{
   position: absolute;
-  color: $corClara;
+  color: $corBgBotaoFundo-WTF;
   font-size: calc($botaoAltura/1.9);
   
   z-index: 101;

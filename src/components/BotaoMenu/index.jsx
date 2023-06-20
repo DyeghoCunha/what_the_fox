@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom'
 
 
 
-export default function BotaoMenu({ icone }) {
+export default function BotaoMenu({ children, link }) {
   const localizacao = useLocation();
 
   return (
@@ -17,11 +17,11 @@ export default function BotaoMenu({ icone }) {
       <div className={styles.loader}>
 
         <div className={styles.rocket}>
-          <div className={`${styles.faRocket} `}>{icone}</div>
+          <div className={`${styles.faRocket} `}>{children}</div>
         </div>
 
-        <div className={` ${styles.click} ${localizacao.pathname === '/' ? '' : styles.clickIn}`} >
-        <div className={styles.iconeOff}>{icone}</div>
+        <div className={` ${styles.click} ${localizacao.pathname === link ? '' : styles.clickIn}`} >
+        <div className={styles.iconeOff}>{children}</div>
         </div>
 
         <span><i></i></span>

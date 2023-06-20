@@ -1,0 +1,73 @@
+@import '../../../styles/variaveis';
+
+
+.banner_container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+  background-color: $colorBg-WTF;
+}
+
+.video_container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  grid-column: 1;
+  grid-row: 1;
+
+  .video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+  }
+
+}
+
+.foto_container {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  grid-column: 2;
+  grid-row: 1;
+
+  .imagem_backGround {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    //background-image: url('../../../assets/Banner/bannerWTF_FotoTrilha.png');
+    background-repeat: repeat-y;
+    animation: moveBackground 60s linear infinite;
+  }
+
+  @keyframes moveBackground {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: -100px -2005px;
+    }
+
+    100% {
+      background-position: 0px -4010px;
+    }
+  }
+}
+
+/* Para smartphones com largura de 375px */
+@media screen and (max-width: 767px) {
+
+.banner_container {
+
+  grid-template-columns: 100%;
+
+}
+}
