@@ -18,13 +18,13 @@ export default function Banner() {
     <section>
      
         {/* <BannerPaginaInicial /> */}
-        
+
       <BannerVideoFoto video={videoRaposa}  imagem={imagemTrilha}/>
 
-      <BannerVideoFoto video={videoRosto}  imagem={imagemTrilha4}/> 
+ {/*      <BannerVideoFoto video={videoRosto}  imagem={imagemTrilha4}/> 
 
       <BannerVideoFoto video={videoLogo}  imagem={imagemTrilha2}/>
-
+ */}
     </section>
 
 

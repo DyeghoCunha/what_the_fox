@@ -10,6 +10,27 @@
   height: fit-content;
   background-color: $colorBg-WTF;
 }
+.botao_container{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width:5%;
+     background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+}
+.avancar{
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+//!!Alterando os botões e trabalhando no Banner
 
 .video_container {
   width: 100%;
