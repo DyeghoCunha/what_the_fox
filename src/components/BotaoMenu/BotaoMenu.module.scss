@@ -1,0 +1,141 @@
+@import '../../styles/variaveis';
+
+
+$botaoLargura: calc(50px);
+$botaoAltura: calc($botaoLargura);
+$containerAltura: var($botaoLargura);
+$corBackGroundBotao: #eaeef0;
+
+
+
+.container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  max-height: $botaoAltura;
+  max-width: $botaoLargura;
+  background: $corFundo;
+}
+
+.loader {
+  position: relative;
+  display: flex;
+
+}
+
+$colorBg-WTF:rgba(238, 219, 188, 1);
+.loader span {
+
+  position: relative;
+  width: $botaoLargura;
+  height: $botaoAltura;
+  background: $colorBg-WTF;
+  border: 2px solid $colorBg-WTF;
+  border-radius: 10%;
+  box-shadow: -4px -4px 15px $corClaraLuz,
+    4px 4px 15px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 5%;
+  box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.5),
+    inset -5px -5px 15px $corClaraLuz;
+}
+
+.loader span::after {
+  content: '';
+  position: absolute;
+  inset: calc($botaoAltura * 0.04);
+
+  border: 12px  solid $corFundo;
+  
+  background: $corFundo;
+  
+  border-radius: 5%;
+  
+   
+}
+.click{
+  
+  position: absolute;
+  width: calc($botaoLargura - 0px);
+  height: calc($botaoAltura - 0px);
+  z-index: 101;
+  border-radius: 10%;
+  background-color: $corFundo;
+  border: 6px solid $corFundo;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+.clickIn{
+  opacity: 1;
+}
+
+$corBgBotaoClaro-WTF: rgba(225, 223, 221, 1);
+$corBgBotaoAzulClara-WTF: rgba(97, 178, 205, 1);
+
+.loader span i{
+  position: absolute;
+  inset: calc($botaoLargura * -0.9);
+  border-radius: 5%;
+  filter: blur(5px);
+  background: linear-gradient($corBgBotaoClaro-WTF,$cyberblue,$corBgBotaoAzulClara-WTF,$cyberblue, $corBgBotaoClaro-WTF);
+  background-position: center;
+  animation: animate 2s linear infinite;
+}
+
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.rocket {
+  position: absolute;
+  inset: calc($botaoLargura /7);
+  z-index: 101;
+  display: flex;
+  border-radius: 5%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+ background-color: transparent;
+
+  width: $botaoLargura -15px;
+  height: $botaoAltura -15px;
+
+
+}
+
+.rocket .faRocket {
+  position: absolute;
+  color: $cyberyellow;
+  font-size: calc($botaoAltura/1.9);
+  z-index: 1;
+
+}
+
+.iconeOff{
+  position: absolute;
+  color: $corClara;
+  font-size: calc($botaoAltura/1.9);
+  
+  z-index: 101;
+  display: flex;
+}

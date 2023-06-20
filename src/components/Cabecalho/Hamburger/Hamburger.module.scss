@@ -1,18 +1,29 @@
 @import "../../../styles/variaveis";
 
-.hamburger_container{
+.hamburger_container {
   display: none;
 }
+
 @media screen and (max-width: 767px) {
 
 
-.hamburger_container {
-  margin-right: 10px;
-  width: fit-content;
-  height: fit-content;
-  border-radius: 8px;
-  display: block;
-
+  .hamburger_container {
+    height: fit-content;
+    width: 100vw;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    display: block;
+    background-color: $colorBg-WTF;
+    z-index: 500000;
+&_icones{
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+    /* 
   .hamburgerOff {
     display: flex;
     justify-content: center;
@@ -33,7 +44,6 @@
     border-radius: 8px;
     padding: 3px;
     box-shadow: inset 4px 0px 4px rgba(255, 255, 255, 0.25),inset  0px 4px 4px rgba(0, 0, 0, 0.25);
+  }*/
   }
-}
-
 }
