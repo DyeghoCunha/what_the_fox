@@ -24,3 +24,17 @@
     gyroscopeMaxAngleY:     45,     // This is the top limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the bottom border of the element;
     gyroscopeSamples:       10      // How many gyroscope moves to decide the starting position.
 }
+
+
+@media screen and (max-width: 1024px) {
+  .cabecalho_container{
+background-color: red;
+}
+}
+
+/* Para smartphones com largura de 375px */
+@media screen and (max-width: 767px) {
+   .cabecalho_container{
+background-color: blue;
+}
+}
