@@ -1,0 +1,68 @@
+@import "../../../styles/variaveis";
+
+.container {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba($colorBg-WTF, 0.8);
+
+}
+
+.container::after {
+  content: " ";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transform: translateZ(10px)
+}
+
+
+.bolinha_container {
+  transform: translateZ(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.imagem {
+  position: absolute;
+  top: 5px;
+  width: 30px;
+}
+
+/* Para smartphones com largura de 375px */
+@media screen and (max-width: 767px) {
+  .container {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .container::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transform: translateZ(10px)
+  }
+
+  .imagem {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 15px;
+  }
+}

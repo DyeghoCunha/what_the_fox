@@ -16,15 +16,21 @@ export default function Banner() {
   return (
 
     <section>
+
+      {/* <BannerPaginaInicial /> */}
+      {proximo === 1 && (
+   <BannerVideoFoto video={videoRaposa} imagem={imagemTrilha} />
+)}
      
-        {/* <BannerPaginaInicial /> */}
+{proximo=== 2 &&(
+  <BannerVideoFoto video={videoRosto}  imagem={imagemTrilha4}/> 
+)}
+       {proximo=== 3 &&(
+    <BannerVideoFoto video={videoLogo}  imagem={imagemTrilha2}/>
+)}
 
-      <BannerVideoFoto video={videoRaposa}  imagem={imagemTrilha}/>
-
- {/*      <BannerVideoFoto video={videoRosto}  imagem={imagemTrilha4}/> 
-
-      <BannerVideoFoto video={videoLogo}  imagem={imagemTrilha2}/>
- */}
+    
+ 
     </section>
 
 

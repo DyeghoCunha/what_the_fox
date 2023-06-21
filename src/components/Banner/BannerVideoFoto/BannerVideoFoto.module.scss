@@ -10,27 +10,55 @@
   height: fit-content;
   background-color: $colorBg-WTF;
 }
-.botao_container{
+
+.botao_container {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width:5%;
-     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.75);
-    border-left: 1px solid rgba(255, 255, 255, 0.75);
-    border-radius: 0px 10px 10px 0px;
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+  z-index: 9999;
+  width: 3%;
+
+  backdrop-filter: blur(5px);
+
+  background: rgba($colorBg-WTF, 0.1);
+  border: 1px solid rgba($colorBg-WTF, 0.5);
+  border-top: 1px solid rgba($colorBg-WTF, 0.75);
+  border-left: 1px solid rgba($colorBg-WTF, 0.75);
 }
-.avancar{
+
+.botao_container:hover {
+  width: 5%;
+  backdrop-filter: blur(25px);
+}
+
+.avancar {
+  border-radius: 10px 0px 0px 10px;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 0px;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
 }
-//!!Alterando os botões e trabalhando no Banner
+
+.voltar {
+  border-radius: 0px 10px 10px 0px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bolinhas {
+  position: absolute;
+
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 6px;
+  z-index: 99999;
+}
 
 .video_container {
   width: 100%;
@@ -65,16 +93,13 @@
     width: 100%;
     //background-image: url('../../../assets/Banner/bannerWTF_FotoTrilha.png');
     background-repeat: repeat-y;
+    background-size: cover;
     animation: moveBackground 60s linear infinite;
   }
 
   @keyframes moveBackground {
     0% {
       background-position: 0 0;
-    }
-
-    50% {
-      background-position: -100px -2005px;
     }
 
     100% {
@@ -86,9 +111,16 @@
 /* Para smartphones com largura de 375px */
 @media screen and (max-width: 767px) {
 
-.banner_container {
+  .banner_container {
 
-  grid-template-columns: 100%;
+    grid-template-columns: 100%;
+    top: 35px;
 
-}
+  }
+
+  .botao_container {
+    width: 10%;
+
+
+  }
 }

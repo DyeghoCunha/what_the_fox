@@ -4,7 +4,7 @@ const BannerContext = createContext()
 
 const BannerProvider = ({ children }) => {
   const [videoFim, setVideoFim] = useState(0)
-  const [proximo, setProximo] = useState(0)
+  const [proximo, setProximo] = useState(1)
 
 
   const value = {
