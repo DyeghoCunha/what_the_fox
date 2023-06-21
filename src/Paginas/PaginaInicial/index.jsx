@@ -5,15 +5,17 @@ import dados from '../../assets/json/dados.json'
 import Categorias from '../../components/Categorias';
 export default function PaginaInicial() {
 
- const goblin = dados.Goblins; 
+  const goblin = dados.Goblins;
 
 
   return (
     <>
-    <Categorias/>
-    <div className={styles.container}>
-  <Deck tipo={"CardPremiunVerde"} tribo={goblin}/>
-    </div>
+
+
+      <div className={styles.container}>
+        <Categorias />
+        <Deck tipo={"CardPremiunVerde"} tribo={goblin} />
+      </div>
     </>
   )
 }

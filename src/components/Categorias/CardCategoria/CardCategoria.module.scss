@@ -31,7 +31,6 @@
 }
 
 
-
 //Alterar o Herói
 .card_personagem_imagem {
   width: 179px;
@@ -71,17 +70,82 @@
 .nome {
 
   position: absolute;
-
   bottom: 10px;
-
   position: absolute;
-letter-spacing: 4px;
-text-shadow:
--1px -1px 0 black,
-1px -1px 0 black,
--1px 1px 0 black,
-1px 1px 0 black;
+  letter-spacing: 4px;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
   font-size: 15px;
   color: $cyberblue;
   font-family: $fonte-normal-WTF-Goblin;
+}
+
+
+
+@media screen and (max-width: 1024px) {}
+
+/* Para smartphones com largura de 375px */
+@media screen and (max-width: 767px) {
+  .container_Card {
+    width: 146px;
+    height: 190px;
+    position: relative;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+  }
+
+  .imgFundo {
+    width: 146px;
+    height: 190px;
+    top: 0;
+    left: 0;
+    transform: translateZ(20px);
+
+  }
+
+  .card_base {
+    position: absolute;
+  }
+
+
+  //Alterar o Herói
+  .card_personagem_imagem {
+    width: 156px;
+    transform: translate(0px, 5px);
+  }
+
+  .card_faixa {
+    width: 146px;
+    height: 190px;
+  }
+
+  .faixaContainer {
+    width: 146px;
+    top: 13px;
+    left: 10px;
+  }
+
+  .nome_container {
+    bottom: 0px;
+    left: -10px;
+    width: 146px;
+    height: 190px;
+  }
+
+  .nome {
+    bottom: 17px;
+    left: 26px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 80%;
+
+    letter-spacing: 4px;
+    font-size: 12px;
+  }
+
+
 }
