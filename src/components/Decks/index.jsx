@@ -12,7 +12,9 @@ export default function Deck({tribo,tipo}) {
     <section className={styles.container}>
       
 {tribo.map((card)=>(
+  <div className={styles.card_container}>
     <CardMain key={card.id} type={tipo} imagem={card.imagem} nome={card.nome} frase={card.frase}/>
+  </div>
 ))}
     </section>
   )
