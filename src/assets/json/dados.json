@@ -212,32 +212,32 @@
     {
     "id":1,
     "nomeCategoria":"Goblins" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true"
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Goblin.png?raw=true"
     },
         {
     "id":2,
     "nomeCategoria":"Raposas" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true"
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Raposa.png?raw=true"
     },
         {
     "id":3,
     "nomeCategoria":"Apes" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true"
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Ape.png?raw=true"
     },
         {
     "id":4,
     "nomeCategoria":"Hemps" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true"
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Erva.png?raw=true"
     },
         {
     "id":5,
     "nomeCategoria":"SwordMaster" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true"
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Samurai.png?raw=true"
     },
         {
     "id":6,
     "nomeCategoria":"Emotes" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true"
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Emote.png?raw=true"
     }
 
   ]

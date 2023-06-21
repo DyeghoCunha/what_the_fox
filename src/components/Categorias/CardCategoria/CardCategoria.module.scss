@@ -1,0 +1,87 @@
+@import '../../../styles/variaveis';
+
+
+.container_Card {
+  width: 179px;
+  height: 190px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+
+}
+
+.imgFundo {
+  position: absolute;
+  z-index: 0;
+  width: 179px;
+  height: 190px;
+  top: 0;
+  left: 0;
+
+
+  transform: translateZ(20px);
+}
+
+.card_base {
+  position: absolute;
+
+}
+
+
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 179px;
+  transform: translate(-0px, -20px);
+  position: absolute;
+
+}
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 179px;
+  height: 190px;
+  position: relative;
+  transform: translateZ(40px);
+}
+
+.faixaContainer {
+  position: absolute;
+  top: 0px;
+  left: 8px;
+}
+
+.nome_container {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 179px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.nome {
+
+  position: absolute;
+
+  bottom: 10px;
+
+  position: absolute;
+letter-spacing: 4px;
+text-shadow:
+-1px -1px 0 black,
+1px -1px 0 black,
+-1px 1px 0 black,
+1px 1px 0 black;
+  font-size: 15px;
+  color: $cyberblue;
+  font-family: $fonte-normal-WTF-Goblin;
+}

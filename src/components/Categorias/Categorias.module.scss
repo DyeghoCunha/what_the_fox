@@ -1,0 +1,27 @@
+@import "../../styles/variaveis";
+
+
+
+.container{
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+ // background-color: $colorBg-WTF;
+
+.card_container{
+  display: flex;
+  margin:40px;
+  gap: 20px;
+}
+
+.titulo{
+font-family: $fonte-normal-WTF;
+}
+
+
+
+}
