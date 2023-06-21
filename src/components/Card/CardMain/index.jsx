@@ -12,7 +12,7 @@ import CardEt from './CardEt'
 const CardMain = ({id,type,nome,frase,imagem}) => {
   
 return (
- <>
+ <section className={styles.container}>
 
 {type==='CardAzul'&&(
   <CardAzul frase={frase} imagem={imagem} nome={nome} key={id}/>
@@ -39,7 +39,7 @@ return (
 
 
 
-</>
+</section>
      );
 };
 

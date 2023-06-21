@@ -2,8 +2,9 @@
 
 
 .container_Card {
-  width: 180px;
-  height: 259px;
+  width: 306px;
+
+  height: 440.30px;
   border-radius: 8px;
   position: relative;
   transform-style: preserve-3d;
@@ -16,8 +17,8 @@
 .imgFundo {
   position: absolute;
   z-index: 0;
-  width: fit-content;
-  height: fit-content;
+  width: 306px;
+  height: 440.30px;
 
   top: 50%;
   left: 50%;
@@ -37,7 +38,7 @@
 
 //Alterar o Herói
 .card_personagem_imagem {
-  width: 190px;
+  width: 323px;
   transform: translate(-10px, -30px);
   position: absolute;
 
@@ -48,8 +49,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 259px;
+  width: 306px;
+  height: 440.30px;
   position: relative;
   transform: translateZ(45px);
 }
@@ -57,27 +58,27 @@
 .faixaContainer {
   position: absolute;
 
-transform: translate(-92px, 120px)
-
+  width: 306px;
+  transform: translate(0px, 121px)
 }
 
 .nome_container {
-  transform: translateY(-5px);
+  transform: translateY(60px);
   position: absolute;
-
-
+  width: 306px;
+  height: fit-content;
 }
 
 .nomeSvg_container {
   position: absolute;
-  transform: translate(-78px, 140px) rotateZ(2deg);
+  transform: translate(48px, 155px) rotateZ(2deg);
   width: 190px;
 
 }
 
 .nome {
   position: absolute;
-  font-size: 10px;
+  font-size: 12px;
   fill: $cyberorange;
   text-shadow:
     -1px -1px 0 #644651,
@@ -85,6 +86,7 @@ transform: translate(-92px, 120px)
     -1px 1px 0 #644651,
     1px 1px 0 #644651;
   font-family: $fonte-normal-WTF-Goblin;
+  transform: scale(1.7);
 
 }
 
@@ -101,9 +103,9 @@ transform: translate(-92px, 120px)
 }
 
 .miniCard {
-  width: fit-content;
+  width: 306px;
   height: fit-content;
-  transform: translate(-11px, -17px);
+  transform: translate(-2px, -22px);
 
 }
 
@@ -111,21 +113,17 @@ transform: translate(-92px, 120px)
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 141px;
+  width: 241px;
   height: 47px;
   text-align: center;
-
-  bottom: 35px;
+  bottom: 86px;
+    left: 30px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  left: 17px;
+  padding: 20px;
   position: absolute;
   font-family: $fonte-normal-WTF-Goblin;
   color: $cyberorange;
-  font-size: 0.6em;
+  font-size: 1em;
   text-shadow:
     -1px -1px 0 black,
     1px -1px 0 black,

@@ -9,24 +9,32 @@
 
 }
 
-.card_container{
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
   width: 350px;
   height: 615px;
-  border: 2px solid;
+  background-image: url(./image/fundoDeck.png);
+  background-position: center;
+  background-repeat: no-repeat;
+
+
 }
 
 
 /* Media query para dispositivos móveis */
 @media screen and (max-width: 768px) {
   .container {
-    
-//!Cuidar com estas Medidas Depois 
+
     margin-top: 60px;
     margin-bottom: 60px;
 
 
-    grid-template-columns: 1fr; /* Cada card em uma coluna */
-    transform: none; /* Remover o deslocamento */
+    grid-template-columns: 1fr;
+    /* Cada card em uma coluna */
+    transform: none;
+    /* Remover o deslocamento */
     justify-content: center;
     align-items: center;
   }
