@@ -6,22 +6,139 @@
   gap: 40px;
   justify-content: center;
   align-items: center;
-
 }
 
 .card_container {
   display: flex;
-  justify-content: center;
-  align-items: top;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
   width: 350px;
   height: 615px;
-  background-image: url(./image/fundoDeck.png);
-  background-position: center;
-  background-repeat: no-repeat;
-
-
+  z-index: 0;
 }
 
+.botao_container {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  z-index: 500;
+  width: 280px;
+  height: 48px;
+  bottom: 0;
+  left: 27px;
+  background-color: transparent;
+  border: none;
+}
+
+.botao_container:hover{
+   transform: scale(1.05);  
+}
+
+.botao_container:active{
+  transform: scale(0.95);
+}
+
+.favorito{
+  position: absolute;
+  z-index: 300;
+  width: fit-content;
+  height: fit-content;
+  top: 20px;
+  left: 20px;
+}
+
+.favorito:hover{
+ transform: scale(1.1); 
+ animation: infinite 1s cores;
+}
+
+@keyframes cores{
+  0%{
+    filter: hue-rotate(90deg)
+  }
+  50%{
+    filter: hue-rotate(360deg)
+  }
+  100%{
+    filter: hue-rotate(45deg)
+  }
+}
+
+.favorito:active{
+  transform: scale(0.95);
+}
+
+.botao_container_imagem {
+  position: absolute;
+  width: 280px;
+  height: 48px;
+  bottom: 10px;
+  border: 2px solid wheat;
+  border-radius: 25px;
+}
+
+.botao_container_imagem:hover {
+ 
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid yellow;
+}
+
+.botao_container_titulo {
+  position: absolute;
+  bottom: -18px;
+  font-size: 30px;
+  z-index: 500;
+  color: $corBgBotaoEscuro-WTF;
+  font-family: $fonte-normal-WTF;
+    text-shadow:
+    -1px -1px 0 wheat,
+    1px -1px 0 wheat,
+    -1px 1px 0 wheat,
+    1px 1px 0 wheat;
+}
+
+.botao_container_titulo:hover {
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 rgb(179, 221, 245),
+    -1px 1px 0 yellow,
+    1px 1px 0 wheat;
+}
+
+.container_valor {
+
+  width: 333px;
+  height: 175px;
+  position: relative;
+
+
+  .fundo_valor {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .valor {
+    width: 74%;
+    height: inherit;
+    display: flex;
+    justify-content: right;
+    color: $corBgBotaoEscuro-WTF;
+    position: absolute;
+    font-family: $fonte-normal-WTF;
+    font-size: 60px;
+    z-index: 150;
+    text-shadow:
+      -1px -1px 0 wheat,
+      1px -1px 0 wheat,
+      -1px 1px 0 wheat,
+      1px 1px 0 wheat;
+  }
+}
 
 /* Media query para dispositivos móveis */
 @media screen and (max-width: 768px) {
