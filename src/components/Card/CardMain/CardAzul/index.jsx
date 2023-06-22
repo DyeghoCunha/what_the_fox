@@ -66,12 +66,12 @@ const CardAzul = ({ nome, frase, imagem }) => {
 
           <div className={styles.favorito}>
 
-            {favoritoOn && (
+       {/*      {favoritoOn && (
               <img className={styles.gema} onClick={handleClick} src={GemaOn} />
             )}
             {!favoritoOn && (
               <img className={styles.gema} onClick={handleClick} src={GemaOff} />
-            )}
+            )} */}
 
           </div>
           <div >

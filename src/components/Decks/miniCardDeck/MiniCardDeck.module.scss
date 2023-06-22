@@ -22,7 +22,15 @@
 .botao_container:active{
   transform: scale(0.95);
 }
+.moedas{
+  position: absolute;
+  z-index: 10;
+  right: 21px;
+  top: 22px;
 
+  
+ }
+ 
 .favorito{
   position: absolute;
   z-index: 300;

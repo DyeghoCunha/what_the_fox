@@ -1,9 +1,6 @@
-
-
-
-
 {
-  "Goblins": [{
+  "Goblins": [
+    {
       "id": 1,
       "raca": "Goblin",
       "classe": "Ladino",
@@ -147,34 +144,8 @@
       "favorito": false
     }
   ],
-  "samurais": [
-        {
-      "id": 14,
-      "raca": "Goblin",
-      "classe": "Assassino",
-      "valor": 95,
-      "nome": "Skrigul Sanguessuga",
-      "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
-      "quantidade": 1,
-      "favorito": false
-    }
-  ],
-  "emotes":[    
+  "raposas": [
     {
-      "id": 15,
-      "raca": "Goblin",
-      "classe": "Assassino",
-      "valor": 95,
-      "nome": "Skrigul Sanguessuga",
-      "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
-      "quantidade": 1,
-      "favorito": false
-    }
-  ],
-  "raposas":[ 
-       {
       "id": 16,
       "raca": "Goblin",
       "classe": "Assassino",
@@ -184,9 +155,7 @@
       "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
       "quantidade": 1,
       "favorito": false
-    }
-  ],
-  "Monkeys":[    
+    },
     {
       "id": 17,
       "raca": "Goblin",
@@ -197,11 +166,31 @@
       "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
       "quantidade": 1,
       "favorito": false
-    }
-  ],
-  "Ervas":[
-      {
+    },
+    {
       "id": 18,
+      "raca": "Goblin",
+      "classe": "Assassino",
+      "valor": 95,
+      "nome": "Skrigul Sanguessuga",
+      "frase": "Nas sombras, sou letal.",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
+      "quantidade": 1,
+      "favorito": false
+    },
+    {
+      "id": 19,
+      "raca": "Goblin",
+      "classe": "Assassino",
+      "valor": 95,
+      "nome": "Skrigul Sanguessuga",
+      "frase": "Nas sombras, sou letal.",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
+      "quantidade": 1,
+      "favorito": false
+    },
+    {
+      "id": 20,
       "raca": "Goblin",
       "classe": "Assassino",
       "valor": 95,
@@ -212,37 +201,119 @@
       "favorito": false
     }
   ],
-  "Categorias":[
+  "Monkeys": [
     {
-    "id":101,
-    "nomeCategoria":"Goblins" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Goblin.png?raw=true"
+      "id": 21,
+      "raca": "Samurai",
+      "classe": "Guerreiro",
+      "valor": 120,
+      "nome": "Hiroshi Katanashi",
+      "frase": "A honra é minha espada.",
+      "imagem": "https://example.com/imagem-samurai.png",
+      "quantidade": 1,
+      "favorito": false
     },
-        {
-    "id":102,
-    "nomeCategoria":"Raposas" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Raposa.png?raw=true"
+    {
+      "id": 22,
+      "raca": "Samurai",
+      "classe": "Guerreiro",
+      "valor": 120,
+      "nome": "Hiroshi Katanashi",
+      "frase": "A honra é minha espada.",
+      "imagem": "https://example.com/imagem-samurai.png",
+      "quantidade": 1,
+      "favorito": false
     },
-        {
-    "id":103,
-    "nomeCategoria":"Apes" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Ape.png?raw=true"
+    {
+      "id": 23,
+      "raca": "Samurai",
+      "classe": "Guerreiro",
+      "valor": 120,
+      "nome": "Hiroshi Katanashi",
+      "frase": "A honra é minha espada.",
+      "imagem": "https://example.com/imagem-samurai.png",
+      "quantidade": 1,
+      "favorito": false
     },
-        {
-    "id":104,
-    "nomeCategoria":"Hemps" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Erva.png?raw=true"
-    },
-        {
-    "id":105,
-    "nomeCategoria":"SwordMaster" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Samurai.png?raw=true"
-    },
-        {
-    "id":106,
-    "nomeCategoria":"Emotes" ,
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Emote.png?raw=true"
+    {
+      "id": 24,
+      "raca": "Samurai",
+      "classe": "Guerreiro",
+      "valor": 120,
+      "nome": "Hiroshi Katanashi",
+      "frase": "A honra é minha espada.",
+      "imagem": "https://example.com/imagem-samurai.png",
+      "quantidade": 1,
+      "favorito": false
     }
+  ],
+  
+  "Ervas": [
+    {
+      "id": 25,
+      "raca": "Erva",
+      "classe": "Curandeiro",
+      "valor": 80,
+      "nome": "Folha Verde",
+      "frase": "A natureza é a minha aliada.",
+      "imagem": "https://example.com/imagem-erva.png",
+      "quantidade": 1,
+      "favorito": false
+    },
+    {
+      "id": 26,
+      "raca": "Erva",
+      "classe": "Curandeiro",
+      "valor": 80,
+      "nome": "Folha Verde",
+      "frase": "A natureza é a minha aliada.",
+      "imagem": "https://example.com/imagem-erva.png",
+      "quantidade": 1,
+      "favorito": false
+    },
+    {
+      "id": 27,
+      "raca": "Erva",
+      "classe": "Curandeiro",
+      "valor": 80,
+      "nome": "Folha Verde",
+      "frase": "A natureza é a minha aliada.",
+      "imagem": "https://example.com/imagem-erva.png",
+      "quantidade": 1,
+      "favorito": false
+    }
+  ],
 
+  "Categorias": [
+    {
+      "id": 101,
+      "nomeCategoria": "Goblins",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Goblin.png?raw=true"
+    },
+    {
+      "id": 102,
+      "nomeCategoria": "Raposas",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Raposa.png?raw=true"
+    },
+    {
+      "id": 103,
+      "nomeCategoria": "Apes",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Ape.png?raw=true"
+    },
+    {
+      "id": 104,
+      "nomeCategoria": "Hemps",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Erva.png?raw=true"
+    },
+    {
+      "id": 105,
+      "nomeCategoria": "SwordMaster",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Samurai.png?raw=true"
+    },
+    {
+      "id": 106,
+      "nomeCategoria": "Emotes",
+      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Emote.png?raw=true"
+    }
   ]
 }
