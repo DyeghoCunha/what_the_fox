@@ -16,7 +16,7 @@ export default function PaginaInicial() {
       <div className={styles.container}>
         <Categorias />
         <Destaques/>
-        <Deck tipo={"CardPremiunVerde"} tribo={goblin} />
+        <Deck tipo={"CardVerde"} tribo={goblin} />
       </div>
     </>
   )

@@ -2,8 +2,8 @@
 
 
 .container_Card {
-  width: 180px;
-  height: 259px;
+  width: 306px;
+  height: 440.30px;
   border-radius: 8px;
   position: relative;
   transform-style: preserve-3d;
@@ -14,8 +14,8 @@
 .imgFundo {
   position: absolute;
   z-index: 0;
-  width: fit-content;
-  height: fit-content;
+  width: 306px;
+  height: 440.30;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -23,7 +23,6 @@
 
 .card_base {
   position: absolute;
-
 }
 
 .card_personagem {
@@ -32,8 +31,8 @@
 
 //Alterar o Herói
 .card_personagem_imagem {
-  width: 190px;
-  transform: translate(-10px, -10px);
+  width: 323px;
+  transform: translate(-10px, -30px);
   position: absolute;
 
 }
@@ -42,16 +41,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 259px;
+  width: 306px;
+  height: 440.30px;
   position: relative;
-  transform:translateZ(30px);
+  transform:translateZ(40px);
 }
 
 .faixaContainer {
   position: absolute;
   top: 0px;
-  right: 0px;
+  left: -62px;
+  width: 306px;
 }
 
 .nome_container {
@@ -73,10 +73,9 @@
 }
 
 .miniCard {
-  width: fit-content;
+  width: 306px;
   height: fit-content;
   transform: translate(-1.5px, -5px);
-
 }
 
 .favorito {
@@ -86,34 +85,26 @@
   cursor: pointer;
 }
 
-.gema {
-  width: fit-content;
-  height: fit-content;
-}
-
 .frase {
   display: flex;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  width: 141px;
-  height: 57px;
+  width: 285px;
+  height: fit-content;
   text-align: center;
-
-  bottom: 15px;
-
-  left: 20px;
+padding: 0px 20px;
+  bottom: 35px;
+  left: 10px;
   position: absolute;
   font-family: $fonte-normal-WTF-Goblin;
   color: #644651;
-  font-size: 0.85em;
+  font-size: 1.8em;
   letter-spacing: 1px;
-  
 }
 
 .nomeSvg_container{
-  transform: translate(7px, 14px) rotateZ(0deg);
-
+transform: scale(1.7);
   text-align: center;
   display: flex;
   justify-self: center;
@@ -121,8 +112,7 @@
 }
 
 .nome {
-  transform: translate(7px, -4px) rotateZ(2deg);
-
+  transform: translate(7px, 16px) rotateZ(0deg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,6 +120,6 @@
   font-size: 10px;
   fill: #644651;
   font-family: $fonte-normal-WTF-Goblin;
-  border: 2px solid;
+
 }
 

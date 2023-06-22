@@ -11,7 +11,7 @@ import GemaOff from '../../image/miniCard_Gema_Off.png';
 const CardVerde = ({ nome, frase, imagem }) => {
   const tiltRef = useRef(null);
 
-  const [favoritoOn, setFavoritoOn] = useState(true)
+
 
   useEffect(() => {
     if (tiltRef.current) {
@@ -25,11 +25,6 @@ const CardVerde = ({ nome, frase, imagem }) => {
       });
     }
   }, []);
-
-
-  function handleClick() {
-    setFavoritoOn(prev => !prev)
-  }
 
 
   return (

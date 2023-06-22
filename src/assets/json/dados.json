@@ -1,3 +1,7 @@
+
+
+
+
 {
   "Goblins": [{
       "id": 1,
@@ -145,7 +149,7 @@
   ],
   "samurais": [
         {
-      "id": 13,
+      "id": 14,
       "raca": "Goblin",
       "classe": "Assassino",
       "valor": 95,
@@ -158,7 +162,7 @@
   ],
   "emotes":[    
     {
-      "id": 13,
+      "id": 15,
       "raca": "Goblin",
       "classe": "Assassino",
       "valor": 95,
@@ -171,7 +175,7 @@
   ],
   "raposas":[ 
        {
-      "id": 13,
+      "id": 16,
       "raca": "Goblin",
       "classe": "Assassino",
       "valor": 95,
@@ -184,7 +188,7 @@
   ],
   "Monkeys":[    
     {
-      "id": 13,
+      "id": 17,
       "raca": "Goblin",
       "classe": "Assassino",
       "valor": 95,
@@ -197,7 +201,7 @@
   ],
   "Ervas":[
       {
-      "id": 13,
+      "id": 18,
       "raca": "Goblin",
       "classe": "Assassino",
       "valor": 95,
@@ -210,32 +214,32 @@
   ],
   "Categorias":[
     {
-    "id":1,
+    "id":101,
     "nomeCategoria":"Goblins" ,
     "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Goblin.png?raw=true"
     },
         {
-    "id":2,
+    "id":102,
     "nomeCategoria":"Raposas" ,
     "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Raposa.png?raw=true"
     },
         {
-    "id":3,
+    "id":103,
     "nomeCategoria":"Apes" ,
     "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Ape.png?raw=true"
     },
         {
-    "id":4,
+    "id":104,
     "nomeCategoria":"Hemps" ,
     "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Erva.png?raw=true"
     },
         {
-    "id":5,
+    "id":105,
     "nomeCategoria":"SwordMaster" ,
     "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Samurai.png?raw=true"
     },
         {
-    "id":6,
+    "id":106,
     "nomeCategoria":"Emotes" ,
     "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Emote.png?raw=true"
     }
