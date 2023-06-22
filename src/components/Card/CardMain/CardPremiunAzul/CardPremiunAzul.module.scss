@@ -2,23 +2,20 @@
 
 
 .container_Card {
-  width: 180px;
-  height: 259px;
+  width: 306px;
+  height: 440.30px;
   border-radius: 8px;
   position: relative;
   transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
-
 }
 
 .imgFundo {
   position: absolute;
   z-index: 0;
-  width: 200px;
-  height: 280px;
-
-  //Colocar em todas
+  width: 306px;
+  height: 440.30;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -26,48 +23,60 @@
 
 .card_base {
   position: absolute;
-
 }
 
 .card_personagem {
-
   transform: translateZ(20px);
 }
 
 //Alterar o Herói
 .card_personagem_imagem {
-  width: 190px;
-  transform: translate(-1px, -10px);
+  width: 312px;
+  transform: translate(-10px, -30px);
   position: absolute;
 
 }
 
 
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 306px;
+  height: 440.30px;
+  position: relative;
+  transform: translateZ(60px);
+}
 
 .faixaContainer {
   position: absolute;
-  bottom: -140px;
-  left: -36px;
-  z-index: 1;
+  top: 42px;
+  right: -149px;
+  width: 306px;
+
 }
 
-
+.nome_container {
+  transform: translate(2px, 21px);
+  position: absolute;
+}
 
 //Altera o MiniCard
 .miniCard_container {
   transform: translateZ(40px);
   position: relative;
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
+  height: 100%;
+
   opacity: 1;
   z-index: 10;
+
 }
 
 .miniCard {
-  width: 180px;
+  width: 285px;
   height: fit-content;
-  transform: translate(2px, 20px);
-
+  transform: translate(11px, 15px);
 }
 
 
@@ -75,32 +84,11 @@
 //-------------------------------------------------------------------------
 
 
-.card_faixa {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateZ(60px);
-  bottom: 30px;
-  left: -5px;
-  width: 195px;
-  height: 100px;
-
-  position: absolute;
-}
-
-
-.nome_container {
-transform: translate(-60px,-10px);
-
-position: absolute;
-z-index: 1;
-}
-
 
 //Altera o MiniCard
 
 .nome {
-  font-size: 13px;
+  font-size: 18px;
   color: $cyberblue;
   font-family: $fonte-normal-WTF-Azul;
   letter-spacing: 1px;
@@ -109,32 +97,36 @@ z-index: 1;
   align-items: center;
   z-index: 20;
   position: absolute;
-  transform: translate(-20px,-37px);
+
   width: fit-content;
   height: fit-content;
+  z-index: 30;
+  height: 20px;
+  left: -157px;
+  top: 188px;
+  width: 306px;
 
-height:20px;
-width: 150px;
-overflow: hidden; /* Oculta qualquer texto que exceda o espaço */
-white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
-text-overflow: ellipsis;
+  overflow: hidden;
+  /* Oculta qualquer texto que exceda o espaço */
+  white-space: nowrap;
+  /* Impede que o texto seja quebrado em várias linhas */
+  text-overflow: ellipsis;
 }
 
 
 .frase {
   display: flex;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  width: 141px;
-  height: 47px;
+  width: 285px;
+  height: fit-content;
   text-align: center;
-
-  bottom: 10px;
-  padding: 5px 5px;
-  left: 18px;
+  padding: 0px 20px;
+  bottom: 35px;
+  left: 10px;
   position: absolute;
   font-family: $fonte-normal-WTF-Azul;
   color: rgb(13, 164, 235);
-  font-size: 0.9em;
+  font-size: 1.8em;
 }
-
