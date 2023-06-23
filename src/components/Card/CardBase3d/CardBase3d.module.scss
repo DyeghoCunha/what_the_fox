@@ -1,0 +1,9 @@
+@import "../../../styles/variaveis";
+
+.container{
+  width: fit-content;
+  height: fit-content;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+}

@@ -11,7 +11,7 @@ import faixa from './image/faixaCard1.png'
 const CardAzul = ({ nome, frase, imagem }) => {
   const tiltRef = useRef(null);
 
-  const [favoritoOn, setFavoritoOn] = useState(true)
+
 
   useEffect(() => {
     if (tiltRef.current) {
@@ -27,9 +27,7 @@ const CardAzul = ({ nome, frase, imagem }) => {
   }, []);
 
 
-  function handleClick() {
-    setFavoritoOn(prev => !prev)
-  }
+
 
 
   return (
@@ -66,12 +64,6 @@ const CardAzul = ({ nome, frase, imagem }) => {
 
           <div className={styles.favorito}>
 
-       {/*      {favoritoOn && (
-              <img className={styles.gema} onClick={handleClick} src={GemaOn} />
-            )}
-            {!favoritoOn && (
-              <img className={styles.gema} onClick={handleClick} src={GemaOff} />
-            )} */}
 
           </div>
           <div >

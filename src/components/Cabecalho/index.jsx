@@ -1,19 +1,30 @@
 import styles from './Cabecalho.module.scss'
 import logo from "./image/logoWTF.png"
 
-import React from 'react'
+import React, { useState } from 'react'
 import CabecalhoLink from './CabecalhoLink'
 import Busca from './Busca';
 import Hamburger from './Hamburger';
+import BotaoGeral from '../BotãoGeral';
+import AbModal from '../Modais/Modal';
 
 
 export default function Cabecalho() {
+
+  const [modalLogar, setModalLogar] = useState(false)
+  const [modalRegistrar, setModalRegistral] = useState(false)
+
 
   const handleBusca = (termoBusca) => {
     console.log('Termo de busca:', termoBusca);
   };
 
-
+  function handleClickLogar() {
+    setModalLogar(prev => !prev)
+  }
+  function handleClickRegistrar() {
+    setModalRegistral(prev => !prev)
+  }
 
   return (
     <nav className={styles.cabecalho_container}>
@@ -24,6 +35,7 @@ export default function Cabecalho() {
 
 
         <div className={` ${styles.display} ${styles.links_container}`}>
+
           <CabecalhoLink to={"/teste"}>
             <div>Home</div>
           </CabecalhoLink>
@@ -39,7 +51,20 @@ export default function Cabecalho() {
           <CabecalhoLink to={"/teste"}>
             <div>Promoções</div>
           </CabecalhoLink>
+
         </div>
+
+
+
+        <h2 onClick={handleClickLogar}>Logar</h2>
+
+        {modalLogar && (
+          <AbModal aberta={true} titulo={"Logar"} children={"Escrever Codigo"} />
+        )}
+        {modalRegistrar && (
+          <AbModal aberta={true} titulo={"Registrar"} children={"Escrever Codigo"} />
+        )}
+
       </section>
       <Busca onBusca={handleBusca} className={styles.busca} />
       <Hamburger />

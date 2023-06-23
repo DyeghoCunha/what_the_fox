@@ -1,0 +1,21 @@
+.container{
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 5 colunas com largura igual */
+  grid-template-rows: repeat(4, 1fr); /* 5 linhas com altura igual */
+  grid-gap: 40px;
+  justify-content: center;
+  align-items: center;
+  
+  width: 90vw;
+  height: fit-content;
+  margin: 40px 0px;
+}
+
+@media screen and (max-width: 767px) {
+
+.container{
+  width: 100vw;
+  padding: 15px 0px;
+  overflow-x:scroll ;
+}
+}

@@ -1,0 +1,111 @@
+@import "../../../../styles/variaveis";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  background: rgba($colorBg-WTF, 0.1);
+  border: 1px solid rgba($colorBg-WTF, 0.5);
+  border-top: 1px solid rgba($colorBg-WTF, 0.75);
+  border-left: 1px solid rgba($colorBg-WTF, 0.75);
+  transform: translateZ(30px);
+  cursor: pointer;
+}
+
+.container_nome {
+
+  position: absolute;
+  top: -5px;
+  left: -20px;
+
+  width: fit-content;
+  height: 20px;
+  padding: 5px 5px;
+
+
+
+  transform: translateZ(40px) rotateZ(-25deg);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container_imagem {
+  position: absolute;
+  transform: translateZ(50px);
+  transform-style: preserve-3d;
+}
+
+$cor : black;
+
+.nome {
+  font-family: $fonte-normal-WTF;
+  color: $cyberblue;
+  text-shadow:
+    -1px -1px 0 $cor,
+    -1px 1px 0 $cor,
+    1px -1px 0 $cor,
+    1px 1px 0 $cor;
+
+}
+
+.container_valor{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translateZ(50px);
+  transform-style: preserve-3d;
+  top: 0;
+  right: 0;
+  z-index: 90000;
+  
+}
+.container_valor:hover{
+  //animation: infinite linear 2s  girando;
+}
+.valor {
+  width: 30px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 0;
+
+}
+
+@keyframes girando {
+
+  0% {
+    transform: translate(0px, 30px) translateZ(50px);
+  }
+
+  25%{
+    transform: translate(30px, -40px) translateZ(50px);
+  }
+
+  50%{
+    transform: translate(0px, -100px) translateZ(30px);
+  }
+   
+  100% {
+    transform: translate(0px, 30px) translateZ(20px);
+  }
+
+
+}
+
+.imagem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+}

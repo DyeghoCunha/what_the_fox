@@ -13,11 +13,17 @@ import miniCard2 from "../../components/Decks/image/minicard2.png"
 import botao2 from "../../components/Decks/image/barra2.png"
 import favoritoOff2 from "../../components/Decks/image/heartOff2.png"
 import favoritoOn2 from "../../components/Decks/image/heartOn2.png"
+import AbModal from '../../components/Modais/Modal';
+import CardBase3d from '../../components/Card/CardBase3d';
+import CardEmote from '../../components/Card/CardMain/CardEmote';
+import DeckEmotes from '../../components/Decks/DeckEmote';
 
 
 export default function PaginaInicial() {
 
   const goblin = dados.Goblins;
+  const emotes = dados.Emotes
+
 
   const miniCardVerde = {
     minicard: miniCard1,
@@ -35,15 +41,17 @@ export default function PaginaInicial() {
 
   return (
     <>
-
-
       <div className={styles.container}>
-        <Categorias />
+   
+        <Categorias /> 
         <Destaques />
+        
+        <DeckEmotes tribo={emotes}/>
+
         <Deck tipo={"CardPremiunAzul"} tribo={goblin} miniCard={miniCardAzul} />
         <Deck tipo={"CardPremiunVerde"} tribo={goblin} miniCard={miniCardVerde}/>
         <Deck tipo={"CardAzul"} tribo={goblin} miniCard={miniCardAzul} />
-        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde}/>
+        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde}/> 
       </div>
     </>
   )

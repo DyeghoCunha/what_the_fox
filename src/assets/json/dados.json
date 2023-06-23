@@ -283,6 +283,409 @@
       "favorito": false
     }
   ],
+  "Emotes":[
+  {
+    "id": 41,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 10,
+    "nome": "#1",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote1.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 42,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 6,
+    "nome": "#2",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote2.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 43,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 12,
+    "nome": "#3",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote3.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 44,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 4,
+    "nome": "#4",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote4.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 45,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 9,
+    "nome": "#5",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote5.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 46,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 14,
+    "nome": "#6",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote6.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 47,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 5,
+    "nome": "#7",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote7.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 48,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 11,
+    "nome": "#8",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote8.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 49,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 7,
+    "nome": "#9",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote9.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 50,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 15,
+    "nome": "#10",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote10.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 51,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 13,
+    "nome": "#11",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote11.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 52,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 2,
+    "nome": "#12",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote12.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 53,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 8,
+    "nome": "#13",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote13.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 54,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 3,
+    "nome": "#14",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote14.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 55,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 10,
+    "nome": "#15",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote15.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 56,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 5,
+    "nome": "#16",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote16.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 57,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 12,
+    "nome": "#17",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote17.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 58,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 7,
+    "nome": "#18",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote18.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 59,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 14,
+    "nome": "#19",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote19.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 60,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 9,
+    "nome": "#20",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote20.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 61,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 6,
+    "nome": "#21",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote21.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 62,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 11,
+    "nome": "#22",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote22.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 63,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 4,
+    "nome": "#23",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote23.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 64,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 8,
+    "nome": "#24",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote24.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 65,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 13,
+    "nome": "#25",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote25.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 66,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 2,
+    "nome": "#26",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote26.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 67,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 10,
+    "nome": "#27",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote27.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 68,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 5,
+    "nome": "#28",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote28.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 69,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 12,
+    "nome": "#29",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote29.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 70,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 9,
+    "nome": "#30",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote30.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 71,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 7,
+    "nome": "#31",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote31.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 72,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 14,
+    "nome": "#32",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote32.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 73,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 6,
+    "nome": "#33",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote33.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 74,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 11,
+    "nome": "#34",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote34.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 75,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 3,
+    "nome": "#35",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote35.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 76,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 8,
+    "nome": "#36",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote36.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 77,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 10,
+    "nome": "#37",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote37.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 78,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 13,
+    "nome": "#38",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote38.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 79,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 2,
+    "nome": "#39",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote39.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  },
+  {
+    "id": 80,
+    "raca": "Emote",
+    "classe": "emote",
+    "valor": 5,
+    "nome": "#40",
+    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote40.png?raw=true",
+    "quantidade": 1,
+    "favorito": false
+  }
+],
+
 
   "Categorias": [
     {

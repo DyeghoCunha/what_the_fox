@@ -1,0 +1,55 @@
+@import "../../../styles/variaveis";
+
+
+.janelaModal {
+  position: fixed;
+  padding: 64px;
+  
+  background: rgba($colorBg-WTF,0.1);
+  box-shadow: 4px 4px 24px -4px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9000000;
+}
+
+.fundoModal {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: rgba(101, 101, 101, 0.85);
+  backdrop-filter: blur(20px);
+   z-index: 8000000;
+}
+
+.tituloModalWrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  align-items: center;
+}
+
+.tituloModal {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  color: #EB9B00;
+  margin: 0;
+}
+
+.botaoFecharModal {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #002F52;
+}
