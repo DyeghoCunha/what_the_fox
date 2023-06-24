@@ -13,9 +13,6 @@ import miniCard2 from "../../components/Decks/image/minicard2.png"
 import botao2 from "../../components/Decks/image/barra2.png"
 import favoritoOff2 from "../../components/Decks/image/heartOff2.png"
 import favoritoOn2 from "../../components/Decks/image/heartOn2.png"
-import AbModal from '../../components/Modais/Modal';
-import CardBase3d from '../../components/Card/CardBase3d';
-import CardEmote from '../../components/Card/CardMain/CardEmote';
 import DeckEmotes from '../../components/Decks/DeckEmote';
 import Divisoria from '../../components/Decks/Divisoria';
 
@@ -23,7 +20,11 @@ import Divisoria from '../../components/Decks/Divisoria';
 export default function PaginaInicial() {
 
   const goblin = dados.Goblins;
-  const emotes = dados.Emotes
+  const emotes = dados.Emotes;
+  const raposas = dados.Raposas;
+  const monkeys = dados.Monkeys;
+  const hemps = dados.Hemps;
+  const bMaster = dados.Blademaster;
 
 
   const miniCardVerde = {
@@ -43,16 +44,27 @@ export default function PaginaInicial() {
   return (
     <>
       <div className={styles.container}>
-   
-        <Categorias /> 
-        <Destaques />
-        <Divisoria/>
-        <DeckEmotes tribo={emotes}/>
 
-        <Deck tipo={"CardPremiunAzul"} tribo={goblin} miniCard={miniCardAzul} />
-        <Deck tipo={"CardPremiunVerde"} tribo={goblin} miniCard={miniCardVerde}/>
-        <Deck tipo={"CardAzul"} tribo={goblin} miniCard={miniCardAzul} />
-        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde}/> 
+        <Categorias />
+         <Destaques /> 
+
+    <Divisoria titulo={"Emotes"} />
+        <DeckEmotes tribo={emotes} />
+
+        <Divisoria titulo={"Fox"} />
+        <Deck tipo={"CardPremiunAzul"} tribo={raposas} miniCard={miniCardAzul} />
+
+        <Divisoria titulo={"Hemps"} />
+        <Deck tipo={"CardPremiunVerde"} tribo={hemps} miniCard={miniCardVerde} />
+
+        <Divisoria titulo={"Apes"} />
+        <Deck tipo={"CardPremiunAzul"} tribo={monkeys} miniCard={miniCardAzul} />
+
+        <Divisoria titulo={"BladeMaster"} />
+        <Deck tipo={"CardAzul"} tribo={bMaster} miniCard={miniCardAzul} /> 
+
+        <Divisoria titulo={"Goblins"} />
+        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} /> 
       </div>
     </>
   )

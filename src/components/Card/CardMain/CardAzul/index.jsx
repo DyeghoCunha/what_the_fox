@@ -8,6 +8,7 @@ import GemaOff from './image/miniCard_Gema_Off.png';
 import fundo from './image/armacaoCard1.png'
 import faixa from './image/faixaCard1.png'
 
+
 const CardAzul = ({ nome, frase, imagem }) => {
   const tiltRef = useRef(null);
 

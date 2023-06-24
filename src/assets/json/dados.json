@@ -1,3 +1,5 @@
+
+
 {
   "Goblins": [
     {
@@ -7,7 +9,7 @@
       "valor": 100,
       "nome": "Grimbog Garmel",
       "frase": "A sombra é minha aliada.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin1.png?raw=true",
+      "imagem": "personagem/goblin/goblin1.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -18,7 +20,7 @@
       "valor": 120,
       "nome": "Zugruk Presa-de-Aço",
       "frase": "Minha força é imparável.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin2.png?raw=true",
+      "imagem": "personagem/goblin/goblin2.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -29,7 +31,7 @@
       "valor": 90,
       "nome": "Zarloga Fulmínea",
       "frase": "Os elementos obedecem a mim.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin3.png?raw=true",
+      "imagem": "personagem/goblin/goblin3.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -40,7 +42,7 @@
       "valor": 110,
       "nome": "Sarkul Ossombrante",
       "frase": "O poder das trevas é meu.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin4.png?raw=true",
+      "imagem": "personagem/goblin/goblin4.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -51,7 +53,7 @@
       "valor": 130,
       "nome": "Gromash Destruidor",
       "frase": "Nenhum inimigo escapa de mim.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin5.png?raw=true",
+      "imagem": "personagem/goblin/goblin5.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -62,7 +64,7 @@
       "valor": 100,
       "nome": "Morgath Iluminada",
       "frase": "A luz da fé guia meus passos.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin6.png?raw=true",
+      "imagem": "personagem/goblin/goblin6.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -73,7 +75,7 @@
       "valor": 105,
       "nome": "Grishnak dos Voodoo",
       "frase": "Os espíritos me guiam.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin7.png?raw=true",
+      "imagem": "personagem/goblin/goblin7.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -84,7 +86,7 @@
       "valor": 115,
       "nome": "Thorgar Garra Verde",
       "frase": "A natureza é minha aliada.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin8.png?raw=true",
+      "imagem": "personagem/goblin/goblin8.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -95,7 +97,7 @@
       "valor": 110,
       "nome": "Gruggar StormTemper",
       "frase": "A fúria me consome!",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin9.png?raw=true",
+      "imagem": "personagem/goblin/goblin9.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -106,7 +108,7 @@
       "valor": 120,
       "nome": "Glorfindel O Radiante",
       "frase": "A luz guia meus passos.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin10.png?raw=true",
+      "imagem": "personagem/goblin/goblin10.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -117,7 +119,7 @@
       "valor": 90,
       "nome": "Zyxar Malévolo",
       "frase": "Meus feitiços são poderosos.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin11.png?raw=true",
+      "imagem": "personagem/goblin/goblin11.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -128,7 +130,7 @@
       "valor": 110,
       "nome": "Lyzara Mortifera",
       "frase": "A morte é minha serva.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin12.png?raw=true",
+      "imagem": "personagem/goblin/goblin12.png",
       "quantidade": 1,
       "favorito": false
     },
@@ -139,64 +141,53 @@
       "valor": 95,
       "nome": "Skrigul Sanguessuga",
       "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
+      "imagem": "personagem/goblin/goblin13.png",
       "quantidade": 1,
       "favorito": false
     }
   ],
-  "raposas": [
+  "Raposas": [
     {
       "id": 16,
-      "raca": "Goblin",
-      "classe": "Assassino",
+      "raca": "Fox",
+      "classe": "Front-End",
       "valor": 95,
-      "nome": "Skrigul Sanguessuga",
-      "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
+      "nome": "Enzo CodeFox",
+      "frase": "Transformando ideias em interfaces incríveis!",
+      "imagem": "personagem/raposas/fox2.png",
       "quantidade": 1,
       "favorito": false
     },
     {
       "id": 17,
-      "raca": "Goblin",
-      "classe": "Assassino",
-      "valor": 95,
-      "nome": "Skrigul Sanguessuga",
-      "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
+      "raca": "Fox",
+      "classe": "Back-End",
+      "valor": 125,
+      "nome": "Jasper Bytepaw",
+      "frase": "Construindo as bases sólidas do mundo virtual!",
+      "imagem": "personagem/raposas/fox1.png",
       "quantidade": 1,
       "favorito": false
     },
     {
       "id": 18,
-      "raca": "Goblin",
-      "classe": "Assassino",
-      "valor": 95,
-      "nome": "Skrigul Sanguessuga",
-      "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
+      "raca": "Fox",
+      "classe": "FullStack",
+      "valor": 45,
+      "nome": "Dagoberto ScriptTail",
+      "frase": "Dominando as linguagens e conectando sistemas!",
+      "imagem": "personagem/raposas/fox3.png",
       "quantidade": 1,
       "favorito": false
     },
     {
       "id": 19,
-      "raca": "Goblin",
-      "classe": "Assassino",
-      "valor": 95,
-      "nome": "Skrigul Sanguessuga",
-      "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
-      "quantidade": 1,
-      "favorito": false
-    },
-    {
-      "id": 20,
-      "raca": "Goblin",
-      "classe": "Assassino",
-      "valor": 95,
-      "nome": "Skrigul Sanguessuga",
-      "frase": "Nas sombras, sou letal.",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/goblin/goblin13.png?raw=true",
+      "raca": "Fox",
+      "classe": "Programadora Mobile",
+      "valor": 195,
+      "nome": "Nova SwiftClaw",
+      "frase": "Criando aplicativos inovadores para a palma da sua mão!",
+      "imagem": "personagem/raposas/fox4.png",
       "quantidade": 1,
       "favorito": false
     }
@@ -204,81 +195,142 @@
   "Monkeys": [
     {
       "id": 21,
-      "raca": "Samurai",
-      "classe": "Guerreiro",
-      "valor": 120,
-      "nome": "Hiroshi Katanashi",
-      "frase": "A honra é minha espada.",
-      "imagem": "https://example.com/imagem-samurai.png",
+      "raca": "Ape",
+      "classe": "Macaco",
+      "valor": 190,
+      "nome": "Tony Primate",
+      "frase": "Voando alto, protegendo a selva!",
+      "imagem": "personagem/apes/ape1.png",
       "quantidade": 1,
       "favorito": false
     },
     {
       "id": 22,
-      "raca": "Samurai",
-      "classe": "Guerreiro",
-      "valor": 120,
-      "nome": "Hiroshi Katanashi",
-      "frase": "A honra é minha espada.",
-      "imagem": "https://example.com/imagem-samurai.png",
+      "raca": "Ape",
+      "classe": "Macaco",
+      "valor": 190,
+      "nome": "Spark Inferno",
+      "frase": "O poder corre em minhas veias!",
+      "imagem": "personagem/apes/ape2.png",
       "quantidade": 1,
       "favorito": false
     },
     {
       "id": 23,
-      "raca": "Samurai",
-      "classe": "Guerreiro",
+      "raca": "Ape",
+      "classe": "Macaco",
       "valor": 120,
-      "nome": "Hiroshi Katanashi",
-      "frase": "A honra é minha espada.",
-      "imagem": "https://example.com/imagem-samurai.png",
+      "nome": "Rex Kong",
+      "frase": "O rei comanda com sabedoria e poder!",
+      "imagem": "personagem/apes/ape3.png",
       "quantidade": 1,
       "favorito": false
     },
     {
       "id": 24,
-      "raca": "Samurai",
-      "classe": "Guerreiro",
-      "valor": 120,
-      "nome": "Hiroshi Katanashi",
-      "frase": "A honra é minha espada.",
-      "imagem": "https://example.com/imagem-samurai.png",
+      "raca": "Ape",
+      "classe": "Macaco",
+      "valor": 90,
+      "nome": "Cerebrus Blue",
+      "frase": "Intelecto envolto em pele azul!",
+      "imagem": "personagem/apes/ape4.png",
+      "quantidade": 1,
+      "favorito": false
+    },
+    {
+      "id": 25,
+      "raca": "Ape",
+      "classe": "Macaco",
+      "valor": 90,
+      "nome": "Shade MindSimian",
+      "frase": "A mente mais astuta esconde-se por trás dos óculos!",
+      "imagem": "personagem/apes/ape5.png",
       "quantidade": 1,
       "favorito": false
     }
+    
+  ],
+  "Blademaster": [
+      
+        {
+          "id": 26,
+          "raca": "Samurai",
+          "classe": "Guerreiro",
+          "valor": 195,
+          "nome": "Takeshi Ignis",
+          "frase": "Minha lâmina purificará os inimigos!",
+          "imagem": "personagem/samurai/samurai1.png",
+          "quantidade": 1,
+          "favorito": false
+        },
+        {
+          "id": 27,
+          "raca": "Samurai",
+          "classe": "Guerreiro",
+          "valor": 150,
+          "nome": "Akio Raijin",
+          "frase": "Meus golpes cortam como um trovão!",
+          "imagem": "personagem/samurai/samurai2.png",
+          "quantidade": 1,
+          "favorito": false
+        },
+        {
+          "id": 28,
+          "raca": "Samurai",
+          "classe": "Guerreiro",
+          "valor": 120,
+          "nome": "Haruka Kama",
+          "frase": "Ceifarei a escuridão que  ameaça!",
+          "imagem": "personagem/samurai/samurai3.png",
+          "quantidade": 1,
+          "favorito": false
+        },
+        {
+          "id": 29,
+          "raca": "Samurai",
+          "classe": "Guerreiro",
+          "valor": 120,
+          "nome": "Takeshi Yami",
+          "frase": "As sombras são minha proteção!",
+          "imagem": "personagem/samurai/samurai4.png",
+          "quantidade": 1,
+          "favorito": false
+        }
+      
+      
   ],
   
-  "Ervas": [
+  "Hemps": [
     {
-      "id": 25,
+      "id": 30,
       "raca": "Erva",
       "classe": "Curandeiro",
       "valor": 80,
       "nome": "Folha Verde",
       "frase": "A natureza é a minha aliada.",
-      "imagem": "https://example.com/imagem-erva.png",
+      "imagem": "personagem/ervas/erva1.png",
       "quantidade": 1,
       "favorito": false
     },
     {
-      "id": 26,
+      "id": 31,
       "raca": "Erva",
       "classe": "Curandeiro",
       "valor": 80,
       "nome": "Folha Verde",
       "frase": "A natureza é a minha aliada.",
-      "imagem": "https://example.com/imagem-erva.png",
+      "imagem": "personagem/ervas/erva2.png",
       "quantidade": 1,
       "favorito": false
     },
     {
-      "id": 27,
+      "id": 32,
       "raca": "Erva",
       "classe": "Curandeiro",
       "valor": 80,
       "nome": "Folha Verde",
       "frase": "A natureza é a minha aliada.",
-      "imagem": "https://example.com/imagem-erva.png",
+      "imagem": "personagem/ervas/erva3.png",
       "quantidade": 1,
       "favorito": false
     }
@@ -290,7 +342,7 @@
     "classe": "emote",
     "valor": 10,
     "nome": "#1",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote1.png?raw=true",
+    "imagem": "personagem/emotes/emote1.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -300,7 +352,7 @@
     "classe": "emote",
     "valor": 6,
     "nome": "#2",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote2.png?raw=true",
+    "imagem": "personagem/emotes/emote2.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -310,7 +362,7 @@
     "classe": "emote",
     "valor": 12,
     "nome": "#3",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote3.png?raw=true",
+    "imagem": "personagem/emotes/emote3.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -320,7 +372,7 @@
     "classe": "emote",
     "valor": 4,
     "nome": "#4",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote4.png?raw=true",
+    "imagem": "personagem/emotes/emote4.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -330,7 +382,7 @@
     "classe": "emote",
     "valor": 9,
     "nome": "#5",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote5.png?raw=true",
+    "imagem": "personagem/emotes/emote5.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -340,7 +392,7 @@
     "classe": "emote",
     "valor": 14,
     "nome": "#6",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote6.png?raw=true",
+    "imagem": "personagem/emotes/emote6.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -350,7 +402,7 @@
     "classe": "emote",
     "valor": 5,
     "nome": "#7",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote7.png?raw=true",
+    "imagem": "personagem/emotes/emote7.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -360,7 +412,7 @@
     "classe": "emote",
     "valor": 11,
     "nome": "#8",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote8.png?raw=true",
+    "imagem": "personagem/emotes/emote8.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -370,7 +422,7 @@
     "classe": "emote",
     "valor": 7,
     "nome": "#9",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote9.png?raw=true",
+    "imagem": "personagem/emotes/emote9.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -380,7 +432,7 @@
     "classe": "emote",
     "valor": 15,
     "nome": "#10",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote10.png?raw=true",
+    "imagem": "personagem/emotes/emote10.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -390,7 +442,7 @@
     "classe": "emote",
     "valor": 13,
     "nome": "#11",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote11.png?raw=true",
+    "imagem": "personagem/emotes/emote11.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -400,7 +452,7 @@
     "classe": "emote",
     "valor": 2,
     "nome": "#12",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote12.png?raw=true",
+    "imagem": "personagem/emotes/emote12.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -410,7 +462,7 @@
     "classe": "emote",
     "valor": 8,
     "nome": "#13",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote13.png?raw=true",
+    "imagem": "personagem/emotes/emote13.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -420,7 +472,7 @@
     "classe": "emote",
     "valor": 3,
     "nome": "#14",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote14.png?raw=true",
+    "imagem": "personagem/emotes/emote14.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -430,7 +482,7 @@
     "classe": "emote",
     "valor": 10,
     "nome": "#15",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote15.png?raw=true",
+    "imagem": "personagem/emotes/emote15.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -440,7 +492,7 @@
     "classe": "emote",
     "valor": 5,
     "nome": "#16",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote16.png?raw=true",
+    "imagem": "personagem/emotes/emote16.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -450,7 +502,7 @@
     "classe": "emote",
     "valor": 12,
     "nome": "#17",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote17.png?raw=true",
+    "imagem": "personagem/emotes/emote17.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -460,7 +512,7 @@
     "classe": "emote",
     "valor": 7,
     "nome": "#18",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote18.png?raw=true",
+    "imagem": "personagem/emotes/emote18.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -470,7 +522,7 @@
     "classe": "emote",
     "valor": 14,
     "nome": "#19",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote19.png?raw=true",
+    "imagem": "personagem/emotes/emote19.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -480,7 +532,7 @@
     "classe": "emote",
     "valor": 9,
     "nome": "#20",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote20.png?raw=true",
+    "imagem": "personagem/emotes/emote20.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -490,7 +542,7 @@
     "classe": "emote",
     "valor": 6,
     "nome": "#21",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote21.png?raw=true",
+    "imagem": "personagem/emotes/emote21.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -500,7 +552,7 @@
     "classe": "emote",
     "valor": 11,
     "nome": "#22",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote22.png?raw=true",
+    "imagem": "personagem/emotes/emote22.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -510,7 +562,7 @@
     "classe": "emote",
     "valor": 4,
     "nome": "#23",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote23.png?raw=true",
+    "imagem": "personagem/emotes/emote23.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -520,7 +572,7 @@
     "classe": "emote",
     "valor": 8,
     "nome": "#24",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote24.png?raw=true",
+    "imagem": "personagem/emotes/emote24.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -530,7 +582,7 @@
     "classe": "emote",
     "valor": 13,
     "nome": "#25",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote25.png?raw=true",
+    "imagem": "personagem/emotes/emote25.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -540,7 +592,7 @@
     "classe": "emote",
     "valor": 2,
     "nome": "#26",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote26.png?raw=true",
+    "imagem": "personagem/emotes/emote26.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -550,7 +602,7 @@
     "classe": "emote",
     "valor": 10,
     "nome": "#27",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote27.png?raw=true",
+    "imagem": "personagem/emotes/emote27.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -560,7 +612,7 @@
     "classe": "emote",
     "valor": 5,
     "nome": "#28",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote28.png?raw=true",
+    "imagem": "personagem/emotes/emote28.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -570,7 +622,7 @@
     "classe": "emote",
     "valor": 12,
     "nome": "#29",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote29.png?raw=true",
+    "imagem": "personagem/emotes/emote29.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -580,7 +632,7 @@
     "classe": "emote",
     "valor": 9,
     "nome": "#30",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote30.png?raw=true",
+    "imagem": "personagem/emotes/emote30.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -590,7 +642,7 @@
     "classe": "emote",
     "valor": 7,
     "nome": "#31",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote31.png?raw=true",
+    "imagem": "personagem/emotes/emote31.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -600,7 +652,7 @@
     "classe": "emote",
     "valor": 14,
     "nome": "#32",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote32.png?raw=true",
+    "imagem": "personagem/emotes/emote32.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -610,7 +662,7 @@
     "classe": "emote",
     "valor": 6,
     "nome": "#33",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote33.png?raw=true",
+    "imagem": "personagem/emotes/emote33.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -620,7 +672,7 @@
     "classe": "emote",
     "valor": 11,
     "nome": "#34",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote34.png?raw=true",
+    "imagem": "personagem/emotes/emote34.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -630,7 +682,7 @@
     "classe": "emote",
     "valor": 3,
     "nome": "#35",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote35.png?raw=true",
+    "imagem": "personagem/emotes/emote35.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -640,7 +692,7 @@
     "classe": "emote",
     "valor": 8,
     "nome": "#36",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote36.png?raw=true",
+    "imagem": "personagem/emotes/emote36.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -650,7 +702,7 @@
     "classe": "emote",
     "valor": 10,
     "nome": "#37",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote37.png?raw=true",
+    "imagem": "personagem/emotes/emote37.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -660,7 +712,7 @@
     "classe": "emote",
     "valor": 13,
     "nome": "#38",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote38.png?raw=true",
+    "imagem": "personagem/emotes/emote38.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -670,7 +722,7 @@
     "classe": "emote",
     "valor": 2,
     "nome": "#39",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote39.png?raw=true",
+    "imagem": "personagem/emotes/emote39.png",
     "quantidade": 1,
     "favorito": false
   },
@@ -680,7 +732,7 @@
     "classe": "emote",
     "valor": 5,
     "nome": "#40",
-    "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/assets/images/personagem/emotes/emote40.png?raw=true",
+    "imagem": "personagem/emotes/emote40.png",
     "quantidade": 1,
     "favorito": false
   }
@@ -691,32 +743,32 @@
     {
       "id": 101,
       "nomeCategoria": "Goblins",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Goblin.png?raw=true"
+      "imagem": "personagem/categorias/categoriaCard_Goblin.png"
     },
     {
       "id": 102,
       "nomeCategoria": "Raposas",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Raposa.png?raw=true"
+      "imagem": "personagem/categorias/categoriaCard_Raposa.png"
     },
     {
       "id": 103,
       "nomeCategoria": "Apes",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Ape.png?raw=true"
+      "imagem": "personagem/categorias/categoriaCard_Ape.png"
     },
     {
       "id": 104,
       "nomeCategoria": "Hemps",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Erva.png?raw=true"
+      "imagem": "personagem/categorias/categoriaCard_Erva.png"
     },
     {
       "id": 105,
       "nomeCategoria": "SwordMaster",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Samurai.png?raw=true"
+      "imagem": "personagem/categorias/categoriaCard_Samurai.png"
     },
     {
       "id": 106,
       "nomeCategoria": "Emotes",
-      "imagem": "https://github.com/DyeghoCunha/what_the_fox/blob/master/src/components/Categorias/image/categoriaCard_Emote.png?raw=true"
+      "imagem": "personagem/categorias/categoriaCard_Emote.png"
     }
   ]
 }
