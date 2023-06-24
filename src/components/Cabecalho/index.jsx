@@ -54,18 +54,17 @@ export default function Cabecalho() {
 
         </div>
 
-
-
-        <h2 onClick={handleClickLogar}>Logar</h2>
+        <div className={styles.logar} onClick={handleClickLogar}>
+          <BotaoGeral texto={"Logar"} />
+        </div>
 
         {modalLogar && (
           <AbModal aberta={true} titulo={"Logar"} children={"Escrever Codigo"} />
         )}
-        {modalRegistrar && (
-          <AbModal aberta={true} titulo={"Registrar"} children={"Escrever Codigo"} />
-        )}
+
 
       </section>
+
       <Busca onBusca={handleBusca} className={styles.busca} />
       <Hamburger />
     </nav>

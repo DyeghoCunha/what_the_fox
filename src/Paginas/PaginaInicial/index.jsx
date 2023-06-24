@@ -17,6 +17,7 @@ import AbModal from '../../components/Modais/Modal';
 import CardBase3d from '../../components/Card/CardBase3d';
 import CardEmote from '../../components/Card/CardMain/CardEmote';
 import DeckEmotes from '../../components/Decks/DeckEmote';
+import Divisoria from '../../components/Decks/Divisoria';
 
 
 export default function PaginaInicial() {
@@ -45,7 +46,7 @@ export default function PaginaInicial() {
    
         <Categorias /> 
         <Destaques />
-        
+        <Divisoria/>
         <DeckEmotes tribo={emotes}/>
 
         <Deck tipo={"CardPremiunAzul"} tribo={goblin} miniCard={miniCardAzul} />
