@@ -1,0 +1,215 @@
+@import "../../styles/variaveis";
+
+
+.container {
+  width: 100vw;
+  height: fit-content;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  bottom: 0px;
+background-color: $colorBg-WTF;
+  
+}
+.artista{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: fit-content;
+  position: relative;
+  
+}
+
+
+  .camada1, .camada2{
+    width: 50vw;
+    
+  }
+  .camada2{
+    position: absolute;
+    left: 336px;
+  }
+
+  .midias{
+    width: 32.5vw;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    right: 0;
+   
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+  }
+  .logo{
+    width: 20vw;
+    
+  }
+  .contato{
+   
+    width: 100%;
+    height: 53%;
+   
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+  }
+
+
+.icone_container{
+ 
+
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+
+width: 100%;
+
+padding: 10px;
+ text-decoration: none;
+.icone{
+  width: 100px;
+  height: 100px;
+  color: black;
+}
+.link{
+  
+  font-size: 4em;
+  font-family: $fonte-normal-WTF-Fox;
+ 
+}
+
+
+}
+.chamada{
+
+  text-align: center;
+font-size: 2em;
+font-family: $fonte-normal-WTF-Fox;
+.strong{
+  font-family: $fonte-normal-WTF;
+  color: $cyberblue;
+  text-shadow: -1px -1px 0px black,
+  -1px 1px 0 black;
+}
+}
+
+.formulario{
+  position: absolute;
+  top: 291px;
+  left: 175px;
+
+ 
+width: fit-content;
+scale: 1.5;
+}
+
+
+/* Para smartphones com largura de 375px */
+@media screen and (max-width: 767px) {
+  .container{
+   padding-bottom: 72px; 
+  
+  }
+
+  .artista{
+   
+    align-items: start;
+
+  }
+
+  .camada1, .camada2{
+    width: 50vw;
+  }
+  .camada2{
+    position: absolute;
+    left: 55px;
+  }
+
+  .midias{
+    width: 32.5vw;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+  }
+  .logo{
+    width: 20vw;
+    padding-top: 5px;
+    
+  }
+
+.contato{
+   
+    width: 100%;
+    height: 53%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+  }
+
+
+.icone_container{
+
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+
+width: 100%;
+
+padding: 10px;
+ text-decoration: none;
+
+.icone{
+  width: 20px;
+  height: 20px;
+  color: black;
+}
+.link{
+  
+  font-size: 1em;
+  font-family: $fonte-normal-WTF-Fox;
+ 
+}
+
+
+}
+.chamada{
+
+  text-align: center;
+font-size: 0.9em;
+font-family: $fonte-normal-WTF-Fox;
+.strong{
+  font-family: $fonte-normal-WTF;
+  color: $cyberblue;
+  font-size: 0.8em;
+  text-shadow: -1px -1px 0px black,
+  -1px 1px 0 black;
+}
+}
+.formulario_container{
+border-top: 5px solid;
+display: flex;
+
+width: 100vw;
+height: 10vh;
+}
+.formulario{
+width: fit-content;
+height: fit-content;
+}
+
+
+}

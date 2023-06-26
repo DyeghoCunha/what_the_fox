@@ -8,6 +8,8 @@ import CardVerde from './CardVerde';
 import CardPremiunVerde from './CardPremiunVerde';
 import CardPremiunAzul from './CardPremiunAzul';
 import CardEt from './CardEt'
+import CardPraia from './CardPraia';
+import CardOffice from './CardOffice';
 
 const CardMain = ({id,type,nome,frase,imagem}) => {
   
@@ -16,6 +18,13 @@ return (
 
 {type==='CardAzul'&&(
   <CardAzul frase={frase} imagem={imagem} nome={nome} key={id}/>
+)}
+
+{type==='CardPraia'&&(
+  <CardPraia imagem={imagem} nome={nome} key={id}/>
+)}
+{type==='CardOffice'&&(
+  <CardOffice frase={frase} imagem={imagem} nome={nome} key={id}/>
 )}
 
 {type==='CardPremiunAzul'&&(

@@ -1,0 +1,136 @@
+@import '../../../../styles/variaveis';
+
+
+.container_Card {
+  width: 306px;
+  height: 440.30px;
+  border-radius: 8px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.imgFundo {
+
+  position: absolute;
+  z-index: 0;
+  width: 306px;
+  height: 440.30;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 80% 8px 8px 8px;
+}
+
+.card_base {
+  position: absolute;
+}
+
+.card_personagem {
+  transform: translateZ(20px);
+}
+
+//Alterar o Herói
+.card_personagem_imagem {
+  width: 332px;
+  transform: translate(-9px, -10px);
+  position: absolute;
+
+}
+
+.card_faixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 306px;
+  height: 440.30px;
+  position: relative;
+  transform: translateZ(40px);
+}
+
+.nome_container {
+  position: relative;
+  width: 100%;
+  height: inherit;
+
+
+  .faixaContainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .gaivota {
+    position: absolute;
+    top: 5px;
+    left: 73px;
+  }
+
+}
+
+.sol {
+  position: absolute;
+  transform: translateZ(10px);
+  top: -25px;
+  left: -15px;
+}
+
+//Altera o MiniCard
+.miniCard_container {
+  transform: translateZ(40px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  z-index: 10;
+
+}
+
+.miniCard {
+  position: absolute;
+  width: 294px;
+  height: fit-content;
+  left: 6px;
+  bottom: 10px;
+  border-radius: 0px 0px 8px 8px;
+  z-index: 1;
+}
+
+
+.nomeSvg_container {
+  position: absolute;
+bottom: 85px; 
+left: 15px;
+transform: translateZ(50px);
+  text-align: center;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  z-index: 30;
+}
+
+.nome {
+  transform: translate(7px, 16px) rotateZ(-7deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  font-family: $fonte-normal-WTF-Azul;
+  color: $corCyano;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+  text-shadow:
+    -1px -1px 0 $cyberblue,
+    1px 1px 0 rgb(6, 122, 175),
+  ;
+  letter-spacing: 1px;
+  z-index: 50;
+}

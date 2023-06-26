@@ -8,9 +8,10 @@ export default function Destaques() {
   return (
     <section className={styles.container}>
       <div className={styles.titulo_container}>
-        <h1 className={styles.titulo}>Promoção</h1>
-       
+        <h1 className={styles.titulo}>Destaque</h1>
       </div>
+
+
       <CardEt nome={"Xelton"} imagem={fotoEt} />
     </section>
   )

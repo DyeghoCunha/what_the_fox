@@ -3,19 +3,21 @@
 
 
 .container{
-  width: 100vw;
+  width: 60vw;
   height: fit-content;
   margin: 0px 0px 50px 0px;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
+
+ 
+
   align-items: center;
-  background-image: url(../../assets/images/fudoPromoção.png);
+  background-image: url(../../assets/images/fundoPromoçãoA.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 
-  padding: 30px;
+  padding: 20px;
  
 }
 
@@ -28,21 +30,26 @@
 .titulo{
   font-family: $fonte-normal-WTF;
   letter-spacing: 5px;
-  font-size: 5em;
+  font-size: 8em;
   color: $cyberblue;
   text-shadow:
-  -1px -1px 0 black,
-  1px -1px 0 black,
-  -1px 1px 0 black,
-  1px 1px 0 black;
+    -1px -1px 0 $corCyano,
+    1px -1px 0 rgb(6, 122, 175),
+    -1px 1px 0 rgb(6, 122, 175),
+    1px 1px 0 rgb(6, 122, 175);
+  letter-spacing: 1px;
 }
 
 /* Para smartphones com largura de 375px */
 @media screen and (max-width: 767px) {
 .container{
   flex-direction: column;
+  width: 100vw;
+   background-image: url(../../assets/images/fundoPromoçãoMobile.png);
+   padding-bottom: 20px;
+   padding-top:0px;
 }
 .titulo{
-  font-size: 3em;
+  font-size: 4em;
 }
 }

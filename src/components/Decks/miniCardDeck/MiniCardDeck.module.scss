@@ -38,6 +38,7 @@
   height: fit-content;
   top: 20px;
   left: 20px;
+  cursor: pointer;
 }
 
 .favorito:hover{
@@ -68,6 +69,7 @@
   bottom: 10px;
   border: 2px solid wheat;
   border-radius: 25px;
+  cursor: pointer;
 }
 
 .botao_container_imagem:hover {
@@ -88,6 +90,7 @@
     1px -1px 0 wheat,
     -1px 1px 0 wheat,
     1px 1px 0 wheat;
+     cursor: pointer;
 }
 
 .botao_container_titulo:hover {
@@ -105,6 +108,7 @@
   position: relative;
 
 
+
   .fundo_valor {
     position: absolute;
     width: fit-content;
@@ -112,6 +116,7 @@
     z-index: 1;
     top: 0;
     left: 0;
+    border-radius: 0px 0px 8px 8px;
   }
 
   .valor {

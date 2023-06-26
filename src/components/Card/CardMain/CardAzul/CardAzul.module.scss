@@ -97,9 +97,11 @@
   left: 10px;
   position: absolute;
   font-family: $fonte-normal-WTF-Azul;
-  color: $corCyano;
+  
   font-size: 1.85em;
   letter-spacing: 1px;
+
+  color: $corCyano;
   text-shadow:
     -1px -1px 0 $cyberblue,
     1px -1px 0 rgb(6, 122, 175),

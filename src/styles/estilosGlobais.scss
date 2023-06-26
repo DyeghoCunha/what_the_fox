@@ -7,8 +7,9 @@
   padding: 0;
   box-sizing: border-box;
   width: 100vw;
-  //background-color: aquamarine;
-  background-image: url(../assets/images/fundoPagina.png) ;
+  background-color: rgb(11, 151, 104);
+  background-image: url(../assets/images/fundoPagina2.png) ;
+
   background-position: center;
   background-repeat: repeat-y;
   background-size: contain;
@@ -91,6 +92,14 @@ body::-webkit-scrollbar-track{
   font-family: "HangedLetters";
   src: local("HangedLetters"),
    url('../assets/fontes/HangedLetters.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto-Medium";
+  src: local("Roboto-Medium"),
+   url('../assets/fontes/Roboto-Medium.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
