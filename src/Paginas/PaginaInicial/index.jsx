@@ -74,7 +74,7 @@ export default function PaginaInicial() {
         <Divisoria titulo={"Emotes"} />
         <DeckEmotes tribo={emotes} />
 
-   {/*      <Divisoria titulo={"Fox"} />
+         <Divisoria titulo={"Fox"} />
         <Deck tipo={"CardOffice"} tribo={raposas} miniCard={miniCardOffice} />
  
         <Divisoria titulo={"Hemps"} />
@@ -87,7 +87,7 @@ export default function PaginaInicial() {
         <Deck tipo={"CardAzul"} tribo={bMaster} miniCard={miniCardAzul} /> 
 
         <Divisoria titulo={"Goblins"} />
-        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} /> */}
+        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} /> 
 
     
       </div>

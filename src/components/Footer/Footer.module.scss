@@ -97,13 +97,18 @@ font-family: $fonte-normal-WTF-Fox;
   -1px 1px 0 black;
 }
 }
+.formulario_container{
+  width: 100vw;
+  height: 20vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 
 .formulario{
-  position: absolute;
-  top: 291px;
-  left: 175px;
 
- 
+margin-bottom: 50px;
 width: fit-content;
 scale: 1.5;
 }
