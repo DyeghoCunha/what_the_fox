@@ -89,12 +89,14 @@
   border-radius: 2px;
   background-image: linear-gradient(to left, $corBgBotaoAzulEscuro-WTF, $corBgBotaoAzulClara-WTF, $corBgBotaoAzulEscuro-WTF);
   cursor: pointer;
+
   &:hover {
     box-shadow: inset 0px 1px 2px $corBgBotaoAzulClara-WTF,
       inset 1px 0px 2px $corBgBotaoAzulClara-WTF;
 
     color: $cyberblue;
   }
+
   &:active {
     background-image: linear-gradient(to left, $corBgBotaoAzulClara-WTF , $corBgBotaoAzulEscuro-WTF , $corBgBotaoAzulClara-WTF );
   }
@@ -102,7 +104,7 @@
 
 /* Para smartphones com largura de 375px */
 @media screen and (max-width: 767px) {
-  .container {
+/*   .container {
     display: none;
-  }
+  } */
 }

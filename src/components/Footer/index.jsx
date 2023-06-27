@@ -47,7 +47,7 @@ export default function Footer() {
 
       <div className={styles.artista}>
 
-        <video ref={videoRef} className={styles.camada1} autoPlay loop muted>
+        <video ref={videoRef} className={styles.camada3} autoPlay loop muted>
           <source src={videoArcano1} type="video/mp4" />
           Desculpe, seu navegador não suporta vídeos HTML5.
         </video>
@@ -77,12 +77,21 @@ export default function Footer() {
       </div>
 
       <div className={styles.formulario_container}>
+
+
         <h2 className={styles.chamada}>Quer receber nossas novidades, promoções exclusivas e 10% OFF na primeira compra? <strong href="/modal" className={styles.strong}>Cadastre-se!</strong> </h2>
+        
         <div className={styles.formulario}>
-          <Busca conteudo="Digite seu E-mail" legenda="E-mail" />
+          <Busca conteudo="Digite seu E-mail" legenda="E-mail"/>
         </div>
+
+        
       </div>
 
+
+        <div className={styles.direitosAutorais}>
+          <h2>2023 © Desenvolvido por <strong>Dyegho Cunha</strong> | Projeto fictício sem fins comerciais.</h2>
+        </div>
 
     </section>
   )

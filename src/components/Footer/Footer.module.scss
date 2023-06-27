@@ -4,138 +4,172 @@
 .container {
   width: 100vw;
   height: fit-content;
- 
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   bottom: 0px;
-background-color: $colorBg-WTF;
-  
+  background-color: $colorBg-WTF;
+overflow: hidden;
+
 }
-.artista{
+
+.artista {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
   height: fit-content;
   position: relative;
-  
+
 }
 
 
-  .camada1, .camada2{
-    width: 50vw;
-    
-  }
-  .camada2{
-    position: absolute;
-    left: 336px;
-  }
+.camada1,
+.camada2 {
+  width: 46vw;
 
-  .midias{
-    width: 32.5vw;
-    height: 100%;
-    position: absolute;
-    top: 10px;
-    right: 0;
-   
-    display: flex;
-    justify-content: top;
-    align-items: center;
-    flex-direction: column;
-  }
-  .logo{
-    width: 20vw;
-    
-  }
-  .contato{
-   
-    width: 100%;
-    height: 53%;
-   
-    position: absolute;
-    bottom: 10px;
-    right: 0px;
-  }
-
-
-.icone_container{
- 
-
- display: flex;
- justify-content: space-around;
- align-items: center;
-
-width: 100%;
-
-padding: 10px;
- text-decoration: none;
-.icone{
-  width: 100px;
-  height: 100px;
-  color: black;
 }
-.link{
-  
-  font-size: 4em;
-  font-family: $fonte-normal-WTF-Fox;
- 
+
+.camada2 {
+  position: absolute;
+  left: 336px;
 }
+
+.midias {
+  width: 32.5vw;
+  height: 100%;
+  position: absolute;
+  top: 10%;
+  right: 0;
+
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
 
 
 }
-.chamada{
+
+.logo {
+  width: 20vw;
+
+}
+
+.contato {
+
+  width: 100%;
+  height: 53%;
+
+  position: absolute;
+  bottom: -50px;
+  right: 0px;
+}
+
+
+.icone_container {
+
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 10px;
+  text-decoration: none;
+
+  .icone {
+    width: 100px;
+    height: 100px;
+    color: black;
+  }
+
+  .link {
+
+    font-size: 4em;
+    font-family: $fonte-normal-WTF-Fox;
+
+  }
+
+
+}
+
+.chamada {
 
   text-align: center;
-font-size: 2em;
-font-family: $fonte-normal-WTF-Fox;
-.strong{
-  font-family: $fonte-normal-WTF;
-  color: $cyberblue;
-  text-shadow: -1px -1px 0px black,
-  -1px 1px 0 black;
+  font-size: 2em;
+  font-family: $fonte-normal-WTF-Fox;
+
+  .strong {
+    font-family: $fonte-normal-WTF;
+    color: $cyberblue;
+    text-shadow: -1px -1px 0px black,
+      -1px 1px 0 black;
+
+  }
 }
-}
-.formulario_container{
+
+.formulario_container {
   width: 100vw;
-  height: 20vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.formulario{
+.formulario {
+  width: fit-content;
+  scale: 1.5;
+}
 
-margin-bottom: 50px;
-width: fit-content;
-scale: 1.5;
+.direitosAutorais {
+  width: 100vw;
+  height: fit-content;
+  text-align: center;
+  color: white;
+  background-color: black;
+
+  strong {
+    font-family: $fonte-bold-SW;
+    font-size: 1.5em;
+    color: $cyberblue;
+  }
 }
 
 
 /* Para smartphones com largura de 375px */
 @media screen and (max-width: 767px) {
-  .container{
-   padding-bottom: 72px; 
-  
+  .container {
+    padding-bottom: 72px;
+
   }
 
-  .artista{
-   
+  .artista {
+
     align-items: start;
 
   }
 
-  .camada1, .camada2{
+  .camada1,
+  .camada2 {
     width: 50vw;
   }
-  .camada2{
+
+  .camada2 {
     position: absolute;
     left: 55px;
   }
 
-  .midias{
+  .camada3 {
+    width: 67vw;
+  }
+
+  .midias {
     width: 32.5vw;
     height: 100%;
     position: absolute;
@@ -146,75 +180,89 @@ scale: 1.5;
     align-items: center;
     flex-direction: column;
   }
-  .logo{
+
+  .logo {
     width: 20vw;
     padding-top: 5px;
-    
+
   }
 
-.contato{
-   
+  .contato {
+
     width: 100%;
     height: 53%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 5px;
     right: 0px;
   }
 
 
-.icone_container{
+  .icone_container {
 
- display: flex;
- justify-content: space-around;
- align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-width: 100%;
+    width: 100%;
 
-padding: 10px;
- text-decoration: none;
+    padding: 10px;
+    text-decoration: none;
 
-.icone{
-  width: 20px;
-  height: 20px;
-  color: black;
-}
-.link{
-  
-  font-size: 1em;
-  font-family: $fonte-normal-WTF-Fox;
- 
-}
+    .icone {
+      width: 20px;
+      height: 20px;
+      color: black;
+    }
+
+    .link {
+
+      font-size: 1em;
+      font-family: $fonte-normal-WTF-Fox;
+
+    }
 
 
-}
-.chamada{
+  }
 
-  text-align: center;
-font-size: 0.9em;
-font-family: $fonte-normal-WTF-Fox;
-.strong{
-  font-family: $fonte-normal-WTF;
-  color: $cyberblue;
-  font-size: 0.8em;
-  text-shadow: -1px -1px 0px black,
-  -1px 1px 0 black;
-}
-}
-.formulario_container{
-border-top: 5px solid;
-display: flex;
+  .chamada {
 
-width: 100vw;
-height: 10vh;
-}
-.formulario{
-width: fit-content;
-height: fit-content;
-}
+    text-align: center;
+    font-size: 0.9em;
+    font-family: $fonte-normal-WTF-Fox;
 
+    .strong {
+      font-family: $fonte-normal-WTF;
+      color: $cyberblue;
+      font-size: 0.8em;
+      text-shadow: -1px -1px 0px black,
+        -1px 1px 0 black;
+    }
+  }
+
+  .formulario_container {
+
+    display: flex;
+
+    width: 100vw;
+    height: 20vh;
+  }
+
+  .formulario {
+    width: fit-content;
+    height: fit-content;
+    scale: 0.8;
+  }
+
+  .direitosAutorais {
+    font-size: 0.4em;
+
+    strong {
+      font-size: 1em;
+    }
+  }
 
 }

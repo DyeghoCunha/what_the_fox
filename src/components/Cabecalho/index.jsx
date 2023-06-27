@@ -65,7 +65,12 @@ export default function Cabecalho() {
 
       </section>
 
-      <Busca onBusca={handleBusca} className={styles.busca} />
+      <div className={styles.esconde}>
+        <Busca onBusca={handleBusca} className={styles.busca} />
+
+      </div>
+
+
       <Hamburger />
     </nav>
   )
