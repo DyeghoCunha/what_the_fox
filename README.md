@@ -40,15 +40,14 @@ Esse é um desafio proposto por Alura maior escola de tecnologia do Brasil, onde
 
 Com incentivo de usarmos a comunidade do Discord como apoio são esses nossos colegas do Desafio. *Mas é uma comundiade exclusiva para alunos por isso não posso deixar o link!*
 
-<img src="https://github.com/DanielBarret0/challenge-alura-7-edicao/blob/main/assets/gif/discord.png" alt="banner do discord">
 
 Também temos nossos instrutores que estão nos desafiando e auxiliando durante esse período que organizam cursos e conteudos para cada semana tanto na plataforma da alura quanto no trello.
 
-<img src="https://github.com/DanielBarret0/challenge-alura-7-edicao/blob/main/assets/gif/desafiantes.png" alt="banner dos instrutores">
+<img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/desafiantes2.png?raw=true" alt="banner dos instrutores">
 
 Recebemos na plataforma do **Trello** um guia para semana com tarefas para serem feitas onde podemos visualizar melhor cada etapa desse Desafio e conferir nosso progresso! 
 
-<img src="https://github.com/DanielBarret0/challenge-alura-7-edicao/blob/main/assets/gif/trello.png" alt="banner do trello instrutores">
+<img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/trello.png?raw=true" alt="banner do trello">
 
 ## Objetivo
 
@@ -68,13 +67,13 @@ Acesse esse projeto aqui [Projeto](https://www.figma.com/file/2TLgt8UjsWUViWlmpX
 
 
 <div align="center">
-<img src="https://github.com/DanielBarret0/challenge-alura-7-edicao/blob/main/assets/gif/figma.png" alt="projeto no Figma">
+<img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/figma.png?raw=true" alt="projeto no Figma">
 </div>
 
 Mas como podem ver, eu fiz algo bem diferente !! 
 
 <div align="center">
-<img src="https://github.com/DanielBarret0/challenge-alura-7-edicao/blob/main/assets/gif/figma.png" alt="projeto no Figma">
+<img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/meu%20projeto.png?raw=true" alt="projeto no Figma">
 </div>
 
 # :one: Primeira Semana | <!-- :construction:**Em progresso**--> :white_check_mark:**Feito** 
@@ -92,7 +91,11 @@ Esses são os meus objetivos da semana:
 ## Resultados da primeira semana:
 
 <div align="center">
-<img src="" alt="gif de resultados da primeira semana">
+<video width="320" height="240" controls>
+  <source src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/V%C3%ADdeo%20sem%20t%C3%ADtulo%20%E2%80%90%20Feito%20com%20o%20Clipchamp%20(18).mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+
 </div>
 
 
@@ -136,6 +139,15 @@ Estou animado para compartilhar o progresso do meu projeto até agora! Ao longo 
 Um aspecto que considero muito gratificante é o fato de ter optado por não utilizar bibliotecas como Bootstrap. Essa escolha tem me ajudado a aprimorar minhas habilidades em JavaScript e me desafiar a criar soluções personalizadas. Embora ainda haja muito a ser feito, estou empolgado com o progresso alcançado até agora.
 
 Continuarei atualizando sobre o projeto e compartilhando os avanços nas próximas semanas. Mal posso esperar para ver como ele evoluirá e o que mais está por vir!
+
+
+# 🖼️ Sobre o Autor
+
+
+<div align="center">
+<img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/vitrinedex.png?raw=true" alt="projeto no Figma">
+</div>
+
 
 <!-- ## ⭐ Representação do projeto em diversas telas
 <div align="center">
