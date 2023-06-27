@@ -92,9 +92,12 @@ Esses são os meus objetivos da semana:
 
 <div align="center">
 <video width="320" height="240" controls>
-  <source src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/V%C3%ADdeo%20sem%20t%C3%ADtulo%20%E2%80%90%20Feito%20com%20o%20Clipchamp%20(18).mp4" type="video/mp4">
+  <source src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/wtf%20%E2%80%90%20Feito%20com%20o%20Clipchamp.gif?raw=true" type="video/mp4">
   Seu navegador não suporta o elemento de vídeo.
 </video>
+
+![Meu Projeto na Semana 1](https://github.com/DyeghoCunha/what_the_fox/blob/master/public/wtf%20%E2%80%90%20Feito%20com%20o%20Clipchamp.gif?raw=true)
+
 
 </div>
 
