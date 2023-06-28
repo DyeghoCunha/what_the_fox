@@ -69,7 +69,7 @@ export default function PaginaInicial() {
       <div className={styles.container}>
 
 
-        <h1> Estou desenvolvendo esta parte </h1>
+       
 
         <Categorias />
         <Destaques />
