@@ -1,0 +1,67 @@
+@import '../../styles/variaveis';
+
+
+.container_modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.container {
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+
+
+  .imagem {
+    border: 2px solid;
+    width: 30vw;
+  }
+
+  .informacoes {
+    border: 2px solid;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+
+    .titulo {
+      border: 2px solid;
+      width: 100%;
+      height: fit-content;
+      text-align: center;
+
+      font-family: $fonte-normal-WTF;
+      color: $cyberblue;
+      text-shadow:
+        -1px -1px 0 black,
+        -1px 1px 0 black,
+        1px -1px 0 black,
+        1px 1px 0 black;
+      font-size: 3vw;
+    }
+
+    
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(12%);
+    margin-left: 20%;
+    scale: 1.3;
+  }
+}

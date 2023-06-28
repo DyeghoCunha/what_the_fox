@@ -9,7 +9,7 @@
 .botao_container {
   color: $colorLetra-Padrao-WTF;
   position: relative;
-  width: 80px;
+  width: fit-content;
   height: 40px;
   padding: 2px;
   border-radius: 4px;
@@ -48,29 +48,53 @@
 }
 
 .botao {
-font-family: $fonte-normal-WTF;
+
 letter-spacing: 2px;
 display: flex;
 justify-content: center;
 align-items: center;
-font-size: 1rem;
+
+
 text-align: center;
-width: calc(100% - 15%);
+width: fit-content;
+
+
+width: calc(100% - 5%);
 height: calc(100% - 25%);
-position: absolute;
-border: none;
+
 z-index: 5000;
-color: white;
+border: none;
 border-radius: 2px;
+box-shadow:  inset 1px 1px 5px $corBgBotaoAzulClara-WTF,
+inset 2px -2px 5px $corBgBotaoAzulEscuro-WTF;
+
 background-image: linear-gradient(to left, $corBgBotaoAzulEscuro-WTF, $corBgBotaoAzulClara-WTF, $corBgBotaoAzulEscuro-WTF);
 cursor: pointer;
-&:hover {
-  box-shadow: inset 0px 1px 2px $corBgBotaoAzulClara-WTF,
+
+&:active {
+  background-image: linear-gradient(to left, $corBgBotaoAzulClara-WTF , $corBgBotaoAzulEscuro-WTF , $corBgBotaoAzulClara-WTF );
+}
+
+
+.texto{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  font-family: $fonte-normal-WTF;
+  width: 100%;
+  height: inherit;
+  color: white;
+  font-size: 1em;
+  white-space: nowrap;
+
+  &:hover {
+  text-shadow: inset 0px 1px 2px $corBgBotaoAzulClara-WTF,
     inset 1px 0px 2px $corBgBotaoAzulClara-WTF;
 
   color: $cyberblue;
 }
-&:active {
-  background-image: linear-gradient(to left, $corBgBotaoAzulClara-WTF , $corBgBotaoAzulEscuro-WTF , $corBgBotaoAzulClara-WTF );
+
 }
+
 }
