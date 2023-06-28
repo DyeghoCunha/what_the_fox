@@ -68,7 +68,10 @@ export default function PaginaInicial() {
     <>
       <div className={styles.container}>
 
-       <Categorias />
+
+        <h1> Estou desenvolvendo esta parte </h1>
+
+     {/*   <Categorias />
         <Destaques />
 
         <Divisoria titulo={"Emotes"} />
@@ -87,7 +90,7 @@ export default function PaginaInicial() {
         <Deck tipo={"CardAzul"} tribo={bMaster} miniCard={miniCardAzul} /> 
 
         <Divisoria titulo={"Goblins"} />
-        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} /> 
+        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} />  */}
 
     
       </div>

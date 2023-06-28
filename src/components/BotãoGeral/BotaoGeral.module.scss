@@ -10,8 +10,8 @@
   color: $colorLetra-Padrao-WTF;
   position: relative;
   width: fit-content;
-  height: 40px;
-  padding: 2px;
+  height: fit-content;
+  padding: 7px 2px;
   border-radius: 4px;
   background-image: linear-gradient(to bottom, $corBgBotaoClaro-WTF, $corBgBotaoEscuro-WTF);
   z-index: 2;
@@ -56,11 +56,10 @@ align-items: center;
 
 
 text-align: center;
-width: fit-content;
 
 
-width: calc(100% - 5%);
-height: calc(100% - 25%);
+width: calc(95%);
+height: calc(90% );
 
 z-index: 5000;
 border: none;
@@ -80,13 +79,18 @@ cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 10px;
+  padding: 0px 10px;
   font-family: $fonte-normal-WTF;
   width: 100%;
-  height: inherit;
+  height: fit-content;
   color: white;
   font-size: 1em;
   white-space: nowrap;
+
+  text-shadow: -1px -1px 0 black,
+  -1px 1px 0 black,
+  1px -1px 0 black,
+  1px 1px 0 black;
 
   &:hover {
   text-shadow: inset 0px 1px 2px $corBgBotaoAzulClara-WTF,

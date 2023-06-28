@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import styles from './PaginaTeste.module.scss';
-import dados from '../../assets/json/dados.json';
-import AbModal from '../../components/Modais/Modal';
+import AbModal from "../../components/Modais/Modal"
 import imagem from "../../assets/images/personagem/raposas/fox4.png";
 import BotaoGeral from "../../components/BotãoGeral"
+import moeda150 from "../../components/Decks/image/150.png"
+import dados from "../../assets/json/dados.json"
+
 export default function PaginaTeste() {
-  const goblin = dados.Goblins;
 
+const raposa = dados.Goblins;
+console.log(raposa[0].valor)
 
-  const [deslocamentoSombraX, setDeslocamentoSombraX] = useState(0);
-  const [deslocamentoSombraY, setDeslocamentoSombraY] = useState(0);
+  const [deslocamentoSombraX, setDeslocamentoSombraX] = useState(4);
+  const [deslocamentoSombraY, setDeslocamentoSombraY] = useState(4);
   const [intensidadeSombra, setIntensidadeSombra] = useState("");
 
-  const handleMouseMove = (event) => {
-    const { clientX, clientY } = event;
-    const offsetX = clientX / window.innerWidth;
-    const offsetY = clientY / window.innerHeight;
-
-    setIntensidadeSombra(offsetX);
-    setDeslocamentoSombraX(offsetX * -10);
-    setDeslocamentoSombraY(offsetY * 10);
-  }
+  /*   const handleMouseMove = (event) => {
+      const { clientX, clientY } = event;
+      const offsetX = clientX / window.innerWidth;
+      const offsetY = clientY / window.innerHeight;
+  
+      setIntensidadeSombra(offsetX);
+      setDeslocamentoSombraX(offsetX * -10);
+      setDeslocamentoSombraY(offsetY * 10);
+    }  */
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -29,11 +32,12 @@ export default function PaginaTeste() {
 
 
   return (
-    <div className={styles.container_modal} onMouseMove={handleMouseMove}>
-      <AbModal aberta={true}>
+    <div className={styles.container_modal}  /* onMouseMove={handleMouseMove} */ >
+      <AbModal aberta={true}  >
         <div className={styles.container}>
+          <div className={styles.container_imagem}>
           <img
-            className={`${styles.imagem} ${styles.dropShadow}`}
+            className={`${styles.container_imagem_personagem} ${styles.dropShadow}`}
             src={imagem}
             alt="Imagem"
 
@@ -41,58 +45,72 @@ export default function PaginaTeste() {
               filter: `drop-shadow(${deslocamentoSombraX}px ${deslocamentoSombraY}px 5px rgba(0, 0, 0, ${intensidadeSombra}))`
             }}
           />
+          </div>
 
           <div className={styles.informacoes}>
 
-            <h4 className={styles.titulo2}>Arte NFT para Coleções</h4>
+            <h1 className={styles.titulo}>Arte NFT para Coleções</h1>
 
-            <h1 className={styles.titulo}>Titulo</h1>
+            <h2 className={styles.nome_do_personagem}>Codificador CodeFox</h2>
 
-            <h1>O que você receberá:</h1>
+            <h3 className={styles.titulo_lista}>O que você receberá</h3>
 
-            <ul>
+            <ul className={styles.container_lista}>
               <li>Arquivo de origem PSD separado em camadas.</li>
               <li>Cada elemento em um arquivo PNG com fundo transparente.</li>
-              <li>Resolução de 2000x2000px, 300 dpi para os Traços/Acessórios.</li>
-
+              <li>Resolução de 2000x2000px, 300 dpi.</li>
             </ul>
 
-            <form>
+            <form id='formuilario1' className={styles.container_formulario}>
 
-              <div>
-                <input type="checkbox" id="corpoBase" name="traits" value="Corpo Base" />
-                <label htmlFor="corpoBase">Corpo Base</label>
+              <h2 className={styles.subtitulo}>Incremente o sua Arte</h2>
 
-                <input type="checkbox" id="olhos" name="traits" value="Olhos" />
-                <label htmlFor="olhos">Olhos</label>
+              <div className={styles.container_formulario_checkbox}>
 
-                <input type="checkbox" id="boca" name="traits" value="Boca" />
-                <label htmlFor="boca">Boca</label>
-
-                <input type="checkbox" id="oculos" name="traits" value="Óculos" />
-                <label htmlFor="oculos">Óculos</label>
-
-                <input type="checkbox" id="capaceteChapeu" name="traits" value="Capacete/Chapéu" />
-                <label htmlFor="capaceteChapeu">Capacete/Chapéu</label>
-
-                <input type="checkbox" id="camiseta" name="traits" value="Camiseta" />
-                <label htmlFor="camiseta">Camiseta</label>
-
-                <input type="checkbox" id="jaqueta" name="traits" value="Jaqueta" />
-                <label htmlFor="jaqueta">Jaqueta</label>
-
-                <input type="checkbox" id="piercings" name="traits" value="Piercings" />
-                <label htmlFor="piercings">Piercings</label>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="corpoBase" name="traits" value="Corpo Base" />
+                  <label htmlFor="corpoBase">Corpo Base</label>
+                </div>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="olhos" name="traits" value="Olhos" />
+                  <label htmlFor="olhos">Olhos</label>
+                </div>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="boca" name="traits" value="Boca" />
+                  <label htmlFor="boca">Boca</label>
+                </div>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="oculos" name="traits" value="Óculos" />
+                  <label htmlFor="oculos">Óculos</label>
+                </div>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="capaceteChapeu" name="traits" value="Capacete/Chapéu" />
+                  <label htmlFor="capaceteChapeu">Chapéu</label>
+                </div>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="camiseta" name="traits" value="Camiseta" />
+                  <label htmlFor="camiseta">Camiseta</label>
+                </div>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="jaqueta" name="traits" value="Jaqueta" />
+                  <label htmlFor="jaqueta">Jaqueta</label>
+                </div>
+                <div className={styles.container_formulario_checkbox_item}>
+                  <input type="checkbox" id="piercings" name="traits" value="Piercings" />
+                  <label htmlFor="piercings">Piercings</label>
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="outrasCaracteristicas">Anything else you can imagine:</label>
-                <textarea id="outrasCaracteristicas" name="outrasCaracteristicas" rows="4" cols="50"></textarea>
+              <div className={styles.separador}>
+                <div className={styles.container_formulario_valor}>
+
+                  <h2 className={styles.container_formulario_valor_numero}>150</h2>
+                  <img src={moeda150} alt="" />
+                </div>
+
+                <BotaoGeral value={"Enviar"} tipo={"submit"} onClick={handleSubmit} texto={"Adicionar ao Carrinho"}>
+                </BotaoGeral>
               </div>
-
-              <BotaoGeral value={"Enviar"} tipo={"submit"}  onClick={handleSubmit} texto={"Adicionar ao Carrinho"}>
-              </BotaoGeral>
-
             </form>
 
 
