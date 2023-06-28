@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './PaginaTeste.module.scss';
 import AbModal from "../../components/Modais/Modal"
 import imagem from "../../assets/images/personagem/raposas/fox4.png";
@@ -9,7 +9,9 @@ import dados from "../../assets/json/dados.json"
 export default function PaginaTeste() {
 
 const raposa = dados.Goblins;
-console.log(raposa[0].valor)
+
+const props = raposa[0].valor
+console.log(props)
 
   const [deslocamentoSombraX, setDeslocamentoSombraX] = useState(4);
   const [deslocamentoSombraY, setDeslocamentoSombraY] = useState(4);
@@ -29,6 +31,46 @@ console.log(raposa[0].valor)
     event.preventDefault()
     console.log("teste")
   }
+//!Testando
+
+const values = {
+  corpoBase: 50,
+  olhos: 10,
+  boca: 10,
+  oculos: 12,
+  capaceteChapeu: 15,
+  camiseta: 15,
+  jaqueta: 20,
+  piercings: 5
+};
+
+const [adicional, setAdicional] = useState(props);
+const [adicionalTotal, setAdicionalTotal] = useState(0);
+const [valorFinal, setValorFinal] = useState(0)
+
+useEffect(() => {
+  const atualizado = Object.values(adicional).reduce((acc, val) => acc + val, 0);
+  setAdicionalTotal(atualizado);
+}, [adicional]);
+
+const handleChange = (event) => {
+  const { id, checked } = event.target;
+
+  const updatedValues = { ...adicional };
+
+  if (checked) {
+    updatedValues[id] = values[id] ;
+  } 
+
+  setAdicional(updatedValues);
+};
+useEffect(()=>{
+
+})
+
+
+
+    console.log("Adicional", adicionalTotal)
 
 
   return (
@@ -66,45 +108,100 @@ console.log(raposa[0].valor)
               <h2 className={styles.subtitulo}>Incremente o sua Arte</h2>
 
               <div className={styles.container_formulario_checkbox}>
-
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="corpoBase" name="traits" value="Corpo Base" />
-                  <label htmlFor="corpoBase">Corpo Base</label>
-                </div>
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="olhos" name="traits" value="Olhos" />
-                  <label htmlFor="olhos">Olhos</label>
-                </div>
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="boca" name="traits" value="Boca" />
-                  <label htmlFor="boca">Boca</label>
-                </div>
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="oculos" name="traits" value="Óculos" />
-                  <label htmlFor="oculos">Óculos</label>
-                </div>
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="capaceteChapeu" name="traits" value="Capacete/Chapéu" />
-                  <label htmlFor="capaceteChapeu">Chapéu</label>
-                </div>
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="camiseta" name="traits" value="Camiseta" />
-                  <label htmlFor="camiseta">Camiseta</label>
-                </div>
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="jaqueta" name="traits" value="Jaqueta" />
-                  <label htmlFor="jaqueta">Jaqueta</label>
-                </div>
-                <div className={styles.container_formulario_checkbox_item}>
-                  <input type="checkbox" id="piercings" name="traits" value="Piercings" />
-                  <label htmlFor="piercings">Piercings</label>
-                </div>
-              </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="corpoBase"
+          name="traits"
+          value="Corpo Base"
+          
+          onChange={handleChange}
+        />
+        <label htmlFor="corpoBase">Corpo Base</label>
+      </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="olhos"
+          name="traits"
+          value="Olhos"
+         
+          onChange={handleChange}
+        />
+        <label htmlFor="olhos">Olhos</label>
+      </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="boca"
+          name="traits"
+          value="Boca"
+          
+          onChange={handleChange}
+        />
+        <label htmlFor="boca">Boca</label>
+      </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="oculos"
+          name="traits"
+          value="Óculos"
+          
+          onChange={handleChange}
+        />
+        <label htmlFor="oculos">Óculos</label>
+      </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="capaceteChapeu"
+          name="traits"
+          value="Capacete/Chapéu"
+          
+          onChange={handleChange}
+        />
+        <label htmlFor="capaceteChapeu">Chapéu</label>
+      </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="camiseta"
+          name="traits"
+          value="Camiseta"
+          
+          onChange={handleChange}
+        />
+        <label htmlFor="camiseta">Camiseta</label>
+      </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="jaqueta"
+          name="traits"
+          value="Jaqueta"
+          
+          onChange={handleChange}
+        />
+        <label htmlFor="jaqueta">Jaqueta</label>
+      </div>
+      <div className={styles.container_formulario_checkbox_item}>
+        <input
+          type="checkbox"
+          id="piercings"
+          name="traits"
+          value="Piercings"
+          
+          onChange={handleChange}
+        />
+        <label htmlFor="piercings">Piercings</label>
+      </div>
+    </div>
 
               <div className={styles.separador}>
                 <div className={styles.container_formulario_valor}>
 
-                  <h2 className={styles.container_formulario_valor_numero}>150</h2>
+                  <h2 className={styles.container_formulario_valor_numero}>{values.boca}</h2>
                   <img src={moeda150} alt="" />
                 </div>
 
