@@ -1,19 +1,23 @@
+import { FavoritoContext } from "../../../common/context/Favoritos"
+import BotaoGeral from "../../BotãoGeral"
 import styles from "./Modal.module.scss"
 
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 export default function AbModal({ children, aberta, aoFechar, titulo }) {
 
-
-  const [abertaState , setAbertaState] = useState(aberta)
+  const { setAberto } = useContext(FavoritoContext)
+  const [abertaState, setAbertaState] = useState(aberta)
 
   if (!abertaState) {
     return <></>
   }
 
-  function aoFechar(){
-    setAbertaState(prev=>!prev)
+  function aoFechar() {
+
+    setAberto(prev=>!prev)
+    setAbertaState(prev => !prev)
   }
 
 
@@ -24,7 +28,7 @@ export default function AbModal({ children, aberta, aoFechar, titulo }) {
         <div className={styles.tituloModalWrapper}>
           <h2 className={styles.tituloModal}>{titulo}</h2>
           <button onClick={aoFechar} className={styles.botaoFecharModal}>
-            X
+           <BotaoGeral texto={"X"}/>
           </button>
         </div>
         {children}

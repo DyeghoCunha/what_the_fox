@@ -1,6 +1,9 @@
 @import '../../styles/variaveis';
 
-
+.modal{
+  position: absolute;
+  z-index:99999999999999999999999;
+}
 .container {
   display: flex;
   flex-direction: column;

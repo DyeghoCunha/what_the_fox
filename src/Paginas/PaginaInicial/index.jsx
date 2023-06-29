@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './PaginaInicial.module.scss'
 import Deck from '../../components/Decks'
 import dados from '../../assets/json/dados.json'
@@ -25,10 +25,14 @@ import botao4 from "../../components/Decks/image/barra4a.png"
 import DeckEmotes from '../../components/Decks/DeckEmote';
 import Divisoria from '../../components/Decks/Divisoria';
 import Footer from '../../components/Footer';
+import { FavoritoContext } from '../../common/context/Favoritos';
+import ModalCard from '../../components/Modais/Modal/ModalCard';
 
 
 
 export default function PaginaInicial() {
+
+  const { aberto, cardModal } = useContext(FavoritoContext)
 
   const goblin = dados.Goblins;
   const emotes = dados.Emotes;
@@ -56,7 +60,7 @@ export default function PaginaInicial() {
     favoritoOn: favoritoOn3,
     favoritoOff: favoritoOff3
   }
-    const miniCardOffice = {
+  const miniCardOffice = {
     minicard: miniCard4,
     botao: botao4,
     favoritoOn: favoritoOn4,
@@ -66,33 +70,39 @@ export default function PaginaInicial() {
 
   return (
     <>
+
+
+   
       <div className={styles.container}>
 
-
-       
-
+        
         <Categorias />
         <Destaques />
 
         <Divisoria titulo={"Emotes"} />
         <DeckEmotes tribo={emotes} />
 
-         <Divisoria titulo={"Fox"} />
+        <Divisoria titulo={"Fox"} />
         <Deck tipo={"CardOffice"} tribo={raposas} miniCard={miniCardOffice} />
- 
+{aberto &&(
+   <div className={styles.modal}>
+    <ModalCard  card={cardModal}/>
+    </div>
+)}
+   
+  
         <Divisoria titulo={"Hemps"} />
         <Deck tipo={"CardPraia"} tribo={hemps} miniCard={miniCardSand} />
- 
+
         <Divisoria titulo={"Apes"} />
         <Deck tipo={"CardPremiunAzul"} tribo={monkeys} miniCard={miniCardAzul} />
 
         <Divisoria titulo={"BladeMaster"} />
-        <Deck tipo={"CardAzul"} tribo={bMaster} miniCard={miniCardAzul} /> 
+        <Deck tipo={"CardAzul"} tribo={bMaster} miniCard={miniCardAzul} />
 
         <Divisoria titulo={"Goblins"} />
-        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} />  
+        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} />
 
-    
       </div>
     </>
   )

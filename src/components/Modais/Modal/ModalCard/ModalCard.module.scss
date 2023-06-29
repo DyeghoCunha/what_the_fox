@@ -1,4 +1,4 @@
-@import '../../styles/variaveis';
+@import '../../../../styles/variaveis';
 
 
 .container_modal {
@@ -9,7 +9,7 @@
 
   height: 100vh;
   width: 100vw;
-
+  z-index: 90000000;
 }
 
 .container {
@@ -85,6 +85,7 @@
       1px -1px 0 black,
       1px 1px 0 black;
     font-size: 2vw;
+    letter-spacing: 5px;
   }
 
   .informacoes {
@@ -178,7 +179,7 @@
     width: 90%;
     display: flex;
     flex-wrap: wrap;
-margin-top: 10px;
+    margin-top: 10px;
     align-items: center;
     justify-content: center;
 
@@ -227,15 +228,15 @@ margin-top: 10px;
     display: flex;
     width: 173px;
     height: 90%;
-    justify-content:end;
+    justify-content: end;
 
     &_numero {
-      
+
       width: 90%;
       text-align: center;
-      
+
       height: fit-content;
-      transform: translate(57%,-50%) rotateZ(-25deg);
+      transform: translate(57%, -50%) rotateZ(-25deg);
       font-family: $fonte-normal-WTF ;
       color: $colorLetra-Padrao-WTF;
       font-size: 3vw;
@@ -245,10 +246,11 @@ margin-top: 10px;
         1px -1px 0 white,
         1px 1px 0 white;
     }
-img{
-  width: 8vw;
-  height: 10vh;
-}
+
+    img {
+      width: 8vw;
+      height: 10vh;
+    }
   }
 
   .separador {
@@ -279,7 +281,7 @@ img{
       align-items: center;
       position: relative;
 
-     
+
       border-radius: 10px;
     }
 
@@ -290,26 +292,26 @@ img{
       border: 1px solid rgba($colorBg-WTF, 0.5);
       border-top: 1px solid rgba($colorBg-WTF, 0.75);
       border-left: 1px solid rgba($colorBg-WTF, 0.75);
-  
+
       border-radius: 10px;
       box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.45),
         inset 4px 4px 10px rgba(0, 0, 0, 0.25), ;
     }
 
-     &_imagem_personagem {
-width: 94%;
-height: 94%;
+    &_imagem_personagem {
+      width: 94%;
+      height: 94%;
 
 
-    border-radius: 10px;
-    backdrop-filter: blur(25px);
+      border-radius: 10px;
+      backdrop-filter: blur(25px);
 
-    background: rgba($cyberblue, 0.1);
-    border-top: 1px solid rgba($colorBg-WTF, 0.75);
-    border-left: 1px solid rgba($colorBg-WTF, 0.75); 
-    box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.25),
-      4px 4px 10px rgba(0, 0, 0, 0.45), ;
-  }
+      background: rgba($cyberblue, 0.1);
+      border-top: 1px solid rgba($colorBg-WTF, 0.75);
+      border-left: 1px solid rgba($colorBg-WTF, 0.75);
+      box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.25),
+        4px 4px 10px rgba(0, 0, 0, 0.45), ;
+    }
 
     .nome_do_personagem {
       position: absolute;
@@ -489,7 +491,7 @@ height: 94%;
           margin-right: 0px;
           margin-left: 40px;
           padding: 0;
-          width:7vw; 
+          width: 7vw;
         }
 
 

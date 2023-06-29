@@ -13,20 +13,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 
 
+
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-      <Cabecalho />
+     <Cabecalho />
       <BannerProvider>
         <Banner />
-      </BannerProvider>
+      </BannerProvider> 
       <FavoritoProvider>
-
+  
         <Routes>
           <Route path="/" element={<PaginaInicial />} />
           <Route path="/teste" element={<PaginaTeste />} />
         </Routes>
-            <Footer/>
+          <Footer/> 
       </FavoritoProvider>
     </BrowserRouter>
   );
