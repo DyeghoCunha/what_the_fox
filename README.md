@@ -70,7 +70,13 @@ Acesse esse projeto aqui [Projeto](https://www.figma.com/file/2TLgt8UjsWUViWlmpX
 <img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/figma.png?raw=true" alt="projeto no Figma">
 </div>
 
+</br>
+</br>
+
 Mas como podem ver, eu fiz algo bem diferente !! 
+
+</br>
+</br>
 
 <div align="center">
 <img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/meu%20projeto.png?raw=true" alt="projeto no Figma">
@@ -110,8 +116,8 @@ Esses são os meus objetivos da semana:
 - :white_check_mark: Passo 1 | Rodapé
 - :white_check_mark: Passo 2 | Cadastro na Newsletter
 - :white_check_mark: Passo 3 | Carrossel
-- :construction: Passo 4 | Modal "Produtos"
-- :construction: Passo 5 | Modal "Produtos - Responsividade"
+- :white_check_mark: Passo 4 | Modal "Produtos"
+- :white_check_mark: Passo 5 | Modal "Produtos - Responsividade"
 - :construction: Passo 6 | Modal "Newsletter"
 
 
@@ -137,12 +143,15 @@ Esses são os meus objetivos da semana:
 
 ## Projeto em Desenvolvimento
 
+### Primeira Semana 
+
 Estou animado para compartilhar o progresso do meu projeto até agora! Ao longo da primeira semana, tenho me dedicado intensamente e estou me desenvolvendo consideravelmente. Uma das melhores partes dessa experiência tem sido a capacidade de adaptar a premissa inicial e colaborar com dois artistas incríveis: Chinno Ferreira e Arcano Ferreira. Eles foram fundamentais ao fornecer todo o material gráfico necessário para dar vida às minhas ideias.
 
 Um aspecto que considero muito gratificante é o fato de ter optado por não utilizar bibliotecas como Bootstrap. Essa escolha tem me ajudado a aprimorar minhas habilidades em JavaScript e me desafiar a criar soluções personalizadas. Embora ainda haja muito a ser feito, estou empolgado com o progresso alcançado até agora.
 
 Continuarei atualizando sobre o projeto e compartilhando os avanços nas próximas semanas. Mal posso esperar para ver como ele evoluirá e o que mais está por vir!
 
+### Segunda Semana
 
 # 🖼️ Sobre o Autor
 
