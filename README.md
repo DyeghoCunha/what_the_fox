@@ -70,13 +70,14 @@ Acesse esse projeto aqui [Projeto](https://www.figma.com/file/2TLgt8UjsWUViWlmpX
 <img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/figma.png?raw=true" alt="projeto no Figma">
 </div>
 
-</br>
-</br>
-
-Mas como podem ver, eu fiz algo bem diferente !! 
 
 </br>
+
+### Mas como podem ver, eu fiz algo bem diferente !! 
+*Esta foto é para referência, depois eu vou colocar o Figma dela, bem bonitinho*
+
 </br>
+
 
 <div align="center">
 <img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/meu%20projeto.png?raw=true" alt="projeto no Figma">
@@ -166,10 +167,10 @@ Continuarei atualizando sobre o projeto e compartilhando os avanços nas próxim
 ![Demonstração]()
 </div> -->
 
-<!-- # 🖼️ Banner do VitrineDev
+ # 🖼️ Banner do VitrineDev
 <div align="center">
-<img src="#vitrinedev" alt="imagem banner do Vitrine Dev">
-</div> -->
+<img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/banner%20(6).png?raw=true#vitrinedev" alt="imagem banner do Vitrine Dev">
+</div> 
 
 
 
