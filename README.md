@@ -12,7 +12,7 @@ A empresa tem por objetivo se tornar referência no mercado, atraindo mais clien
 
 Estou empolgado em compartilhar o conceito do meu novo projeto, aproveitando a oportunidade deste desafio. Decidi utilizar os posicionamentos e conceitos do Figma, mas desenvolver algo que refletisse minha personalidade.
 
-Há cerca de 15 anos, conheci dois amigos durante o período escolar, e desde então sempre quis realizar um projeto em conjunto com eles. O primeiro é o talentoso Desenhista Digital Chinno Ferreira, e o segundo é seu irmão Arcano Ferreira, um Motion Designer de primeira. Aproveitando essa oportunidade, decidi criar a What The Fox (WTF), um site de venda de materiais digitais.
+Há cerca de 15 anos, conheci dois amigos durante o período escolar, e desde então sempre quis realizar um projeto em conjunto com eles. O primeiro é o talentoso Desenhista Digital Chinno Ferreira, e o segundo é seu irmão Arcano Ferreira, um Motion Designer de primeira. Aproveitando essa oportunidade, decidi criar a What The Fox (WTF), um site de venda de materiais digitais..
 
 Inicialmente, o projeto Meteora tinha como propósito ser uma loja de roupas genéricas. No entanto, decidi substituir as roupas por materiais artísticos para dar um toque mais único e especial. A WTF oferecerá os incríveis materiais produzidos por Chinno Ferreira, como NFTs, Emotes e Desenhos Personalizados, além dos incríveis Banners e Animações desenvolvidos por Arcano Ferreira.
 
