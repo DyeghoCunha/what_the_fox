@@ -262,7 +262,39 @@
     gap: 10px;
   }
 }
+@media screen and (max-width: 1139px) {
 
+.container {
+    width: 90vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_imagem {
+      width: 50vw;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+      border-radius: 10px;
+    }
+
+    &_imagem::after {
+      content: "";
+      position: absolute;
+      inset: 1vw;
+    }
+
+    &_imagem_personagem {
+      width: 94%;
+      height: 94%;
+    }
+  }
+}
 
 
 @media screen and (max-width: 768px) {

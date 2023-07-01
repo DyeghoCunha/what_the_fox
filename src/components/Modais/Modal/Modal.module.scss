@@ -43,13 +43,49 @@
 
 .botaoFecharModal {
   position: absolute;
-  width: fit-content;
-  height: fit-content;
+  width:fit-content;
+  height:fit-content;
 
   top: 40px;
-  right: 40px;
-  background: transparent;
-  border: none;
+
+background-color: transparent;
+color: transparent;
+border: none;
+  right: 50px;
   cursor: pointer;
-  color: #002F52;
+
 }
+
+
+
+@media screen and (max-width: 768px) {
+
+
+
+  .botaoFecharModal {
+  position: absolute;
+  width:40px;
+  height:40px;
+z-index: 2000;
+  bottom: 90px;
+  border-radius: 8px;
+
+     background-color: #FFF0DA;
+        border-radius: 8px;
+        border-top: 1px solid #fae9d0;
+        border-left: 1px solid #fae9d0;
+        border-bottom: 1px solid #f0dcc3;
+        border-right: 1px solid #f0dcc3;
+        box-shadow:
+          -5px -5px 10px rgba(#fdeed8, 1),
+          10px 10px 20px rgba(#ebd8bf, 1);
+  right: 50px;
+  cursor: pointer;
+
+  &_custom{
+
+    display: none;
+  }
+}
+}
+

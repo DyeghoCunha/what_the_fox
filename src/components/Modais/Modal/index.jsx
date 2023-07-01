@@ -16,8 +16,8 @@ export default function AbModal({ children, aberta, aoFechar, titulo }) {
 
   function aoFechar() {
 
-    setAberto(prev=>!prev)
-    setAbertaState(prev => !prev)
+    setAberto(prev => !prev)
+    //setAbertaState(prev => !prev)
   }
 
 
@@ -27,8 +27,10 @@ export default function AbModal({ children, aberta, aoFechar, titulo }) {
       <div className={styles.janelaModal}>
         <div className={styles.tituloModalWrapper}>
           <h2 className={styles.tituloModal}>{titulo}</h2>
-          <button onClick={aoFechar} className={styles.botaoFecharModal}>
-           <BotaoGeral texto={"X"}/>
+          <button onClick={aoFechar} className={styles.botaoFecharModal}>X
+            <div className={styles.botaoFecharModal_custom}>
+              <BotaoGeral texto={"X"} />
+            </div>
           </button>
         </div>
         {children}
