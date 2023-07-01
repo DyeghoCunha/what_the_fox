@@ -7,6 +7,7 @@ import Busca from './Busca';
 import Hamburger from './Hamburger';
 import BotaoGeral from '../BotãoGeral';
 import AbModal from '../Modais/Modal';
+import ModalCadastroUsuario from '../Modais/CadastroUsuario';
 
 
 export default function Cabecalho() {
@@ -58,9 +59,9 @@ export default function Cabecalho() {
           <BotaoGeral texto={"Logar"} />
         </div>
 
-        {modalLogar && (
-          <AbModal aberta={true} titulo={"Logar"} children={"Escrever Codigo"} />
-        )}
+      
+        <ModalCadastroUsuario aberta={true} titulo={"Teste"}/>
+        
 
 
       </section>

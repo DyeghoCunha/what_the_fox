@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import styles from './PaginaTeste.module.scss';
-import AbModal from '../../components/Modais/Modal';
-import ModalCard from '../../components/Modais/Modal/ModalCard';
+import ModalCadastroUsuario from '../../components/Modais/CadastroUsuario';
 
 
 export default function PaginaTeste() {
 
   return(
   
-   <ModalCard aberta={true}/> 
+ <ModalCadastroUsuario aberta={true}/> 
+  
   )
 
 }

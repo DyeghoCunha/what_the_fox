@@ -6,7 +6,7 @@ import Banner from './components/Banner';
 import BannerPaginaInicial from './components/Banner/BannerPaginaInicial';
 import BannerVideoFoto from './components/Banner/BannerVideoFoto';
 import Cabecalho from './components/Cabecalho';
-import {BannerProvider} from "./common/context/Banner"
+import { BannerProvider } from "./common/context/Banner"
 import './styles/estilosGlobais.scss'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -17,17 +17,22 @@ import Footer from './components/Footer';
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-     <Cabecalho />
+
+    {/*   <Cabecalho />
       <BannerProvider>
         <Banner />
-      </BannerProvider> 
+      </BannerProvider>
+ */}
       <FavoritoProvider>
-  
+
         <Routes>
-          <Route path="/" element={<PaginaInicial />} />
-          <Route path="/teste" element={<PaginaTeste />} />
+          <Route path="/teste" element={<PaginaInicial />} />
+          <Route path="/" element={<PaginaTeste />} />
         </Routes>
-          <Footer/> 
+
+
+   {/*      <Footer /> */}
+
       </FavoritoProvider>
     </BrowserRouter>
   );

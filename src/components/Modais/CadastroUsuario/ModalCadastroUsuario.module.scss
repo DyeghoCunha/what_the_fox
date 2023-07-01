@@ -1,0 +1,211 @@
+@import "../../../styles/variaveis";
+
+
+
+
+.janelaModal {
+  position: fixed;
+  padding: 80px;
+  background: rgba($colorBg-WTF, 0.1);
+  box-shadow: 4px 4px 24px -4px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 90000000;
+}
+
+.fundoModal {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: rgba(101, 101, 101, 0.85);
+  backdrop-filter: blur(20px);
+  z-index: 8000000;
+}
+
+.tituloModalWrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  align-items: center;
+}
+
+.tituloModal {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  color: #EB9B00;
+  margin: 0;
+}
+
+.botaoFecharModal {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+
+  top: 0px;
+
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  right: 0px;
+  cursor: pointer;
+
+}
+
+.container {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_figura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: inherit;
+  
+  }
+
+  &_formulario {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: inherit;
+  
+    gap: 20px;
+
+    &_nomeEmail {
+      width: 100%;
+      height: fit-content;
+    }
+
+    &_senha {
+
+      width: 66%;
+
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: -5px -5px 5px rgba(white, 0.2),
+        3px 3px 5px rgba(black, 0.25);
+    }
+
+    &_botao {
+
+      width: 100%;
+    }
+  }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .fundoModal {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &_figura {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 40%;
+   
+    }
+
+    &_formulario {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: inherit;
+  
+      gap: 20px;
+
+      &_nomeEmail {
+        width: 100%;
+        height: fit-content;
+      }
+
+      &_senha {
+        width: 90%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px -5px 5px rgba(white, 0.2),
+          3px 3px 5px rgba(black, 0.25);
+      }
+
+      &_botao {
+        margin-top: 4%;
+        margin-left: 20%;
+        height: fit-content;
+        width: 90%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+      }
+    }
+
+  }
+
+  .botaoFecharModal {
+    position: absolute;
+    top: 98px;
+    left: 338px;
+    cursor: pointer;
+    z-index: 55555;
+    width: 40px;
+    height: 40px;
+    background-color: #FFF0DA;
+    border-radius: 8px;
+    border-top: 1px solid #fae9d0;
+    border-left: 1px solid #fae9d0;
+    border-bottom: 1px solid #f0dcc3;
+    border-right: 1px solid #f0dcc3;
+    box-shadow:
+      -5px -5px 10px rgba(#fdeed8, 1),
+      10px 10px 20px rgba(#ebd8bf, 1);
+
+color: $colorLetra-Padrao-WTF;
+
+font-family: $fonte-normal-WTF;
+font-size: 20px;
+
+    &_custom {
+
+      display: none;
+    }
+  }
+}

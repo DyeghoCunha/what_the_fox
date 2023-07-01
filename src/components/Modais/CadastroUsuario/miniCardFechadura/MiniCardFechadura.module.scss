@@ -1,0 +1,111 @@
+@import "../../../../styles/variaveis";
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  background: rgba($colorBg-WTF, 0.1);
+  border: 1px solid rgba($colorBg-WTF, 0.5);
+  border-top: 1px solid rgba($colorBg-WTF, 0.75);
+  border-left: 1px solid rgba($colorBg-WTF, 0.75);
+  transform: translateZ(10px);
+  cursor: pointer;
+}
+
+.container_personagem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(10px);
+  height: 100%;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+}
+
+.container_fechadura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(40px);
+  height: 100%;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba($colorBg-WTF, 0.5);
+    border-top: 1px solid rgba($colorBg-WTF, 0.75);
+    border-left: 1px solid rgba($colorBg-WTF, 0.75);
+    position: relative;
+    border: 1px solid $colorBg-WTF;
+   
+    box-shadow: inset 30px 30px 60px black,
+    inset 30px -30px 60px black,
+    inset -50px -50px 60px black,
+    inset -50px 50px 60px black;
+    z-index: 1;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -50%;
+    left: 50%;
+
+    transform: translate(-50%, 15%) translateZ(10px);
+  }
+
+  .container_personagem {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 15%) translateZ(10px);
+    height: 100%;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  .container_fechadura {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 15%) translateZ(40px);
+    height: 100%;
+    width: 100%;
+
+
+    img {
+
+      width: 100%;
+      height: 100%;
+
+    }
+
+  }
+}
