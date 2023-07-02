@@ -1,13 +1,13 @@
 import styles from "./ModalCadastroUsuario.module.scss"
 
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import BotaoGeral from "../../BotãoGeral"
 import MiniCardFechadura from "./miniCardFechadura"
-import BotaoFoguete from "../../ContainerRGB"
 import ContainerRGB from "../../ContainerRGB"
 import CampoTexto from "../../CampoTexto/intex"
+import axios from "axios"
 
 export default function ModalCadastroUsuario({ aberta, aoFechar, titulo }) {
   //!_____Cadastro de Usuario_____
@@ -16,31 +16,56 @@ export default function ModalCadastroUsuario({ aberta, aoFechar, titulo }) {
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [senhaConfirmada, setSenhaConfirmada] = useState("")
+const [abertaState, setAbertaState] = useState(aberta)
+const [opacidade, setOpacidade] = useState(1)
 
-console.log(nome)
-//!___________________________________________________________
+  function aoSubmeterFormulario(evento) {
+    evento.preventDefault()
+    const usuario = {
+      nome,
+      email,
+      senha
+    }
 
 
+    axios.post("http://localhost:8000/public/registrar", usuario)
 
-  const [abertaState, setAbertaState] = useState(aberta)
-  if (!abertaState) {
-    return <></>
+      .then(() => {
+           alert("Usuário foi cadastrado com sucesso!")
+        setNome("")
+        setEmail("")
+        setSenha("")
+        setSenhaConfirmada("")
+        aoFechar(prev=>!prev)
+      })
+      .catch(()=>{
+        alert("Alguma coisa deu errado")
+      })
+ 
   }
-  function aoFechar() {
 
-    setAbertaState(prev => !prev)
-  }
+  //!___________________________________________________________
 
 
+
+  useEffect(()=>{
+  
+  console.log("AbertaState:",abertaState)
+
+},[abertaState])
+
+
+ 
 
   return (
-    <>
+  <>
 
-      <div onClick={aoFechar} className={styles.fundoModal} />
+
+      <div onClick={event => aoFechar(prev=>!prev)}  className={styles.fundoModal} />
       <div className={styles.janelaModal}>
         <div className={styles.tituloModalWrapper}>
           <h2 className={styles.tituloModal}>{titulo}</h2>
-          <button onClick={aoFechar} className={styles.botaoFecharModal}>X
+          <button onClick={event => aoFechar(prev=>!prev)} className={styles.botaoFecharModal}>X
             <div className={styles.botaoFecharModal_custom}>
               <BotaoGeral texto={"X"} />
             </div>
@@ -51,7 +76,7 @@ console.log(nome)
           <section className={styles.container}>
 
             <figure className={styles.container_figura} alt="Desenho de um macaco de terno segurando uma taça com bebida">
-              <MiniCardFechadura opacidade={1} />
+              <MiniCardFechadura opacidade={opacidade} />
             </figure>
 
             <form className={styles.container_formulario}>
@@ -65,17 +90,13 @@ console.log(nome)
               </div>
 
               <div className={styles.container_formulario_botao}>
-                <BotaoGeral texto={"Enviar"} />
+                <BotaoGeral onClick={aoSubmeterFormulario} texto={"Enviar"} />
               </div>
             </form>
-
-
-
 
           </section>
         </ContainerRGB>
       </div>
-
-    </>
+  </>
   )
 }

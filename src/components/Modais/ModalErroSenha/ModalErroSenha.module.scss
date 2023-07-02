@@ -1,0 +1,94 @@
+@import "../../../styles/variaveis";
+
+
+.janelaModal {
+  position: fixed;
+  padding: 5px;
+  background: rgba($colorBg-WTF, 0.1);
+  box-shadow: 4px 4px 24px -4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 90000000;
+}
+
+.fundoModal {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: rgba(101, 101, 101, 0.85);
+  backdrop-filter: blur(20px);
+  z-index: 8000000;
+}
+
+
+.fundo {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  background-color: #66229D;
+
+}
+
+.faixa {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  transform: translateZ(20px);
+}
+
+.faixaErro {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(40px);
+}
+
+.pedras {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(20px);
+  border-radius: 8px;
+}
+
+.botao {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(60px);
+  cursor: pointer;
+}
+
+.erro {
+  position: absolute;
+  width: 265px;
+  height: 89px;
+  bottom: 4px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  left: 17px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: $fonte-normal-WTF;
+  color: $colorLetra-Padrao-WTF;
+  transform: translateZ(50px);
+}

@@ -18,8 +18,8 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
 
-    {/*   <Cabecalho />
-      <BannerProvider>
+      <Cabecalho />
+    {/*   <BannerProvider>
         <Banner />
       </BannerProvider>
  */}

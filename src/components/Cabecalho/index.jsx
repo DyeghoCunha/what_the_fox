@@ -6,14 +6,14 @@ import CabecalhoLink from './CabecalhoLink'
 import Busca from './Busca';
 import Hamburger from './Hamburger';
 import BotaoGeral from '../BotãoGeral';
-import AbModal from '../Modais/Modal';
 import ModalCadastroUsuario from '../Modais/CadastroUsuario';
+import ModalLoginUsuario from '../Modais/LoginUsuario';
 
 
 export default function Cabecalho() {
 
   const [modalLogar, setModalLogar] = useState(false)
-  const [modalRegistrar, setModalRegistral] = useState(false)
+  const [modalRegistrar, setModalRegistrar] = useState(false)
 
 
   const handleBusca = (termoBusca) => {
@@ -23,9 +23,12 @@ export default function Cabecalho() {
   function handleClickLogar() {
     setModalLogar(prev => !prev)
   }
+
   function handleClickRegistrar() {
-    setModalRegistral(prev => !prev)
+    setModalRegistrar(prev => !prev)
+    console.log(modalRegistrar)
   }
+
 
   return (
     <nav className={styles.cabecalho_container}>
@@ -33,7 +36,6 @@ export default function Cabecalho() {
 
       <section className={styles.container_logo_e_links}>
         <img className={styles.logo} src={logo} alt="Logotipo da What The Fox" />
-
 
         <div className={` ${styles.display} ${styles.links_container}`}>
 
@@ -55,20 +57,20 @@ export default function Cabecalho() {
 
         </div>
 
-        <div className={styles.logar} onClick={handleClickLogar}>
-          <BotaoGeral texto={"Logar"} />
+        <div className={styles.logar} onClick={handleClickRegistrar}>
+          <BotaoGeral texto={"Registrar"} />
         </div>
 
-      
-        <ModalCadastroUsuario aberta={true} titulo={"Teste"}/>
-        
+        {modalRegistrar && (
+          <ModalLoginUsuario aberta={modalRegistrar} aoFechar={setModalRegistrar} />
+        )}
+
 
 
       </section>
 
       <div className={styles.esconde}>
         <Busca onBusca={handleBusca} className={styles.busca} />
-
       </div>
 
 

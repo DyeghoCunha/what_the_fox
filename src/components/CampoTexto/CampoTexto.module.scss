@@ -31,9 +31,9 @@
     border-radius: 8px;
     font-size: 2vw;
     color: $colorLetra-Padrao-WTF;
-    font-family: $fonte-normal-WTF-Busca;
-   
-    letter-spacing: 5px;
+    font-family: $fonte-normal-WTF-Fox;
+    text-align: center;
+    letter-spacing: 2px;
 
 &:focus{
   box-shadow:  2px 2px 5px rgba(0,0,0,0.25);
@@ -72,7 +72,7 @@
     border-radius: 8px;
     font-size: 7vw;
     color: $colorLetra-Padrao-WTF;
-    font-family: $fonte-normal-WTF-Busca;
+    font-family: $fonte-normal-WTF-Fox;
    
     letter-spacing: 5px;
 &:focus{
