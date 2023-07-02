@@ -121,6 +121,10 @@ Esses são os meus objetivos da semana:
 - :white_check_mark: Passo 5 | Modal "Produtos - Responsividade"
 - :white_check_mark: Passo 6 | Modal "Newsletter"
 
+## Resultados da Segunda semana:
+
+![Meu Projeto na Semana 2](https://github.com/DyeghoCunha/what_the_fox/blob/master/public/Semana2.gif?raw=true)
+
 
 
 # :three: Terceira Semana 
@@ -154,6 +158,61 @@ Continuarei atualizando sobre o projeto e compartilhando os avanços nas próxim
 
 ### Segunda Semana
 
+Olá, pessoal! Queria compartilhar com vocês mais um detalhe do meu projeto para o Challenge. Seguindo a mesma dinâmica da primeira semana, decidi não utilizar bibliotecas externas para os meus modais e efeitos visuais. Optei por utilizar apenas CSS e JavaScript, o bom e velho método manual!
+
+Eu sei que existem muitas soluções prontas e muito mais bonitas disponíveis, mas isso iria contra o propósito de aprendizado do desafio. Para mim, seria apenas copiar e colar. Por exemplo, eu implementei um efeito de sombreamento que ficou assim:
+
+
+![Exemplo de Sombreamento](https://github.com/DyeghoCunha/what_the_fox/blob/master/public/ModaldeProduto.gif?raw=true)
+
+</br>
+Para explicar de forma simples, eu utilizei um trecho de código que controla o deslocamento da sombra de acordo com o movimento do mouse. Aqui está:
+
+```
+//*__________Inicio da Sombra__________________________________________
+  const [deslocamentoSombraX, setDeslocamentoSombraX] = useState(40);
+  const [deslocamentoSombraY, setDeslocamentoSombraY] = useState(40);
+  const [intensidadeSombra, setIntensidadeSombra] = useState("");
+
+  const handleMouseMove = (event) => {
+
+    event.preventDefault()
+    const { clientX, clientY } = event;
+    const offsetX = clientX / window.innerWidth;
+    const offsetY = clientY / window.innerHeight;
+
+    setIntensidadeSombra(offsetX);
+    setDeslocamentoSombraX(offsetX * -20);
+    setDeslocamentoSombraY(offsetY * 20);
+  }
+//*__________Fim da Sombra_____________________________________________
+
+
+//*_________Aplicar o style à imagem___________________________________
+ <img
+              className={`${styles.container_imagem_personagem} ${styles.dropShadow}`}
+              src={card.imagem}
+              alt="Imagem"
+
+              style={{
+                filter: `drop-shadow(${deslocamentoSombraX}px ${deslocamentoSombraY}px 5px rgba(0, 0, 0, ${intensidadeSombra}))`
+              }}
+  />
+
+```
+
+Além disso, fiz alguns testes para tornar a sombra mais dinâmica e poder utilizar um efeito de lanterna nos personagens quando aplicar o tema escuro. No entanto, acho que isso ficará para o próximo projeto ou para os ajustes finais.
+
+Fiz também um modal para registro e login de usuário, mas como este não faz parte do projeto proposto, eu vou deixar para fazer considerações sobre ele quando a implementação estiver finalizada e rodando pelo Firebase (se eu conseguir). Mas caso tenha curiosidade, ele ficou assim:
+
+![Exemplo do modal de Cadastro](https://github.com/DyeghoCunha/what_the_fox/blob/master/public/ModaldeCadastro.gif?raw=true)
+
+Estou muito animado com o progresso que estou fazendo neste Challenge e ansioso para compartilhar o resultado final em breve. Continuem acompanhando!
+
+
+
+
+
 # 🖼️ Sobre o Autor
 
 
@@ -172,7 +231,12 @@ Continuarei atualizando sobre o projeto e compartilhando os avanços nas próxim
 <img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/banner%20(6).png?raw=true#vitrinedev" alt="imagem banner do Vitrine Dev">
 </div> 
 
+ # 🖼️ Foto do Projeto
 
+ ###Eu ocultei alguns cards para que a foto não ficasse muito grande 
+<div align="center">
+<img src="https://github.com/DyeghoCunha/what_the_fox/blob/master/public/PaginaInicial_288x882.png?raw=true" alt="imagem do projeto">
+</div> 
 
 <!-- @media screen and (max-width: 1024px) {
   .cabecalho_container{
