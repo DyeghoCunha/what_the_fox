@@ -15,7 +15,8 @@
   border-top: 1px solid rgba($colorBg-WTF, 0.75);
   border-left: 1px solid rgba($colorBg-WTF, 0.75);
   transform: translateZ(10px);
-  cursor: pointer;
+
+
 }
 
 .container_personagem {
@@ -23,8 +24,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateZ(10px);
-  height: 100%;
-  width: 100%;
+  height: 450px;
+  width: 450px;
+ 
 
   img {
     width: 100%;
@@ -38,19 +40,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateZ(40px);
-  height: 100%;
-  width: 100%;
-
+  height: 450px;
+  width: 450px;
+opacity: 1;
   img {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    border: 1px solid rgba($colorBg-WTF, 0.5);
-    border-top: 1px solid rgba($colorBg-WTF, 0.75);
-    border-left: 1px solid rgba($colorBg-WTF, 0.75);
+
     position: relative;
-    border: 1px solid $colorBg-WTF;
-   
+    
+   border: 10px solid $colorBg-WTF;
     box-shadow: inset 30px 30px 60px black,
     inset 30px -30px 60px black,
     inset -50px -50px 60px black,
@@ -58,8 +58,22 @@
     z-index: 1;
   }
 
+
+
+.apagar{
+  opacity: 0;
+   animation: 2s linear opacidade;
 }
 
+@keyframes opacidade{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+}
 @media screen and (max-width: 768px) {
 
   .container {

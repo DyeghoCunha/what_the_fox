@@ -7,9 +7,9 @@ import faixaErro from "./image/faixaErro.png"
 import pedras from "./image/pedras.png"
 import botao from "./image/bottao.png"
 
-export default function ModalErroSenha({ aoFechar=true}) {
+export default function ModalErroSenha({ aoFechar, aberto}) {
 
-const [aberto , setAberto ] = useState(aoFechar)
+ 
 
   
 
@@ -26,7 +26,7 @@ const [aberto , setAberto ] = useState(aoFechar)
               <img src={faixa} className={styles.faixa} alt="" />
               <img src={faixaErro} className={styles.faixaErro} alt="" />
               <img src={pedras} className={styles.pedras} alt="" />
-              <img src={botao} className={styles.botao} onClick={()=> setAberto(prev=>!prev)} alt="" />
+              <img src={botao} className={styles.botao} onClick={()=> aoFechar(prev=>!prev)} alt="" />
               <h2 className={styles.erro}>E-mail ou Senha Inválidos</h2>
             </CardBase3d>
 

@@ -4,12 +4,12 @@ import styles from "./ModalLoginUsuario.module.scss"
 import React, { useState } from 'react'
 
 import BotaoGeral from "../../BotãoGeral"
-import MiniCardFechadura from "./miniCardFechadura"
 import ContainerRGB from "../../ContainerRGB"
 import CampoTexto from "../../CampoTexto/intex"
 import axios from "axios"
 import ModalCadastroUsuario from "../CadastroUsuario"
 import ModalErroSenha from "../ModalErroSenha"
+import MiniCardFechadura from "../CadastroUsuario/miniCardFechadura"
 
 export default function ModalLoginUsuario({ aberta, aoFechar, titulo }) {
 
@@ -17,6 +17,7 @@ export default function ModalLoginUsuario({ aberta, aoFechar, titulo }) {
   const [opacidade, setOpacidade] = useState(false)
   const [aprovado, setAprovado] = useState(false)
   const [erro, setErro] = useState("")
+  const [erroModal, setErroModal] = useState(false)
 
   //!_____Login de Usuario_____
 
@@ -35,19 +36,21 @@ export default function ModalLoginUsuario({ aberta, aoFechar, titulo }) {
 
       .then(resposta => {
         console.log(resposta)
-        setOpacidade(prev=>!prev)
-        setAprovado(prev=>!prev)
+        setOpacidade(prev => !prev)
+        setAprovado(prev => !prev)
       })
       .catch(erro => {
         if (erro?.response?.data?.message) {
           console.log(erro.response.data.message);
           setErro(erro.response.data.message);
+          setErroModal(true)
         } else {
           alert("Aconteceu um erro iniesperado com o seu login")
         }
       })
   }
 
+  console.log("ERRO:", erro.length)
   //!___________________________________________________________
 
   function handleClickRegistro() {
@@ -61,9 +64,12 @@ export default function ModalLoginUsuario({ aberta, aoFechar, titulo }) {
       {registro && (
         <ModalCadastroUsuario aoFechar={setRegistro} />
       )}
-{erro.length>3&&(
-  <ModalErroSenha />
-)}
+
+
+        <div className={styles.container_modalErro}>
+          <ModalErroSenha aoFechar={setErroModal} aberto={erroModal} />
+        </div>
+    
 
       {!registro && (
         <>
