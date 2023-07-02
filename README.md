@@ -110,7 +110,7 @@ Esses são os meus objetivos da semana:
 
 
 
-# :two: Segunda Semana | :construction:**Em progresso**
+# :two: Segunda Semana | <!-- :construction:**Em progresso**--> :white_check_mark:**Feito** 
 
 Esses são os meus objetivos da semana: 
 
@@ -119,7 +119,7 @@ Esses são os meus objetivos da semana:
 - :white_check_mark: Passo 3 | Carrossel
 - :white_check_mark: Passo 4 | Modal "Produtos"
 - :white_check_mark: Passo 5 | Modal "Produtos - Responsividade"
-- :construction: Passo 6 | Modal "Newsletter"
+- :white_check_mark: Passo 6 | Modal "Newsletter"
 
 
 
