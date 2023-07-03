@@ -11,29 +11,30 @@ import './styles/estilosGlobais.scss'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
+import { FirebaseProvider } from './common/context/FirebaseConfig';
 
 
 
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-
-      <Cabecalho />
-     <BannerProvider>
+<FirebaseProvider>
+     {/* <BannerProvider>
         <Banner />
       </BannerProvider>
-
+ */}
       <FavoritoProvider>
 
         <Routes>
-          <Route path="/" element={<PaginaInicial />} />
-          <Route path="/teste" element={<PaginaTeste />} />
+          <Route path="/teste" element={<PaginaInicial />} />
+          <Route path="/" element={<PaginaTeste />} />
         </Routes>
 
 
-      <Footer /> 
+    {/*   <Footer />  */}
 
       </FavoritoProvider>
+</FirebaseProvider>      
     </BrowserRouter>
   );
 }

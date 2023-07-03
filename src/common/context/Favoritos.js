@@ -10,9 +10,7 @@ const FavoritoProvider = ({children})=>{
 const [aberto , setAberto] = useState(false)
 const [cardModal, setCardModal]=useState({})
 
-useEffect(()=>{
-  console.log("Aberto Context:",aberto)
-},[aberto])
+
    //!_____FIM MODAL______
 
   const [favorito, setFavorito]=useState([])

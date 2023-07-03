@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ModalCadastroUsuario from '../../components/Modais/CadastroUsuario';
-import ModalErroSenha from '../../components/Modais/ModalErroSenha';
+import TesteCadastroFirebase from '../../components/Modais/CadastroUsuario/TesteCadastroFirebase';
+
 
 
 export default function PaginaTeste() {
@@ -9,7 +9,7 @@ export default function PaginaTeste() {
 
     <>
 
-      {/* <ModalErroSenha /> */}
+     <TesteCadastroFirebase/> 
 
 
     </>
