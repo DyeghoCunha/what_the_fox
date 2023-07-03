@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import BotaoGeral from "../../BotãoGeral"
 import MiniCardFechadura from "./miniCardFechadura"
 import ContainerRGB from "../../ContainerRGB"
-import CampoTexto from "../../CampoTexto/intex"
+import CampoTexto from "../../CampoTexto/"
 import axios from "axios"
 
 export default function ModalCadastroUsuario({ aberta, aoFechar, titulo }) {

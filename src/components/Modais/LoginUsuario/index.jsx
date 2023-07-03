@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 
 import BotaoGeral from "../../BotãoGeral"
 import ContainerRGB from "../../ContainerRGB"
-import CampoTexto from "../../CampoTexto/intex"
+import CampoTexto from "../../CampoTexto"
 import axios from "axios"
 import ModalCadastroUsuario from "../CadastroUsuario"
 import ModalErroSenha from "../ModalErroSenha"

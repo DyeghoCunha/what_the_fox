@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { createContext, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore"
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 
 
 
@@ -18,6 +20,8 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
+export const database = getFirestore(app)
+export const storage = getStorage(app)
 //*_______________________________________________________________________________
 
 
@@ -31,7 +35,8 @@ const FirebaseProvider = (({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [usuario, setUsuario] = useState(null)
+  const [usuario, setUsuario] = useState(null);
+  const [armazenaInput, setArmazenaInput] = useState({})
 
   const auth = getAuth();
 
@@ -142,7 +147,7 @@ const FirebaseProvider = (({ children }) => {
 
   //*___________________Registro com conta do GitHub____________________________________________
 
-const handleSubmitGithub = (event) => {
+  const handleSubmitGithub = (event) => {
 
     event.preventDefault()
     signInWithPopup(auth, githubProvider)
@@ -176,17 +181,159 @@ const handleSubmitGithub = (event) => {
   };
 
   //*___________________FIM Registro com conta do GitHub____________________________________________
-
-
-
   //!_____________Fim do Cadastro e Login_________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!_____________Inicio de configuração do Banco de Dados (FIRESTORE)_________________________________
+
+  const collectionRef = collection(database, "users")
+  //?____Add Dados no Banco___
+  const handleAddDadosUsuario = (event) => {
+    event.preventDefault()
+    addDoc(collectionRef, {
+      email: email,
+      senha: password
+    })
+      .then(() => {
+        alert("Data Added")
+      })
+      .catch((err) => {
+        alert(err.message)
+      })
+  }
+  //?___Fim Add Dados no Banco___
+  //*____________________________________________________________________________________________________________
+  //?__Pegar dados__________________________________________
+  //__Pega as informações do CollectionRef
+  const getData = (event) => {
+
+    event.preventDefault()
+    getDocs(collectionRef)
+      .then((response) => {
+
+        console.log(response.docs.map((item) => {
+          return item.data()
+        }))
+
+        console.log(response.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        }))
+
+
+      })
+  }
+  //?__FIM_____Pegar dados__________________________________________
+  //*____________________________________________________________________________________________________________
+  //?__Alterar dados do Banco de dados__________
+  const updateData = (event) => {
+    event.preventDefault()
+
+    //__ Esta mudando estaticamente pelo ID jMtIcORBpSupZeokEjY6___
+    const docToUpdate = doc(database, "users", "jMtIcORBpSupZeokEjY6")
+    updateDoc(docToUpdate, {
+      email: "ABC",
+      senha: 123456
+    })
+      .then(() => {
+        alert("Atualizado")
+      })
+      .catch((err) => {
+        alert(err.message)
+      })
+  }
+  //?__FIM___Alterar dados do Banco de dados__________
+  //*____________________________________________________________________________________________________________
+  //?__Deletar dado do Banco de Dados____
+  const deleteData = (event) => {
+    event.preventDefault()
+    //__ Esta mudando estaticamente pelo ID jMtIcORBpSupZeokEjY6___
+    const docToDelete = doc(database, "users", "K8B7ixSE1yxeHKn50q8X")
+    //Ele apaga exatamento os dados que estão escritos no Email e Senha
+    deleteDoc(docToDelete, {
+      email: "testeBanco@teste.com",
+      senha: 123456
+    })
+      .then(() => {
+        alert("Deletado")
+      })
+      .catch((err) => {
+        alert(err.message)
+      })
+  }
+  //?__FIM___Deletar dado do Banco de Dados___
+  //!_____________Fim de configuração do Banco de Dados (FIRESTORE)_________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!___________________________________________________________________________________________
+  //!_____Configuração do Firebase Storage (Arquivos)_______________________________________________
+  const handleInputFileFireStorage = (event) => {
+    event.preventDefault();
+
+    const imagemRef = ref(storage, `pastaExemplo/${armazenaInput.name}`)
+    const uploadTask = uploadBytesResumable(imagemRef, armazenaInput)
+
+    uploadTask.on("state_changed", (snapshot) => {
+      //verifica o carregamento
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+      console.log('Upload is ' + progress + '% done');
+
+    }, (error) => {
+      console.log(error.message)
+    }, () => {
+
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        console.log('File available at', downloadURL);
+      });
+    }
+    )
+
+
+    /*//TODO-- Verifica o Tamanho da imagem, para adicionar depois na inclusão
+    
+     const reader = new FileReader();
+    reader.onload = (e) => {
+      const image = new Image();
+      image.src = e.target.result;
+  
+      image.onload = () => {
+        const width = image.width;
+        const height = image.height;
+  
+        console.log('Largura:', width);
+        console.log('Altura:', height);
+      };
+    };
+  reader.readAsDataURL(armazenaInput); 
+  */
+
+  };
+
+  //!_____FIM____Configuração do Firebase Storage___________________________________________________
+
+
+
 
 
   //!__________________Valores para o Provider__________________________________
 
   const value = {
     email, setEmail, password, setPassword, error, setError, handleSignUp, handleSignIn,
-     handleSubmitGoogle, handleSubmitGithub, usuario, 
+    handleSubmitGoogle, handleSubmitGithub, usuario, handleAddDadosUsuario, getData, updateData, deleteData,
+    armazenaInput, setArmazenaInput, handleInputFileFireStorage
   }
 
   //!___________________________________________________________________________

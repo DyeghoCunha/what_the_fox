@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import TesteCadastroFirebase from '../../components/Modais/CadastroUsuario/TesteCadastroFirebase';
+import TesteBancoDados from '../../components/TesteBancoDados';
+
 
 
 
@@ -9,7 +10,7 @@ export default function PaginaTeste() {
 
     <>
 
-     <TesteCadastroFirebase/> 
+     <TesteBancoDados/> 
 
 
     </>
