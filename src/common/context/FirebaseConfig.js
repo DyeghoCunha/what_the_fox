@@ -31,7 +31,7 @@ const FirebaseProvider = (({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [user, setUser] = useState(null)
+  const [usuario, setUsuario] = useState(null)
 
   const auth = getAuth();
 
@@ -76,7 +76,7 @@ const FirebaseProvider = (({ children }) => {
 
       .then((userCredential) => {
         const user = userCredential.user;
-        setUser(user)
+        setUsuario(user)
         console.log("Usuário logado:", user);
       })
 
@@ -112,7 +112,7 @@ const FirebaseProvider = (({ children }) => {
 
       .then((userCredential) => {
         const user = userCredential.user;
-        setUser(user)
+        setUsuario(user)
         console.log("Usuário registrado:", user);
       })
 
@@ -149,7 +149,7 @@ const handleSubmitGithub = (event) => {
 
       .then((userCredential) => {
         const user = userCredential.user;
-        setUser(user)
+        setUsuario(user)
         console.log("Usuário registrado:", user);
       })
 
@@ -186,7 +186,7 @@ const handleSubmitGithub = (event) => {
 
   const value = {
     email, setEmail, password, setPassword, error, setError, handleSignUp, handleSignIn,
-     handleSubmitGoogle, handleSubmitGithub, user, setUser
+     handleSubmitGoogle, handleSubmitGithub, usuario, 
   }
 
   //!___________________________________________________________________________

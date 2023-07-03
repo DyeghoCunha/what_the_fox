@@ -12,11 +12,14 @@ import { FirebaseContext, app } from "../../../../common/context/FirebaseConfig"
 
 const TesteCadastroFirebase = () => {
 
-  const { email, setEmail, password, setPassword, error, handleSignUp, handleSignIn, handleSubmitGoogle, handleSubmitGithub, user } = useContext(FirebaseContext)
+  const { email, setEmail, password, setPassword, error, handleSignUp, handleSignIn, handleSubmitGoogle, handleSubmitGithub, usuario } = useContext(FirebaseContext)
 
 
   console.log(email)
   console.log(password)
+  if(usuario){
+    console.log(usuario)
+  }
 
 
   return (
@@ -39,12 +42,13 @@ const TesteCadastroFirebase = () => {
               <div className={styles.container_formulario_senha}>
 
               {error && <p>{error}</p>}
-              {user && <p>Bem vindo {user}</p>}
+            {usuario && <p>{usuario.displayName}</p>}
+             {usuario && <img src={usuario.photoURL}/>}
               </div>
 
               <div className={styles.container_formulario_botao} >
-                {/* <BotaoGeral onClick={handleSignUp} texto={"Cadastrar"} />
-                <BotaoGeral onClick={handleSignIn} texto={"Logar"} /> */}
+                <BotaoGeral onClick={handleSignUp} texto={"Cadastrar"} />
+                <BotaoGeral onClick={handleSignIn} texto={"Logar"} />
                 <BotaoGeral onClick={handleSubmitGoogle} texto={"Google"} />
                 <BotaoGeral onClick={handleSubmitGithub} texto={"GitHub"} />
 
