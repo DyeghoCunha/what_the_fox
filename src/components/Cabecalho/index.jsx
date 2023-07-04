@@ -1,17 +1,18 @@
 import styles from './Cabecalho.module.scss'
 import logo from "./image/logoWTF.png"
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import CabecalhoLink from './CabecalhoLink'
 import Busca from './Busca';
 import Hamburger from './Hamburger';
 import BotaoGeral from '../BotãoGeral';
 import ModalCadastroUsuario from '../Modais/CadastroUsuario';
 import ModalLoginUsuario from '../Modais/LoginUsuario';
+import { FirebaseContext } from '../../common/context/FirebaseConfig';
 
 
 export default function Cabecalho() {
-
+  const { logado } = useContext(FirebaseContext)
   const [modalLogar, setModalLogar] = useState(false)
   const [modalRegistrar, setModalRegistrar] = useState(false)
 
@@ -28,11 +29,12 @@ export default function Cabecalho() {
     setModalRegistrar(prev => !prev)
     console.log(modalRegistrar)
   }
-
+if(logado){
+ console.log("Nao eh nulo") 
+}
 
   return (
     <nav className={styles.cabecalho_container}>
-
 
       <section className={styles.container_logo_e_links}>
         <img className={styles.logo} src={logo} alt="Logotipo da What The Fox" />

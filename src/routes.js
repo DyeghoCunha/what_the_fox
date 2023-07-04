@@ -19,6 +19,7 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
 <FirebaseProvider>
+  <Cabecalho/>
      {/* <BannerProvider>
         <Banner />
       </BannerProvider>

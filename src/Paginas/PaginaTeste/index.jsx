@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import TesteBancoDados from '../../components/TesteBancoDados';
+import TesteCadastroFirebase from '../../components/Modais/CadastroUsuario/TesteCadastroFirebase';
+import BotaoGeral from '../../components/BotãoGeral';
+import { DiGithubBadge } from "react-icons/di";
 
 
 
 
 export default function PaginaTeste() {
 
+  const icone = <DiGithubBadge/>
+
   return (
 
     <>
 
-     <TesteBancoDados/> 
+   <BotaoGeral icone={icone}/> 
 
 
     </>

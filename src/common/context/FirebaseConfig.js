@@ -1,12 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { createContext, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore"
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+import { createContext, useEffect, useState } from "react";
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup,
+  GithubAuthProvider, onAuthStateChanged, signOut
+} from "firebase/auth";
 
+import { getStorage, ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage"
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, onSnapshot, query, where } from "firebase/firestore"
 
+import dados from "../../assets/json/dados.json"
 
+//TODO____ A parte de Hosting não vão ser usadas agora, então vou ver elas depois.
 
 //*____Informações adquiridas diretamente do Projeto cadastrado no Google Firebase
 const firebaseConfig = {
@@ -24,9 +29,7 @@ export const database = getFirestore(app)
 export const storage = getStorage(app)
 //*_______________________________________________________________________________
 
-
 const FirebaseContext = createContext()
-
 const FirebaseProvider = (({ children }) => {
 
   let googleProvider = new GoogleAuthProvider();
@@ -34,9 +37,12 @@ const FirebaseProvider = (({ children }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [nome, setNome] = useState("")
+  const [idade, setIdade] = useState("")
   const [error, setError] = useState(null);
   const [usuario, setUsuario] = useState(null);
   const [armazenaInput, setArmazenaInput] = useState({})
+  const [logado, setLogado] = useState(false)
 
   const auth = getAuth();
 
@@ -196,7 +202,7 @@ const FirebaseProvider = (({ children }) => {
 
   const collectionRef = collection(database, "users")
   //?____Add Dados no Banco___
-  const handleAddDadosUsuario = (event) => {
+  const handleAddDadosComPasta = (event) => {
     event.preventDefault()
     addDoc(collectionRef, {
       email: email,
@@ -213,26 +219,32 @@ const FirebaseProvider = (({ children }) => {
   //*____________________________________________________________________________________________________________
   //?__Pegar dados__________________________________________
   //__Pega as informações do CollectionRef
+  //TODO --- Armazena no FireStore os dados em pastas referenciadas na const collectionRef... Usar como Banco de Dados
   const getData = (event) => {
-
     event.preventDefault()
     getDocs(collectionRef)
       .then((response) => {
-
         console.log(response.docs.map((item) => {
           return item.data()
         }))
-
+        //Também mostra o ID (usar este)
         console.log(response.docs.map((item) => {
           return { ...item.data(), id: item.id }
         }))
-
-
       })
+    /*  
+    //Pega os dados em Tempo real, funciona semelhante ao getDocs, mas pelo que eu vi no React ele funciona igual //!Ficar Atento
+    onSnapshot(collectionRef, (response)=>{
+       console.log(response.docs.map((item) => {
+          return item.data()
+        }))
+      })  
+      */
+
   }
   //?__FIM_____Pegar dados__________________________________________
   //*____________________________________________________________________________________________________________
-  //?__Alterar dados do Banco de dados__________
+  //?__Alterar dados do Banco de dados______________________________
   const updateData = (event) => {
     event.preventDefault()
 
@@ -249,9 +261,9 @@ const FirebaseProvider = (({ children }) => {
         alert(err.message)
       })
   }
-  //?__FIM___Alterar dados do Banco de dados__________
+  //?__FIM___Alterar dados do Banco de dados_______________________
   //*____________________________________________________________________________________________________________
-  //?__Deletar dado do Banco de Dados____
+  //?__Deletar dado do Banco de Dados______________________________
   const deleteData = (event) => {
     event.preventDefault()
     //__ Esta mudando estaticamente pelo ID jMtIcORBpSupZeokEjY6___
@@ -268,12 +280,79 @@ const FirebaseProvider = (({ children }) => {
         alert(err.message)
       })
   }
-  //?__FIM___Deletar dado do Banco de Dados___
+  //?__FIM___Deletar dado do Banco de Dados________________________
+  //*____________________________________________________________________________________________________________
+  //?_____FireStore Queries________________________________________
+  //Todo ----- Pega os itens que possuem aquelas caracteristicas definidas, creio que seja bom para usar em Favoritos e em Filtros
+  //TODO Usar para os Cards de Categorias
+  const ageQuery = query(collectionRef, where("idade", "<", 41))
+  const getDataQuery = (event) => {
+    event.preventDefault()
+
+    /*       getDocs(ageQuery)
+          .then((response) => {
+            console.log(response.docs.map((item) => {
+              return item.data()}))}) */
+
+    onSnapshot(ageQuery, (response) => {
+      console.log(response.docs.map((item) => {
+        return item.data()
+      }))
+    })
+  }
+  //apenas função para gravar os dados para testar com o Query
+  const handleAddDados = (event) => {
+    event.preventDefault()
+    addDoc(collectionRef, {
+      nome: nome,
+      email: email,
+      idade: Number(idade)
+    })
+      .then(() => {
+        alert("Data Added")
+      })
+      .catch((err) => {
+        alert(err.message)
+      })
+  }
+  //?_____FIM__FireStore Queries________________________________________
+  //*____________________________________________________________________________________________________________
+
+  //?_____Security Log In Log Off_______________________________________
+  useEffect(() => {
+    onSnapshot(collectionRef, (data) => {
+      console.log(data.docs.map((item) => {
+        return { ...item.data(), id: item.id }
+      }))
+    })
+    //No Firebase Rules colocar allow write: if request.auth != null;
+    //                           allow read: if request.auth !=null;
+    //Condicionais relacionadas ao Se está logado ou não
+    //TODO---- Colocar para poder acessar o Carrinho e os Favoritos e para Favoritar
+    onAuthStateChanged(auth, (data) => {
+      if (data) {
+
+        setLogado(true)
+        console.log(data)
+        console.log("Logged in ")
+      }
+      else {
+        console.log("Not Logged in")
+      }
+    })
+  }, [])
+  const handleLogOut = () => {
+    setLogado(false)
+    signOut(auth)
+  }
+  //?_____Security Log In Log Off_______________________________________
+  //*____________________________________________________________________________________________________________
+
   //!_____________Fim de configuração do Banco de Dados (FIRESTORE)_________________________________
   //!___________________________________________________________________________________________
   //!___________________________________________________________________________________________
   //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
+  //!_________________Ainda Falta muica coisa, eu não sei como deletar arquivos, só incluir_____
   //!___________________________________________________________________________________________
   //!___________________________________________________________________________________________
   //!___________________________________________________________________________________________
@@ -321,19 +400,111 @@ const FirebaseProvider = (({ children }) => {
   */
 
   };
-
   //!_____FIM____Configuração do Firebase Storage___________________________________________________
 
 
 
 
+  //!_____BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
+
+  const [foxDb, setFoxDb] = useState([])
+  const [goblinDb, setGoblinDb] = useState([])
+  const [apesDb, setApesDb] = useState([])
+  const [bladeMasterDb, setBladeMasterDb] = useState([])
+  const [hempDb, setHempDb] = useState([])
+  const [emoteDb, setEmoteDb] = useState([])
+
+
+
+
+  const collectionFox = collection(database, "Fox")
+  const collectionGoblin = collection(database, "Goblins")
+  const collectionApes = collection(database, "Apes")
+  const collectionBladeMasters = collection(database, "BladeMasters")
+  const collectionHemps = collection(database, "Hemps")
+  const collectionEmotes = collection(database, "Emotes")
+
+  const raposa = dados.Emotes
+
+  //?____Add Dados no Banco___
+  const handleAddDadosNoBandoDeDados = (event) => {
+    event.preventDefault()
+
+    for (let i = 0; i <= raposa.length; i++) {
+      addDoc(collectionEmotes, {
+        id: raposa[i].id,
+        raca: raposa[i].raca,
+        classe: raposa[i].classe,
+        valor: raposa[i].valor,
+        nome: raposa[i].nome,
+        //frase: raposa[i].frase,
+        imagem: raposa[i].imagem,
+        quantidade: raposa[i].quantidade,
+        favorito: raposa[i].favorito
+      })
+        .then(() => {
+          console.log(raposa[i].nome)
+          // alert("Data Added")
+        })
+        .catch((err) => {
+          alert(err.message)
+        })
+    }
+  }
+//Chamar os dados
+  useEffect(() => {
+    onSnapshot(collectionFox, (data) => {
+      setFoxDb(data.docs.map((item) => {
+        return { ...item.data(), id: item.id }
+      }))
+    })
+    onSnapshot(collectionGoblin, (data) => {
+      setGoblinDb(data.docs.map((item) => {
+        return { ...item.data(), id: item.id }
+      }))
+    })
+    onSnapshot(collectionApes, (data) => {
+      setApesDb(data.docs.map((item) => {
+        return { ...item.data(), id: item.id }
+      }))
+    })
+    onSnapshot(collectionBladeMasters, (data) => {
+      setBladeMasterDb(data.docs.map((item) => {
+        return { ...item.data(), id: item.id }
+      }))
+    })
+    onSnapshot(collectionHemps, (data) => {
+      setHempDb(data.docs.map((item) => {
+        return { ...item.data(), id: item.id }
+      }))
+    })
+    onSnapshot(collectionEmotes, (data) => {
+      setEmoteDb(data.docs.map((item) => {
+        return { ...item.data(), id: item.id }
+      }))
+    })
+
+  }, [])
+
+  /* 
+  
+  console.log("FoxDB:", foxDb)
+  console.log("GoblinDb:", goblinDb)
+  console.log("ApeDb:", apesDb)
+  console.log("BladeMansterDb:", bladeMasterDb)
+  console.log("HempDb:", hempDb)
+  console.log("EmoteDb:", emoteDb)
+   */
+   //!_____FIM DO BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
 
   //!__________________Valores para o Provider__________________________________
 
   const value = {
-    email, setEmail, password, setPassword, error, setError, handleSignUp, handleSignIn,
-    handleSubmitGoogle, handleSubmitGithub, usuario, handleAddDadosUsuario, getData, updateData, deleteData,
-    armazenaInput, setArmazenaInput, handleInputFileFireStorage
+    logado,email, setEmail, password, setPassword, nome, setNome, idade, setIdade, error, setError, handleSignUp, handleSignIn, handleLogOut,
+    handleSubmitGoogle, handleSubmitGithub, usuario, handleAddDadosComPasta, handleAddDados, getDataQuery, getData, updateData, deleteData,
+    armazenaInput, setArmazenaInput, handleInputFileFireStorage, handleAddDadosNoBandoDeDados,
+    //Baco de Dados
+    foxDb,goblinDb,apesDb,bladeMasterDb,hempDb,emoteDb,
   }
 
   //!___________________________________________________________________________
@@ -348,4 +519,11 @@ const FirebaseProvider = (({ children }) => {
 
 
 export { FirebaseContext, FirebaseProvider }
+
+
+
+
+
+
+
 
