@@ -20,10 +20,10 @@ setEscondeSenha(prev => !prev)
 
        {senha  && (
         <div className={styles.container}>
-            <button onClick={handleEscondeSenha} className={styles.container_escondeSenha}>{escondeSenha?<GrFormView/>:<GrFormViewHide/>}</button>
           <label>{label}</label>
           <input type={escondeSenha? "password": "text"} value={value} onChange={event => onChange(event.target.value)} placeholder={placeholder} />
 
+            <button onClick={handleEscondeSenha} className={styles.container_escondeSenha}>{escondeSenha?<GrFormView/>:<GrFormViewHide/>}</button>
         </div>
       )}
       {!senha  && (

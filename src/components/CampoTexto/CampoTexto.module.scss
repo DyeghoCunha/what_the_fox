@@ -28,6 +28,8 @@
     margin: 0px;
     font-size: 3.5vw;
     opacity: 0.2;
+    user-select: none;
+    outline: none;
 
   }
 
@@ -84,7 +86,7 @@
     color: $colorLetra-Padrao-WTF;
 
     margin: 10px 10px;
- border: 2px solid;
+
  
     &_escondeSenha{
     display: flex;
