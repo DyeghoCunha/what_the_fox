@@ -1,15 +1,38 @@
 
 import styles from "./CampoTexto.module.scss"
+import { GrFormViewHide , GrFormView } from "react-icons/gr";
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function CampoTexto({ label, value, onChange, placeholder=label , type ="text"}) {
+export default function CampoTexto({ label, value, onChange, placeholder = label, type = "text", senha=false}) {
+  
+  const [escondeSenha , setEscondeSenha] = useState(true)
+
+  const handleEscondeSenha = ()=>{
+setEscondeSenha(prev => !prev) 
+  }
+
+
   return (
-    <div className={styles.container}>
-      <label>{label}</label>
-      <input type={type} value={value} onChange={ event => onChange(event.target.value)} placeholder={placeholder}/>
-    </div>
+    <>
+
+       {senha  && (
+        <div className={styles.container}>
+            <button onClick={handleEscondeSenha} className={styles.container_escondeSenha}>{escondeSenha?<GrFormView/>:<GrFormViewHide/>}</button>
+          <label>{label}</label>
+          <input type={escondeSenha? "password": "text"} value={value} onChange={event => onChange(event.target.value)} placeholder={placeholder} />
+
+        </div>
+      )}
+      {!senha  && (
+        <div className={styles.container}>
+          <label>{label}</label>
+          <input type={type} value={value} onChange={event => onChange(event.target.value)} placeholder={placeholder} />
+        </div>
+      )}
+
+    </>
   );
 }

@@ -2,17 +2,36 @@
 
 
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   width: 90%;
   height: fit-content;
   color: $colorLetra-Padrao-WTF;
-
   margin: 10px 10px;
- 
+  position: relative;
 
-  label{
+  
+  &_escondeSenha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none; 
+    
+    position: absolute;
+    bottom: -8px;
+    right: -9px; 
+    background-color:transparent;
+ 
+    z-index: 10;
+    padding: 0px;
+    margin: 0px;
+    font-size: 3.5vw;
+    opacity: 0.2;
+
+  }
+
+  label {
     font-family: $fonte-normal-WTF;
     font-size: 1.8vw;
     margin-left: 0px;
@@ -20,12 +39,12 @@
     letter-spacing: 3px;
 
   }
-  
-  input{
+
+  input {
 
     position: relative;
-    border:none;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.25);
+    border: none;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.25);
     width: 100%;
     outline: none;
     border-radius: 8px;
@@ -35,50 +54,83 @@
     text-align: center;
     letter-spacing: 2px;
 
-&:focus{
-  box-shadow:  2px 2px 5px rgba(0,0,0,0.25);
-}
-    
+    &:focus {
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
   }
 }
+@media screen and (max-width: 1139px) {
 
-@media screen and (max-width: 768px) {
-  
   .container{
 
-  width: 90%;
-  height: fit-content;
-  color: $colorLetra-Padrao-WTF;
-
-  margin: 10px 10px;
- 
-
-  label{
-    font-family: $fonte-normal-WTF;
-    font-size:7vw;
-    margin-left: 0px;
-    margin-bottom: 2px;
-    letter-spacing: 3px;
+      &_escondeSenha{
+    bottom: -5px;
+    right: -7px; 
+    font-size: 40px;
 
   }
-  
-  input{
+  }
 
-    position: relative;
-    border:none;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.25);
-    width: 100%;
-    outline: none;
-    border-radius: 8px;
-    font-size: 7vw;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .container {
+
+    width: 90%;
+    height: fit-content;
     color: $colorLetra-Padrao-WTF;
-    font-family: $fonte-normal-WTF-Fox;
-   
-    letter-spacing: 5px;
-&:focus{
-  box-shadow:  2px 2px 5px rgba(0,0,0,0.25);
-}
+
+    margin: 10px 10px;
+ border: 2px solid;
+ 
+    &_escondeSenha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none; 
     
+    position: absolute;
+    bottom: -1px;
+    right: -4px; 
+    background-color:transparent;
+ 
+    z-index: 10;
+    padding: 0px;
+    margin: 0px;
+    font-size: 27px;
+
   }
-}
+
+    label {
+      font-family: $fonte-normal-WTF;
+      font-size: 7vw;
+      margin-left: 0px;
+      margin-bottom: 2px;
+      letter-spacing: 3px;
+
+    }
+
+    input {
+
+      position: relative;
+      border: none;
+      box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      outline: none;
+      border-radius: 8px;
+      font-size: 7vw;
+      color: $colorLetra-Padrao-WTF;
+      font-family: $fonte-normal-WTF-Fox;
+
+      letter-spacing: 5px;
+
+      &:focus {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+      }
+
+    }
+  }
 }
