@@ -60,7 +60,7 @@ if(logado){
         </div>
 
         <div className={styles.logar} onClick={handleClickRegistrar}>
-          <BotaoGeral texto={"Registrar"} />
+          <BotaoGeral texto={"Login"} />
         </div>
 
         {modalRegistrar && (
