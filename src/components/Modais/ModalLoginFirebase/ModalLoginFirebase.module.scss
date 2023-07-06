@@ -36,7 +36,7 @@
   height: 40px;
   border-radius: 8px;
   top: 10px;
-  @include cardExterno($colorBg-WTF);
+  @include cardExternoSemBlur($colorBg-WTF);
   padding: 5px;
   background-color: transparent;
   color: rgb(255, 255, 255);
@@ -106,7 +106,7 @@
       justify-content: center;
       align-items: center;
 
-      @include cardInterno($colorBg-WTF);
+      @include cardInternoSemBlur($colorBg-WTF);
 
     }
 
@@ -201,7 +201,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        @include cardInterno($colorBg-WTF);
+        @include cardInternoSemBlur($colorBg-WTF);
       }
 
     }

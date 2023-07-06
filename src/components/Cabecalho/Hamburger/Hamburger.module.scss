@@ -8,21 +8,215 @@
 
 
   .hamburger_container {
-    height: fit-content;
-    width: 100vw;
+    height: 550px;
+    border-radius: 8px;
+    width: 310px;
     position: fixed;
-    bottom: 0px;
-    left: 0;
+    top: 60px;
+    right: 2px;
     display: block;
-    background-color: $colorBg-WTF;
-    z-index: 500000;
-&_icones{
-  margin: 10px 0px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  
-}
+    flex-direction: column;
+    z-index: 50000000000;
+    opacity: 1;
+    animation: forwards 1s abrirMenu;
+
+
+
+
+
+
+    &_icones {
+      margin: 10px 0px;
+      gap: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      overflow: hidden;
+      &_botao {
+        width: 285px;
+        height: fit-content;
+        gap: 20px;
+        padding-right: 11px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        @include cardInternoSemBlur($colorBg-WTF);
+      }
+      .primeiroLink {
+        border-radius: 50% 0px 0px;
+
+      }
+
+      .ultimoLink {
+        border-radius: 0px 0px 0px 50%;
+      }
+
+    }
 
   }
+
+
+
+  @keyframes abrirMenu {
+    0% {
+      opacity: 0;
+      transform: translate(100% ,-50%) skew(10deg, 90deg);
+    }
+
+
+    100% {
+      opacity: 1;
+      transform: translate(0% ,0%) skew(0deg, 0deg);
+    }
+  }
+
+  .titulo {
+    font-size: 30px;
+    font-family: $fonte-normal-WTF;
+    color: $colorLetra-Padrao-WTF;
+    text-decoration: none;
+
+  }
+
+  .separador_linksHome {
+
+
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    @include cardExternoSemBlur($colorBg-WTF);
+    padding: 5px 0px;
+    border-radius: 8px 0px 0px 8px;
+
+
+  }
+
+  .separador_linksHome::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 0;
+
+    width: 72px;
+    height: 302px;
+    @include cardInternoSemBlur($cyberblue);
+    border-radius: 10px 0px 0px 10px;
+    z-index: 10;
+  }
+
+
+  .informacoesUsuario {
+    width: 300px;
+    height: 200px;
+
+    position: relative;
+
+    margin-top: 10px;
+
+  }
+
+  .container_userCard {
+    display: flex;
+
+
+    width: 183px;
+    height: 200px;
+    border-radius: 8px 8px 80px 8px;
+    @include cardInternoSemBlur($colorBg-WTF);
+
+
+
+    &_user {
+      width: 140px;
+      height: fit-content;
+      padding: 10px 0px 0px 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+
+      &_favoritoCarrinho {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 8px;
+        right: 17px;
+        width: fit-content;
+        height: fit-content;
+        gap: 20px;
+      }
+
+      &_foto {
+        width: 80px;
+        height: 80px;
+        @include cardInternoSemBlur($colorBg-WTF);
+        padding: 5px;
+        border-radius: 50%;
+      }
+
+      &_titulo {
+        width: 100%;
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+        margin: 10px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        font-family: $fonte-normal-WTF;
+        color: $colorLetra-Padrao-WTF;
+        letter-spacing: 2px;
+        font-size: 14px;
+      }
+
+    }
+
+    &_logOut {
+      position: absolute;
+      top: 10px;
+      right: 125px;
+      width: fit-content;
+      height: fit-content;
+    }
+
+
+    &_logIn {
+      width: fit-content;
+      height: fit-content;
+      margin: 5px 98px 5px 5px;
+    }
+
+  }
+
+  .container_saldo {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    border: 2px solid;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include cardInternoSemBlur($colorBg-WTF);
+
+    padding-top: 5px;
+    border-radius: 0px 25% 25% 0px;
+
+    &_icone {
+      color: $colorLetra-Padrao-WTF;
+      font-size: 34px;
+      opacity: 0.6;
+    }
+
+    &_valor {
+      color: $colorLetra-Padrao-WTF;
+      font-family: $fonte-normal-WTF;
+    }
+  }
+
+
 }

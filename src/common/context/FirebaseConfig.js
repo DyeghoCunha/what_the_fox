@@ -41,6 +41,8 @@ const FirebaseProvider = (({ children }) => {
   const [idade, setIdade] = useState("")
   const [error, setError] = useState(null);
   const [usuario, setUsuario] = useState(null);
+  const [ usuarioNome, setUsuarioNome] = useState("")
+  const [usuarioFoto,setUsuarioFoto]= useState("")
   const [armazenaInput, setArmazenaInput] = useState({})
   const [logado, setLogado] = useState(false)
   const [usuarioUid, setUsuarioUid] = useState(null)
@@ -393,6 +395,8 @@ const FirebaseProvider = (({ children }) => {
         //!___APAGAR_________________________
         setUsuario(data)
         setUsuarioUid(data.uid)
+        setUsuarioNome(data.displayName)
+        setUsuarioFoto(data.photoURL)
         //!___APAGAR_________________________
       }
       else {
@@ -598,7 +602,7 @@ const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0])
     //!__________________Valores para o Provider__________________________________
 
     const value = {
-      logado, email, setEmail, password, setPassword, nome, setNome, idade, setIdade, error, setError, handleSignUp, handleSignIn, handleLogOut,
+      logado, email, setEmail, password, setPassword, nome, setNome, idade, setIdade,usuarioNome,usuarioFoto, error, setError, handleSignUp, handleSignIn, handleLogOut,
       handleSubmitGoogle, handleSubmitGithub, handleSignUpComBandoDeDados, usuario, handleAddDadosComPasta, handleAddDados, getDataQuery, getData, updateData, deleteData,
       armazenaInput, setArmazenaInput, handleInputFileFireStorage, handleAddDadosNoBandoDeDados,
       //Baco de Dados

@@ -14,21 +14,45 @@
   font-family: $fonte-normal-WTF;
   color: $colorLetra-Padrao-WTF;
 
-&:hover{
+  &:hover {
 
-text-shadow: 0px 0px 1px $cyberblue;
+    text-shadow: 0px 0px 1px $cyberblue;
+  }
 }
+
+.linkDestacado {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  border-radius: 8px;
+  font-family: $fonte-normal-WTF-Fox;
+  text-shadow: 0px 0px 5px white;
+  @include cardInterno($colorBg-WTF);
 }
+
+.linkDestacado::after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  inset: 2px;
+  border-radius: 8px;
+  @include cardExterno ($cyberblue);
+  
+}
+
 
 @media screen and (max-width: 1024px) {
-.link{
-  font-size: 13px;
-}
+  .link {
+    font-size: 13px;
+  }
 }
 
 /* Para smartphones com largura de 375px */
 @media screen and (max-width: 767px) {
-   .link{
-display: none;
-}
+  .link {
+    display: none;
+  }
 }

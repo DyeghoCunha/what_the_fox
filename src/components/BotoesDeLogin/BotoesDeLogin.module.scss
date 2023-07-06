@@ -8,7 +8,7 @@
   padding: 15px;
   border-radius: 8px;
 
-  backdrop-filter: blur(15px);
+  
   background: rgba($colorBg-WTF, 0.1);
   border: 1px solid rgba($colorBg-WTF, 0.5);
   border-top: 1px solid rgba($colorBg-WTF, 0.75);
@@ -19,7 +19,7 @@
   &_botoes {
     padding: 10px;
     border-radius: 8px;
-    backdrop-filter: blur(25px);
+   
     background: rgba($colorBg-WTF, 0.3);
     border: 1px solid rgba($colorBg-WTF, 0.5);
     border-top: 1px solid rgba($colorBg-WTF, 0.75);

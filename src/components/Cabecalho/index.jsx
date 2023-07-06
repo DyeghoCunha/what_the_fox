@@ -9,13 +9,25 @@ import BotaoGeral from '../BotãoGeral';
 import ModalCadastroUsuario from '../Modais/CadastroUsuario';
 import ModalLoginUsuario from '../Modais/LoginUsuario';
 import { FirebaseContext } from '../../common/context/FirebaseConfig';
+import ModalLoginFirebase from '../Modais/ModalLoginFirebase';
+import BotaoMenu from '../BotaoMenu';
+import { BsFillCartFill } from "react-icons/bs";
+import { MdFavorite } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faCartShopping, faHeart, faX, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Cabecalho() {
-  const { logado } = useContext(FirebaseContext)
+  const { logado, handleLogOut } = useContext(FirebaseContext)
   const [modalLogar, setModalLogar] = useState(false)
   const [modalRegistrar, setModalRegistrar] = useState(false)
 
+  const [menuHamburger, setMenuHamburger] = useState(false)
+
+  const handleMenuHamburger = () => {
+    setMenuHamburger(prev => !prev)
+  }
 
   const handleBusca = (termoBusca) => {
     console.log('Termo de busca:', termoBusca);
@@ -29,9 +41,9 @@ export default function Cabecalho() {
     setModalRegistrar(prev => !prev)
     console.log(modalRegistrar)
   }
-if(logado){
- console.log("Nao eh nulo") 
-}
+  if (logado) {
+    console.log("Cabecalho:Logado")
+  }
 
   return (
     <nav className={styles.cabecalho_container}>
@@ -41,33 +53,60 @@ if(logado){
 
         <div className={` ${styles.display} ${styles.links_container}`}>
 
-          <CabecalhoLink to={"/teste"}>
+          <CabecalhoLink to={"/"}>
             <div>Home</div>
           </CabecalhoLink>
 
-          <CabecalhoLink to={"/teste"}>
+          <CabecalhoLink to={"/artistas"}>
             <div>Os Artistas</div>
           </CabecalhoLink>
 
-          <CabecalhoLink to={"/teste"}>
+          <CabecalhoLink to={"/novidades"}>
             <div>Novidades</div>
           </CabecalhoLink>
 
-          <CabecalhoLink to={"/teste"}>
+          <CabecalhoLink to={"/promocoes"}>
             <div>Promoções</div>
           </CabecalhoLink>
 
         </div>
 
-        <div className={styles.logar} onClick={handleClickRegistrar}>
-          <BotaoGeral texto={"Login"} />
+        <Link to={"/favorito"}>
+          <div className={`${styles.logar} ${styles.esconde}`}>
+            <BotaoMenu link={"/favorito"} ><FontAwesomeIcon icon={faHeart} /></BotaoMenu>
+          </div>
+        </Link>
+
+        <Link to={"/carrinho"}>
+          <div className={`${styles.logar} ${styles.esconde}`}>
+            <BotaoMenu link={"/carrinho"} ><FontAwesomeIcon icon={faCartShopping} /></BotaoMenu>
+          </div>
+        </Link>
+
+        <div className={`${styles.logar} ${styles.aparece}`} onClick={handleMenuHamburger}>
+
+          {!menuHamburger && (
+            <BotaoMenu ><FontAwesomeIcon icon={faBars} /></BotaoMenu>
+          )}
+          {menuHamburger && (
+            <BotaoMenu ><FontAwesomeIcon icon={faX} /></BotaoMenu>
+          )}
+
         </div>
 
-        {modalRegistrar && (
-          <ModalLoginUsuario aberta={modalRegistrar} aoFechar={setModalRegistrar} />
+        {logado && (
+          <div className={`${styles.logar} ${styles.esconde}`} onClick={handleLogOut}>
+            <BotaoGeral texto={"LogOut"} />
+          </div>
         )}
-
-
+        {!logado && (
+          <div className={`${styles.logar} ${styles.esconde}`} onClick={handleClickLogar}>
+            <BotaoGeral texto={"Login"} />
+          </div>
+        )}
+        {modalLogar && (
+          <ModalLoginFirebase aoFechar={setModalLogar} />
+        )}
 
       </section>
 
@@ -76,7 +115,7 @@ if(logado){
       </div>
 
 
-      <Hamburger />
+      <Hamburger aberto={menuHamburger} modalLogin={setModalLogar} />
     </nav>
   )
 }

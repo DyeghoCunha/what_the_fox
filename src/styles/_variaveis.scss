@@ -53,6 +53,26 @@ $corBgBotaoShadowClara-WTF: rgb(179, 151, 144);
   border-left: 1px solid rgba($color, 0.75);
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
+@mixin cardInternoSemBlur($color) {
+
+
+  background: rgba($color, 0.3);
+  border: 1px solid rgba($color, 0.5);
+  border-top: 1px solid rgba($color, 0.75);
+  border-left: 1px solid rgba($color, 0.75);
+  box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.15);
+}
+
+@mixin cardExternoSemBlur($color){
+    
+ 
+  background: rgba($color, 0.1);
+  border: 1px solid rgba($color, 0.5);
+  border-top: 1px solid rgba($color, 0.75);
+  border-left: 1px solid rgba($color, 0.75);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
 
 
 $corCyano: rgba(68, 209, 201, 1);

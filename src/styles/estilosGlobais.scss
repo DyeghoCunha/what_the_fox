@@ -1,11 +1,15 @@
 @import-normalize;
 @import './variaveis';
 
+*{
+   text-decoration: none;
 
+}
  body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
   width: 100vw;
   background-color: rgb(11, 151, 104);
   //background-image: url(../assets/images/fundoPagina2.png) ;

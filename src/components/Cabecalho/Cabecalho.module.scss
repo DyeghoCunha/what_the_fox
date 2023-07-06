@@ -17,24 +17,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+gap: 40px;
+ 
 
   .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 55px;
+    width: fit-content;
   }
 
   .links_container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 40px;
-    margin-right: 40px;
+  
+    width: 600px;
+    
   }
 }
-
+.aparece{
+  display: none;
+}
 @media screen and (max-width: 767px) {
   .cabecalho_container {
     position: fixed;

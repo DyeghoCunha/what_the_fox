@@ -20,32 +20,30 @@ export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
   const [erroModal, setErroModal] = useState(false)
 
   //!_____Login de Usuario_____
-  const { setAberto } = useContext(FavoritoContext)
-  const { email, setEmail, password,setPassword,error,handleSignIn, handleSignUp, handleSubmitGoogle,
-  handleSubmitGithub, usuario,handleLogOut,handleSignUpComBandoDeDados} = useContext(FirebaseContext)
+ /*  const { setAberto } = useContext(FavoritoContext) */
+  const { email, setEmail, password, setPassword, error, handleSignIn, handleSignUp, handleSubmitGoogle,
+    handleSubmitGithub, usuario, handleSignUpComBandoDeDados, logado } = useContext(FirebaseContext)
 
 
   function aoSubmeterFormulario(evento) {
     evento.preventDefault()
     console.log("Enviou")
   }
-if(usuario){
-  console.log(`
-  ModalLogin-----
-  Erro: ${error}
-  Usuario: ${usuario}
-  Foto: ${usuario.photoURL}
-  Nome:${usuario.displayName}
-  
-  `)}
 
-  
+  /* if(usuario){
+    console.log(`
+    ModalLogin-----
+    Erro: ${error}
+    Usuario: ${usuario.uId}
+    Foto: ${usuario.photoURL}
+    Nome:${usuario.displayName}
+    `)} */
 
-  function aoFechar() {
-    setAberto(prev => !prev)
-    //setAbertaState(prev => !prev)
-  }
 
+  /*  function aoFechar() {
+     setAberto(prev => !prev)
+     //setAbertaState(prev => !prev)
+   } */
 
 
   return (
@@ -57,21 +55,21 @@ if(usuario){
         <div onClick={event => aoFechar(prev => !prev)} className={styles.fundoModal} />
 
         <div className={styles.janelaModal}>
-          <button onClick={handleLogOut} className={styles.botaoFecharModal}>X
+          <button onClick={event => aoFechar(prev => !prev)} className={styles.botaoFecharModal}>X
           </button>
-          <ContainerRGB aprovado={aprovado}>
+          <ContainerRGB aprovado={logado}>
             <section className={styles.container}>
               <div className={styles.container_foto}>
-                <MiniCardFechadura opacidade={0} />
+                <MiniCardFechadura opacidade={logado} />
               </div>
 
               <form className={styles.container_formulario}>
                 <h1 className={styles.container_formulario_titulo}>Faça seu Login</h1>
                 <div className={styles.container_formulario_nomeEmail}>
-                  <FormularioDeLogin emailValue={email}  emailOnChange={setEmail} senhaValue={password} senhaOnChange={setPassword}/>
+                  <FormularioDeLogin emailValue={email} emailOnChange={setEmail} senhaValue={password} senhaOnChange={setPassword} />
                 </div>
 
-                <div  className={styles.container_formulario_botaoRegistrar}>
+                <div className={styles.container_formulario_botaoRegistrar}>
                   <BotoesDeLogin githubLogin={handleSubmitGithub} googleLogin={handleSubmitGoogle} normalLogin={handleSignUpComBandoDeDados} />
                 </div>
 
