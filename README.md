@@ -26,7 +26,7 @@ Agradeço a todos que estão acompanhando esse processo e prometo compartilhar m
 | :placard: Vitrine.Dev |  [Minha Vitrine Dev](https://cursos.alura.com.br/vitrinedev/dyeghocunha)   |
 | -------------  | --- |
 | :sparkles: Nome        | **What the Fox**
-| :label: Tecnologias |   <img src="https://img.shields.io/badge/react-5CE1E6?style=for-the-badge&logo=react&logoColor=white"><img src="https://img.shields.io/badge/sass-F06292?style=for-the-badge&logo=sass&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+| :label: Tecnologias |   <img src="https://img.shields.io/badge/react-5CE1E6?style=for-the-badge&logo=react&logoColor=white"><img src="https://img.shields.io/badge/sass-F06292?style=for-the-badge&logo=sass&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"><img src="https://img.shields.io/badge/firebase-FEC927?style=for-the-badge&logo=firebase&logoColor=white">
 | 🎇: Bibliotecas | [Vanilla-Tilt](https://cdnjs.com/libraries/vanilla-tilt)
 | :rocket: URL         | [Projeto](what-the-fox.vercel.app)
 | :fire: Desafio     | [Conheça o Challenge Alura](https://www.alura.com.br/challenges?host=https://cursos.alura.com.br%22&_gl=1*1jo87p8*_ga*MTY2MTcyNjM0My4xNjczOTk2Mjc3*_ga_59FP0KYKSM*MTY4Nzg3MTQ5Ny4yMzEuMS4xNjg3ODcyMTU0LjI5LjAuMA..*_fplc*dVhYaUJIeEJYSmpKRjZnMDZlJTJCRkkybENrMnYycDZWRGhMY1d6czN3TVNudlZweGdXJTJCY0NyNEtqaDg2ZWZqclF6aXdxNVk5YXVXVk9GdWI0RkdJZ2JPcU1XdkVHeWolMkJYRlNQRkZKSCUyRnZES1ZPbGNEQ3QlMkY0R2U1M3pteWRVUSUzRCUzRA..)
