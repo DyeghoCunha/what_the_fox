@@ -129,11 +129,19 @@ Esses são os meus objetivos da semana:
 
 # :three: Terceira Semana 
 
+## Meus Objetivos
+- :white_check_mark: Passo 1 | Banco de Dados no Firebase
+- :white_check_mark: Passo 2 | Login com Google Firebase
+- :construction: Passo 3 | Arrumar Blur dos Modais
+
 Esses são os meus objetivos da semana: 
 
--
--
--
+- :construction: Passo 1 | Galeria de Produtos - Listagem via API
+- :construction: Passo 2 | Galeria de Produtos - Filtrar por categoria
+- :construction: Passo 3 | Galeria de Produtos - Filtrar por barra de pesquisa
+- :construction: Passo 4 | Modal de Produtos - Abrir / Fechar
+- :construction: Passo 5 | Modal "Produtos - Responsividade"
+- :construction: Passo 6 | Modal de Newsletter - Abrir / Fechar
 
 
 # :four: Quarta Semana 
