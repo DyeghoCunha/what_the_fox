@@ -10,7 +10,8 @@ export default function CampoTexto({ label, value, onChange, placeholder = label
   
   const [escondeSenha , setEscondeSenha] = useState(true)
 
-  const handleEscondeSenha = ()=>{
+  const handleEscondeSenha = (event)=>{
+    event.preventDefault()
 setEscondeSenha(prev => !prev) 
   }
 

@@ -75,15 +75,11 @@ export default function ModalLoginUsuario({ aberta, aoFechar, titulo }) {
         <>
           <div onClick={event => aoFechar(prev => !prev)} className={styles.fundoModal} />
           <div className={styles.janelaModal}>
-            <div className={styles.tituloModalWrapper}>
-              <h2 className={styles.tituloModal}>{titulo}</h2>
               <button onClick={event => aoFechar(prev => !prev)} className={styles.botaoFecharModal}>X
                 <div className={styles.botaoFecharModal_custom}>
                   <BotaoGeral texto={"X"} />
                 </div>
               </button>
-            </div>
-
             <ContainerRGB aprovado={aprovado}>
               <section className={styles.container}>
 

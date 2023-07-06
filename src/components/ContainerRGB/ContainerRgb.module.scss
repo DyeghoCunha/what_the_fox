@@ -6,17 +6,18 @@
   display: flex;
   width: 70vw;
   height: 70vh;
+
+
 }
 
 .container span {
   position: relative;
   width: inherit;
   height: inherit;
-  background: $colorBg-WTF;
-  border: 6px solid $colorBg-WTF;
-  border-radius: 8px;
 
+  border-radius: 8px;
   overflow: hidden;
+  @include cardExterno($colorBg-WTF);
 }
 
 .container span::before {
@@ -30,9 +31,9 @@
 .container span::after {
   content: '';
   position: absolute;
-  inset: 10px;
+  inset: 5px;
+  @include cardInterno($colorBg-WTF);
   background: $colorBg-WTF;
-  border: 5px solid $colorBg-WTF;
   border-radius: 8px;
   
 }
@@ -81,4 +82,44 @@
 }
 
 
+.container span {
+  position: relative;
+  width: inherit;
+  height: inherit;
+
+  border-radius: 8px;
+  overflow: hidden;
+  @include cardExterno($colorBg-WTF);
+}
+
+.container span::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+
+}
+
+.container span::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+ 
+}
+
+
+.container_conteudo{
+  position: absolute;
+  
+  inset: 7px;
+ 
+  background-color: $colorBg-WTF;
+  z-index: 10;
+  border-radius:8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 }

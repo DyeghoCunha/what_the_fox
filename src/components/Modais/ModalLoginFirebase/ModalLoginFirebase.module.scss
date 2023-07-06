@@ -1,0 +1,215 @@
+@import "../../../styles/variaveis";
+
+
+
+
+.janelaModal {
+  position: fixed;
+  padding: 60px;
+  background: transparent;
+  box-shadow: 4px 4px 24px -4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 90000000;
+}
+
+.fundoModal {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: rgba(101, 101, 101, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 8000000;
+}
+
+.botaoFecharModal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  top: 10px;
+  @include cardExterno($colorBg-WTF);
+  padding: 5px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-family: $fonte-normal-WTF;
+  right: 10px;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 99%;
+
+  &_foto {
+    width: 50%;
+    height: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+
+  &_formulario_titulo {
+    position: absolute;
+    top: -18px;
+
+    font-size: 30px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    font-family: $fonte-normal-WTF;
+    color: $colorLetra-Padrao-WTF;
+    letter-spacing: 5px;
+  }
+
+  &_formulario {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+
+
+    &_nomeEmail {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      margin: 10px;
+    }
+
+    &_botaoRegistrar {
+
+      width: fit-content;
+      height: fit-content;
+      padding: 5px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include cardInterno($colorBg-WTF);
+
+    }
+
+  }
+
+}
+
+.container_modalErro {
+  z-index: 900000000000;
+}
+
+
+@media screen and (max-width: 768px) {
+
+ .fundoModal {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(88, 87, 87, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 8000000;
+    overflow: hidden;
+
+  }
+  .janelaModal {
+    box-shadow: none;
+    border-radius: 8px;
+    backdrop-filter: blur(0px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 90000000;
+    overflow: hidden;
+  }
+  .botaoFecharModal {
+    top: 61px;
+    padding: 5px;
+    color: $colorLetra-Padrao-WTF;
+    right: 67px;
+    z-index: 10;
+  }
+
+  .container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &_foto {
+      display: none;
+    }
+
+
+    &_formulario_titulo {
+      position: absolute;
+      top: 23px;
+      font-size: 30px;
+      width: fit-content;
+      height: fit-content;
+      z-index: 10;
+      font-family: $fonte-normal-WTF;
+      color: $colorLetra-Padrao-WTF;
+      letter-spacing: 3px;
+    }
+
+    &_formulario {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+     
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: end;
+      padding-bottom: 20px;
+
+      &_nomeEmail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 10px;
+      
+      }
+
+      &_botaoRegistrar {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include cardInterno($colorBg-WTF);
+      }
+
+    }
+
+  }
+
+  .container_modalErro {
+    z-index: 900000000000;
+  }
+
+}

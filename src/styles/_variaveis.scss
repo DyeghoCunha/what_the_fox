@@ -30,9 +30,29 @@ $corBgBotaoAzulEscuro-WTF: rgba(20, 47, 60, 1);
 $colorLetra-Padrao-WTF: rgba(100, 70, 81, 1);
 //$colorBg-WTF:rgba(238, 219, 188, 1);
 $colorBg-WTF:rgba(255, 235, 207, 1);
+$colorBg-WTF-Verde:rgb(11, 151, 104);
 $corBgBotaoShadowClara-WTF: rgb(179, 151, 144);
 
+@mixin cardInterno($color) {
 
+  backdrop-filter: blur(25px);
+  background: rgba($color, 0.3);
+  border: 1px solid rgba($color, 0.5);
+  border-top: 1px solid rgba($color, 0.75);
+  border-left: 1px solid rgba($color, 0.75);
+  box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.25),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.15);
+}
+
+@mixin cardExterno($color){
+    
+  backdrop-filter: blur(15px);
+  background: rgba($color, 0.1);
+  border: 1px solid rgba($color, 0.5);
+  border-top: 1px solid rgba($color, 0.75);
+  border-left: 1px solid rgba($color, 0.75);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
 
 
 $corCyano: rgba(68, 209, 201, 1);

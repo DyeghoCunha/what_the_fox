@@ -43,6 +43,7 @@ const FirebaseProvider = (({ children }) => {
   const [usuario, setUsuario] = useState(null);
   const [armazenaInput, setArmazenaInput] = useState({})
   const [logado, setLogado] = useState(false)
+  const [usuarioUid, setUsuarioUid] = useState(null)
 
   const auth = getAuth();
 
@@ -115,6 +116,58 @@ const FirebaseProvider = (({ children }) => {
 
   };
 
+  //TODO ----- Adicionando o Usuario Criado ao Banco de Dados
+  const handleSignUpComBandoDeDados = (event) => {
+    event.preventDefault()
+    createUserWithEmailAndPassword(auth, email, password)
+
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("Usuário registrado:", user);
+
+        //TODO------ Pegar o onAutentication, salvar o uId em um useState, e acessar as pastas Favorito e Carrinho
+        addDoc(collection(database, `userDb/user/${user.uid}`), {
+          uId: user.uid,
+          email: user.email,
+          nome: user.displayName,
+          foto: user.photoURL,
+          carrinho: [],
+          favorito: [],
+          saldo: 300,
+        })
+          .then(() => {
+            console.log("Salvo no DB")
+          })
+          .catch((err) => {
+            alert(err.message)
+          })
+
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("Código de erro:", errorCode);
+        console.log("Mensagem de erro:", errorMessage);
+
+        if (errorCode === "auth/invalid-email") {
+          setError("O email fornecido é inválido ou possui um formato incorreto.");
+        } else if (errorCode === "auth/email-already-in-use") {
+          setError("O email fornecido já está em uso");
+        } else if (errorCode === "auth/weak-password") {
+          setError("A senha fornecida é fraca. Por favor, escolha uma senha mais forte.");
+        } else if (errorCode === "auth/operation-not-allowed") {
+          setError("A criação de contas não está habilitada no momento.");
+        } else {
+          setError("Ocorreu um erro durante o processo de registro. Por favor, tente novamente mais tarde.");
+        }
+      });
+
+  };
+
+
+
+
+
   //*___________________Registro com conta do Google________________________________________
   const handleSubmitGoogle = (event) => {
 
@@ -124,9 +177,12 @@ const FirebaseProvider = (({ children }) => {
       .then((userCredential) => {
         const user = userCredential.user;
         setUsuario(user)
+        //!____________________________________________________
+
+
+        //!_____________________________________________
         console.log("Usuário registrado:", user);
       })
-
       .catch((error) => {
 
         const errorCode = error.code;
@@ -288,14 +344,13 @@ const FirebaseProvider = (({ children }) => {
   const ageQuery = query(collectionRef, where("idade", "<", 41))
   const getDataQuery = (event) => {
     event.preventDefault()
-
     /*       getDocs(ageQuery)
           .then((response) => {
             console.log(response.docs.map((item) => {
               return item.data()}))}) */
 
     onSnapshot(ageQuery, (response) => {
-      console.log(response.docs.map((item) => {
+      console.log("Querry: ", response.docs.map((item) => {
         return item.data()
       }))
     })
@@ -320,205 +375,248 @@ const FirebaseProvider = (({ children }) => {
 
   //?_____Security Log In Log Off_______________________________________
   useEffect(() => {
-    onSnapshot(collectionRef, (data) => {
-      console.log(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
+    /*  onSnapshot(collectionRef, (data) => {
+       console.log("UsuariosDB:", data.docs.map((item) => {
+         return { ...item.data(), id: item.id }
+       }))
+     })  */
+
     //No Firebase Rules colocar allow write: if request.auth != null;
     //                           allow read: if request.auth !=null;
     //Condicionais relacionadas ao Se está logado ou não
     //TODO---- Colocar para poder acessar o Carrinho e os Favoritos e para Favoritar
     onAuthStateChanged(auth, (data) => {
       if (data) {
-
         setLogado(true)
-        console.log(data)
-        console.log("Logged in ")
+        console.log("onAuthStateChanged: ", data.uid)
+        //console.log("Logged in ")
+        //!___APAGAR_________________________
+        setUsuario(data)
+        setUsuarioUid(data.uid)
+        //!___APAGAR_________________________
       }
       else {
-        console.log("Not Logged in")
+        //console.log("Not Logged in")
       }
+
     })
   }, [])
-  const handleLogOut = () => {
-    setLogado(false)
-    signOut(auth)
-  }
-  //?_____Security Log In Log Off_______________________________________
-  //*____________________________________________________________________________________________________________
 
-  //!_____________Fim de configuração do Banco de Dados (FIRESTORE)_________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!_________________Ainda Falta muica coisa, eu não sei como deletar arquivos, só incluir_____
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!_____Configuração do Firebase Storage (Arquivos)_______________________________________________
-  const handleInputFileFireStorage = (event) => {
-    event.preventDefault();
+//TODO_________MUUIITO IMPORTANTE ____Alterar dados do Favoritos_____
 
-    const imagemRef = ref(storage, `pastaExemplo/${armazenaInput.name}`)
-    const uploadTask = uploadBytesResumable(imagemRef, armazenaInput)
+/* useEffect(()=>{
 
-    uploadTask.on("state_changed", (snapshot) => {
-      //verifica o carregamento
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log("UID: ", usuarioUid)
 
-      console.log('Upload is ' + progress + '% done');
-
-    }, (error) => {
-      console.log(error.message)
-    }, () => {
-
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        console.log('File available at', downloadURL);
-      });
-    }
-    )
-
-
-    /*//TODO-- Verifica o Tamanho da imagem, para adicionar depois na inclusão
-    
-     const reader = new FileReader();
-    reader.onload = (e) => {
-      const image = new Image();
-      image.src = e.target.result;
-  
-      image.onload = () => {
-        const width = image.width;
-        const height = image.height;
-  
-        console.log('Largura:', width);
-        console.log('Altura:', height);
-      };
-    };
-  reader.readAsDataURL(armazenaInput); 
-  */
-
-  };
-  //!_____FIM____Configuração do Firebase Storage___________________________________________________
-
-
-
-
-  //!_____BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
-
-  const [foxDb, setFoxDb] = useState([])
-  const [goblinDb, setGoblinDb] = useState([])
-  const [apesDb, setApesDb] = useState([])
-  const [bladeMasterDb, setBladeMasterDb] = useState([])
-  const [hempDb, setHempDb] = useState([])
-  const [emoteDb, setEmoteDb] = useState([])
-
-
-
-
-  const collectionFox = collection(database, "Fox")
-  const collectionGoblin = collection(database, "Goblins")
-  const collectionApes = collection(database, "Apes")
-  const collectionBladeMasters = collection(database, "BladeMasters")
-  const collectionHemps = collection(database, "Hemps")
-  const collectionEmotes = collection(database, "Emotes")
-
-  const raposa = dados.Emotes
-
-  //?____Add Dados no Banco___
-  const handleAddDadosNoBandoDeDados = (event) => {
-    event.preventDefault()
-
-    for (let i = 0; i <= raposa.length; i++) {
-      addDoc(collectionEmotes, {
-        id: raposa[i].id,
-        raca: raposa[i].raca,
-        classe: raposa[i].classe,
-        valor: raposa[i].valor,
-        nome: raposa[i].nome,
-        //frase: raposa[i].frase,
-        imagem: raposa[i].imagem,
-        quantidade: raposa[i].quantidade,
-        favorito: raposa[i].favorito
+    getDocs(collection(database, `userDb/user/${usuarioUid}`))
+      .then((response) => {
+        
+        setUsuario(response.docs.map((item) => {
+          return item.id 
+        }))
       })
-        .then(() => {
-          console.log(raposa[i].nome)
-          // alert("Data Added")
-        })
-        .catch((err) => {
-          alert(err.message)
-        })
+    
+},[usuarioUid])
+
+useEffect(()=>{
+  if(usuario){
+console.log("UPDATE ID: ", usuario[0])
+const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0])
+ updateDoc(docToUpdate, {
+     favorito:[{DeucertoPorra:"SIM"}]
+    })
+      .then(() => {
+        alert("Atualizado")
+      })
+      .catch((err) => {
+        alert(err.message)
+      }) 
+   
+  }
+}, [usuario]) */
+
+//TODO_________MUUIITO IMPORTANTE ____Alterar dados do Favoritos_____
+
+
+
+    const handleLogOut = () => {
+      setLogado(false)
+      signOut(auth)
     }
-  }
-//Chamar os dados
-  useEffect(() => {
-    onSnapshot(collectionFox, (data) => {
-      setFoxDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionGoblin, (data) => {
-      setGoblinDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionApes, (data) => {
-      setApesDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionBladeMasters, (data) => {
-      setBladeMasterDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionHemps, (data) => {
-      setHempDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionEmotes, (data) => {
-      setEmoteDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
+    //?_____Security Log In Log Off_______________________________________
+    //*____________________________________________________________________________________________________________
 
-  }, [])
+    //!_____________Fim de configuração do Banco de Dados (FIRESTORE)_________________________________
+    //!___________________________________________________________________________________________
+    //!___________________________________________________________________________________________
+    //!___________________________________________________________________________________________
+    //!_________________Ainda Falta muica coisa, eu não sei como deletar arquivos, só incluir_____
+    //!___________________________________________________________________________________________
+    //!___________________________________________________________________________________________
+    //!___________________________________________________________________________________________
+    //!___________________________________________________________________________________________
+    //!_____Configuração do Firebase Storage (Arquivos)_______________________________________________
+    const handleInputFileFireStorage = (event) => {
+      event.preventDefault();
 
-  /* 
-  
-  console.log("FoxDB:", foxDb)
-  console.log("GoblinDb:", goblinDb)
-  console.log("ApeDb:", apesDb)
-  console.log("BladeMansterDb:", bladeMasterDb)
-  console.log("HempDb:", hempDb)
-  console.log("EmoteDb:", emoteDb)
-   */
-   //!_____FIM DO BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
+      const imagemRef = ref(storage, `pastaExemplo/${armazenaInput.name}`)
+      const uploadTask = uploadBytesResumable(imagemRef, armazenaInput)
 
-  //!__________________Valores para o Provider__________________________________
+      uploadTask.on("state_changed", (snapshot) => {
+        //verifica o carregamento
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 
-  const value = {
-    logado,email, setEmail, password, setPassword, nome, setNome, idade, setIdade, error, setError, handleSignUp, handleSignIn, handleLogOut,
-    handleSubmitGoogle, handleSubmitGithub, usuario, handleAddDadosComPasta, handleAddDados, getDataQuery, getData, updateData, deleteData,
-    armazenaInput, setArmazenaInput, handleInputFileFireStorage, handleAddDadosNoBandoDeDados,
-    //Baco de Dados
-    foxDb,goblinDb,apesDb,bladeMasterDb,hempDb,emoteDb,
-  }
+        console.log('Upload is ' + progress + '% done');
 
-  //!___________________________________________________________________________
+      }, (error) => {
+        console.log(error.message)
+      }, () => {
+
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log('File available at', downloadURL);
+        });
+      }
+      )
 
 
-  return (
-    <FirebaseContext.Provider value={value}>
-      {children}
-    </FirebaseContext.Provider>
-  )
-})
+      /*//TODO-- Verifica o Tamanho da imagem, para adicionar depois na inclusão
+      
+       const reader = new FileReader();
+      reader.onload = (e) => {
+        const image = new Image();
+        image.src = e.target.result;
+    
+        image.onload = () => {
+          const width = image.width;
+          const height = image.height;
+    
+          console.log('Largura:', width);
+          console.log('Altura:', height);
+        };
+      };
+    reader.readAsDataURL(armazenaInput); 
+    */
+
+    };
+    //!_____FIM____Configuração do Firebase Storage___________________________________________________
 
 
-export { FirebaseContext, FirebaseProvider }
+
+
+    //!_____BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
+
+    const [foxDb, setFoxDb] = useState([])
+    const [goblinDb, setGoblinDb] = useState([])
+    const [apesDb, setApesDb] = useState([])
+    const [bladeMasterDb, setBladeMasterDb] = useState([])
+    const [hempDb, setHempDb] = useState([])
+    const [emoteDb, setEmoteDb] = useState([])
+
+
+
+
+    const collectionFox = collection(database, "Fox")
+    const collectionGoblin = collection(database, "Goblins")
+    const collectionApes = collection(database, "Apes")
+    const collectionBladeMasters = collection(database, "BladeMasters")
+    const collectionHemps = collection(database, "Hemps")
+    const collectionEmotes = collection(database, "Emotes")
+
+    const raposa = dados.Emotes
+
+    //?____Add Dados no Banco___
+    const handleAddDadosNoBandoDeDados = (event) => {
+      event.preventDefault()
+
+      for (let i = 0; i <= raposa.length; i++) {
+        addDoc(collectionEmotes, {
+          id: raposa[i].id,
+          raca: raposa[i].raca,
+          classe: raposa[i].classe,
+          valor: raposa[i].valor,
+          nome: raposa[i].nome,
+          //frase: raposa[i].frase,
+          imagem: raposa[i].imagem,
+          quantidade: raposa[i].quantidade,
+          favorito: raposa[i].favorito
+        })
+          .then(() => {
+            console.log(raposa[i].nome)
+            // alert("Data Added")
+          })
+          .catch((err) => {
+            alert(err.message)
+          })
+      }
+    }
+    //Chamar os dados
+    useEffect(() => {
+      onSnapshot(collectionFox, (data) => {
+        setFoxDb(data.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        }))
+      })
+      onSnapshot(collectionGoblin, (data) => {
+        setGoblinDb(data.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        }))
+      })
+      onSnapshot(collectionApes, (data) => {
+        setApesDb(data.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        }))
+      })
+      onSnapshot(collectionBladeMasters, (data) => {
+        setBladeMasterDb(data.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        }))
+      })
+      onSnapshot(collectionHemps, (data) => {
+        setHempDb(data.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        }))
+      })
+      onSnapshot(collectionEmotes, (data) => {
+        setEmoteDb(data.docs.map((item) => {
+          return { ...item.data(), id: item.id }
+        }))
+      })
+
+    }, [])
+
+    /* 
+    
+    console.log("FoxDB:", foxDb)
+    console.log("GoblinDb:", goblinDb)
+    console.log("ApeDb:", apesDb)
+    console.log("BladeMansterDb:", bladeMasterDb)
+    console.log("HempDb:", hempDb)
+    console.log("EmoteDb:", emoteDb)
+     */
+    //!_____FIM DO BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
+
+    //!__________________Valores para o Provider__________________________________
+
+    const value = {
+      logado, email, setEmail, password, setPassword, nome, setNome, idade, setIdade, error, setError, handleSignUp, handleSignIn, handleLogOut,
+      handleSubmitGoogle, handleSubmitGithub, handleSignUpComBandoDeDados, usuario, handleAddDadosComPasta, handleAddDados, getDataQuery, getData, updateData, deleteData,
+      armazenaInput, setArmazenaInput, handleInputFileFireStorage, handleAddDadosNoBandoDeDados,
+      //Baco de Dados
+      foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb,
+    }
+
+    //!___________________________________________________________________________
+
+
+    return (
+      <FirebaseContext.Provider value={value}>
+        {children}
+      </FirebaseContext.Provider>
+    )
+  })
+
+
+  export { FirebaseContext, FirebaseProvider }
 
 
 

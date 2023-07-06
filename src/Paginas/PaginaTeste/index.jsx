@@ -4,11 +4,15 @@ import BotaoGeral from '../../components/BotãoGeral';
 import { DiGithubBadge } from "react-icons/di";
 import styles from "./PaginaTeste.module.scss"
 import BotoesDeLogin from '../../components/BotoesDeLogin';
-import FormualrioDeLogin from '../../components/FormularioDeLogin';
+import FormularioDeLogin from '../../components/FormularioDeLogin';
+import ModalLoginUsuario from '../../components/Modais/LoginUsuario';
+import ModalLoginFirebase from '../../components/Modais/ModalLoginFirebase';
 
 
 
 export default function PaginaTeste() {
+
+  const [teste, setTeste] = useState("")
 
 const logGitHub = ()=>{
   console.log("GitHub")
@@ -24,8 +28,7 @@ const normalLogin = ()=>{
 
     <>
 <div className={styles.container}>
-  <FormualrioDeLogin/>
-<BotoesDeLogin githubLogin={logGitHub} googleLogin={logGoogle} normalLogin={normalLogin}/>
+<ModalLoginFirebase/>
 </div>
 
     </>
