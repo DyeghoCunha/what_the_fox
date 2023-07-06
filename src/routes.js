@@ -20,19 +20,19 @@ export default function AppRoutes() {
     <BrowserRouter>
 <FirebaseProvider>
   <Cabecalho/>
-     {/* <BannerProvider>
+      <BannerProvider>
         <Banner />
       </BannerProvider>
- */}
+ 
       <FavoritoProvider>
 
         <Routes>
-          <Route path="/teste" element={<PaginaInicial />} />
-          <Route path="/" element={<PaginaTeste />} />
+          <Route path="/" element={<PaginaInicial />} />
+          <Route path="/teste" element={<PaginaTeste />} />
         </Routes>
 
 
-    {/*   <Footer />  */}
+    <Footer /> 
 
       </FavoritoProvider>
 </FirebaseProvider>      
