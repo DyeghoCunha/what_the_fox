@@ -1,0 +1,70 @@
+@import '../../../../styles/variaveis';
+
+.container {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include cardExternoSemBlur($colorBg-WTF);
+  border-radius: 8px;
+  padding: 10px;
+
+  &_informacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include cardInternoSemBlur($colorBg-WTF);
+    border-radius: 8px;
+
+    &_titulo {
+      width: 100%;
+      text-align: center;
+      @include tituloPadrao();
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    &_subtitulo {
+      font-family: $fonte-normal-WTF-Fox;
+      color: $colorLetra-Padrao-WTF;
+      margin: 0px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    &_lista {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      padding: 0px;
+      margin: 0px 0px 5px 0px;
+      position: relative;
+      list-style-type: none;
+      gap: 1px;
+
+      & li {
+
+        margin: 0px 1px;
+        font-family: $fonte-normal-WTF-Fox;
+        color: $colorLetra-Padrao-WTF;
+        padding: 5px 10px;
+        @include cardExternoSemBlur($cyberblue);
+
+        &:first-of-type {
+          border-radius: 8px 8px 0px 0px;
+        }
+        &:last-of-type{
+          border-radius: 0px 0px 8px 8px;
+        }
+
+        &:hover {
+          @include cardInternoSemBlur($cyberblue);
+        }
+      }
+    }
+  }
+}

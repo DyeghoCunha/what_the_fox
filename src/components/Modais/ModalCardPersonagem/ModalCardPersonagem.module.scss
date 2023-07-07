@@ -1,101 +1,781 @@
 @import '../../../styles/variaveis';
 
 
-.container {
-  width: 300px;
-  height: 210px;
-  border-radius: 8px;
-  padding: 10px;
-  @include cardExternoSemBlur($colorBg-WTF);
+.container_modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 90000000;
+}
 
-  &_formulario {
-    width: inherit;
-    height: inherit;
-    border-radius: 8px;
+.container {
+  width: 920px;
+  height: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorBg-WTF-Verde;
+  border: 2px solid;
+ // position: relative;
+  border-radius: 10px;
+
+  /*  box-shadow: -4px -4px 10px rgba($colorBg-WTF, 0.5),
+    4px 4px 10px rgba(black, 0.25), -4px -4px 20px rgba($colorBg-WTF, 0.5),
+    4px 4px 25px rgba(black, 0.25); */
+
+  &_imagem {
+    width: fit-content;
+    height: fit-content;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include cardInternoSemBlur($colorBg-WTF);
+    position: relative;
+    border-radius: 10px;
+  }
 
-    &_titulo {
+
+  &_imagem::after {
+    content: "";
+    position: absolute;
+    width:100%;
+    top:0;
+    left: 0;
+    inset: 10px;
+    border: 1px solid rgba($colorBg-WTF, 0.5);
+    border-top: 1px solid rgba($colorBg-WTF, 0.75);
+    border-left: 1px solid rgba($colorBg-WTF, 0.75);
+
+    border-radius: 10px;
+    box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.45),
+      inset 4px 4px 10px rgba(0, 0, 0, 0.25), ;
+  }
+
+  &_imagem_personagem {
+    position: absolute;
+    height: auto;
+    width: 300px;
+
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+
+    background: rgba($cyberblue, 0.1);
+    border: 1px solid rgba($colorBg-WTF, 0.5);
+    border-top: 1px solid rgba($colorBg-WTF, 0.75);
+    border-left: 1px solid rgba($colorBg-WTF, 0.75);
+
+    box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.25),
+      4px 4px 10px rgba(0, 0, 0, 0.45), ;
+  }
+
+  .nome_do_personagem {
+    position: absolute;
+    width: 100%;
+    top: 17px;
+    height: fit-content;
+    text-align: center;
+
+    font-family: $fonte-normal-WTF;
+    color: $cyberblue;
+    text-shadow:
+      -1px -1px 0 black,
+      -1px 1px 0 black,
+      1px -1px 0 black,
+      1px 1px 0 black;
+    font-size: 2vw;
+    letter-spacing: 5px;
+  }
+//___________________________________________
+  .informacoes {
+
+    width: 45vw;
+    height: 27vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+
+
+    .titulo {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: $fonte-normal-WTF-Fox;
+      font-size: 2.2vw;
+      color: $colorLetra-Padrao-WTF;
+      padding: 0;
+      margin-top: 10px;
+
+    }
+
+    .subtitulo {
       width: 100%;
       height: fit-content;
       text-align: center;
-      font-size: 22px;
-      @include tituloPadrao();
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+      font-family: $fonte-normal-WTF;
+      color: $colorBg-WTF;
+      text-shadow:
+        -1px -1px 0 black,
+        -1px 1px 0 black,
+        1px -1px 0 black,
+        1px 1px 0 black;
+      font-size: 2vw;
+      letter-spacing: 5px;
     }
 
-    &_fieldset {
-      width: 85%;
-      height: 110px;
-      border-radius: 8px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      justify-items: center;
-      align-items: center;
-      margin-bottom: 10px;
-      @include cardExternoSemBlur($colorBg-WTF);
-      gap: 4px;
 
-      &_legenda {
+
+    .titulo_lista {
+      width: 100%;
+      text-align: center;
+      font-family: $fonte-normal-WTF-Fox;
+      color: $colorLetra-Padrao-WTF;
+      font-size: 1.5vw;
+      padding: 0;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .container_lista {
+      width: 100%;
+      height: fit-content;
+      padding: 0;
+      margin-left: 3vw;
+      margin-bottom: 0;
+
+      li {
+        width: 94%;
         font-family: $fonte-normal-WTF-Fox;
         color: $colorLetra-Padrao-WTF;
-        border-radius: 8px;
-        padding: 1px 4px;
-        @include cardInternoSemBlur($colorBg-WTF);
       }
 
-      &_checkbox {
-        width: 100%;
-        height: fit-content;
-        text-align: center;
-        font-family: $fonte-normal-WTF-Fox;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 50;
-        color: $colorLetra-Padrao-WTF;
+    }
+
+  }
+
+
+}
+
+.container_formulario {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  &_checkbox {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+    background-color: #FFF0DA;
+    border-radius: 8px;
+    border-top: 1px solid #fae9d0;
+    border-left: 1px solid #fae9d0;
+    border-bottom: 1px solid #f0dcc3;
+    border-right: 1px solid #f0dcc3;
+    box-shadow:
+      -5px -5px 10px rgba(#fdeed8, 1),
+      10px 10px 20px rgba(#ebd8bf, 1);
+
+    &_item {
+      width: fit-content;
+      height: fit-content;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: $fonte-normal-WTF-Fox;
+      color: $colorLetra-Padrao-WTF;
+      font-size: 1em;
+
+      label {
+        margin-left: 5px;
 
         &:hover {
-          @include cardExternoSemBlur($cyberblue);
-        }
 
-        &:active {
-          @include cardInternoSemBlur($cyberblue);
-        }
-
-        @include cardInternoSemBlur($colorBg-WTF);
-
-        & label {
-          cursor: pointer;
-        }
-
-        & input[type="checkbox"] {
-          display: none;
-        }
-
-        & input:checked+label {
           color: $cyberblue;
-        }
+          font-family: $fonte-normal-WTF-Fox;
+          font-size: 1em;
 
-        &:nth-of-type(1) {
-          border-radius: 8px 0px 0px 0px;
-        }
-
-        &:nth-of-type(2) {
-          border-radius: 0px 8px 0px 0px;
-        }
-
-        &:nth-of-type(8) {
-          border-radius: 0px 0px 8px 0px;
-        }
-
-        &:nth-of-type(7) {
-          border-radius: 0px 0px 0px 8px;
+          text-shadow:
+            -1px -1px 0 black,
+            -1px 1px 0 black,
+            1px -1px 0 black,
+            1px 1px 0 black;
         }
       }
     }
   }
+
+  &_valor {
+    display: flex;
+    width: 173px;
+    height: 90%;
+    justify-content: end;
+
+    &_numero {
+
+      width: 90%;
+      text-align: center;
+
+      height: fit-content;
+      transform: translate(57%, -50%) rotateZ(-25deg);
+      font-family: $fonte-normal-WTF ;
+      color: $colorLetra-Padrao-WTF;
+      font-size: 3vw;
+      text-shadow:
+        -1px -1px 0 white,
+        -1px 1px 0 white,
+        1px -1px 0 white,
+        1px 1px 0 white;
+    }
+
+    img {
+      width: 8vw;
+      height: 10vh;
+    }
+  }
+
+  .separador {
+    width: 100%;
+    height: 38%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1139px) {
+
+  .container {
+    width: 90vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_imagem {
+      width: 50vw;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+      border-radius: 10px;
+    }
+
+    &_imagem::after {
+      content: "";
+      position: absolute;
+      inset: 1vw;
+    }
+
+    &_imagem_personagem {
+      width: 94%;
+      height: 94%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_imagem {
+      width: 60vw;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+      border-radius: 10px;
+    }
+
+    &_imagem::after {
+      content: "";
+      position: absolute;
+      inset: 1vw;
+      border: 1px solid rgba($colorBg-WTF, 0.5);
+      border-top: 1px solid rgba($colorBg-WTF, 0.75);
+      border-left: 1px solid rgba($colorBg-WTF, 0.75);
+
+      border-radius: 10px;
+      box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.45),
+        inset 4px 4px 10px rgba(0, 0, 0, 0.25), ;
+    }
+
+    &_imagem_personagem {
+      width: 94%;
+      height: 94%;
+
+
+      border-radius: 10px;
+      backdrop-filter: blur(25px);
+
+      background: rgba($cyberblue, 0.1);
+      border-top: 1px solid rgba($colorBg-WTF, 0.75);
+      border-left: 1px solid rgba($colorBg-WTF, 0.75);
+      box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.25),
+        4px 4px 10px rgba(0, 0, 0, 0.45), ;
+    }
+
+    .nome_do_personagem {
+      position: absolute;
+      width: 100%;
+      top: 17px;
+      height: fit-content;
+      text-align: center;
+
+      font-family: $fonte-normal-WTF;
+      color: $cyberblue;
+      text-shadow:
+        -1px -1px 0 black,
+        -1px 1px 0 black,
+        1px -1px 0 black,
+        1px 1px 0 black;
+      font-size: 3.5vw;
+    }
+
+    .informacoes {
+
+      width: 60vw;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: top;
+      align-items: center;
+
+
+      .titulo {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: $fonte-normal-WTF-Fox;
+        font-size: 3.5vw;
+        color: $colorLetra-Padrao-WTF;
+        padding: 0;
+        margin-top: 10px;
+
+      }
+
+      .subtitulo {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 0;
+        font-family: $fonte-normal-WTF;
+        color: $colorBg-WTF;
+        text-shadow:
+          -1px -1px 0 black,
+          -1px 1px 0 black,
+          1px -1px 0 black,
+          1px 1px 0 black;
+        font-size: 2vw;
+        letter-spacing: 5px;
+      }
+
+
+
+      .titulo_lista {
+        width: 100%;
+        text-align: center;
+        font-family: $fonte-normal-WTF-Fox;
+        color: $colorLetra-Padrao-WTF;
+        font-size: 2.5vw;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .container_lista {
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        margin-left: 3vw;
+        margin-bottom: 0;
+
+        li {
+          width: 94%;
+          font-family: $fonte-normal-WTF-Fox;
+          color: $colorLetra-Padrao-WTF;
+        }
+
+      }
+
+    }
+
+
+    .container_formulario {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+      &_checkbox {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 10px;
+        background-color: #FFF0DA;
+        border-radius: 8px;
+        border-top: 1px solid #fae9d0;
+        border-left: 1px solid #fae9d0;
+        border-bottom: 1px solid #f0dcc3;
+        border-right: 1px solid #f0dcc3;
+        box-shadow:
+          -5px -5px 10px rgba(#fdeed8, 1),
+          10px 10px 20px rgba(#ebd8bf, 1);
+
+        &_item {
+          width: fit-content;
+          height: fit-content;
+          margin: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-family: $fonte-normal-WTF-Fox;
+          color: $colorLetra-Padrao-WTF;
+          font-size: 1em;
+
+          label {
+            margin-left: 5px;
+
+            &:hover {
+
+              color: $cyberblue;
+              font-family: $fonte-normal-WTF-Fox;
+              font-size: 1em;
+
+              text-shadow:
+                -1px -1px 0 black,
+                -1px 1px 0 black,
+                1px -1px 0 black,
+                1px 1px 0 black;
+            }
+          }
+        }
+      }
+
+      &_valor {
+        display: flex;
+        width: 100%;
+        height: 90%;
+        justify-content: center;
+
+        &_numero {
+          position: absolute;
+          bottom: -10px;
+
+          transform: rotateZ(-20deg);
+          width: fit-content;
+          height: fit-content;
+          font-family: $fonte-normal-WTF ;
+          color: $colorLetra-Padrao-WTF;
+          font-size: 4vw;
+          text-shadow:
+            -1px -1px 0 white,
+            -1px 1px 0 white,
+            1px -1px 0 white,
+            1px 1px 0 white;
+
+        }
+
+        img {
+          margin-right: 0px;
+          margin-left: 40px;
+          padding: 0;
+          width: 7vw;
+        }
+
+
+      }
+    }
+
+  }
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_imagem {
+      margin-top: 10%;
+
+      width: 90vw;
+
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .nome_do_personagem {
+      position: absolute;
+      width: 100%;
+      top: 17px;
+      height: fit-content;
+      text-align: center;
+
+      font-family: $fonte-normal-WTF;
+      color: $cyberblue;
+      text-shadow:
+        -1px -1px 0 black,
+        -1px 1px 0 black,
+        1px -1px 0 black,
+        1px 1px 0 black;
+      font-size: 5.5vw;
+    }
+
+    .informacoes {
+
+      width: 100vw;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: top;
+      align-items: center;
+
+
+      .titulo {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: $fonte-normal-WTF-Fox;
+        font-size: 5.5vw;
+        color: $colorLetra-Padrao-WTF;
+        padding: 0;
+        margin-top: 10px;
+
+      }
+
+      .subtitulo {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 0;
+        font-family: $fonte-normal-WTF;
+        color: $colorBg-WTF;
+        text-shadow:
+          -1px -1px 0 black,
+          -1px 1px 0 black,
+          1px -1px 0 black,
+          1px 1px 0 black;
+        font-size: 5vw;
+        letter-spacing: 5px;
+      }
+
+
+
+      .titulo_lista {
+        width: 100%;
+        text-align: center;
+        font-family: $fonte-normal-WTF-Fox;
+        color: $colorLetra-Padrao-WTF;
+        font-size: 5.5vw;
+        padding: 0;
+        margin-top: 0px;
+        margin-bottom: 0;
+      }
+
+      .container_lista {
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        margin-left: 10vw;
+        margin-bottom: 0;
+
+        li {
+          font-size: 12px;
+          font-family: $fonte-normal-WTF-Fox;
+          color: $colorLetra-Padrao-WTF;
+        }
+
+      }
+
+    }
+
+
+    .container_formulario {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      margin-top: 20px;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+
+
+      &_checkbox {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 10px;
+        background-color: #FFF0DA;
+        border-radius: 8px;
+        border-top: 1px solid #fae9d0;
+        border-left: 1px solid #fae9d0;
+        border-bottom: 1px solid #f0dcc3;
+        border-right: 1px solid #f0dcc3;
+        box-shadow:
+          -5px -5px 10px rgba(#fdeed8, 1),
+          10px 10px 20px rgba(#ebd8bf, 1);
+
+        &_item {
+          width: fit-content;
+          height: fit-content;
+          margin: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-family: $fonte-normal-WTF-Fox;
+          color: $colorLetra-Padrao-WTF;
+          font-size: 5vw;
+
+          label {
+            margin-left: 5px;
+
+            &:hover {
+
+              color: $cyberblue;
+              font-family: $fonte-normal-WTF-Fox;
+              font-size: 1em;
+              cursor: pointer;
+              text-shadow:
+                -1px -1px 0 black,
+                -1px 1px 0 black,
+                1px -1px 0 black,
+                1px 1px 0 black;
+            }
+          }
+        }
+      }
+
+      .separador {
+
+
+
+        bottom: 0px;
+
+        padding-bottom: 10px;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+      }
+
+      &_valor {
+        position: absolute;
+        display: flex;
+        width: 50%;
+        height: fit-content;
+        left: 0;
+        justify-content: center;
+
+        &_numero {
+          position: absolute;
+          transform: translate(-21%, 30%) rotateZ(-20deg);
+          width: fit-content;
+          height: fit-content;
+          font-family: $fonte-normal-WTF ;
+          color: $colorLetra-Padrao-WTF;
+          font-size: 12vw;
+          text-shadow:
+            -1px -1px 0 white,
+            -1px 1px 0 white,
+            1px -1px 0 white,
+            1px 1px 0 white;
+
+        }
+
+        img {
+          width: 15vw;
+          height: 10vh;
+          padding: 0;
+
+
+
+
+        }
+
+      }
+    }
+
+  }
+
+  .teste {
+    width: fit-content;
+    position: absolute;
+    bottom: 0;
+    right: -26px;
+    scale: 0.8;
+  }
+
+
 }
