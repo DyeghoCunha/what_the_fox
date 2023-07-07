@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 import styles from "./PaginaTeste.module.scss"
+import dados from "../../assets/json/dados.json"
+import { FirebaseContext } from '../../common/context/FirebaseConfig';
+import { FavoritoContext } from '../../common/context/Favoritos';
+import ModalCardPersonagem from '../../components/Modais/ModalCardPersonagem';
 
 
 
@@ -8,13 +12,16 @@ import styles from "./PaginaTeste.module.scss"
 export default function PaginaTeste() {
 
 
-
-
+  const { foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb, } = useContext(FirebaseContext)
+const {cardModal} = useContext(FavoritoContext)
+  
 
   return (
 
     <>
-      <div className={styles.container}>
+      <div className={styles.container_paginaTeste}>
+
+       <ModalCardPersonagem card={dados.Raposas}/>
 
       </div>
     </>

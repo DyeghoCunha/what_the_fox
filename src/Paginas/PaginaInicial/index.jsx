@@ -27,81 +27,47 @@ import Divisoria from '../../components/Decks/Divisoria';
 import Footer from '../../components/Footer';
 import { FavoritoContext } from '../../common/context/Favoritos';
 import ModalCard from '../../components/Modais/Modal/ModalCard';
+import { FirebaseContext } from '../../common/context/FirebaseConfig';
+import Produtos from '../../components/Produtos';
 
 
 
 export default function PaginaInicial() {
 
   const { aberto, cardModal } = useContext(FavoritoContext)
+ 
 
-  const goblin = dados.Goblins;
   const emotes = dados.Emotes;
-  const raposas = dados.Raposas;
-  const monkeys = dados.Monkeys;
-  const hemps = dados.Hemps;
-  const bMaster = dados.Blademaster;
+ 
 
-
-  const miniCardVerde = {
-    minicard: miniCard1,
-    botao: botao1,
-    favoritoOn: favoritoOn1,
-    favoritoOff: favoritoOff1
-  }
-  const miniCardAzul = {
-    minicard: miniCard2,
-    botao: botao2,
-    favoritoOn: favoritoOn2,
-    favoritoOff: favoritoOff2
-  }
-  const miniCardSand = {
-    minicard: miniCard3,
-    botao: botao3,
-    favoritoOn: favoritoOn3,
-    favoritoOff: favoritoOff3
-  }
-  const miniCardOffice = {
-    minicard: miniCard4,
-    botao: botao4,
-    favoritoOn: favoritoOn4,
-    favoritoOff: favoritoOff4
-  }
+ const { foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb, } = useContext(FirebaseContext)
+  
 
 
   return (
     <>
 
 
-   
+
       <div className={styles.container}>
 
-        
         <Categorias />
         <Destaques />
-
         <Divisoria titulo={"Emotes"} />
         <DeckEmotes tribo={emotes} />
 
-        <Divisoria titulo={"Fox"} />
-        <Deck tipo={"CardOffice"} tribo={raposas} miniCard={miniCardOffice} />
-{aberto &&(
-   <div className={styles.modal}>
-    <ModalCard  card={cardModal}/>
-    </div>
-)}
-   
-  
-        <Divisoria titulo={"Hemps"} />
-        <Deck tipo={"CardPraia"} tribo={hemps} miniCard={miniCardSand} />
+        {aberto && (
+          <div className={styles.modal}>
+            <ModalCard card={cardModal} />
+          </div>
+        )}
 
-        <Divisoria titulo={"Apes"} />
-        <Deck tipo={"CardPremiunAzul"} tribo={monkeys} miniCard={miniCardAzul} />
-
-        <Divisoria titulo={"BladeMaster"} />
-        <Deck tipo={"CardAzul"} tribo={bMaster} miniCard={miniCardAzul} />
-
-        <Divisoria titulo={"Goblins"} />
-        <Deck tipo={"CardVerde"} tribo={goblin} miniCard={miniCardVerde} />
+       <Produtos estiloCard={"CardOffice"} miniCard={"miniCardOffice"} titulo={"Fox"} tribo={foxDb}/>
+       <Produtos estiloCard={"CardPraia"} miniCard={"miniCardSand"} titulo={"Hemps"} tribo={hempDb}/>
+       <Produtos estiloCard={"CardVerde"} miniCard={"miniCardVerde"} titulo={"Goblins"} tribo={goblinDb}/>
+       <Produtos estiloCard={"CardAzul"} miniCard={"miniCardAzul"} titulo={"BladeMaster"} tribo={bladeMasterDb}/>
+       <Produtos estiloCard={"CardPremiunAzul"} miniCard={"miniCardAzul"} titulo={"Apes"} tribo={apesDb}/>
+       
 
       </div>
     </>

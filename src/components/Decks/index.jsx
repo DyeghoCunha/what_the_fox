@@ -9,17 +9,15 @@ import MiniCardDeck from './miniCardDeck';
 
 export default function Deck({ tribo, tipo , miniCard}) {
 
-const randomId = uuidv4();
 
   return (
     <section className={styles.container}>
 
       {tribo.map((card) => (
-        <div className={styles.card_container}>
 
+        <div key={uuidv4()} className={styles.card_container}>
           <CardMain key={card.id} type={tipo} imagem={card.imagem} nome={card.nome} frase={card.frase} />
-           <MiniCardDeck key={randomId} card={card} miniCard={miniCard} />
-      
+          <MiniCardDeck key={uuidv4()} card={card} miniCard={miniCard} />
         </div>
       ))}
     </section>

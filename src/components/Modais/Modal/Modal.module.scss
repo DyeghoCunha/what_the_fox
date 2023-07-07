@@ -4,11 +4,8 @@
 .janelaModal {
   position: fixed;
   padding: 30px;
- 
-  background: rgba($colorBg-WTF,0.1);
-  box-shadow: 4px 4px 24px -4px rgba(0, 0, 0, 0.15);
+
   border-radius: 24px;
-  backdrop-filter: blur(10px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -21,39 +18,23 @@
   right: 0px;
   top: 0px;
   bottom: 0px;
-  background: rgba(101, 101, 101, 0.85);
-  backdrop-filter: blur(20px);
-   z-index: 8000000;
-}
-
-.tituloModalWrapper {
-  display: flex;
-  justify-content: space-between;
-  font-family: sans-serif;
-  align-items: center;
-}
-
-.tituloModal {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 48px;
-  color: #EB9B00;
-  margin: 0;
+  //background: rgba(101, 101, 101, 0.85);
+  //backdrop-filter: blur(20px);
+  z-index: 8000000;
 }
 
 .botaoFecharModal {
   position: absolute;
-  width:fit-content;
-  height:fit-content;
+  width: fit-content;
+  height: fit-content;
 
-  top: 40px;
+  top: 100px;
 
-background-color: transparent;
-color: transparent;
-border: none;
-  right: 50px;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  right: 250px;
   cursor: pointer;
-
 }
 
 
@@ -63,29 +44,28 @@ border: none;
 
 
   .botaoFecharModal {
-  position: absolute;
-  width:40px;
-  height:40px;
-z-index: 2000;
-  bottom: 90px;
-  border-radius: 8px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 2000;
+    bottom: 90px;
+    border-radius: 8px;
 
-     background-color: #FFF0DA;
-        border-radius: 8px;
-        border-top: 1px solid #fae9d0;
-        border-left: 1px solid #fae9d0;
-        border-bottom: 1px solid #f0dcc3;
-        border-right: 1px solid #f0dcc3;
-        box-shadow:
-          -5px -5px 10px rgba(#fdeed8, 1),
-          10px 10px 20px rgba(#ebd8bf, 1);
-  right: 50px;
-  cursor: pointer;
+    background-color: #FFF0DA;
+    border-radius: 8px;
+    border-top: 1px solid #fae9d0;
+    border-left: 1px solid #fae9d0;
+    border-bottom: 1px solid #f0dcc3;
+    border-right: 1px solid #f0dcc3;
+    box-shadow:
+      -5px -5px 10px rgba(#fdeed8, 1),
+      10px 10px 20px rgba(#ebd8bf, 1);
+    right: 50px;
+    cursor: pointer;
 
-  &_custom{
+    &_custom {
 
-    display: none;
+      display: none;
+    }
   }
 }
-}
-

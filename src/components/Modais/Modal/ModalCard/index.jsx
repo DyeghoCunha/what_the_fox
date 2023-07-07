@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './ModalCard.module.scss';
 import AbModal from ".."
-import imagem from "../../../../assets/images/personagem/samurai/samurai1.png";
+
 import BotaoGeral from "../../../BotãoGeral"
 import moeda150 from "../../../../components/Decks/image/150.png"
 import dados from "../../../../assets/json/dados.json"
@@ -9,8 +9,7 @@ import { FavoritoContext } from '../../../../common/context/Favoritos';
 
 export default function ModalCard({ card, aberta }) {
 
-  const { aberto, cardModal } = useContext(FavoritoContext)
-
+  const { aberto } = useContext(FavoritoContext)
 
 
   //!_________VER OS VALORES QUE SERAM RECEBIDOS 
@@ -28,7 +27,7 @@ export default function ModalCard({ card, aberta }) {
   const [deslocamentoSombraY, setDeslocamentoSombraY] = useState(40);
   const [intensidadeSombra, setIntensidadeSombra] = useState("");
 
-  const handleMouseMove = (event) => {
+/*   const handleMouseMove = (event) => {
 
     event.preventDefault()
     const { clientX, clientY } = event;
@@ -39,7 +38,7 @@ export default function ModalCard({ card, aberta }) {
     setDeslocamentoSombraX(offsetX * -20);
     setDeslocamentoSombraY(offsetY * 20);
   }
-
+ */
   //*__________Fim da Sombra__________________________________________
 
   function handleSubmit(event) {
@@ -95,7 +94,7 @@ export default function ModalCard({ card, aberta }) {
 
 
     <AbModal aberta={aberto}>
-      <div className={styles.container_modal} onMouseMove={handleMouseMove}  >
+      <div className={styles.container_modal} /* onMouseMove={handleMouseMove} */  >
         <div className={styles.container}>
           <div className={styles.container_imagem}>
             <img
@@ -113,21 +112,14 @@ export default function ModalCard({ card, aberta }) {
           <div className={styles.informacoes}>
 
             <h1 className={styles.titulo}>Arte NFT para Coleções</h1>
-
-
-
             <h3 className={styles.titulo_lista}>O que você receberá</h3>
-
             <ul className={styles.container_lista}>
               <li>Arquivo de origem PSD separado em camadas.</li>
               <li>Cada elemento em um arquivo PNG com fundo transparente.</li>
               <li>Resolução de 2000x2000px, 300 dpi.</li>
             </ul>
-
             <form id='formuilario1' className={styles.container_formulario}>
-
               <h2 className={styles.subtitulo}>Incremente o sua Arte</h2>
-
               <div className={styles.container_formulario_checkbox}>
                 <div className={styles.container_formulario_checkbox_item}>
                   <input
@@ -221,7 +213,6 @@ export default function ModalCard({ card, aberta }) {
 
               <div className={styles.separador}>
                 <div className={styles.container_formulario_valor}>
-
                   <h2 className={styles.container_formulario_valor_numero}>{valorFinal}</h2>
                   <img src={moeda150} alt="" />
                 </div>

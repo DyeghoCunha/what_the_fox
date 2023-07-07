@@ -9,6 +9,10 @@
   height: fit-content;
   padding: 1px 5px;
   overflow-x: hidden;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 500000000000;
 
 }
 

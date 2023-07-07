@@ -7,13 +7,15 @@
   position: fixed;
   padding: 60px;
   background: transparent;
-  box-shadow: 4px 4px 24px -4px rgba(0, 0, 0, 0.15);
+ box-shadow: 4px 4px 24px -4px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-  backdrop-filter: blur(10px);
+  
+ // backdrop-filter: blur(10px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 90000000;
+  @include cardInternoSemBlur($colorBg-WTF);
 }
 
 .fundoModal {
@@ -22,9 +24,11 @@
   right: 0px;
   top: 0px;
   bottom: 0px;
-  background: rgba(101, 101, 101, 0.85);
-  backdrop-filter: blur(4px);
+  background-color: $colorBg-WTF;
+ // background: rgba(101, 101, 101, 0.85);
+  //backdrop-filter: blur(4px);
   z-index: 8000000;
+  overflow: hidden;
 }
 
 .botaoFecharModal {

@@ -13,21 +13,22 @@
 }
 
 .container {
-  width: 60vw;
-  height: 60vh;
+  width: 920px;
+  height: 530px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $colorBg-WTF;
-  position: relative;
+ // position: relative;
   border-radius: 10px;
-  box-shadow: -4px -4px 10px rgba($colorBg-WTF, 0.5),
+
+  /*  box-shadow: -4px -4px 10px rgba($colorBg-WTF, 0.5),
     4px 4px 10px rgba(black, 0.25), -4px -4px 20px rgba($colorBg-WTF, 0.5),
-    4px 4px 25px rgba(black, 0.25);
+    4px 4px 25px rgba(black, 0.25); */
 
   &_imagem {
-    width: 60vw;
-    height: 30vw;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +40,10 @@
   &_imagem::after {
     content: "";
     position: absolute;
-    inset: 1.5vw;
+    width:100%;
+    top:0;
+    left: 0;
+    inset: 10px;
     border: 1px solid rgba($colorBg-WTF, 0.5);
     border-top: 1px solid rgba($colorBg-WTF, 0.75);
     border-left: 1px solid rgba($colorBg-WTF, 0.75);
@@ -49,14 +53,10 @@
       inset 4px 4px 10px rgba(0, 0, 0, 0.25), ;
   }
 
-
-
   &_imagem_personagem {
-
-
-    height: 88%;
-    width: 88%;
-
+    position: absolute;
+    height: auto;
+    width: 300px;
 
     border-radius: 10px;
     backdrop-filter: blur(5px);
@@ -87,7 +87,7 @@
     font-size: 2vw;
     letter-spacing: 5px;
   }
-
+//___________________________________________
   .informacoes {
 
     width: 45vw;
@@ -262,9 +262,10 @@
     gap: 10px;
   }
 }
+
 @media screen and (max-width: 1139px) {
 
-.container {
+  .container {
     width: 90vw;
     height: auto;
     display: flex;

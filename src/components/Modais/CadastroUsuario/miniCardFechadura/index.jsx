@@ -4,10 +4,10 @@ import imagemPersonagem from "./image/personagem1.png"
 import imagemFechadura from "./image/fechadura.png"
 import CardBase3d from "../../../Card/CardBase3d"
 
-export default function MiniCardFechadura({opacidade=false}) {
+export default function MiniCardFechadura({ opacidade = false }) {
 
   return (
-    <CardBase3d reverse={true} segueMouse={false} inclinacao={20} velocidade={10}>
+    <section >
 
       <div className={styles.container}></div>
       <div className={styles.container_personagem}>
@@ -17,6 +17,6 @@ export default function MiniCardFechadura({opacidade=false}) {
         <img src={imagemFechadura} className={`${opacidade ? styles.apagar : ""}`} alt="" />
       </div>
 
-    </CardBase3d>
+    </section>
   )
 }

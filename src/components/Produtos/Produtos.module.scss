@@ -1,0 +1,17 @@
+@import "../../styles/variaveis";
+
+
+
+.container{
+width: 100vw;
+height: fit-content;
+
+&_titulo{
+  @include cardInternoSemBlur($colorBg-WTF);
+  
+}
+&_deck{
+  
+  @include cardExternoSemBlur($colorBg-WTF);
+}
+}

@@ -1,23 +1,22 @@
 @import '../../styles/variaveis';
 
 
-.container {
+.container_paginaTeste {
   display: flex;
-  //flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(11, 151, 104);
-  height: 100vh;
+ 
+  
+  margin-top: 100px;
   width: 100vw;
 
 }
 
-
-
-
 @media screen and (max-width: 768px) {
 
-  .container {
+  .container_paginaTeste {
     width: 100vw;
     height: 100vh;
     display: flex;

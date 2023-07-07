@@ -1,0 +1,101 @@
+@import '../../../../styles/variaveis';
+
+
+.container {
+  width: 300px;
+  height: 210px;
+  border-radius: 8px;
+  padding: 10px;
+  @include cardExternoSemBlur($colorBg-WTF);
+
+  &_formulario {
+    width: inherit;
+    height: inherit;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include cardInternoSemBlur($colorBg-WTF);
+
+    &_titulo {
+      width: 100%;
+      height: fit-content;
+      text-align: center;
+      font-size: 22px;
+      @include tituloPadrao();
+    }
+
+    &_fieldset {
+      width: 85%;
+      height: 110px;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 10px;
+      @include cardExternoSemBlur($colorBg-WTF);
+      gap: 4px;
+
+      &_legenda {
+        font-family: $fonte-normal-WTF-Fox;
+        color: $colorLetra-Padrao-WTF;
+        border-radius: 8px;
+        padding: 1px 4px;
+        @include cardInternoSemBlur($colorBg-WTF);
+      }
+
+      &_checkbox {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-family: $fonte-normal-WTF-Fox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 50;
+        color: $colorLetra-Padrao-WTF;
+
+        &:hover {
+          @include cardExternoSemBlur($cyberblue);
+        }
+
+        &:active {
+          @include cardInternoSemBlur($cyberblue);
+        }
+
+        @include cardInternoSemBlur($colorBg-WTF);
+
+        & label {
+          cursor: pointer;
+        }
+
+        & input[type="checkbox"] {
+          display: none;
+        }
+
+        & input:checked+label {
+          color: $cyberblue;
+        }
+
+        &:nth-of-type(1) {
+          border-radius: 8px 0px 0px 0px;
+        }
+
+        &:nth-of-type(2) {
+          border-radius: 0px 8px 0px 0px;
+        }
+
+        &:nth-of-type(8) {
+          border-radius: 0px 0px 8px 0px;
+        }
+
+        &:nth-of-type(7) {
+          border-radius: 0px 0px 0px 8px;
+        }
+      }
+    }
+  }
+}

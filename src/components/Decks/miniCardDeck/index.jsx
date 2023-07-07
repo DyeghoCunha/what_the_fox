@@ -1,19 +1,72 @@
 import styles from "./MiniCardDeck.module.scss"
-import React, { useCallback, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import valor10 from "../image/10.png"
 import valor150 from "../image/150.png"
 import valor50 from "../image/50.png"
-import ModalCard from "../../Modais/Modal/ModalCard"
 import { FavoritoContext } from "../../../common/context/Favoritos"
+
+import miniCard1 from "../../Decks/image/minicard1.png"
+import botao1 from "../../Decks/image/barra.png"
+import favoritoOff1 from "../../Decks/image/heartOff1.png"
+import favoritoOn1 from "../../Decks/image/heartOn1.png"
+import miniCard2 from "../../Decks/image/minicard2.png"
+import botao2 from "../../Decks/image/barra2.png"
+import favoritoOff2 from "../../Decks/image/heartOff2.png"
+import favoritoOn2 from "../../Decks/image/heartOn2.png"
+import miniCard3 from "../../Decks/image/minicard3.png"
+import favoritoOff3 from "../../Decks/image/heartOff3.png"
+import favoritoOn3 from "../../Decks/image/heartOn3.png"
+import botao3 from "../../Decks/image/barra3.png"
+import miniCard4 from "../../Decks/image/minicard4.png"
+import favoritoOff4 from "../../Decks/image/heartOff4.png"
+import favoritoOn4 from "../../Decks/image/heartOn4.png"
+import botao4 from "../../Decks/image/barra4a.png"
+
+
 
 
 
 
 export default function MiniCardDeck({ card, miniCard }) {
   const [favorito, setFavorito] = useState(false);
+  const { setAberto, setCardModal } = useContext(FavoritoContext)
+  const [minicardEstilo, setMinicardEstilo] = useState({})
 
-  const {  setAberto, setCardModal } = useContext(FavoritoContext)
+
+  useEffect(() => {
+    const estiloMapping = {
+      miniCardVerde: {
+        minicard: miniCard1,
+        botao: botao1,
+        favoritoOn: favoritoOn1,
+        favoritoOff: favoritoOff1
+      },
+      miniCardAzul: {
+        minicard: miniCard2,
+        botao: botao2,
+        favoritoOn: favoritoOn2,
+        favoritoOff: favoritoOff2
+      },
+      miniCardSand: {
+        minicard: miniCard3,
+        botao: botao3,
+        favoritoOn: favoritoOn3,
+        favoritoOff: favoritoOff3
+      },
+      miniCardOffice: {
+        minicard: miniCard4,
+        botao: botao4,
+        favoritoOn: favoritoOn4,
+        favoritoOff: favoritoOff4
+      }
+    };
+  
+    if (miniCard && estiloMapping.hasOwnProperty(miniCard)) {
+      setMinicardEstilo(estiloMapping[miniCard]);
+    }
+  }, []);
+  
 
 
   let moedas = 0;
@@ -41,7 +94,7 @@ export default function MiniCardDeck({ card, miniCard }) {
   function handleClick() {
     setAberto(prev => !prev)
     setCardModal(card)
-  
+
   }
 
 
@@ -49,19 +102,19 @@ export default function MiniCardDeck({ card, miniCard }) {
     <>
       <div className={styles.container_valor}>
         {!favorito && (
-          <img onClick={handleFavorito} src={miniCard.favoritoOff} className={styles.favorito} alt="" />
+          <img onClick={handleFavorito} src={minicardEstilo.favoritoOff} className={styles.favorito} alt="" />
         )}
         {favorito && (
-          <img onClick={handleFavorito} src={miniCard.favoritoOn} className={styles.favorito} alt="" />
+          <img onClick={handleFavorito} src={minicardEstilo.favoritoOn} className={styles.favorito} alt="" />
         )}
         <h1 className={styles.valor}>{card.valor}</h1>
         <img src={moedas} alt="" className={styles.moedas} />
-        <img src={miniCard.minicard} className={styles.fundo_valor} alt="" />
+        <img src={minicardEstilo.minicard} className={styles.fundo_valor} alt="" />
 
-        <button className={styles.botao_container}>
+        <div className={styles.botao_container}>
           <h1 className={styles.botao_container_titulo} onClick={handleClick}>Saiba Mais</h1>
-          <img className={styles.botao_container_imagem} src={miniCard.botao} alt="" />
-        </button>
+          <img className={styles.botao_container_imagem} src={minicardEstilo.botao} alt="" />
+        </div>
       </div>
     </>
 

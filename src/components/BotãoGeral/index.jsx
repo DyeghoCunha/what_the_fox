@@ -12,7 +12,7 @@ export default function BotaoGeral({ tipo, texto, icone, value, onClick }) {
   return (
     <section className={styles.container}>
       <div className={styles.botao_container} >
-        <button className={styles.botao}
+        <div className={styles.botao}
           value={value}
           onClick={onClick}
           type={tipo}>
@@ -24,7 +24,7 @@ export default function BotaoGeral({ tipo, texto, icone, value, onClick }) {
             <h1 className={styles.icone}>{icone}</h1>
           )}
 
-        </button>
+        </div>
       </div>
     </section>
   )

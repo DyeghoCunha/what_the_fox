@@ -1,6 +1,5 @@
 import CardBase3d from "../../CardBase3d"
 import styles from "./CardEmote.module.scss"
-import imagem from "../../../../assets/images/personagem/emotes/emote1.png"
 import foxCoin15 from "./image/FoxCoin15.png"
 import foxCoin10 from "./image/FoxCoin10.png"
 import foxCoin5 from "./image/FoxCoin5.png"

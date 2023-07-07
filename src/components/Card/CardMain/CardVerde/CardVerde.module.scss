@@ -1,14 +1,8 @@
 @import '../../../../styles/variaveis';
 
 
-.container_Card {
-  width: 306px;
-  height: 440.30px;
-  border-radius: 8px;
-  position: relative;
-  transform-style: preserve-3d;
-  display: flex;
-  flex-direction: column;
+.container{
+@include container_card();
 }
 
 .imgFundo {
@@ -69,10 +63,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-
   opacity: 1;
   z-index: 10;
-
 }
 
 .miniCard {
@@ -91,7 +83,7 @@
   width: 285px;
   height: fit-content;
   text-align: center;
-padding: 0px 20px;
+  padding: 0px 20px;
   bottom: 35px;
   left: 10px;
   position: absolute;
