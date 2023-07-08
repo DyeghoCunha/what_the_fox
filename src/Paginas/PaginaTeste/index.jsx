@@ -7,6 +7,7 @@ import { FavoritoContext } from '../../common/context/Favoritos';
 import ModalCardPersonagem from '../../components/Modais/ModalCardPersonagem';
 import Informativo from '../../components/Feature/ModalCardPersonagem/Informativo';
 import FotoCard from '../../components/Feature/ModalCardPersonagem/FotoCard';
+import CardValor from '../../components/Feature/ModalCardPersonagem/CardValor';
 
 
 
@@ -23,8 +24,9 @@ const {cardModal} = useContext(FavoritoContext)
     <>
       <div className={styles.container_paginaTeste}>
 
-       {/* <ModalCardPersonagem card={dados.Raposas}/> */}
-<FotoCard card={foxDb[0]}/>
+    {/*   <ModalCardPersonagem card={dados.Raposas}/>  */}
+      <CardValor/>
+
       </div>
     </>
 

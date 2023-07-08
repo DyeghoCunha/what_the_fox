@@ -1,0 +1,33 @@
+@import "../../../../styles/variaveis";
+
+.container {
+
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 8px;
+  position: relative;
+  @include cardExternoSemBlur($colorBg-WTF);
+
+  &_valor {
+    width: fit-content;
+    margin: 0px;
+    font-size: 40px;
+    position: absolute;
+    top: 6px;
+    right: 20px;
+    transform: rotateZ(-32deg);
+    border-radius: 8px;
+    z-index: 10;
+    @include tituloPadrao();
+  }
+
+  &_imagem {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 1;
+  }
+}
