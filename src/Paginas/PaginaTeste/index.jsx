@@ -5,9 +5,8 @@ import dados from "../../assets/json/dados.json"
 import { FirebaseContext } from '../../common/context/FirebaseConfig';
 import { FavoritoContext } from '../../common/context/Favoritos';
 import ModalCardPersonagem from '../../components/Modais/ModalCardPersonagem';
-import Informativo from '../../components/Feature/ModalCardPersonagem/Informativo';
-import FotoCard from '../../components/Feature/ModalCardPersonagem/FotoCard';
-import CardValor from '../../components/Feature/ModalCardPersonagem/CardValor';
+import BotoesDoModalCard from '../../components/Feature/ModalCardPersonagem/BotoesDoModalCard';
+
 
 
 
@@ -24,9 +23,10 @@ const {cardModal} = useContext(FavoritoContext)
     <>
       <div className={styles.container_paginaTeste}>
 
-    {/*   <ModalCardPersonagem card={dados.Raposas}/>  */}
-      <CardValor/>
-
+     <ModalCardPersonagem card={dados.Raposas}/>   
+  
+     
+     
       </div>
     </>
 

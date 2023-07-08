@@ -1,7 +1,6 @@
 @import '../../styles/variaveis';
 
 
-
 $botaoLargura: 50px;
 $botaoAltura: $botaoLargura;
 $corBackGroundBotao: $colorBotaoMenu-WTF;
@@ -16,7 +15,7 @@ $corBackGroundBotao: $colorBotaoMenu-WTF;
   border-radius: 50%;
   max-height: $botaoAltura;
   max-width: $botaoLargura;
-  background: $corBackGroundBotao;
+  background: $colorBg-WTF;
 
 
   &_luz {
@@ -56,8 +55,8 @@ $corBackGroundBotao: $colorBotaoMenu-WTF;
       position: relative;
       width: $botaoLargura;
       height: $botaoAltura;
-      background: $corBackGroundBotao;
-      border: 2px solid $corBackGroundBotao;
+      background: $colorBg-WTF;
+      border: 2px solid $colorBg-WTF;
       border-radius: 10%;
       box-shadow: -4px -4px 5px rgba(255, 255, 255, 0.25),
         4px 4px 10px rgba(0, 0, 0, 0.20);
@@ -107,8 +106,8 @@ $corBackGroundBotao: $colorBotaoMenu-WTF;
     align-items: center;
     z-index: 101;
     border-radius: 10%;
-    background-color: $corBackGroundBotao;
-    border: 2px solid $corBackGroundBotao;
+    background-color: $colorBg-WTF;
+    border: 2px solid $colorBg-WTF;
 
     opacity: 0;
     transition: opacity 0.5s ease-in-out;

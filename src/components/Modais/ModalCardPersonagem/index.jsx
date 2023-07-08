@@ -9,6 +9,8 @@ import { FavoritoContext } from '../../../common/context/Favoritos';
 import IncrementoCheckBox from "../../Feature/ModalCardPersonagem/IncrementoCheckBox"
 import Informativo from '../../Feature/ModalCardPersonagem/Informativo';
 import FotoCard from '../../Feature/ModalCardPersonagem/FotoCard';
+import CardValor from '../../Feature/ModalCardPersonagem/CardValor';
+import BotaoModal from '../../BotaoNeomorph';
 
 export default function ModalCard({ card, aberta }) {
 
@@ -30,29 +32,24 @@ export default function ModalCard({ card, aberta }) {
 
 
 
-    <div className={styles.container} >
+    <section className={styles.container} >
 
       <div className={styles.container_informativo}>
         <Informativo />
         <IncrementoCheckBox card={card} />
       </div>
-      <div className={styles.container_foto}>
 
+      <section className={styles.container_foto}>
         <FotoCard />
-
         <div className={styles.container_compras}>
-          <div className={styles.container_formulario_valor}>
-            <h2 className={styles.container_formulario_valor_numero}>{valorFinal}</h2>
-            <img src={moeda150} alt="" />
-          </div>
-          <div className={styles.teste}>
-            <BotaoGeral value={"Enviar"} tipo={"submit"} onClick={handleSubmit} texto={"Adicionar ao Carrinho"}>
-            </BotaoGeral>
+          <CardValor />
+          <div className={styles.container_compras_botoes}>
+          
           </div>
         </div>
 
-      </div>
-    </div>
+      </section>
+    </section>
 
 
 

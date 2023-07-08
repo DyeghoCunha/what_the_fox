@@ -11,24 +11,19 @@ export default function BotaoMenu({ children, link }) {
   const localizacao = useLocation();
 
   return (
+ <section className={styles.container}>
 
-    <section className={styles.container}>
+      <div className={styles.container_luz}>
 
-      <div className={styles.loader}>
-
-        <div className={styles.rocket}>
-          <div className={`${styles.faRocket} `}>{children}</div>
+        <div className={styles.container_luz_icone}>
+          <div className={`${styles.container_luz_icone_imagem} `}>{children}</div>
         </div>
 
-        <div className={` ${styles.click} ${localizacao.pathname === link ? '' : styles.clickIn}`} >
-        <div className={styles.iconeOff}>{children}</div>
+        <div className={` ${styles.container_luz_tampa} ${localizacao.pathname === link ? '' : styles.aoClicar}`} >
+          <div className={styles.container_luz_tampa_imagem}>{children}</div>
         </div>
-
-        <span><i></i></span>
-
-
+        <span className={styles.container_luz_base}><i className={styles.container_luz_base_RGB}></i></span>
       </div>
-
     </section>
 
 

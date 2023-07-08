@@ -11,8 +11,20 @@ align-items: center;
 
 
 &_compras{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 height: 100px;
 
+&_botoes{
+  display: flex;
+  width: 200px;
+  height: 100px;
+  border: 2px solid;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
 }
 
