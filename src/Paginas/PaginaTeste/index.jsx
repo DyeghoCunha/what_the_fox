@@ -4,7 +4,7 @@ import styles from "./PaginaTeste.module.scss"
 import dados from "../../assets/json/dados.json"
 import { FirebaseContext } from '../../common/context/FirebaseConfig';
 import { FavoritoContext } from '../../common/context/Favoritos';
-import ModalCardPersonagem from '../../components/Modais/ModalCardPersonagem';
+import ModalCardPersonagem from '../../components/Feature/ModalCardPersonagem';
 import BotoesDoModalCard from '../../components/Feature/ModalCardPersonagem/BotoesDoModalCard';
 
 
@@ -15,18 +15,18 @@ export default function PaginaTeste() {
 
 
   const { foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb, } = useContext(FirebaseContext)
-const {cardModal} = useContext(FavoritoContext)
-  
+  const { cardModal } = useContext(FavoritoContext)
+
 
   return (
 
     <>
       <div className={styles.container_paginaTeste}>
 
-     <ModalCardPersonagem card={dados.Raposas}/>   
-  
-     
-     
+        <ModalCardPersonagem card={dados.Raposas} />
+
+
+
       </div>
     </>
 
