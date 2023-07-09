@@ -30,11 +30,11 @@ export default function FotoCard({ card }) {
       <div className={styles.container_personagem}>
         <img
           className={`${styles.container_personagem_foto} ${styles.dropShadow}`}
-          src={props.imagem}
+          src={card.imagem}
           alt="Imagem"
           style={imagemStyle}
         />
-        <h2 className={styles.container_personagem_nome}>{props.nome}</h2>
+        <h2 className={styles.container_personagem_nome}>{card.nome}</h2>
       </div>
     </div>
   );

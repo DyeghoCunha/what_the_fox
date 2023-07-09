@@ -25,9 +25,10 @@ export default function AppRoutes() {
           <CarrinhoProvider>
             <FavoritoProvider>
               <Cabecalho />
-              {/*   <BannerProvider>
-        <Banner />
-      </BannerProvider> */}
+
+             {/*  <BannerProvider>
+                <Banner />
+              </BannerProvider> */}
 
 
 
@@ -37,7 +38,7 @@ export default function AppRoutes() {
               </Routes>
 
 
-              {/*  <Footer />  */}
+            {/*   <Footer /> */}
 
             </FavoritoProvider>
           </CarrinhoProvider>

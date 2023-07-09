@@ -5,9 +5,9 @@ import moeda100 from "../../../../components/Decks/image/10.png"
 import moeda50 from "../../../../components/Decks/image/50.png"
 
 
-export default function CardValor({ valor = 999 }) {
+export default function CardValor({ valor }) {
 
-
+console.log("ValorMoedas: ", valor)
   let moeda = "";
   if (valor >= 100 && valor < 150) {
     moeda = moeda50;

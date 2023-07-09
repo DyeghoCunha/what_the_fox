@@ -94,7 +94,7 @@ export default function MiniCardDeck({ card, miniCard }) {
   function handleClick() {
     setAberto(prev => !prev)
     setCardModal(card)
-
+console.log("Saiba Mais - cardModal: ", card)
   }
 
 

@@ -2,19 +2,42 @@
 
 
 
+.modal{
 
+  position: fixed;
+  top: 25px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
 .container {
   width: 815px;
   height: 615px;
-  border-radius: 8px;
+  border-radius: 50% 8px 50% 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 9000000000000000;
+  z-index: 0;
   @include cardInternoSemBlur($colorBg-WTF-Verde);
   background-color: $colorBg-WTF;
+
+  &::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 50% 8px 50%;
+    z-index: 10;
+    @include cardInternoSemBlur($colorBg-WTF);
+    background-color:$colorBg-WTF-Verde;
+  }
 
   &_botaoFechar {
     position: absolute;
@@ -33,6 +56,7 @@
   border-radius: 8px;
   @include cardInternoSemBlur($colorBg-WTF-Verde);
   background-color: $colorBg-WTF-Verde;
+  z-index: 11;
 
   &_informativo {
     height: 100%;

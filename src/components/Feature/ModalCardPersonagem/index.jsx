@@ -17,59 +17,68 @@ import { CarrinhoContext } from '../../../common/context/Carrinho';
 
 
 export default function ModalCardPersonagem({ card, aberta }) {
-  const [valorCartao, setValorCartao] = useState(card[0].valor)
+  const [valorCartao, setValorCartao] = useState(card.valor)
   const { aberto, setAberto, handleAdicionaItemNoFavoritoFirebase } = useContext(FavoritoContext)
   const { handleAdicionaItemNoCarrinhoFirebase } = useContext(CarrinhoContext)
-  const { valorAdicional, setValorFinalDoCard, } = useContext(ModalCardContext)
+  const { valorAdicional, setValorFinalDoCard, valorFinalDoCard, setValorAdicional,setValorDoCartaoSelecionado } = useContext(ModalCardContext)
+
+
+
+  useEffect(() => {
+
+    if (valorAdicional > card.valor) {
+      setValorCartao(valorAdicional)
+      setValorFinalDoCard(valorAdicional)
+    } else if (valorCartao > valorAdicional && valorAdicional > 0) {
+      setValorCartao(card.valor)
+      setValorFinalDoCard(card.valor)
+    }
+  }, [valorAdicional, valorFinalDoCard])
 
   useEffect(() => {
     setValorFinalDoCard(valorCartao);
   }, [valorCartao])
 
-
-  useEffect(() => {
-
-    if (valorAdicional >= valorCartao) {
-      setValorCartao(valorAdicional)
-      setValorFinalDoCard(valorAdicional)
-    } else if (valorCartao > valorAdicional && valorAdicional > 0) {
-      setValorCartao(valorAdicional)
-      setValorFinalDoCard(valorAdicional)
-    }
-  }, [valorAdicional])
-
-
-  function handleSubmit(event) {
-    event.preventDefault()
-  }
+  //!_____________________Comecando aqui a alteracao__________0
+  /*   if(!aberto){
+       document.body.style.overflow = 'hidden';
+     }else{
+        document.body.style.overflow = 'auto'; 
+     }
+  */
   const handleFechar = () => {
     setAberto(prev => !prev)
+    setValorFinalDoCard(0)
+    setValorAdicional(0)
+    setValorDoCartaoSelecionado(0)
+    setValorCartao(0)
   }
 
   return (
     <>
-      {!aberto && (
-        <section className={styles.container}>
-          <div className={styles.container_botaoFechar}>
-            <BotaoNeomorph botaoModal={true}><FontAwesomeIcon icon={faRectangleXmark} /></BotaoNeomorph>
-          </div>
-          <section className={styles.container_personagem} >
-            <div className={styles.container_personagem_informativo}>
-              <Informativo />
-              <IncrementoCheckBox card={card[0]} />
+      {aberto && (
+        <section className={styles.modal}>
+          <section className={styles.container}>
+            <div className={styles.container_botaoFechar}>
+              <BotaoNeomorph onClick={handleFechar} botaoModal={true}><FontAwesomeIcon icon={faRectangleXmark} /></BotaoNeomorph>
             </div>
-            <section className={styles.container_personagem_foto}>
-              <FotoCard />
-              <div className={styles.container_personagem_compras}>
-                <CardValor valor={valorCartao} />
-                <div className={styles.container_personagem_compras_botoes}>
-                  <BotoesDoModalCard
-                    onClickFavorito={() => handleAdicionaItemNoFavoritoFirebase(card[1])}
-                    onClickCarrinho={() => handleAdicionaItemNoCarrinhoFirebase(card[2])}
-                  />
-
-                </div>
+            <section className={styles.container_personagem} >
+              <div className={styles.container_personagem_informativo}>
+                <Informativo />
+                <IncrementoCheckBox card={card} />
               </div>
+              <section className={styles.container_personagem_foto}>
+                <FotoCard card={card} />
+                <div className={styles.container_personagem_compras}>
+                  <CardValor valor={valorFinalDoCard > card.valor ? valorFinalDoCard : card.valor } />
+                  <div className={styles.container_personagem_compras_botoes}>
+                    <BotoesDoModalCard
+                      onClickFavorito={() => handleAdicionaItemNoFavoritoFirebase(card)}
+                      onClickCarrinho={() => handleAdicionaItemNoCarrinhoFirebase(card)}
+                    />
+                  </div>
+                </div>
+              </section>
             </section>
           </section>
         </section>

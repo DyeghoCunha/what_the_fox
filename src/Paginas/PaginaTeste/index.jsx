@@ -6,6 +6,7 @@ import { FirebaseContext } from '../../common/context/FirebaseConfig';
 import { FavoritoContext } from '../../common/context/Favoritos';
 import ModalCardPersonagem from '../../components/Feature/ModalCardPersonagem';
 import BotoesDoModalCard from '../../components/Feature/ModalCardPersonagem/BotoesDoModalCard';
+import Produtos from '../../components/Produtos';
 
 
 
@@ -22,8 +23,9 @@ export default function PaginaTeste() {
 
     <>
       <div className={styles.container_paginaTeste}>
-
-        <ModalCardPersonagem card={dados.Raposas} />
+        
+        <Produtos estiloCard={"CardVerde"}miniCard={"miniCardVerde"} titulo={"Fox"} tribo={foxDb}/>
+       
 
 
 

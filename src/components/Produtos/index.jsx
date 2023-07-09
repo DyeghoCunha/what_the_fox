@@ -8,6 +8,7 @@ import { FavoritoContext } from '../../common/context/Favoritos';
 
 import ModalCard from '../../components/Modais/Modal/ModalCard';
 import DeckEmotes from '../Decks/DeckEmote';
+import ModalCardPersonagem from '../Feature/ModalCardPersonagem';
 
 
 
@@ -15,7 +16,7 @@ export default function Produtos({ titulo, tribo, miniCard, estiloCard, emotes =
 
   const { aberto, cardModal } = useContext(FavoritoContext)
 
-
+  console.log("CardModal: ", cardModal)
 
 
   return (
@@ -23,18 +24,14 @@ export default function Produtos({ titulo, tribo, miniCard, estiloCard, emotes =
     <>
 
       <article className={styles.container}>
-        {aberto && (
-          <div className={styles.modal}>
-            <ModalCard card={cardModal} />
-          </div>
-        )}
+        <ModalCardPersonagem card={cardModal} />
         <div className={styles.container_titulo}>
           <Divisoria titulo={titulo} />
         </div>
 
         {emotes && (
           <div className={styles.container_deck}>
-            <DeckEmotes tribo={tribo}/>
+            <DeckEmotes tribo={tribo} />
           </div>
 
         )}
