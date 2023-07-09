@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './BotaoNeomorph.module.scss'
 import { useLocation } from 'react-router-dom'
 
-export default function BotaoNeomorph({ children, link, parametro, botaoModal }) {
+export default function BotaoNeomorph({onClick, children, link, parametro, botaoModal }) {
   const localizacao = useLocation();
 
   return (
-    <section className={styles.container}>
+    <section onClick={onClick} className={styles.container}>
       <div className={styles.container_luz}>
         <div className={styles.container_luz_icone}>
           <div className={`${styles.container_luz_icone_imagem} `}>{children}</div>

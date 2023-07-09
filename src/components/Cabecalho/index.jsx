@@ -11,11 +11,12 @@ import ModalLoginUsuario from '../Modais/LoginUsuario';
 import { FirebaseContext } from '../../common/context/FirebaseConfig';
 import ModalLoginFirebase from '../Modais/ModalLoginFirebase';
 import BotaoMenu from '../BotaoMenu';
-import { BsFillCartFill } from "react-icons/bs";
-import { MdFavorite } from "react-icons/md";
+
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCartShopping, faHeart, faX, faXmark } from '@fortawesome/free-solid-svg-icons';
+import BotaoNeomorph from '../BotaoNeomorph';
+import FavoritosCarrinho from './FavoritosCarrinho';
 
 
 export default function Cabecalho() {
@@ -71,22 +72,12 @@ export default function Cabecalho() {
 
         </div>
 
-        <Link to={"/favorito"}>
-          <div className={`${styles.logar} ${styles.esconde}`}>
-            <BotaoMenu link={"/favorito"} ><FontAwesomeIcon icon={faHeart} /></BotaoMenu>
-          </div>
-        </Link>
-
-        <Link to={"/carrinho"}>
-          <div className={`${styles.logar} ${styles.esconde}`}>
-            <BotaoMenu link={"/carrinho"} ><FontAwesomeIcon icon={faCartShopping} /></BotaoMenu>
-          </div>
-        </Link>
+       <FavoritosCarrinho/>
 
         <div className={`${styles.logar} ${styles.aparece}`} onClick={handleMenuHamburger}>
 
           {!menuHamburger && (
-            <BotaoMenu ><FontAwesomeIcon icon={faBars} /></BotaoMenu>
+            <BotaoMenu><FontAwesomeIcon icon={faBars} /></BotaoMenu>
           )}
           {menuHamburger && (
             <BotaoMenu ><FontAwesomeIcon icon={faX} /></BotaoMenu>

@@ -12,30 +12,37 @@ import './styles/estilosGlobais.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import { FirebaseProvider } from './common/context/FirebaseConfig';
+import { ModalCardProvider } from './common/context/ModalCard';
+import { CarrinhoProvider } from './common/context/Carrinho';
 
 
 
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-<FirebaseProvider>
-  <Cabecalho/>
-    {/*   <BannerProvider>
+      <FirebaseProvider>
+        <ModalCardProvider>
+          <CarrinhoProvider>
+            <FavoritoProvider>
+              <Cabecalho />
+              {/*   <BannerProvider>
         <Banner />
       </BannerProvider> */}
- 
-      <FavoritoProvider>
-
-        <Routes>
-          <Route path="/teste" element={<PaginaInicial />} />
-          <Route path="/" element={<PaginaTeste />} />
-        </Routes>
 
 
-   {/*  <Footer />  */}
 
-      </FavoritoProvider>
-</FirebaseProvider>      
+              <Routes>
+                <Route path="/teste" element={<PaginaInicial />} />
+                <Route path="/" element={<PaginaTeste />} />
+              </Routes>
+
+
+              {/*  <Footer />  */}
+
+            </FavoritoProvider>
+          </CarrinhoProvider>
+        </ModalCardProvider>
+      </FirebaseProvider>
     </BrowserRouter>
   );
 }

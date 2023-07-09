@@ -6,7 +6,7 @@
   align-items: center;
   background-color: $colorBg-WTF;
   width: 100vw;
-  height: fit-content;
+  height: 60px;
   padding: 1px 5px;
   overflow-x: hidden;
   position: fixed;
@@ -46,6 +46,7 @@ gap: 40px;
 }
 @media screen and (max-width: 767px) {
   .cabecalho_container {
+    height: fit-content;
     position: fixed;
     padding: 5px;
     top: 0px;

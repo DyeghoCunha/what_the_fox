@@ -1,0 +1,67 @@
+@import "../../../styles/variaveis";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+  height: fit-content;
+
+  &_icone {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+
+    .circulo {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      bottom: -5px;
+      right: -5px;
+      border-radius: 50%;
+      
+      z-index: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include cardExternoSemBlur($colorBg-WTF);
+      border: 2px solid $colorBotaoMenu-WTF;
+      background-color: $colorBg-WTF;
+    }
+
+    &_numero {
+     
+      color: $colorLetra-Padrao-WTF;
+      font-size: 17px;
+      font-family: $fonte-normal-WTF-Fox;
+    }
+
+
+
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+  .logar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .esconde {
+    display: none;
+  }
+}

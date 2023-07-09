@@ -1,56 +1,18 @@
 import styles from "./IncrementoCheckBox.module.scss"
 import React, { useContext, useEffect, useState } from 'react';
 import dados from "../../../../assets/json/dados.json"
+import { ModalCardContext } from "../../../../common/context/ModalCard";
 
 
 export default function IncrementoCheckBox({ card }) {
 
-
-  const raposa = dados.Goblins;
-  const props = raposa[0].valor
-
-  const values = {
-    corpoBase: 50,
-    olhos: 10,
-    boca: 10,
-    oculos: 12,
-    capaceteChapeu: 15,
-    camiseta: 15,
-    jaqueta: 20,
-    piercings: 5
-  };
-
-  const [adicional, setAdicional] = useState(props);
-  const [adicionalTotal, setAdicionalTotal] = useState(0);
-  const [valorFinal, setValorFinal] = useState(0)
+  const { setCartaoSelecionado,handleAdicionalDeItens } = useContext(ModalCardContext);
 
   useEffect(() => {
-    const atualizado = Object.values(adicional).reduce((acc, val) => acc + val, 0);
-    setAdicionalTotal(atualizado);
-  }, [adicional]);
-
-  const handleChange = (event) => {
-    const { id, checked } = event.target;
-
-    setAdicional((prevAdicional) => {
-      const updatedAdicional = { ...prevAdicional };
-
-      if (checked) {
-        updatedAdicional[id] = values[id];
-      } else {
-        delete updatedAdicional[id];
-      }
-
-      return updatedAdicional;
-    });
-  };
-
-  useEffect(() => {
-
-    const final = card.valor + adicionalTotal
-
-    setValorFinal(final);
-  }, [adicionalTotal]);
+    if (card) {
+      setCartaoSelecionado(card)
+    }
+  }, [])
 
 
   return (
@@ -66,7 +28,7 @@ export default function IncrementoCheckBox({ card }) {
               id="corpoBase"
               name="traits"
               value="Corpo Base"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="corpoBase">Corpo Base</label>
           </div>
@@ -77,7 +39,7 @@ export default function IncrementoCheckBox({ card }) {
               id="olhos"
               name="traits"
               value="Olhos"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="olhos">Olhos</label>
           </div>
@@ -88,7 +50,7 @@ export default function IncrementoCheckBox({ card }) {
               id="boca"
               name="traits"
               value="Boca"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="boca">Boca</label>
           </div>
@@ -99,7 +61,7 @@ export default function IncrementoCheckBox({ card }) {
               id="oculos"
               name="traits"
               value="Óculos"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="oculos">Óculos</label>
           </div>
@@ -110,7 +72,7 @@ export default function IncrementoCheckBox({ card }) {
               id="capaceteChapeu"
               name="traits"
               value="Capacete/Chapéu"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="capaceteChapeu">Chapéu</label>
           </div>
@@ -121,7 +83,7 @@ export default function IncrementoCheckBox({ card }) {
               id="camiseta"
               name="traits"
               value="Camiseta"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="camiseta">Camiseta</label>
           </div>
@@ -132,7 +94,7 @@ export default function IncrementoCheckBox({ card }) {
               id="jaqueta"
               name="traits"
               value="Jaqueta"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="jaqueta">Jaqueta</label>
           </div>
@@ -143,7 +105,7 @@ export default function IncrementoCheckBox({ card }) {
               id="piercings"
               name="traits"
               value="Piercings"
-              onChange={handleChange}
+              onChange={handleAdicionalDeItens}
             />
             <label htmlFor="piercings">Piercings</label>
           </div>
