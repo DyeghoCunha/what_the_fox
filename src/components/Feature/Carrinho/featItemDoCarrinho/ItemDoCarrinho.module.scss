@@ -1,0 +1,45 @@
+@import "../../../../styles/variaveis";
+
+
+
+.base {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  @include cardInternoSemBlur($colorBg-WTF-Verde);
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px 0px 5px 0px;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  @include cardExternoSemBlur($colorBg-WTF);
+  gap: 5px;
+
+  &_botao {
+    width: 110px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 8px;
+    @include cardExternoSemBlur($colorBg-WTF);
+    font-size: 25px;
+    color: $colorLetra-Padrao-WTF;
+    &:hover {
+      color: $cyberblue;
+    }
+    &:active {
+      color: $cyberblue;
+      @include cardInternoSemBlur($colorBg-WTF);
+    }
+  }
+}

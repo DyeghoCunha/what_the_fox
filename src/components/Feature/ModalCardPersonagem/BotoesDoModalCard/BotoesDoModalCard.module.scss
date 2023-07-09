@@ -12,6 +12,7 @@
   gap: 20px;
   @include cardExternoSemBlur($colorBg-WTF);
   border-radius: 8px;
+  z-index: 25;
 
   &::after{
   content:"" ;

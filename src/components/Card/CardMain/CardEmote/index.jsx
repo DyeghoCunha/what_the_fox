@@ -7,11 +7,11 @@ import foxCoin5 from "./image/FoxCoin5.png"
 
 import React from 'react'
 
-export default function CardEmote({ card }) {
+export default function CardEmote({ card, emote = true , imagem }) {
 
   let moeda = ""
-  
-  const preco = card.valor
+
+  const preco = card && card.valor ? card.valor : ""
 
 
   if (preco > 10) {
@@ -26,17 +26,21 @@ export default function CardEmote({ card }) {
     <CardBase3d >
       <section className={styles.container}>
         <div className={styles.container_imagem}>
-          <img src={card.imagem} className={styles.imagem} alt="" />
+          <img src={card ? card.imagem : imagem} className={styles.imagem} alt="" />
         </div>
       </section>
 
-      <div className={styles.container_valor}>
-        <img src={moeda} className={styles.valor} />
-      </div>
+      {emote && (
+        <>
+          <div className={styles.container_valor}>
+            <img src={moeda} className={styles.valor} />
+          </div>
 
-      <div className={styles.container_nome}>
-        <h2 className={styles.nome}>{card.nome}</h2>
-      </div>
+          <div className={styles.container_nome}>
+            <h2 className={styles.nome}>{card.nome}</h2>
+          </div>
+        </>
+      )}
     </CardBase3d >
   )
 }

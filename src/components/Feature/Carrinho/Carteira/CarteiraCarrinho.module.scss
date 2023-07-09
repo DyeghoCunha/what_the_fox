@@ -1,0 +1,73 @@
+@import "../../../../styles/variaveis";
+
+
+.container {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  .carteira {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &_saldo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+   
+
+
+    &_valorTotal {
+      width: 160px;
+      height: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      margin-left: 2px;
+
+
+
+      &_titulo {
+        width: 90%;
+        border-radius: 8px 8px 0px 0px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include cardExternoSemBlur($colorBg-WTF);
+        padding: 10px 5px 3px 5px;
+        @include tituloPadrao();
+        font-size: 18px;
+        letter-spacing: 5px;
+      }
+
+      &_valor {
+        width: 96%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        border-radius: 0px 0px 8px 8px;
+        padding: 4px 0px 0px 0px;
+        font-family: $fonte-normal-WTF-Fox;
+        color: $colorLetra-Padrao-WTF;
+        font-size: 24px;
+        @include cardInternoSemBlur($colorBg-WTF);
+      }
+
+    }
+  }
+}

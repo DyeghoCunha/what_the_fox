@@ -1,0 +1,121 @@
+@import "../../styles/variaveis";
+
+.base {
+  width: 320px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  @include cardInternoSemBlur($colorBg-WTF-Verde);
+  padding: 5px;
+  border-radius: 8px;
+  margin: 100px 0px 0px 100px;
+
+}
+
+.container {
+  width: 320px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px;
+  border-radius: 8px;
+  @include cardInternoSemBlur($colorBg-WTF-Verde);
+
+
+  &_titulo {
+    width: 97%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
+    margin: 0px 0px 5px 0px;
+    @include tituloPadrao();
+    @include cardExternoSemBlur($colorBg-WTF);
+     letter-spacing: 5px;
+  }
+
+  &_saldoFinal {
+    width: 97%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    border-radius: 0px 0px 8px 8px;
+
+
+    &_titulo {
+      margin: 0;
+      padding: 0;
+      width: 49%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include cardExternoSemBlur($colorBg-WTF);
+      border-radius: 0px 0px 0px 8px;
+      @include tituloPadrao();
+      font-size: 17px;
+      letter-spacing: 5px;
+    }
+
+    &_valor {
+      width: 49%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      padding: 0;
+      margin: 0;
+      border-radius: 0px 0px 8px 0px;
+      @include cardInternoSemBlur($colorBg-WTF);
+      font-family: $fonte-normal-WTF-Fox;
+      
+       color: $cyberblue;
+  text-shadow: 1px 1px 2px black;
+  filter: drop-shadow(1px 1px 0px $colorBg-WTF-Verde);
+    }
+  }
+
+.naoPodeComprar{
+  color: $cyberorange;
+  text-shadow: 1px 1px 2px black;
+  filter: drop-shadow(1px 1px 0px red);
+}
+&_botoes{
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 5px 0px;
+  border-radius: 30% 8px 30% 8px;
+  @include cardInternoSemBlur($colorBg-WTF);
+  z-index: 20;
+
+  &::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0px;
+    border-radius: 8px 30% 8px 30%;
+    border: 1px solid $colorBg-WTF;
+    background-color: $colorBg-WTF-Verde;
+    
+  }
+}
+
+}

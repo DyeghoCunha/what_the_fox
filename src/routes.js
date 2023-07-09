@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import { FirebaseProvider } from './common/context/FirebaseConfig';
 import { ModalCardProvider } from './common/context/ModalCard';
 import { CarrinhoProvider } from './common/context/Carrinho';
+import PaginaCarrinho from './Paginas/PaginaCarrinho';
 
 
 
@@ -34,6 +35,7 @@ export default function AppRoutes() {
 
               <Routes>
                 <Route path="/teste" element={<PaginaInicial />} />
+                <Route path="/carrinho" element={<PaginaCarrinho />} />
                 <Route path="/" element={<PaginaTeste />} />
               </Routes>
 

@@ -3,19 +3,19 @@ import CardEmote from '../../Card/CardMain/CardEmote'
 
 import styles from "./DeckEmote.module.scss"
 
-export default function DeckEmotes({tribo}) {
+export default function DeckEmotes({ tribo, emote }) {
 
 
 
   return (
-<>
-<section className={styles.container}>
-{tribo.map((card) => ( 
+    <>
+      <section className={styles.container}>
+        {tribo.map((card) => (
 
-  <CardEmote card={card}/>
+          <CardEmote card={card} emote={emote} />
 
-))}
-</section>
-</>
+        ))}
+      </section>
+    </>
   )
 }

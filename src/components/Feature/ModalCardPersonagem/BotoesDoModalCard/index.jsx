@@ -4,7 +4,7 @@ import styles from "./BotoesDoModalCard.module.scss"
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-export default function BotoesDoModalCard({ parametro, onClickFavorito, onClickCarrinho }) {
+export default function BotoesDoModalCard({ parametro, onClickIcone1, onClickIcone2, icone1, icone2 }) {
 
 
 
@@ -12,8 +12,8 @@ export default function BotoesDoModalCard({ parametro, onClickFavorito, onClickC
   return (
     <section className={styles.container}>
       <div className={styles.container_botoes}>
-        <BotaoNeomorph onClick={onClickFavorito} botaoModal={true} parametro={parametro}><FontAwesomeIcon icon={faHeartCirclePlus} /></BotaoNeomorph>
-        <BotaoNeomorph onClick={onClickCarrinho} botaoModal={true} parametro={parametro}><FontAwesomeIcon icon={faCartPlus} /></BotaoNeomorph>
+        <BotaoNeomorph onClick={onClickIcone1} botaoModal={true} parametro={parametro}>{icone1}</BotaoNeomorph>
+        <BotaoNeomorph onClick={onClickIcone2} botaoModal={true} parametro={parametro}>{icone2}</BotaoNeomorph>
       </div>
 
     </section>

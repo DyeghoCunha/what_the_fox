@@ -10,7 +10,7 @@ import CardValor from './CardValor';
 import BotoesDoModalCard from './BotoesDoModalCard';
 
 import BotaoNeomorph from '../../BotaoNeomorph';
-import { faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faHeartCirclePlus, faRectangleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ModalCardContext } from '../../../common/context/ModalCard';
 import { CarrinhoContext } from '../../../common/context/Carrinho';
@@ -73,8 +73,10 @@ export default function ModalCardPersonagem({ card, aberta }) {
                   <CardValor valor={valorFinalDoCard > card.valor ? valorFinalDoCard : card.valor } />
                   <div className={styles.container_personagem_compras_botoes}>
                     <BotoesDoModalCard
-                      onClickFavorito={() => handleAdicionaItemNoFavoritoFirebase(card)}
-                      onClickCarrinho={() => handleAdicionaItemNoCarrinhoFirebase(card)}
+                      onClickIcone1={() => handleAdicionaItemNoFavoritoFirebase(card)}
+                      onClickIcone2={() => handleAdicionaItemNoCarrinhoFirebase(card)}
+                      icone1={<FontAwesomeIcon icon={faHeartCirclePlus} />}
+                      icone2={<FontAwesomeIcon icon={faCartPlus} />}
                     />
                   </div>
                 </div>

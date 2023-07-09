@@ -1,7 +1,5 @@
 import styles from "./Hamburger.module.scss"
-import hamburgerOn from "../image/menuHamgurgerOpen.png"
-import hamburgerOff from "../image/menuHamgurgerClose.png"
-import React, { useContext, useState } from 'react'
+import React, { useContext} from 'react'
 import { FaFortAwesome } from "react-icons/fa";
 import BotaoMenu from "../../BotaoMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,18 +8,12 @@ import { faNewspaper } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import ContainerRGBFlex from "../../ContainerRGBFlex"
 import { FirebaseContext } from "../../../common/context/FirebaseConfig";
-
 import fotoAnonimo from "../../../assets/images/cardAnonimo.png"
-import BotaoGeral from "../../BotãoGeral";
 import BotoesDeLogin from "../../BotoesDeLogin";
 
 
 export default function Hamburger({ modalLogin, aberto }) {
   const { logado, usuario, handleLogOut, usuarioNome, usuarioFoto, handleSubmitGoogle, handleSubmitGithub } = useContext(FirebaseContext)
-
-
-
-
 
   return (
     <>
