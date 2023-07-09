@@ -5,12 +5,13 @@
 .modal{
 
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 900000;
   display: flex;
+  margin-top: 70px;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
