@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { FirebaseContext } from "./FirebaseConfig";
-import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { arrayUnion, collection, collectionGroup, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore";
 import { ModalCardContext } from "./ModalCard";
 
 const CarrinhoContext = createContext()
@@ -15,7 +15,9 @@ const CarrinhoProvider = ({ children }) => {
   function handleAdicionaItemNoCarrinhoFirebase(objeto) {
     const objetoAtualizado = { ...objeto, valor: valorFinalDoCard }
     console.log("Atualizado: ", objetoAtualizado)
+
     if (usuario) {
+
       console.log("UPDATE ID: ", usuario[0]);
       const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);
       updateDoc(docToUpdate, {
@@ -23,13 +25,42 @@ const CarrinhoProvider = ({ children }) => {
       })
         .then(() => {
           console.log("Carrinho Inserido: ", objetoAtualizado);
-          setQuantidadeCarrinho(usuario[0].carrinho.length)
+          const getArrayLength = async () => {
+            const docSnap = await getDoc(docToUpdate);
+
+            if (docSnap.exists()) {
+              const data = docSnap.data();
+              const arrayLength = data.carrinho.length;
+              console.log("Quantidade de itens no array:", arrayLength);
+              setQuantidadeCarrinho(arrayLength)
+              localStorage.setItem('quantidadeCarrinho', arrayLength);
+            }
+          };
+          getArrayLength();
         })
         .catch((err) => {
           alert(err.message);
         });
     }
   }
+  
+  
+  const valor = localStorage.getItem('Logado');
+  const valor1 = localStorage.getItem('Usuario');
+  console.log("Valor: ", valor)
+  console.log("Valor 2: ", valor1)
+
+  
+  
+  
+  
+  
+  
+// Resto do seu código...
+
+
+
+
 
 
 

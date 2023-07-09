@@ -46,6 +46,7 @@ const FirebaseProvider = (({ children }) => {
   const [armazenaInput, setArmazenaInput] = useState({})
   const [logado, setLogado] = useState(false)
   const [usuarioUid, setUsuarioUid] = useState(null)
+  
 
   const auth = getAuth();
 
@@ -407,12 +408,12 @@ const FirebaseProvider = (({ children }) => {
 
   //?_____Security Log In Log Off_______________________________________
   const [usuarioDbPastaRef, setUsuarioDbPastaRef] = useState("")
-  useEffect(() => {
+  /* useEffect(() => {
     /*  onSnapshot(collectionRef, (data) => {
        console.log("UsuariosDB:", data.docs.map((item) => {
          return { ...item.data(), id: item.id }
        }))
-     })  */
+     })  
 
     //No Firebase Rules colocar allow write: if request.auth != null;
     //                           allow read: if request.auth !=null;
@@ -449,7 +450,38 @@ const FirebaseProvider = (({ children }) => {
       }
 
     })
+  }, []) */
+
+
+
+  useEffect(() => {
+
+    onAuthStateChanged(auth, (data) => {
+      if (data) {
+        setLogado(true)
+        setUsuarioUid(data.uid)
+        setUsuarioNome(data.displayName)
+        setUsuarioFoto(data.photoURL)
+       localStorage.setItem('Logado', true);
+       localStorage.setItem('usuarioUid', data.uid);
+
+
+        getDocs(collection(database, `userDb/user/${data.uid}`))
+          .then((response) => {
+            setUsuario(response.docs.map((item) => {
+              localStorage.setItem('usuario', item.id);
+              return item.id
+            }))
+          })
+      }
+      else {
+    
+      }
+
+    })
   }, [])
+
+
 
   //TODO_________MUUIITO IMPORTANTE ____Alterar dados do Favoritos_____
 
@@ -495,6 +527,7 @@ const FirebaseProvider = (({ children }) => {
 
 
   const handleLogOut = () => {
+    localStorage.removeItem('Logado');
     setLogado(false)
     signOut(auth)
   }

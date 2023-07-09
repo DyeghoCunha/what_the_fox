@@ -20,9 +20,10 @@ import FavoritosCarrinho from './FavoritosCarrinho';
 
 
 export default function Cabecalho() {
-  const { logado, handleLogOut } = useContext(FirebaseContext)
+  const { handleLogOut } = useContext(FirebaseContext)
   const [modalLogar, setModalLogar] = useState(false)
   const [modalRegistrar, setModalRegistrar] = useState(false)
+  const logado = localStorage.getItem('Logado');
 
   const [menuHamburger, setMenuHamburger] = useState(false)
 

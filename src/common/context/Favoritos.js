@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { arrayUnion, doc, getDoc, updateDoc } from "firebase/firestore";
+import { arrayUnion, collection, doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
 
 import { FirebaseContext } from "./FirebaseConfig.js"
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -41,9 +41,32 @@ const FavoritoProvider = ({ children }) => {
         })
         .catch((err) => {
           alert(err.message);
+        })
+        .then(() => {
+          const getArrayLength = async () => {
+            const docSnap = await getDoc(docToUpdate);
+            if (docSnap.exists()) {
+              const data = docSnap.data();
+              const arrayLength = data.favorito.length;
+              console.log("Quantidade de itens no array:", arrayLength);
+              setQuantidadeFavoritos(arrayLength)
+              localStorage.setItem('quantidadeFavoritos', arrayLength);
+            }
+          };
+          getArrayLength();
+
+          
+        })
+        .catch((err) => {
+          alert(err.message);
         });
     }
   }
+
+  
+
+  
+
 
 
   //!___FIM___pegar os Favoritos do banco de dados do usuario_____
@@ -83,7 +106,7 @@ const FavoritoProvider = ({ children }) => {
   const value = {
     favorito,
     setFavorito,
-    aberto, setAberto, cardModal, setCardModal,handleAdicionaItemNoFavoritoFirebase,
+    aberto, setAberto, cardModal, setCardModal, handleAdicionaItemNoFavoritoFirebase,
     quantidadeFavoritos
 
   }

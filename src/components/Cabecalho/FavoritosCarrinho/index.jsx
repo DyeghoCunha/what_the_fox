@@ -12,6 +12,24 @@ export default function FavoritosCarrinho() {
 
   const { quantidadeFavoritos } = useContext(FavoritoContext)
   const { quantidadeCarrinho } = useContext(CarrinhoContext)
+  const quantidadeCarrinhoLocalSt = localStorage.getItem('quantidadeCarrinho');
+  const quantidadeFavoritosLocalSt = localStorage.getItem('quantidadeFavoritos');
+
+console.log(quantidadeCarrinhoLocalSt)
+let qtdCarrinho = 0
+let qtdFavoritos = 0
+
+if(quantidadeCarrinho>0){
+  qtdCarrinho = quantidadeCarrinho
+}else{
+  qtdCarrinho = quantidadeCarrinhoLocalSt
+}
+
+if(quantidadeFavoritos>0){
+  qtdFavoritos = quantidadeFavoritos
+}else{
+  qtdFavoritos = quantidadeFavoritosLocalSt
+}
 
   return (
     <>
@@ -20,31 +38,23 @@ export default function FavoritosCarrinho() {
         <Link to={"/favorito"}>
           <div className={styles.container_icone}>
             <BotaoNeomorph link={"/favorito"} ><FontAwesomeIcon icon={faHeart} /></BotaoNeomorph>
-            {quantidadeFavoritos > 0 && (
+            {qtdFavoritos > 0 && (
               <span className={` ${styles.circulo} ${styles.apaga}`}>
-                <i className={styles.container_icone_numero}>{quantidadeFavoritos}</i>
+                <i className={styles.container_icone_numero}>{qtdFavoritos}</i>
               </span>
             )}
           </div>
         </Link>
-
         <Link to={"/carrinho"}>
           <div className={styles.container_icone}>
             <BotaoNeomorph link={"/carrinho"} ><FontAwesomeIcon icon={faCartShopping} /></BotaoNeomorph>
-
-            {quantidadeCarrinho > 0 && (
+            {qtdCarrinho > 0 && (
               <span className={` ${styles.circulo} ${styles.apaga}`}>
-                <i className={styles.container_icone_numero}>{quantidadeCarrinho}</i>
+                <i className={styles.container_icone_numero}>{qtdCarrinho}</i>
               </span>
             )}
-
           </div>
         </Link>
-
-
-
-
-
       </section >
 
     </>
