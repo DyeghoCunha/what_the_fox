@@ -59,7 +59,7 @@ export default function Cabecalho() {
             <div>Home</div>
           </CabecalhoLink>
 
-          <CabecalhoLink to={"/artistas"}>
+          <CabecalhoLink  to={"/artistas"}>
             <div>Os Artistas</div>
           </CabecalhoLink>
 

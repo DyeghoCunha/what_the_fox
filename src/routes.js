@@ -15,6 +15,7 @@ import { FirebaseProvider } from './common/context/FirebaseConfig';
 import { ModalCardProvider } from './common/context/ModalCard';
 import { CarrinhoProvider } from './common/context/Carrinho';
 import PaginaCarrinho from './Paginas/PaginaCarrinho';
+import { BuscaProvider } from './common/context/Busca';
 
 
 
@@ -22,28 +23,30 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <FirebaseProvider>
-        <ModalCardProvider>
-          <CarrinhoProvider>
-            <FavoritoProvider>
-              <Cabecalho />
+        <BuscaProvider>
+          <ModalCardProvider>
+            <CarrinhoProvider>
+              <FavoritoProvider>
+                <Cabecalho />
 
-              <BannerProvider>
-                <Banner />
-              </BannerProvider>
+                <BannerProvider>
+                  <Banner />
+                </BannerProvider>
 
 
 
-              <Routes>
-                <Route path="/" element={<PaginaInicial />} />
-                <Route path="/carrinho" element={<PaginaCarrinho />} />
-                <Route path="/teste" element={<PaginaTeste />} />
-              </Routes>
+                <Routes>
+                  <Route path="/" element={<PaginaInicial />} />
+                  <Route path="/carrinho" element={<PaginaCarrinho />} />
+                  <Route path="/teste" element={<PaginaTeste />} />
+                </Routes>
 
-              <Footer />
+                <Footer id="Artistas#1" />
 
-            </FavoritoProvider>
-          </CarrinhoProvider>
-        </ModalCardProvider>
+              </FavoritoProvider>
+            </CarrinhoProvider>
+          </ModalCardProvider>
+        </BuscaProvider>
       </FirebaseProvider>
     </BrowserRouter>
   );

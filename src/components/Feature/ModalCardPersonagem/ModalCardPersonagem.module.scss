@@ -11,7 +11,6 @@
   bottom: 0;
   z-index: 900000;
   display: flex;
-  margin-top: 70px;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
@@ -112,7 +111,8 @@
 @media (max-width: 480px) {
   .container {
     position: relative;
-    top: 125px;
+    padding: 170px;
+    //top: 125px;
     width: fit-content;
     height: fit-content;
     z-index: 8000;

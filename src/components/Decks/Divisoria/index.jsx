@@ -5,10 +5,10 @@ import meio from "./image/barraMeio.png"
 
 import React from 'react'
 
-export default function Divisoria({ titulo }) {
+export default function Divisoria({ id, titulo }) {
   return (
     <>
-      <section className={styles.container}>
+      <section id={id} className={styles.container}>
         <img src={esquerda} className={styles.container_imagem} alt="" />
         <img src={meio} className={styles.container_imagem} alt="" />
         <img src={direita} className={styles.container_imagem} alt="" />

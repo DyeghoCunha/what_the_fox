@@ -742,32 +742,32 @@
 
   "Categorias": [
     {
-      "id": 101,
+      "id": "Goblin#1" ,
       "nomeCategoria": "Goblins",
       "imagem": "personagem/categorias/categoriaCard_Goblin.png"
     },
     {
-      "id": 102,
+      "id": "Fox#1",
       "nomeCategoria": "Raposas",
       "imagem": "personagem/categorias/categoriaCard_Raposa.png"
     },
     {
-      "id": 103,
+      "id":"Apes#1",
       "nomeCategoria": "Apes",
       "imagem": "personagem/categorias/categoriaCard_Ape.png"
     },
     {
-      "id": 104,
+      "id": "Hemp#1",
       "nomeCategoria": "Hemps",
       "imagem": "personagem/categorias/categoriaCard_Erva.png"
     },
     {
-      "id": 105,
-      "nomeCategoria": "SwordMaster",
+      "id": "BladeMaster#1",
+      "nomeCategoria": "BladeMaster",
       "imagem": "personagem/categorias/categoriaCard_Samurai.png"
     },
     {
-      "id": 106,
+      "id": "Emotes#1",
       "nomeCategoria": "Emotes",
       "imagem": "personagem/categorias/categoriaCard_Emote.png"
     }

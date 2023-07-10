@@ -10,6 +10,7 @@
   flex-direction: column;
 
   border-radius: 10px;
+  cursor: pointer;
 
 }
 
@@ -37,6 +38,7 @@
   transform: translate(-0px, -20px);
   position: absolute;
   z-index: 2000;
+  
 
 }
 
@@ -48,6 +50,7 @@
   height: 190px;
   position: relative;
   transform: translateZ(40px);
+ 
 }
 
 .faixaContainer {

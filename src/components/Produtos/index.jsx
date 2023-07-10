@@ -12,21 +12,21 @@ import ModalCardPersonagem from '../Feature/ModalCardPersonagem';
 
 
 
-export default function Produtos({ titulo, tribo, miniCard, estiloCard, emotes = false }) {
+export default function Produtos({ id, titulo, tribo, miniCard, estiloCard, emotes = false }) {
 
   const { aberto, cardModal } = useContext(FavoritoContext)
 
-  console.log("CardModal: ", cardModal)
+ // console.log("CardModal: ", cardModal)
 
 
   return (
 
     <>
 
-      <article className={styles.container}>
+      <article id={id} className={styles.container}>
         <ModalCardPersonagem card={cardModal} />
         <div className={styles.container_titulo}>
-          <Divisoria titulo={titulo} />
+          <Divisoria  titulo={titulo} />
         </div>
 
         {emotes && (

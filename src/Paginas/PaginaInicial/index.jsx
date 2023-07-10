@@ -19,13 +19,15 @@ export default function PaginaInicial() {
     
         <Categorias />
         <Destaques />
-        <Divisoria titulo={"Emotes"} />
+        <Divisoria id="Emotes#1" titulo={"Emotes"} />
         <DeckEmotes tribo={emoteDb} />
-        <Produtos estiloCard={"CardOffice"} miniCard={"miniCardOffice"} titulo={"Fox"} tribo={foxDb} />
-        <Produtos estiloCard={"CardPraia"} miniCard={"miniCardSand"} titulo={"Hemps"} tribo={hempDb} />
-        <Produtos estiloCard={"CardVerde"} miniCard={"miniCardVerde"} titulo={"Goblins"} tribo={goblinDb} />
-        <Produtos estiloCard={"CardAzul"} miniCard={"miniCardAzul"} titulo={"BladeMaster"} tribo={bladeMasterDb} />
-        <Produtos estiloCard={"CardPremiunAzul"} miniCard={"miniCardAzul"} titulo={"Apes"} tribo={apesDb} />
+        
+        <Produtos id="Fox#1" estiloCard={"CardOffice"} miniCard={"miniCardOffice"} titulo={"Fox"} tribo={foxDb} />
+        
+        <Produtos id="Hemp#1" estiloCard={"CardPraia"} miniCard={"miniCardSand"} titulo={"Hemps"} tribo={hempDb} />
+        <Produtos id="Goblin#1" estiloCard={"CardVerde"} miniCard={"miniCardVerde"} titulo={"Goblins"} tribo={goblinDb} />
+        <Produtos id="BladeMaster#1" estiloCard={"CardAzul"} miniCard={"miniCardAzul"} titulo={"BladeMaster"} tribo={bladeMasterDb} />
+        <Produtos id="Apes#1" estiloCard={"CardPremiunAzul"} miniCard={"miniCardAzul"} titulo={"Apes"} tribo={apesDb} />
 
 
       </div>

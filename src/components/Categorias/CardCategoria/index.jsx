@@ -5,9 +5,19 @@ import VanillaTilt from 'vanilla-tilt';
 import React, { useEffect, useRef } from 'react'
 
 
-export default function CardCategoria({ nome, imagem  }) {
+export default function CardCategoria({ nome, imagem, id }) {
 
   const tiltRef = useRef(null);
+
+
+  const handleClick = () => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = -64; // Defina o deslocamento negativo desejado
+      const topPosition = element.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({ top: topPosition, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     if (tiltRef.current) {
@@ -25,7 +35,7 @@ export default function CardCategoria({ nome, imagem  }) {
   return (
 
     <>
-      <div className={`${styles.container_Card} tilt`} ref={tiltRef}>
+      <div onClick={handleClick} className={`${styles.container_Card} tilt`} ref={tiltRef}>
         <img className={styles.imgFundo} src={armacao} alt="" />
         <div className={`${styles.card_base} ${styles.card_personagem}`}>
           <img className={styles.card_personagem_imagem} src={imagem} alt="" />
