@@ -4,17 +4,24 @@ import CarteiraCarrinho from './Carteira';
 import BotoesDoModalCard from '../ModalCardPersonagem/BotoesDoModalCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown, faHand, faMoneyBillTransfer, faTrashArrowUp } from '@fortawesome/free-solid-svg-icons';
+import FotoCard from '../ModalCardPersonagem/FotoCard';
+import imagem from "../Carrinho/image/macaco.jpg"
+import { CarrinhoContext } from '../../../common/context/Carrinho';
 
 
 
 
 export default function Carrinho({ card, onClick }) {
 
-  const [saldo, setSaldo] = useState(756)
+  const [saldo, setSaldo] = useState(256)
   const [podeComprar, setPodeComprar] = useState(null)
+  const {handleLimpaCarrinhoFirebase} = useContext(CarrinhoContext)
 
   const valor = 580;
-
+  const semSaldo = {
+    nome: "Você está sem grana !",
+    imagem: imagem
+  }
 
   const pagamento = saldo - valor
 
@@ -28,18 +35,26 @@ export default function Carrinho({ card, onClick }) {
 
   return (
     <>
-      <section className={styles.container}>
-        <h2 className={styles.container_titulo}>Carrinho</h2>
-        <CarteiraCarrinho valorCarteira={600} valorItens={1590} />
-        <div className={styles.container_saldoFinal}>
-          <h2 className={styles.container_saldoFinal_titulo}>Saldo Final</h2>
-          <p className={`${!podeComprar ? styles.naoPodeComprar : ""} ${styles.container_saldoFinal_valor}`}><FontAwesomeIcon icon={faMoneyBillTransfer} />{pagamento}</p>
+      <section className={styles.paginaCarrinho}>
+        <section className={styles.container}>
+          <h2 className={styles.container_titulo}>Carrinho</h2>
+          <CarteiraCarrinho valorCarteira={600} valorItens={1590} />
+          <div className={styles.container_saldoFinal}>
+            <h2 className={styles.container_saldoFinal_titulo}>Saldo Final</h2>
+            <p className={`${!podeComprar ? styles.naoPodeComprar : ""} ${styles.container_saldoFinal_valor}`}><FontAwesomeIcon icon={faMoneyBillTransfer} />{pagamento}</p>
+          </div>
+        </section>
+
+        {!podeComprar && (
+          <div className={styles.container_semSaldo}>
+            <FotoCard card={semSaldo} sombra={false} />
+          </div>
+        )}
+
+        <div className={styles.container_botoes}>
+          <BotoesDoModalCard onClickIcone1={handleLimpaCarrinhoFirebase} icone2={!podeComprar ? <FontAwesomeIcon icon={faHand} /> : <FontAwesomeIcon icon={faCartArrowDown} />} icone1={<FontAwesomeIcon icon={faTrashArrowUp} />} />
         </div>
-      
-      <div className={styles.container_botoes}>
-        <BotoesDoModalCard icone2={!podeComprar ? <FontAwesomeIcon icon={faHand} /> : <FontAwesomeIcon icon={faCartArrowDown} />} icone1={<FontAwesomeIcon icon={faTrashArrowUp} />} />
-      </div>
-</section>
+      </section>
     </>
   )
 }

@@ -9,7 +9,7 @@ export default function IncrementoCheckBox({ card }) {
   const { setCartaoSelecionado,handleAdicionalDeItens } = useContext(ModalCardContext);
 
   useEffect(() => {
-    console.log("CARD: ", card)
+    //console.log("CARD: ", card)
     setCartaoSelecionado(card)
   }, [])
 

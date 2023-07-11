@@ -14,24 +14,20 @@ const FavoritoProvider = ({ children }) => {
   const [cardModal, setCardModal] = useState({})
   const [quantidadeFavoritos, setQuantidadeFavoritos] = useState(0)
   const { usuarioUid, database, usuario } = useContext(FirebaseContext)
+  const [isFavorito, setIsFavorito] =useState(false)
 
 
 
   //!_____FIM MODAL______
 
 
-
-  //!___INICIO___pegar os Favoritos do banco de dados do usuario_____
-  const userId = "9BcZXt0EoleNGYVBZSnpJDC5F6E3";
-
   const auth = getAuth()
-  const [favoritoRef, setFavoritoRef] = useState()
-
+  const [favoritoRef, setFavoritoRef] = useState([])
+  const [favoritosProdutos,setFavoritosProdutos] = useState([])
 
   function handleAdicionaItemNoFavoritoFirebase(objeto) {
-
     if (usuario) {
-      console.log("UPDATE ID: ", usuario[0]);
+      // console.log("UPDATE ID: ", usuario[0]);
       const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);
       updateDoc(docToUpdate, {
         favorito: arrayUnion(objeto)
@@ -47,56 +43,65 @@ const FavoritoProvider = ({ children }) => {
             const docSnap = await getDoc(docToUpdate);
             if (docSnap.exists()) {
               const data = docSnap.data();
+              setFavoritosProdutos(data.favorito)
               const arrayLength = data.favorito.length;
               console.log("Quantidade de itens no array:", arrayLength);
+              
               setQuantidadeFavoritos(arrayLength)
               localStorage.setItem('quantidadeFavoritos', arrayLength);
             }
           };
           getArrayLength();
-
-          
         })
         .catch((err) => {
           alert(err.message);
         });
     }
   }
+  console.log("Favoritos:", favoritosProdutos);
 
-  
 
-  
+function handleRemoveItemDoFavoritoFirebase(card) {
+  if (usuario) {
+    console.log("UPDATE ID: ", usuario[0]);
+    console.log("UPDATE ID: ", card.id);
+    console.log("UPDATE Valor: ", card.valor);
+    const docToUpdate = doc(database, `userDb/user/${usuarioUid}/${usuario[0]}`);
 
+    // Obtém o documento atual do Firestore
+    getDoc(docToUpdate)
+      .then((docSnap) => {
+        if (docSnap.exists()) {
+          const carrinhoAtual = docSnap.data().carrinho;
+
+          // Filtra o carrinho atual para remover apenas o item correspondente
+          const newCarrinho = carrinhoAtual.filter(item => !(item.valor === card.valor && item.id === card.id));
+
+          // Atualiza o documento no Firestore com o novo carrinho
+          updateDoc(docToUpdate, {
+            carrinho: newCarrinho
+          })
+            .then(() => {
+              console.log("Item removido do carrinho:", card.nome, card.id);
+              setFavoritosProdutos(newCarrinho);
+              setQuantidadeFavoritos(newCarrinho.length);
+              localStorage.setItem('quantidadeFavoritos', newCarrinho.length);
+            })
+            .catch((err) => {
+              alert(err.message);
+            });
+        } else {
+          console.log("O documento não existe");
+        }
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  }
+}
 
 
   //!___FIM___pegar os Favoritos do banco de dados do usuario_____
-
-
-  //!____Inicio___Conta a quantidade de Favoritos do banco de Dados do Usuario_____
-
-  /* const handleQuantidadeDeFavoritos = async () => {
-    try {
-      const userDocSnapshot = await getDoc(userDocRef);
-
-      if (userDocSnapshot.exists()) {
-        const userData = userDocSnapshot.data();
-        const favorites = userData.favoritos;
-
-        if (favorites) {
-          const count = Object.keys(favorites).length;
-          console.log("Número de favoritos:", count);
-        } else {
-          console.log("Nenhum favorito encontrado");
-        }
-      } else {
-        console.log("Usuário não encontrado");
-      }
-    } catch (error) {
-      console.error("Erro ao contar os favoritos do usuário:", error);
-    }
-  }; */
-
-  //!____Inicio___Conta a quantidade de Favoritos do banco de Dados do Usuario_____
 
 
 
@@ -107,7 +112,7 @@ const FavoritoProvider = ({ children }) => {
     favorito,
     setFavorito,
     aberto, setAberto, cardModal, setCardModal, handleAdicionaItemNoFavoritoFirebase,
-    quantidadeFavoritos
+    quantidadeFavoritos,favoritoRef, setFavoritoRef,favoritosProdutos
 
   }
 

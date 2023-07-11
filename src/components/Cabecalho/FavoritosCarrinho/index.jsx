@@ -15,7 +15,7 @@ export default function FavoritosCarrinho() {
   const quantidadeCarrinhoLocalSt = localStorage.getItem('quantidadeCarrinho');
   const quantidadeFavoritosLocalSt = localStorage.getItem('quantidadeFavoritos');
 
-console.log(quantidadeCarrinhoLocalSt)
+//console.log(quantidadeCarrinhoLocalSt)
 let qtdCarrinho = 0
 let qtdFavoritos = 0
 

@@ -3,7 +3,7 @@ import styles from './FotoCard.module.scss';
 import dados from "../../../../assets/json/dados.json"
 import { FavoritoContext } from '../../../../common/context/Favoritos';
 
-export default function FotoCard({ card }) {
+export default function FotoCard({ card , sombra=true}) {
   const [deslocamentoSombraX, setDeslocamentoSombraX] = useState(40);
   const [deslocamentoSombraY, setDeslocamentoSombraY] = useState(40);
   const [intensidadeSombra, setIntensidadeSombra] = useState("");
@@ -11,14 +11,21 @@ export default function FotoCard({ card }) {
   const raposa = dados.Raposas
   const props = raposa[0]
 
+  
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
     const offsetX = clientX / window.innerWidth;
     const offsetY = clientY / window.innerHeight;
-
-    setIntensidadeSombra(offsetX);
+    if(sombra){
+      setIntensidadeSombra(offsetX);
     setDeslocamentoSombraX(offsetX * -20);
     setDeslocamentoSombraY(offsetY * 20);
+    }else{
+            setIntensidadeSombra(0);
+    setDeslocamentoSombraX(0);
+    setDeslocamentoSombraY(0);
+    }
+    
   }
 
   const imagemStyle = useMemo(() => ({
@@ -26,7 +33,7 @@ export default function FotoCard({ card }) {
   }), [deslocamentoSombraX, deslocamentoSombraY, intensidadeSombra]);
 
   return (
-    <div className={styles.container} onMouseMove={handleMouseMove}>
+    <div className={styles.container}  onMouseMove={handleMouseMove}>
       <div className={styles.container_personagem}>
         <img
           className={`${styles.container_personagem_foto} ${styles.dropShadow}`}

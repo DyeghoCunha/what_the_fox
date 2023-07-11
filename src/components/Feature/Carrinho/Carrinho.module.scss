@@ -1,6 +1,14 @@
 @import "../../../styles/variaveis";
 
-
+.paginaCarrinho{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+   @include cardExternoSemBlur($colorBg-WTF);
+   border-radius: 8px;
+   padding: 5px;
+}
 .container {
   width: 320px;
   height: fit-content;
@@ -77,6 +85,13 @@
   text-shadow: 1px 1px 2px black;
   filter: drop-shadow(1px 1px 0px red);
 }
+
+&_semSaldo{
+  margin-top: 10px;
+  height: fit-content;
+  width: fit-content;
+}
+
 &_botoes{
   width: 100%;
   height: fit-content;

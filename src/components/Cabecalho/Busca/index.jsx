@@ -6,12 +6,14 @@ import { BuscaContext } from '../../../common/context/Busca';
 
 export default function Busca({ legenda = "Buscar", onBusca, conteudo = "Digite sua busca" }) {
 
-  const [termoBusca, setTermoBusca] = useState('');
-  
+  const [termoBusca, setTermoBusca] = useState();
+
   const { buscarObjetos } = useContext(BuscaContext)
+const teste = ["alto"]
+
 
   const handleChange = (event) => {
-    setTermoBusca(event.target.value);
+    setTermoBusca([event.target.value]);
   };
 
   const handleSubmit = (event) => {
@@ -19,7 +21,12 @@ export default function Busca({ legenda = "Buscar", onBusca, conteudo = "Digite 
     onBusca(termoBusca);
   };
 
-  console.log("Buscar: ", termoBusca)
+   const handleBuscar = (event) => {
+
+    buscarObjetos(termoBusca)
+
+  }
+  //console.log("Buscar: ", termoBusca)
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
@@ -31,7 +38,7 @@ export default function Busca({ legenda = "Buscar", onBusca, conteudo = "Digite 
         className={styles.input}
       />
       <div className={styles.botao_container} >
-        <button className={styles.botao} type="submit">{legenda}</button>
+        <button onClick={handleBuscar} className={styles.botao} type="text">{legenda}</button>
       </div>
     </form>
   );

@@ -22,6 +22,9 @@ import miniCard4 from "../../Decks/image/minicard4.png"
 import favoritoOff4 from "../../Decks/image/heartOff4.png"
 import favoritoOn4 from "../../Decks/image/heartOn4.png"
 import botao4 from "../../Decks/image/barra4a.png"
+import miniCardBusca from "../image/minicardBusca.png"
+import favoritoOffBusca from "../image/favoritoOffBusca.png"
+import favoritoOnBusca from "../image/favoritoOnBusca.png"
 
 
 
@@ -34,40 +37,49 @@ export default function MiniCardDeck({ card, miniCard }) {
   const [minicardEstilo, setMinicardEstilo] = useState({})
 
 
-  useEffect(() => {
-    const estiloMapping = {
-      miniCardVerde: {
-        minicard: miniCard1,
-        botao: botao1,
-        favoritoOn: favoritoOn1,
-        favoritoOff: favoritoOff1
-      },
-      miniCardAzul: {
-        minicard: miniCard2,
-        botao: botao2,
-        favoritoOn: favoritoOn2,
-        favoritoOff: favoritoOff2
-      },
-      miniCardSand: {
-        minicard: miniCard3,
-        botao: botao3,
-        favoritoOn: favoritoOn3,
-        favoritoOff: favoritoOff3
-      },
-      miniCardOffice: {
-        minicard: miniCard4,
-        botao: botao4,
-        favoritoOn: favoritoOn4,
-        favoritoOff: favoritoOff4
-      }
-    };
-  
-    if (miniCard && estiloMapping.hasOwnProperty(miniCard)) {
-      setMinicardEstilo(estiloMapping[miniCard]);
-    }
-  }, []);
-  
 
+
+    useEffect(() => {
+      const estiloMapping = {
+        miniCardVerde: {
+          minicard: miniCard1,
+          botao: botao1,
+          favoritoOn: favoritoOn1,
+          favoritoOff: favoritoOff1
+        },
+        miniCardAzul: {
+          minicard: miniCard2,
+          botao: botao2,
+          favoritoOn: favoritoOn2,
+          favoritoOff: favoritoOff2
+        },
+        miniCardSand: {
+          minicard: miniCard3,
+          botao: botao3,
+          favoritoOn: favoritoOn3,
+          favoritoOff: favoritoOff3
+        },
+        miniCardOffice: {
+          minicard: miniCard4,
+          botao: botao4,
+          favoritoOn: favoritoOn4,
+          favoritoOff: favoritoOff4
+        }
+        ,miniCardBusca:{
+          minicard: miniCardBusca,
+          favoritoOn: favoritoOnBusca,
+          favoritoOff: favoritoOffBusca
+        }
+      };
+
+      if (miniCard && estiloMapping.hasOwnProperty(miniCard)) {
+        setMinicardEstilo(estiloMapping[miniCard]);
+      }
+      
+    }, []);
+
+
+  
 
   let moedas = 0;
   const parametro = Number(card.valor)
@@ -94,7 +106,7 @@ export default function MiniCardDeck({ card, miniCard }) {
   function handleClick() {
     setAberto(prev => !prev)
     setCardModal(card)
-console.log("Saiba Mais - cardModal: ", card)
+    console.log("Saiba Mais - cardModal: ", card)
   }
 
 

@@ -44,7 +44,7 @@ export default function Cabecalho() {
     console.log(modalRegistrar)
   }
   if (logado) {
-    console.log("Cabecalho:Logado")
+    //console.log("Cabecalho:Logado")
   }
 
   return (

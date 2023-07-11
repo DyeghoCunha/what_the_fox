@@ -1,16 +1,89 @@
 @import "../../styles/variaveis";
 
-.base {
-  width: 320px;
-  height: 700px;
+.container {
+  width: 95vw;
+  height: fit-content;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
+  justify-content: center;
+  align-items: start;
   gap: 10px;
-  @include cardInternoSemBlur($colorBg-WTF-Verde);
-  padding: 5px;
-  border-radius: 8px;
-  margin: 100px 0px 0px 100px;
+  margin: 20px 0px;
 
+  &_produtos {
+    width: 875px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include cardInternoSemBlur($colorBg-WTF-Verde);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  &_carteira {
+    width: 320px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: sticky;
+      top: 70px;
+      margin-bottom: 95px;
+
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 95vw;
+    margin-top: 70px;
+    gap: 10px;
+    position: relative;
+
+    &_carteira {
+      position: sticky;
+      top: 90px;
+      margin-bottom: 90px;
+    }
+
+  }
+
+
+
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 60px 0px 00px 0px;
+    padding: 0px 0px;
+  
+
+    &_produtos {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    &_carteira {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 40px 0px 60px 0px;
+
+    }
+  }
 }

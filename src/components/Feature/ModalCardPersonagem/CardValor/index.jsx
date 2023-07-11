@@ -7,7 +7,7 @@ import moeda50 from "../../../../components/Decks/image/50.png"
 
 export default function CardValor({ valor }) {
 
-console.log("ValorMoedas: ", valor)
+//console.log("ValorMoedas: ", valor)
   let moeda = "";
   if (valor >= 100 && valor < 150) {
     moeda = moeda50;

@@ -12,7 +12,7 @@ export default function DeckEmotes({ tribo, emote }) {
       <section className={styles.container}>
         {tribo.map((card) => (
 
-          <CardEmote card={card} emote={emote} />
+          <CardEmote key={card.id} card={card} emote={emote} />
 
         ))}
       </section>

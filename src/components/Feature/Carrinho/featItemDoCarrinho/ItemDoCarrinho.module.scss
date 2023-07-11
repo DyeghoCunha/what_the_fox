@@ -43,3 +43,13 @@
     }
   }
 }
+@media (max-width: 480px){
+  .base{
+    margin: 5px 0px;
+    padding: 5px 0px;
+  }
+  .container{
+    padding: 0;
+    margin: 0;
+  }
+}

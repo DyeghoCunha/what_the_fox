@@ -16,6 +16,7 @@ import { ModalCardProvider } from './common/context/ModalCard';
 import { CarrinhoProvider } from './common/context/Carrinho';
 import PaginaCarrinho from './Paginas/PaginaCarrinho';
 import { BuscaProvider } from './common/context/Busca';
+import PaginaFavoritos from './Paginas/PaginaFavoritos';
 
 
 
@@ -39,6 +40,7 @@ export default function AppRoutes() {
                   <Route path="/" element={<PaginaInicial />} />
                   <Route path="/carrinho" element={<PaginaCarrinho />} />
                   <Route path="/teste" element={<PaginaTeste />} />
+                  <Route path="/favorito" element={<PaginaFavoritos/>} />
                 </Routes>
 
                 <Footer id="Artistas#1" />

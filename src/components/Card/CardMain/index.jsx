@@ -13,6 +13,10 @@ const CardMain = ({ id, type, nome, frase, imagem }) => {
   return (
     <section className={styles.container}>
 
+     {type === 'CardBusca' && (
+        <CardPremiunVerde frase={frase} imagem={imagem} nome={nome} key={id} />
+      )}
+ 
       {type === 'CardAzul' && (
         <CardAzul frase={frase} imagem={imagem} nome={nome} key={id} />
       )}

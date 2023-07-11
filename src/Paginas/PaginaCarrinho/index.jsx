@@ -8,6 +8,7 @@ import { faCartArrowDown, faCoins, faHand, faMoneyBillTransfer, faSackDollar, fa
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CarteiraCarrinho from '../../components/Feature/Carrinho/Carteira'
 import Carrinho from '../../components/Feature/Carrinho'
+import { CarrinhoContext } from '../../common/context/Carrinho'
 
 
 
@@ -16,6 +17,8 @@ export default function PaginaCarrinho({ card, onClick }) {
 
   const [saldo, setSaldo] = useState(756)
   const [podeComprar, setPodeComprar] = useState(null)
+  const { carrinhoProdutos } = useContext(CarrinhoContext)
+const carrinho = localStorage.getItem('carrinhoProdutos')
 
   const valor = 580;
 
@@ -29,12 +32,21 @@ export default function PaginaCarrinho({ card, onClick }) {
       setPodeComprar(false)
     }
   }, [pagamento])
-
   return (
     <>
-      <section className={styles.base}>
-        <ItemDoCarrinho card={dados.Raposas[3]} />
-        <Carrinho/>
+      <section className={styles.container}>
+
+        <div className={styles.container_produtos}>
+
+          {carrinhoProdutos.map((card) => (
+            <ItemDoCarrinho  card={card} />
+          ))}
+        </div>
+
+        <div className={styles.container_carteira}>
+          <Carrinho />
+        </div>
+
       </section>
 
 

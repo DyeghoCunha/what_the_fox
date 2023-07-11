@@ -53,9 +53,9 @@ const ModalCardProvider = ({ children }) => {
   }, [adicionalTotal]);
 
   useEffect(() => {
-    console.log("Valor Adicional: ", valorAdicional)
+    /* console.log("Valor Adicional: ", valorAdicional)
     console.log("Valor Final do Card: ", valorFinalDoCard)
-    console.log("ValorDoCartaoSelecionado: ", valorDoCartaoSelecionado)
+    console.log("ValorDoCartaoSelecionado: ", valorDoCartaoSelecionado) */
   }, [valorAdicional, valorFinalDoCard,valorDoCartaoSelecionado ])
 
   const value = {

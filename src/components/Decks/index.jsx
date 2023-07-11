@@ -7,7 +7,8 @@ import CardMain from '../Card/CardMain'
 import MiniCardDeck from './miniCardDeck';
 
 
-export default function Deck({ tribo, tipo , miniCard}) {
+export default function Deck({ tribo, tipo, miniCard }) {
+
 
 
   return (

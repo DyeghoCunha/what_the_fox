@@ -46,7 +46,7 @@ const FirebaseProvider = (({ children }) => {
   const [armazenaInput, setArmazenaInput] = useState({})
   const [logado, setLogado] = useState(false)
   const [usuarioUid, setUsuarioUid] = useState(null)
-  
+
 
   const auth = getAuth();
 
@@ -455,16 +455,15 @@ const FirebaseProvider = (({ children }) => {
 
 
   useEffect(() => {
-
     onAuthStateChanged(auth, (data) => {
       if (data) {
         setLogado(true)
         setUsuarioUid(data.uid)
         setUsuarioNome(data.displayName)
         setUsuarioFoto(data.photoURL)
-       localStorage.setItem('Logado', true);
-       localStorage.setItem('usuarioUid', data.uid);
-
+        localStorage.setItem('Logado', true);
+        
+        localStorage.setItem('usuarioUid', data.uid)
 
         getDocs(collection(database, `userDb/user/${data.uid}`))
           .then((response) => {
@@ -475,235 +474,236 @@ const FirebaseProvider = (({ children }) => {
           })
       }
       else {
-    
+        console.log("Algum problema na autenticação")
       }
 
+
     })
   }, [])
 
 
 
-  //TODO_________MUUIITO IMPORTANTE ____Alterar dados do Favoritos_____
+//TODO_________MUUIITO IMPORTANTE ____Alterar dados do Favoritos_____
 
-  /*    useEffect(()=>{
-    
-        console.log("UID: ", usuarioUid)
-    
-        getDocs(collection(database, `userDb/user/${usuarioUid}`))
-          .then((response) => {
-            
-            setUsuario(response.docs.map((item) => {
-              return item.id 
-            }))})
-        
-    },[usuarioUid]) */
+/*    useEffect(()=>{
+  
+      console.log("UID: ", usuarioUid)
+  
+      getDocs(collection(database, `userDb/user/${usuarioUid}`))
+        .then((response) => {
+          
+          setUsuario(response.docs.map((item) => {
+            return item.id 
+          }))})
+      
+  },[usuarioUid]) */
 
-  useEffect(() => {
-    console.log("Usuario: ", usuario)
-  }, [usuario])
+useEffect(() => {
+  //console.log("Usuario: ", usuario)
+}, [usuario])
 
 
-  function handleAdicionaItemNoFavoritoFirebase(objeto) {
+function handleAdicionaItemNoFavoritoFirebase(objeto) {
 
-    if (usuario) {
-      console.log("UPDATE ID: ", usuario[0]);
-      const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);
-      updateDoc(docToUpdate, {
-        favorito: arrayUnion(objeto)
+  if (usuario) {
+    console.log("UPDATE ID: ", usuario[0]);
+    const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);
+    updateDoc(docToUpdate, {
+      favorito: arrayUnion(objeto)
+    })
+      .then(() => {
+        console.log("Favorito Inserido: ", objeto);
       })
-        .then(() => {
-          console.log("Favorito Inserido: ", objeto);
-        })
-        .catch((err) => {
-          alert(err.message);
-        });
-    }
-  }
-
-
-
-  //TODO_________MUUIITO IMPORTANTE ____Alterar dados do Favoritos_____
-
-
-
-  const handleLogOut = () => {
-    localStorage.removeItem('Logado');
-    setLogado(false)
-    signOut(auth)
-  }
-  //?_____Security Log In Log Off_______________________________________
-  //*____________________________________________________________________________________________________________
-
-  //!_____________Fim de configuração do Banco de Dados (FIRESTORE)_________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!_________________Ainda Falta muica coisa, eu não sei como deletar arquivos, só incluir_____
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!___________________________________________________________________________________________
-  //!_____Configuração do Firebase Storage (Arquivos)_______________________________________________
-  const handleInputFileFireStorage = (event) => {
-    event.preventDefault();
-
-    const imagemRef = ref(storage, `pastaExemplo/${armazenaInput.name}`)
-    const uploadTask = uploadBytesResumable(imagemRef, armazenaInput)
-
-    uploadTask.on("state_changed", (snapshot) => {
-      //verifica o carregamento
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-
-      console.log('Upload is ' + progress + '% done');
-
-    }, (error) => {
-      console.log(error.message)
-    }, () => {
-
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        console.log('File available at', downloadURL);
+      .catch((err) => {
+        alert(err.message);
       });
-    }
-    )
-
-
-    /*//TODO-- Verifica o Tamanho da imagem, para adicionar depois na inclusão
-    
-     const reader = new FileReader();
-    reader.onload = (e) => {
-      const image = new Image();
-      image.src = e.target.result;
-  
-      image.onload = () => {
-        const width = image.width;
-        const height = image.height;
-  
-        console.log('Largura:', width);
-        console.log('Altura:', height);
-      };
-    };
-  reader.readAsDataURL(armazenaInput); 
-  */
-
-  };
-  //!_____FIM____Configuração do Firebase Storage___________________________________________________
-
-
-
-
-  //!_____BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
-
-  const [foxDb, setFoxDb] = useState([])
-  const [goblinDb, setGoblinDb] = useState([])
-  const [apesDb, setApesDb] = useState([])
-  const [bladeMasterDb, setBladeMasterDb] = useState([])
-  const [hempDb, setHempDb] = useState([])
-  const [emoteDb, setEmoteDb] = useState([])
-
-
-
-
-  const collectionFox = collection(database, "Fox")
-  const collectionGoblin = collection(database, "Goblins")
-  const collectionApes = collection(database, "Apes")
-  const collectionBladeMasters = collection(database, "BladeMasters")
-  const collectionHemps = collection(database, "Hemps")
-  const collectionEmotes = collection(database, "Emotes")
-
-  const raposa = dados.Emotes
-
-  //?____Add Dados no Banco___
-  const handleAddDadosNoBandoDeDados = (event) => {
-    event.preventDefault()
-
-    for (let i = 0; i <= raposa.length; i++) {
-      addDoc(collectionEmotes, {
-        id: raposa[i].id,
-        raca: raposa[i].raca,
-        classe: raposa[i].classe,
-        valor: raposa[i].valor,
-        nome: raposa[i].nome,
-        //frase: raposa[i].frase,
-        imagem: raposa[i].imagem,
-        quantidade: raposa[i].quantidade,
-        favorito: raposa[i].favorito
-      })
-        .then(() => {
-          console.log(raposa[i].nome)
-          // alert("Data Added")
-        })
-        .catch((err) => {
-          alert(err.message)
-        })
-    }
   }
-  //Chamar os dados
-  useEffect(() => {
-    onSnapshot(collectionFox, (data) => {
-      setFoxDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionGoblin, (data) => {
-      setGoblinDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionApes, (data) => {
-      setApesDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionBladeMasters, (data) => {
-      setBladeMasterDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionHemps, (data) => {
-      setHempDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
-    onSnapshot(collectionEmotes, (data) => {
-      setEmoteDb(data.docs.map((item) => {
-        return { ...item.data(), id: item.id }
-      }))
-    })
+}
 
-  }, [])
 
-  /* 
-  
-  console.log("FoxDB:", foxDb)
-  console.log("GoblinDb:", goblinDb)
-  console.log("ApeDb:", apesDb)
-  console.log("BladeMansterDb:", bladeMasterDb)
-  console.log("HempDb:", hempDb)
-  console.log("EmoteDb:", emoteDb)
-   */
-  //!_____FIM DO BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
 
-  //!__________________Valores para o Provider__________________________________
+//TODO_________MUUIITO IMPORTANTE ____Alterar dados do Favoritos_____
 
-  const value = {
-    logado, email, setEmail, password, setPassword, nome, setNome, idade, setIdade, usuarioNome, usuarioFoto, error, setError, handleSignUp, handleSignIn, handleLogOut,
-    handleSubmitGoogle, handleSubmitGithub, handleSignUpComBandoDeDados, usuario, handleAddDadosComPasta, handleAddDados, getDataQuery, getData, updateData, deleteData,
-    armazenaInput, setArmazenaInput, handleInputFileFireStorage, handleAddDadosNoBandoDeDados,
-    //Baco de Dados
-    foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb,
-    //Para o Favoritos
-    usuarioUid, database, usuario, handleAdicionaItemNoFavoritoFirebase
 
+
+const handleLogOut = () => {
+  localStorage.removeItem('Logado');
+  setLogado(false)
+  signOut(auth)
+}
+//?_____Security Log In Log Off_______________________________________
+//*____________________________________________________________________________________________________________
+
+//!_____________Fim de configuração do Banco de Dados (FIRESTORE)_________________________________
+//!___________________________________________________________________________________________
+//!___________________________________________________________________________________________
+//!___________________________________________________________________________________________
+//!_________________Ainda Falta muica coisa, eu não sei como deletar arquivos, só incluir_____
+//!___________________________________________________________________________________________
+//!___________________________________________________________________________________________
+//!___________________________________________________________________________________________
+//!___________________________________________________________________________________________
+//!_____Configuração do Firebase Storage (Arquivos)_______________________________________________
+const handleInputFileFireStorage = (event) => {
+  event.preventDefault();
+
+  const imagemRef = ref(storage, `pastaExemplo/${armazenaInput.name}`)
+  const uploadTask = uploadBytesResumable(imagemRef, armazenaInput)
+
+  uploadTask.on("state_changed", (snapshot) => {
+    //verifica o carregamento
+    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+    console.log('Upload is ' + progress + '% done');
+
+  }, (error) => {
+    console.log(error.message)
+  }, () => {
+
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      console.log('File available at', downloadURL);
+    });
   }
-
-  //!___________________________________________________________________________
-
-
-  return (
-    <FirebaseContext.Provider value={value}>
-      {children}
-    </FirebaseContext.Provider>
   )
+
+
+  /*//TODO-- Verifica o Tamanho da imagem, para adicionar depois na inclusão
+  
+   const reader = new FileReader();
+  reader.onload = (e) => {
+    const image = new Image();
+    image.src = e.target.result;
+ 
+    image.onload = () => {
+      const width = image.width;
+      const height = image.height;
+ 
+      console.log('Largura:', width);
+      console.log('Altura:', height);
+    };
+  };
+reader.readAsDataURL(armazenaInput); 
+*/
+
+};
+//!_____FIM____Configuração do Firebase Storage___________________________________________________
+
+
+
+
+//!_____BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
+
+const [foxDb, setFoxDb] = useState([])
+const [goblinDb, setGoblinDb] = useState([])
+const [apesDb, setApesDb] = useState([])
+const [bladeMasterDb, setBladeMasterDb] = useState([])
+const [hempDb, setHempDb] = useState([])
+const [emoteDb, setEmoteDb] = useState([])
+
+
+
+
+const collectionFox = collection(database, "Fox")
+const collectionGoblin = collection(database, "Goblins")
+const collectionApes = collection(database, "Apes")
+const collectionBladeMasters = collection(database, "BladeMasters")
+const collectionHemps = collection(database, "Hemps")
+const collectionEmotes = collection(database, "Emotes")
+
+const raposa = dados.Emotes
+
+//?____Add Dados no Banco___
+const handleAddDadosNoBandoDeDados = (event) => {
+  event.preventDefault()
+
+  for (let i = 0; i <= raposa.length; i++) {
+    addDoc(collectionEmotes, {
+      id: raposa[i].id,
+      raca: raposa[i].raca,
+      classe: raposa[i].classe,
+      valor: raposa[i].valor,
+      nome: raposa[i].nome,
+      //frase: raposa[i].frase,
+      imagem: raposa[i].imagem,
+      quantidade: raposa[i].quantidade,
+      favorito: raposa[i].favorito
+    })
+      .then(() => {
+        console.log(raposa[i].nome)
+        // alert("Data Added")
+      })
+      .catch((err) => {
+        alert(err.message)
+      })
+  }
+}
+//Chamar os dados
+useEffect(() => {
+  onSnapshot(collectionFox, (data) => {
+    setFoxDb(data.docs.map((item) => {
+      return { ...item.data(), id: item.id }
+    }))
+  })
+  onSnapshot(collectionGoblin, (data) => {
+    setGoblinDb(data.docs.map((item) => {
+      return { ...item.data(), id: item.id }
+    }))
+  })
+  onSnapshot(collectionApes, (data) => {
+    setApesDb(data.docs.map((item) => {
+      return { ...item.data(), id: item.id }
+    }))
+  })
+  onSnapshot(collectionBladeMasters, (data) => {
+    setBladeMasterDb(data.docs.map((item) => {
+      return { ...item.data(), id: item.id }
+    }))
+  })
+  onSnapshot(collectionHemps, (data) => {
+    setHempDb(data.docs.map((item) => {
+      return { ...item.data(), id: item.id }
+    }))
+  })
+  onSnapshot(collectionEmotes, (data) => {
+    setEmoteDb(data.docs.map((item) => {
+      return { ...item.data(), id: item.id }
+    }))
+  })
+
+}, [])
+
+/* 
+ 
+console.log("FoxDB:", foxDb)
+console.log("GoblinDb:", goblinDb)
+console.log("ApeDb:", apesDb)
+console.log("BladeMansterDb:", bladeMasterDb)
+console.log("HempDb:", hempDb)
+console.log("EmoteDb:", emoteDb)
+ */
+//!_____FIM DO BANCO DE DADOS DO WHAT THE FOX______________________________________________________________
+
+//!__________________Valores para o Provider__________________________________
+
+const value = {
+  logado, email, setEmail, password, setPassword, nome, setNome, idade, setIdade, usuarioNome, usuarioFoto, error, setError, handleSignUp, handleSignIn, handleLogOut,
+  handleSubmitGoogle, handleSubmitGithub, handleSignUpComBandoDeDados, usuario, handleAddDadosComPasta, handleAddDados, getDataQuery, getData, updateData, deleteData,
+  armazenaInput, setArmazenaInput, handleInputFileFireStorage, handleAddDadosNoBandoDeDados,
+  //Baco de Dados
+  foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb,
+  //Para o Favoritos
+  usuarioUid, database, usuario, handleAdicionaItemNoFavoritoFirebase
+
+}
+
+//!___________________________________________________________________________
+
+
+return (
+  <FirebaseContext.Provider value={value}>
+    {children}
+  </FirebaseContext.Provider>
+)
 })
 
 
