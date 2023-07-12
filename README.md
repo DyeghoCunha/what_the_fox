@@ -262,6 +262,6 @@ background-color: blue;
 
 
 
-
+ Arrumando o Codigo
 Falar que foi instalado o AXIOS e a API do Vinny para poder usar como banco de dados
 } -->
