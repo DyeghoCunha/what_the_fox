@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from './PaginaInicial.module.scss'
 import Categorias from '../../components/Categorias';
 import Destaques from '../../components/Destaque';
@@ -13,7 +13,10 @@ export default function PaginaInicial() {
 
   const { foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb, } = useContext(FirebaseContext)
   const { objetos } = useContext(BuscaContext);
+  useEffect(()=>{
 
+    window.scrollTo(0, 300);
+     },[])
   //console.log("Pagina Inicial: ", objetos)
   return (
     <>

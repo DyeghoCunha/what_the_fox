@@ -2,13 +2,14 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 340px);
+  grid-template-rows: 1fr auto;
+  padding: 40px 10px 60px 10px;
+
   justify-content: center;
   align-items: center;
-
-  padding: 50px;
-
+  gap: 40px;
+  width: 100vw;
 
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
@@ -28,28 +29,35 @@
   border: 1px solid rgba($colorBg-WTF, 0.5);
   border-top: 1px solid rgba($colorBg-WTF, 0.75);
   border-left: 1px solid rgba($colorBg-WTF, 0.75);
-gap: 10px;
-
+  gap: 10px;
   box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.25),
     inset -5px -5px 10px rgba(0, 0, 0, 0.15);
 
-
 }
+
+
+
+
 
 
 /* Media query para dispositivos móveis */
 @media screen and (max-width: 768px) {
   .container {
 
-    margin-top: 60px;
-    margin-bottom: 60px;
-
-
-    grid-template-columns: 1fr;
-    /* Cada card em uma coluna */
+    margin-top: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 10px;
     transform: none;
-    /* Remover o deslocamento */
     justify-content: center;
     align-items: center;
   }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px 0px;
+  }
+
+
 }

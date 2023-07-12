@@ -1,0 +1,87 @@
+@import "../../../styles/variaveis";
+
+.container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px 20px 0px;
+  @include cardInternoSemBlur($colorBg-WTF-Verde);
+  background-color: $colorBg-WTF;
+
+  &_chamada {
+    color: $colorLetra-Padrao-WTF;
+    font-family: $fonte-normal-WTF;
+    letter-spacing: 2px;
+
+    &_realce {
+      margin-left: 15px;
+      color: $cyberblue;
+      text-shadow: 1px 1px 0px black, -1px -1px 0px black,
+        1px -1px 0px black, -1px 1px 0px black;
+    }
+
+  }
+
+  &_formulario{
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    &_aviso{
+      font-family: $fonte-normal-WTF-Fox;
+      color: $colorLetra-Padrao-WTF;
+      font-size: 24px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+
+.container {
+  
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+ 
+  &_chamada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+ 
+    &_realce {
+      margin-left: 15px;
+      margin-top: 10px;
+      color: $cyberblue;
+      text-shadow: 1px 1px 0px black, -1px -1px 0px black,
+        1px -1px 0px black, -1px 1px 0px black;
+    }
+
+  }
+
+  &_formulario{
+    margin-top: 10px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    &_aviso{
+     display: none;
+    }
+  }
+}
+    }

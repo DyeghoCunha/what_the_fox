@@ -1,12 +1,9 @@
 import styles from "./ModalLoginFirebase.module.scss"
 
 import React, { useContext, useState } from 'react'
-import BotaoGeral from "../../BotãoGeral"
 import ContainerRGB from "../../ContainerRGB"
-import CampoTexto from "../../CampoTexto"
 import ModalErroSenha from "../ModalErroSenha"
 import MiniCardFechadura from "../CadastroUsuario/miniCardFechadura"
-import { FavoritoContext } from "../../../common/context/Favoritos"
 import FormularioDeLogin from "../../FormularioDeLogin"
 import BotoesDeLogin from "../../BotoesDeLogin"
 import { FirebaseContext } from "../../../common/context/FirebaseConfig"
@@ -19,8 +16,7 @@ export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
   const [erro, setErro] = useState("")
   const [erroModal, setErroModal] = useState(false)
 
-  //!_____Login de Usuario_____
- /*  const { setAberto } = useContext(FavoritoContext) */
+
   const { email, setEmail, password, setPassword, error, handleSignIn, handleSignUp, handleSubmitGoogle,
     handleSubmitGithub, usuario, handleSignUpComBandoDeDados, logado } = useContext(FirebaseContext)
 
@@ -29,21 +25,6 @@ export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
     evento.preventDefault()
     console.log("Enviou")
   }
-
-  /* if(usuario){
-    console.log(`
-    ModalLogin-----
-    Erro: ${error}
-    Usuario: ${usuario.uId}
-    Foto: ${usuario.photoURL}
-    Nome:${usuario.displayName}
-    `)} */
-
-
-  /*  function aoFechar() {
-     setAberto(prev => !prev)
-     //setAbertaState(prev => !prev)
-   } */
 
 
   return (

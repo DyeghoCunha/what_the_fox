@@ -59,7 +59,7 @@ const FavoritoProvider = ({ children }) => {
         });
     }
   }
-  console.log("Favoritos:", favoritosProdutos);
+  
 
 
 function handleRemoveItemDoFavoritoFirebase(card) {

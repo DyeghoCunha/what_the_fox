@@ -1,0 +1,60 @@
+@import "../../../styles/variaveis";
+
+.container{
+width:885px;
+height: 500px;
+
+position: relative;
+background-color: $colorBg-WTF;
+
+&_primeiraCamada{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+&_segundaCamada{
+  position: absolute;
+  top: 0;
+  right: 0px;
+  height: 100%;
+}
+
+}
+
+@media (max-width: 768px) {
+.container{
+width:400px;
+height: 400px;
+
+
+&_primeiraCamada{
+  z-index: 0;
+}
+&_segundaCamada{
+  display: none;
+}
+}
+}
+
+@media (max-width: 480px) {
+.container{
+width:320px;
+height: auto;
+border-radius: 0px;
+
+&_primeiraCamada{
+  display: none;
+  border-radius: 0px;
+}
+&_segundaCamada{
+display: none;
+border-radius: 0px;
+
+}
+
+}
+}
+
+
+

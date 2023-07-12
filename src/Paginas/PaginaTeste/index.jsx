@@ -24,8 +24,8 @@ export default function PaginaTeste() {
     <>
       <div className={styles.container_paginaTeste}>
         
-        <Produtos estiloCard={"CardVerde"}miniCard={"miniCardVerde"} titulo={"Fox"} tribo={foxDb}/>
-       
+        {/* <Produtos estiloCard={"CardVerde"}miniCard={"miniCardVerde"} titulo={"Fox"} tribo={foxDb}/>
+        */}
 
 
 

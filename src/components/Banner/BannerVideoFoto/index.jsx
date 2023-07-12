@@ -2,7 +2,7 @@ import React, { useContext, useRef } from 'react';
 import styles from './BannerVideoFoto.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import Bolinha from '../Bolinhas';
+
 import Paginacao from './Paginacao';
 import { BannerContext } from '../../../common/context/Banner';
 
@@ -31,17 +31,17 @@ export default function BannerVideoFoto({ video, imagem }) {
   return (
     <section className={styles.banner_container}>
 
-      <button onClick={handleClickProximo} className={`${styles.botao_container} ${styles.avancar}`}>
+      <div onClick={handleClickProximo} className={`${styles.botao_container} ${styles.avancar}`}>
         <FontAwesomeIcon icon={faChevronRight} />
-      </button>
-
-      <button onClick={handleClickVoltar} className={`${styles.botao_container} ${styles.voltar}`}>
-        <FontAwesomeIcon icon={faChevronLeft} />
-      </button>
-
-      <div className={styles.bolinhas}>
-        <Paginacao atual={proximo} />
       </div>
+
+      <div onClick={handleClickVoltar} className={`${styles.botao_container} ${styles.voltar}`}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </div>
+
+     {/*  <div className={styles.bolinhas}>
+        <Paginacao atual={proximo} />
+      </div> */}
 
       <div className={styles.video_container}>
         <video ref={videoRef} className={styles.video} autoPlay loop muted>

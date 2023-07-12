@@ -1,0 +1,60 @@
+@import "../../../styles/variaveis";
+
+.container{
+  width: 100vw;
+  height: fit-content;
+  
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  background-color: $colorBg-WTF;
+
+
+  &_artista{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    &_foto{
+      width: fit-content;
+    }
+
+    &_contato{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+
+}
+
+@media (max-width: 480px) {
+  .container{
+  
+
+
+
+  &_artista{
+  
+flex-direction: column-reverse;
+    &_foto{
+      width: fit-content;
+    }
+
+    &_contato{
+      width: 100vw;
+    
+    }
+  }
+
+}
+}

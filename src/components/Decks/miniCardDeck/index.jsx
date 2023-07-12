@@ -25,8 +25,7 @@ import botao4 from "../../Decks/image/barra4a.png"
 import miniCardBusca from "../image/minicardBusca.png"
 import favoritoOffBusca from "../image/favoritoOffBusca.png"
 import favoritoOnBusca from "../image/favoritoOnBusca.png"
-import { doc, updateDoc, arrayUnion, getDoc } from 'firebase/firestore';
-import { FirebaseContext, database } from "../../../common/context/FirebaseConfig"
+import { FirebaseContext } from "../../../common/context/FirebaseConfig"
 
 
 
@@ -49,7 +48,7 @@ function handleVerificaSeFavorito(card) {
       // Defina setFavorito como true aqui
       setFavorito(true);
       return;
-    }else{console.log("ERRO")}
+    }
   }
 }
 
