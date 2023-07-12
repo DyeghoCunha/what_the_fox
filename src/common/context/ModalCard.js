@@ -10,7 +10,7 @@ const ModalCardProvider = ({ children }) => {
   const [adicionalTotal, setAdicionalTotal] = useState(0);
   const [cartaoSelecionado, setCartaoSelecionado] = useState({})
   const [valorDoCartaoSelecionado, setValorDoCartaoSelecionado] = useState(0);
-
+  const [valorCartao, setValorCartao] = useState(0)
 
   //!!___Valores Definitivos Finais_____
 
@@ -61,7 +61,7 @@ const ModalCardProvider = ({ children }) => {
   const value = {
     modalAberto, setModalAberto, valorAdicional, setValorAdicional, setValorFinalDoCard,
     setCartaoSelecionado, handleAdicionalDeItens, setValorDoCartaoSelecionado, valorAdicional,
-    valorFinalDoCard,valorDoCartaoSelecionado
+    valorFinalDoCard,valorDoCartaoSelecionado,valorCartao, setValorCartao
   }
 
 

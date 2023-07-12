@@ -44,6 +44,7 @@ const FavoritoProvider = ({ children }) => {
             if (docSnap.exists()) {
               const data = docSnap.data();
               setFavoritosProdutos(data.favorito)
+              localStorage.setItem('favoritoProdutos', data.favorito)
               const arrayLength = data.favorito.length;
               console.log("Quantidade de itens no array:", arrayLength);
               
@@ -72,20 +73,20 @@ function handleRemoveItemDoFavoritoFirebase(card) {
     getDoc(docToUpdate)
       .then((docSnap) => {
         if (docSnap.exists()) {
-          const carrinhoAtual = docSnap.data().carrinho;
+          const favoritoAtual = docSnap.data().favorito;
 
           // Filtra o carrinho atual para remover apenas o item correspondente
-          const newCarrinho = carrinhoAtual.filter(item => !(item.valor === card.valor && item.id === card.id));
+          const newFavorito = favoritoAtual.filter(item => !(item.valor === card.valor && item.id === card.id));
 
           // Atualiza o documento no Firestore com o novo carrinho
           updateDoc(docToUpdate, {
-            carrinho: newCarrinho
+            favorito: newFavorito
           })
             .then(() => {
               console.log("Item removido do carrinho:", card.nome, card.id);
-              setFavoritosProdutos(newCarrinho);
-              setQuantidadeFavoritos(newCarrinho.length);
-              localStorage.setItem('quantidadeFavoritos', newCarrinho.length);
+              setFavoritosProdutos(newFavorito);
+              setQuantidadeFavoritos(newFavorito.length);
+              localStorage.setItem('quantidadeFavoritos', newFavorito.length);
             })
             .catch((err) => {
               alert(err.message);
@@ -101,6 +102,10 @@ function handleRemoveItemDoFavoritoFirebase(card) {
 }
 
 
+
+
+
+
   //!___FIM___pegar os Favoritos do banco de dados do usuario_____
 
 
@@ -112,7 +117,7 @@ function handleRemoveItemDoFavoritoFirebase(card) {
     favorito,
     setFavorito,
     aberto, setAberto, cardModal, setCardModal, handleAdicionaItemNoFavoritoFirebase,
-    quantidadeFavoritos,favoritoRef, setFavoritoRef,favoritosProdutos
+    quantidadeFavoritos,favoritoRef, setFavoritoRef,favoritosProdutos,handleRemoveItemDoFavoritoFirebase
 
   }
 

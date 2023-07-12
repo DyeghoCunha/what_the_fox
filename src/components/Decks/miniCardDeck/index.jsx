@@ -25,17 +25,33 @@ import botao4 from "../../Decks/image/barra4a.png"
 import miniCardBusca from "../image/minicardBusca.png"
 import favoritoOffBusca from "../image/favoritoOffBusca.png"
 import favoritoOnBusca from "../image/favoritoOnBusca.png"
-
-
+import { doc, updateDoc, arrayUnion, getDoc } from 'firebase/firestore';
+import { FirebaseContext, database } from "../../../common/context/FirebaseConfig"
 
 
 
 
 export default function MiniCardDeck({ card, miniCard }) {
   const [favorito, setFavorito] = useState(false);
-  const { setAberto, setCardModal } = useContext(FavoritoContext)
+  const { setAberto, setCardModal ,favoritosProdutos,handleRemoveItemDoFavoritoFirebase,handleAdicionaItemNoFavoritoFirebase} = useContext(FavoritoContext)
   const [minicardEstilo, setMinicardEstilo] = useState({})
+  const {usuarioUid, usuario} =useContext(FirebaseContext)
 
+
+
+// ...
+
+function handleVerificaSeFavorito(card) {
+  if (usuario) {
+    const itemJaFavorito = favoritosProdutos.some(item => item.id === card.id);
+    if (itemJaFavorito) {
+      console.log("O item já está nos favoritos:", card);
+      // Defina setFavorito como true aqui
+      setFavorito(true);
+      return;
+    }else{console.log("ERRO")}
+  }
+}
 
 
 
@@ -75,6 +91,7 @@ export default function MiniCardDeck({ card, miniCard }) {
       if (miniCard && estiloMapping.hasOwnProperty(miniCard)) {
         setMinicardEstilo(estiloMapping[miniCard]);
       }
+      handleVerificaSeFavorito(card);
       
     }, []);
 
@@ -101,12 +118,12 @@ export default function MiniCardDeck({ card, miniCard }) {
 
   function handleFavorito() {
     setFavorito(prev => !prev)
-    console.log(card)
   }
   function handleClick() {
     setAberto(prev => !prev)
     setCardModal(card)
-    console.log("Saiba Mais - cardModal: ", card)
+    
+    
   }
 
 
@@ -114,10 +131,10 @@ export default function MiniCardDeck({ card, miniCard }) {
     <>
       <div className={styles.container_valor}>
         {!favorito && (
-          <img onClick={handleFavorito} src={minicardEstilo.favoritoOff} className={styles.favorito} alt="" />
+          <img onClick={()=>handleAdicionaItemNoFavoritoFirebase(card)} src={minicardEstilo.favoritoOff} className={styles.favorito} alt="" />
         )}
         {favorito && (
-          <img onClick={handleFavorito} src={minicardEstilo.favoritoOn} className={styles.favorito} alt="" />
+          <img onClick={()=>handleRemoveItemDoFavoritoFirebase(card)} src={minicardEstilo.favoritoOn} className={styles.favorito} alt="" />
         )}
         <h1 className={styles.valor}>{card.valor}</h1>
         <img src={moedas} alt="" className={styles.moedas} />

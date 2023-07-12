@@ -11,11 +11,11 @@ import { CarrinhoContext } from '../../../common/context/Carrinho';
 
 
 
-export default function Carrinho({ card, onClick }) {
+export default function Carrinho({ card, onClick ,valorDoCarrinho }) {
 
-  const [saldo, setSaldo] = useState(256)
+  
   const [podeComprar, setPodeComprar] = useState(null)
-  const {handleLimpaCarrinhoFirebase} = useContext(CarrinhoContext)
+  const {handleLimpaCarrinhoFirebase,saldo,diminuirSaldo , setSaldo} = useContext(CarrinhoContext)
 
   const valor = 580;
   const semSaldo = {
@@ -23,7 +23,7 @@ export default function Carrinho({ card, onClick }) {
     imagem: imagem
   }
 
-  const pagamento = saldo - valor
+  const pagamento = saldo - valorDoCarrinho
 
   useEffect(() => {
     if (pagamento > 0) {
@@ -38,7 +38,7 @@ export default function Carrinho({ card, onClick }) {
       <section className={styles.paginaCarrinho}>
         <section className={styles.container}>
           <h2 className={styles.container_titulo}>Carrinho</h2>
-          <CarteiraCarrinho valorCarteira={600} valorItens={1590} />
+          <CarteiraCarrinho valorCarteira={saldo} valorItens={valorDoCarrinho} />
           <div className={styles.container_saldoFinal}>
             <h2 className={styles.container_saldoFinal_titulo}>Saldo Final</h2>
             <p className={`${!podeComprar ? styles.naoPodeComprar : ""} ${styles.container_saldoFinal_valor}`}><FontAwesomeIcon icon={faMoneyBillTransfer} />{pagamento}</p>
@@ -52,7 +52,7 @@ export default function Carrinho({ card, onClick }) {
         )}
 
         <div className={styles.container_botoes}>
-          <BotoesDoModalCard onClickIcone1={handleLimpaCarrinhoFirebase} icone2={!podeComprar ? <FontAwesomeIcon icon={faHand} /> : <FontAwesomeIcon icon={faCartArrowDown} />} icone1={<FontAwesomeIcon icon={faTrashArrowUp} />} />
+          <BotoesDoModalCard onClickIcone1={handleLimpaCarrinhoFirebase} onClickIcone2={podeComprar ? diminuirSaldo : ""} icone2={!podeComprar ? <FontAwesomeIcon icon={faHand} /> : <FontAwesomeIcon icon={faCartArrowDown} />} icone1={<FontAwesomeIcon icon={faTrashArrowUp} />} />
         </div>
       </section>
     </>

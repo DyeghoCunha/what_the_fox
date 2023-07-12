@@ -1,32 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styles from "./PaginaFavoritos.module.scss"
-
-
 import { FavoritoContext } from '../../common/context/Favoritos'
 import Produtos from '../../components/Produtos'
-
-
+import { FirebaseContext } from '../../common/context/FirebaseConfig'
 
 
 export default function PaginaFavoritos() {
 
-
+  const { foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb, } = useContext(FirebaseContext)
   const { favoritosProdutos } = useContext(FavoritoContext)
-useEffect(()=>{
-  console.log("Pagina Favoritos: ", favoritosProdutos)
-},[favoritosProdutos])
 
+
+  useEffect(()=>{
+
+ window.scrollTo(0, 0);
+  },[])
 
   return (
     <>
       <section className={styles.container}>
 
-          {favoritosProdutos.map((card) => (
-            <Produtos id="FAvoritos#1" estiloCard={"CardEt"} miniCard={"miniCardBusca"} titulo={"Favoritos"} tribo={card} />
-          ))}
+      <Produtos id="Favoritos#1" estiloCard={"CardPremiunVerde"} miniCard={"miniCardBusca"} titulo={"Favoritos"} tribo={favoritosProdutos} />
+          
      
-
-
       </section>
 
 

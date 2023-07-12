@@ -12,11 +12,12 @@ const CarrinhoProvider = ({ children }) => {
   const { valorFinalDoCard } = useContext(ModalCardContext)
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0)
   const [carrinhoProdutos, setCarrinhoProdutos] = useState([])
- 
+  const [valorTotalDoCarrinho, setValorTotalDoCarrinho] = useState(0)
+  const [saldo, setSaldo] = useState(0)
 
   function handleAdicionaItemNoCarrinhoFirebase(objeto) {
     const objetoAtualizado = { ...objeto, valor: valorFinalDoCard }
-    
+
 
     if (usuario) {
       //console.log("UPDATE ID: ", usuario[0]);
@@ -37,6 +38,11 @@ const CarrinhoProvider = ({ children }) => {
               //localStorage.setItem("carrinhoProdutos", data.carrinho)
               setQuantidadeCarrinho(arrayLength)
               localStorage.setItem('quantidadeCarrinho', arrayLength);
+              const valorTotal = data.carrinho.reduce((total, item) => total + item.valor, 0);
+              setValorTotalDoCarrinho(valorTotal);
+              const saldo = docSnap.data().saldo;
+              setSaldo(saldo);
+
             }
           };
           getArrayLength();
@@ -47,77 +53,123 @@ const CarrinhoProvider = ({ children }) => {
     }
   }
 
-  function handleLimpaCarrinhoFirebase() {
-  if (usuario) {
-    console.log("UPDATE ID: ", usuario[0]);
-    const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);
-    updateDoc(docToUpdate, {
-      carrinho: deleteField()
-    })
-      .then(() => {
-        console.log("Todos os itens removidos do carrinho");
-        setCarrinhoProdutos([]);
-        setQuantidadeCarrinho(0);
-        localStorage.removeItem('quantidadeCarrinho');
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
-  }
-}
+  async function diminuirSaldo() {
+    if (usuario) {
+      const docToUpdate = doc(database, `userDb/user/${usuarioUid}/${usuario[0]}`);
 
+      try {
+        // Obtém o documento atual do Firestore
+        const docSnap = await getDoc(docToUpdate);
 
-
-
-function handleRemoveItemDoCarrinhoFirebase(card) {
-  if (usuario) {
-    console.log("UPDATE ID: ", usuario[0]);
-    console.log("UPDATE ID: ", card.id);
-    console.log("UPDATE Valor: ", card.valor);
-    const docToUpdate = doc(database, `userDb/user/${usuarioUid}/${usuario[0]}`);
-
-    // Obtém o documento atual do Firestore
-    getDoc(docToUpdate)
-      .then((docSnap) => {
         if (docSnap.exists()) {
-          const carrinhoAtual = docSnap.data().carrinho;
+          const saldoAtual = docSnap.data().saldo;
+          const novoSaldo = saldoAtual - valorTotalDoCarrinho;
 
-          // Filtra o carrinho atual para remover apenas o item correspondente
-          const newCarrinho = carrinhoAtual.filter(item => !(item.valor === card.valor && item.id === card.id));
+          // Atualiza o documento no Firestore com o novo saldo
+          await updateDoc(docToUpdate, {
+            saldo: novoSaldo
+          });
 
-          // Atualiza o documento no Firestore com o novo carrinho
           updateDoc(docToUpdate, {
-            carrinho: newCarrinho
+            carrinho: deleteField()
           })
             .then(() => {
-              console.log("Item removido do carrinho:", card.nome, card.id);
-              setCarrinhoProdutos(newCarrinho);
-              setQuantidadeCarrinho(newCarrinho.length);
-              localStorage.setItem('quantidadeCarrinho', newCarrinho.length);
+              console.log("Todos os itens removidos do carrinho");
+              setCarrinhoProdutos([]);
+              setQuantidadeCarrinho(0);
+              setValorTotalDoCarrinho(0)
+              localStorage.removeItem('quantidadeCarrinho');
             })
             .catch((err) => {
               alert(err.message);
             });
+          setSaldo(novoSaldo)
+          console.log("Saldo atualizado:", novoSaldo);
         } else {
           console.log("O documento não existe");
         }
-      })
-      .catch((err) => {
+      } catch (err) {
         alert(err.message);
-      });
+      }
+    }
   }
-}
+
+  function handleLimpaCarrinhoFirebase() {
+    if (usuario) {
+      console.log("UPDATE ID: ", usuario[0]);
+      const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);
+      updateDoc(docToUpdate, {
+        carrinho: deleteField()
+      })
+        .then(() => {
+          console.log("Todos os itens removidos do carrinho");
+          setCarrinhoProdutos([]);
+          setQuantidadeCarrinho(0);
+          localStorage.removeItem('quantidadeCarrinho');
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+    }
+  }
 
 
-  
+
+
+  function handleRemoveItemDoCarrinhoFirebase(card) {
+    if (usuario) {
+      console.log("UPDATE ID: ", usuario[0]);
+      console.log("UPDATE ID: ", card.id);
+      console.log("UPDATE Valor: ", card.valor);
+      const docToUpdate = doc(database, `userDb/user/${usuarioUid}/${usuario[0]}`);
+
+      // Obtém o documento atual do Firestore
+      getDoc(docToUpdate)
+        .then((docSnap) => {
+          if (docSnap.exists()) {
+            const carrinhoAtual = docSnap.data().carrinho;
+
+            // Filtra o carrinho atual para remover apenas o item correspondente
+            const newCarrinho = carrinhoAtual.filter(item => !(item.valor === card.valor && item.id === card.id));
+
+            // Atualiza o documento no Firestore com o novo carrinho
+            updateDoc(docToUpdate, {
+              carrinho: newCarrinho
+            })
+              .then(() => {
+                console.log("Item removido do carrinho:", card.nome, card.id);
+                setCarrinhoProdutos(newCarrinho);
+                setQuantidadeCarrinho(newCarrinho.length);
+                localStorage.setItem('quantidadeCarrinho', newCarrinho.length);
+                const valorTotal = newCarrinho.reduce((total, item) => total + item.valor, 0);
+                setValorTotalDoCarrinho(valorTotal);
+              })
+              .catch((err) => {
+                alert(err.message);
+              });
+          } else {
+            console.log("O documento não existe");
+          }
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+    }
+  }
+  //______________________________
+
+
+
+
   const valor = localStorage.getItem('Logado');
   const valor1 = localStorage.getItem('Usuario');
 
 
 
   const value = {
-    handleAdicionaItemNoCarrinhoFirebase, quantidadeCarrinho,handleLimpaCarrinhoFirebase,
-    carrinhoProdutos, setCarrinhoProdutos,handleRemoveItemDoCarrinhoFirebase
+    handleAdicionaItemNoCarrinhoFirebase, quantidadeCarrinho, handleLimpaCarrinhoFirebase,
+    carrinhoProdutos, setCarrinhoProdutos, handleRemoveItemDoCarrinhoFirebase, valorTotalDoCarrinho,
+    saldo, setSaldo, diminuirSaldo
   }
 
 

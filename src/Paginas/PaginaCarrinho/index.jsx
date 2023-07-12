@@ -15,13 +15,17 @@ import { CarrinhoContext } from '../../common/context/Carrinho'
 
 export default function PaginaCarrinho({ card, onClick }) {
 
-  const [saldo, setSaldo] = useState(756)
+  const [saldo, setSaldo] = useState(0)
   const [podeComprar, setPodeComprar] = useState(null)
-  const { carrinhoProdutos } = useContext(CarrinhoContext)
-const carrinho = localStorage.getItem('carrinhoProdutos')
+  const { carrinhoProdutos, valorTotalDoCarrinho} = useContext(CarrinhoContext)
+  const carrinho = localStorage.getItem('carrinhoProdutos')
 
   const valor = 580;
 
+  useEffect(()=>{
+
+ window.scrollTo(0, 300);
+  },[])
 
   const pagamento = saldo - valor
 
@@ -32,6 +36,7 @@ const carrinho = localStorage.getItem('carrinhoProdutos')
       setPodeComprar(false)
     }
   }, [pagamento])
+  
   return (
     <>
       <section className={styles.container}>
@@ -44,7 +49,7 @@ const carrinho = localStorage.getItem('carrinhoProdutos')
         </div>
 
         <div className={styles.container_carteira}>
-          <Carrinho />
+          <Carrinho valorDoCarrinho={valorTotalDoCarrinho}  />
         </div>
 
       </section>

@@ -130,10 +130,7 @@ transform: translateZ(50px);
   color: $cybergreen;
   font-size: 1.6em;
   letter-spacing: 1px;
-  text-shadow:
-    -1px -1px 0 $cyberblue,
-    1px 1px 0 rgb(6, 122, 175),
-  ;
-  letter-spacing: 1px;
+
+  letter-spacing: 2px;
   z-index: 50;
 }

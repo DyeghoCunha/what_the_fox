@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './ModalCardPersonagem.module.scss';
 
-import dados from "../../../assets/json/dados.json"
 import { FavoritoContext } from '../../../common/context/Favoritos';
 import IncrementoCheckBox from "./IncrementoCheckBox"
 import Informativo from './Informativo';
@@ -17,21 +16,31 @@ import { CarrinhoContext } from '../../../common/context/Carrinho';
 
 
 export default function ModalCardPersonagem({ card, aberta }) {
-  const [valorCartao, setValorCartao] = useState(card.valor)
-  const { aberto, setAberto, handleAdicionaItemNoFavoritoFirebase } = useContext(FavoritoContext)
+  const {valorCartao, setValorCartao} = useContext(ModalCardContext) 
+  const { aberto, setAberto,cardModal, handleAdicionaItemNoFavoritoFirebase } = useContext(FavoritoContext)
   const { handleAdicionaItemNoCarrinhoFirebase } = useContext(CarrinhoContext)
   const { valorAdicional, setValorFinalDoCard, valorFinalDoCard, setValorAdicional,setValorDoCartaoSelecionado } = useContext(ModalCardContext)
 
 
+useEffect(()=>{
+  setValorCartao(cardModal.valor)
+},[cardModal])
+
+
+useEffect(()=>{
+      setValorFinalDoCard(0)
+    setValorAdicional(0)
+    setValorDoCartaoSelecionado(0)
+},[valorCartao])
 
   useEffect(() => {
 
-    if (valorAdicional > card.valor) {
+    if (valorAdicional > valorCartao) {
       setValorCartao(valorAdicional)
       setValorFinalDoCard(valorAdicional)
     } else if (valorCartao > valorAdicional && valorAdicional > 0) {
-      setValorCartao(card.valor)
-      setValorFinalDoCard(card.valor)
+      setValorCartao(valorCartao)
+      setValorFinalDoCard(valorCartao)
     }
   }, [valorAdicional, valorFinalDoCard])
 
@@ -39,13 +48,7 @@ export default function ModalCardPersonagem({ card, aberta }) {
     setValorFinalDoCard(valorCartao);
   }, [valorCartao])
 
-  //!_____________________Comecando aqui a alteracao__________0
-  /*   if(!aberto){
-       document.body.style.overflow = 'hidden';
-     }else{
-        document.body.style.overflow = 'auto'; 
-     }
-  */
+
   const handleFechar = () => {
     setAberto(prev => !prev)
     setValorFinalDoCard(0)
