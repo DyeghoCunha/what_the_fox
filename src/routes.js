@@ -28,11 +28,11 @@ export default function AppRoutes() {
           <ModalCardProvider>
             <CarrinhoProvider>
               <FavoritoProvider>
-                <Cabecalho />
+              <Cabecalho />
 
                 <BannerProvider>
                   <Banner />
-                </BannerProvider>
+                </BannerProvider> 
 
 
 

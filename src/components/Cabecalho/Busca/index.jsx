@@ -4,12 +4,12 @@ import React, { useState, useContext } from 'react';
 import styles from "./Busca.module.scss"
 import { BuscaContext } from '../../../common/context/Busca';
 
-export default function Busca({ legenda = "Buscar", onBusca, conteudo = "Digite sua busca" }) {
+export default function Busca({ legenda = "Buscar", onBusca, conteudo = "Digite sua busca", email = false }) {
 
   const [termoBusca, setTermoBusca] = useState();
 
   const { buscarObjetos } = useContext(BuscaContext)
-const teste = ["alto"]
+  const teste = ["alto"]
 
 
   const handleChange = (event) => {
@@ -21,10 +21,10 @@ const teste = ["alto"]
     onBusca(termoBusca);
   };
 
-   const handleBuscar = (event) => {
 
+
+  const handleBuscar = (event) => {
     buscarObjetos(termoBusca)
-
   }
   //console.log("Buscar: ", termoBusca)
 
@@ -38,7 +38,9 @@ const teste = ["alto"]
         className={styles.input}
       />
       <div className={styles.botao_container} >
-        <button onClick={handleBuscar} className={styles.botao} type="text">{legenda}</button>
+
+      <button onClick={() => email ? handleSubmit : handleBuscar} className={styles.botao} type="text">{legenda}</button>
+
       </div>
     </form>
   );

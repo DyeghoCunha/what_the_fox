@@ -2,7 +2,7 @@
 
 
 
-.modal{
+.modal {
 
   position: fixed;
   top: 0;
@@ -15,7 +15,7 @@
   align-items: center;
   overflow-y: auto;
   max-height: 100vh;
-  
+
 }
 
 .container {
@@ -30,7 +30,7 @@
   @include cardInternoSemBlur($colorBg-WTF-Verde);
   background-color: $colorBg-WTF;
 
-  &::before{
+  &::before {
     position: absolute;
     content: "";
     width: 100%;
@@ -38,7 +38,7 @@
     border-radius: 8px 50% 8px 50%;
     z-index: 10;
     @include cardInternoSemBlur($colorBg-WTF);
-    background-color:$colorBg-WTF-Verde;
+    background-color: $colorBg-WTF-Verde;
   }
 
   &_botaoFechar {
@@ -111,11 +111,18 @@
 @media (max-width: 480px) {
   .container {
     position: relative;
-    padding: 170px;
-    //top: 125px;
+    /* padding: 170px;*/
+    top: 165px; 
     width: fit-content;
     height: fit-content;
     z-index: 8000;
+    border-radius: 0px;
+    overflow: hidden;
+
+    &:before {
+      border-radius: 0px;
+      background-color: transparent;
+    }
 
     &_botaoFechar {
       position: absolute;

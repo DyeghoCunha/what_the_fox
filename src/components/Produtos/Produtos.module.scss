@@ -5,6 +5,10 @@
 .container{
 width: 100vw;
 height: fit-content;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 
 &_titulo{
   @include cardInternoSemBlur($colorBg-WTF);

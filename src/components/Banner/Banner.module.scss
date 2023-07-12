@@ -1,0 +1,67 @@
+@import "../../styles/variaveis";
+
+.container {
+
+  height: 480px;
+  background-color: $colorBg-WTF-Verde;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  @include cardInternoSemBlur($colorBg-WTF);
+}
+
+.hidden {
+  display: none;
+  transition: opacity 3s ease-in-out;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+  animation: forwards 0.5s aparece;
+
+}
+
+
+.bolinhas {
+  position: absolute;
+
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 6px;
+  z-index: 9999;
+}
+
+
+@keyframes aparece {
+  0% {
+    opacity: 0;
+  transform: translate(0,-100%);
+  }
+
+  100% {
+    opacity: 1;
+     transform: translate(0,0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+ height: 400px;
+  }
+  .bolinhas{
+    bottom: -50px;
+  }
+
+}
+
+@media (max-width: 480px) {
+.container{
+  height: 180px;
+}
+}
