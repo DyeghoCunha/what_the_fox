@@ -7,6 +7,7 @@ import { FavoritoContext } from '../../common/context/Favoritos';
 import ModalCardPersonagem from '../../components/Feature/ModalCardPersonagem';
 import BotoesDoModalCard from '../../components/Feature/ModalCardPersonagem/BotoesDoModalCard';
 import Produtos from '../../components/Produtos';
+import BoasVindasCard from '../../components/Modais/ModalLoginFirebase/BoasVindasCard';
 
 
 
@@ -24,8 +25,7 @@ export default function PaginaTeste() {
     <>
       <div className={styles.container_paginaTeste}>
         
-        {/* <Produtos estiloCard={"CardVerde"}miniCard={"miniCardVerde"} titulo={"Fox"} tribo={foxDb}/>
-        */}
+      <BoasVindasCard/> 
 
 
 

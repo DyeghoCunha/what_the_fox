@@ -6,15 +6,12 @@
   display: flex;
   width: 70vw;
   height: 70vh;
-
-
 }
 
 .container span {
   position: relative;
   width: inherit;
   height: inherit;
-
   border-radius: 8px;
   overflow: hidden;
   @include cardExterno($colorBg-WTF);
@@ -25,7 +22,6 @@
   position: absolute;
   inset: 0;
   border-radius: 8px;
-
 }
 
 .container span::after {
@@ -35,7 +31,6 @@
   @include cardInterno($colorBg-WTF);
   background: $colorBg-WTF;
   border-radius: 8px;
-  
 }
 
 //!Aqui colocar o valor da largura e as cores do Loading
@@ -45,9 +40,9 @@
   height: 200%;
   inset: -50%;
   filter: blur(30px);
-  background: linear-gradient($cyberblue , $cybergreen, $cyberyellow);
+  //background: linear-gradient($cyberblue , $cybergreen, $cyberyellow);
   background-position: center;
-  animation: animate 4s linear infinite;
+  //animation: animate 5s linear infinite;
 }
 
 @keyframes animate {
@@ -62,12 +57,10 @@
 
 .container_conteudo{
   position: absolute;
-  
   inset: 28px;
   background-color: $colorBg-WTF;
   z-index: 10;
   border-radius:8px;
-
   display: flex;
   justify-content: center;
   align-items: center;

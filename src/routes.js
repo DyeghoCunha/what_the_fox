@@ -30,21 +30,21 @@ export default function AppRoutes() {
               <FavoritoProvider>
               <Cabecalho />
 
-                <BannerProvider>
+              {/*   <BannerProvider>
                   <Banner />
-                </BannerProvider> 
+                </BannerProvider>  */}
 
 
 
                 <Routes>
-                  <Route path="/" element={<PaginaInicial />} />
+                  <Route path="/teste" element={<PaginaInicial />} />
                   <Route path="/carrinho" element={<PaginaCarrinho />} />
-                  <Route path="/teste" element={<PaginaTeste />} />
+                  <Route path="/" element={<PaginaTeste />} />
                   <Route path="/favorito" element={<PaginaFavoritos/>} />
                 </Routes>
 
-                <Footer id="Artistas#1" />
-
+              {/*   <Footer id="Artistas#1" />
+ */}
               </FavoritoProvider>
             </CarrinhoProvider>
           </ModalCardProvider>
