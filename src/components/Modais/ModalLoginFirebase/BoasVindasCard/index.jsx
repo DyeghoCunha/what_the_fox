@@ -28,7 +28,7 @@ export default function BoasVindasCard() {
 
   return (
 
-    
+
     <section className={styles.container}>
       <div className={styles.container_usuario}>
         <FotoPersonagemCarrinho imagem={imagem} />
@@ -42,7 +42,7 @@ export default function BoasVindasCard() {
         </div>
         { saldo > 100 && (
         <div className={styles.container_saldo_card}>
-            <p>Divirta-se!</p>
+            <p>Divirta-se!!</p>
         </div>
           )}
           {saldo < 100 && (
