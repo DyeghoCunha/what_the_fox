@@ -133,23 +133,24 @@ Esses são os meus objetivos da semana:
 - :white_check_mark: Passo 1 | Banco de Dados no Firebase
 - :white_check_mark: Passo 2 | Login com Google Firebase
 - :white_check_mark: Passo 3 | Arrumar Blur dos Modais
+- :white_check_mark: Passo 4 | Colocar Modal para Compra de Moedas
+- :white_check_mark: Passo 5 | Finalizar compra de Moedas Por QRCode no Celular
 
 Esses são os meus objetivos da semana: 
 
 - :white_check_mark: Passo 1 | Galeria de Produtos - Listagem via API
 - :white_check_mark: Passo 2 | Galeria de Produtos - Filtrar por categoria
-- :construction: Passo 3 | Galeria de Produtos - Filtrar por barra de pesquisa
 - :white_check_mark: Passo 4 | Modal de Produtos - Abrir / Fechar
 - :white_check_mark: Passo 5 | Modal "Produtos - Responsividade"
-- :construction: Passo 6 | Modal de Newsletter - Abrir / Fechar
+
 
 
 # :four: Quarta Semana 
 
 Esses são os meus objetivos da semana: 
 
--
--
+- :construction: Passo 3 | Galeria de Produtos - Filtrar por barra de pesquisa
+- :construction: Passo 6 | Modal de Newsletter - Abrir / Fechar
 -
 
 # 🤯 Minha experiência
