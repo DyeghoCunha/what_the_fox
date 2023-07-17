@@ -1,6 +1,6 @@
 import CardEmote from "../../../Card/CardMain/CardEmote"
 import styles from "./FotoPersonagemCarrinho.module.scss"
-import ModalCardPersonagem from "../../ModalCardPersonagem"
+
 
 import React from 'react'
 

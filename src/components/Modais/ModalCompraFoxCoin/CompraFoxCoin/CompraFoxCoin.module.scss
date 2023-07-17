@@ -1,0 +1,59 @@
+@import "../../../../styles/variaveis";
+
+
+.container {
+  width: 650px;
+  height: 610px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  @include cardInternoSemBlur($colorBg-WTF-Verde);
+  border-radius: 8px;
+  background-color:$colorBg-WTF-Verde;
+
+  &_titulo{
+    @include tituloPadrao();
+    letter-spacing: 5px;
+    font-size: 25px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px 4px 0px;
+    @include cardExternoSemBlur($colorBg-WTF);
+    border-radius: 8px 8px 0px 0px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  &_saldo{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    @include cardExternoSemBlur($cyberblue);
+    padding: 10px 0px;
+    margin: 10px 0px;
+    border-radius: 0px 0px 8px 8px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+.container{
+  width: 100vw;
+  height: fit-content;
+
+  &_titulo{
+    text-align: center;
+    font-size: 20px;
+  }
+
+  &_saldo{
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+}

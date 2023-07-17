@@ -22,10 +22,11 @@
   position: absolute;
   top: -5px;
   left: -20px;
-
   width: fit-content;
   height: 20px;
   padding: 5px 5px;
+
+
 
 
 
@@ -39,8 +40,9 @@
 
 .container_imagem {
   position: absolute;
-  transform: translateZ(50px);
-  transform-style: preserve-3d;
+  transform: translateZ(60px);
+  transform-style: preserve-3d; 
+  z-index: 50000000000000000000000000000000000;
 }
 
 $cor : black;
@@ -108,4 +110,5 @@ $cor : black;
   width: 80px;
   height: 80px;
   z-index: 10;
+
 }

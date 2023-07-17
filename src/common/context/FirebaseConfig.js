@@ -46,6 +46,7 @@ const FirebaseProvider = (({ children }) => {
   const [armazenaInput, setArmazenaInput] = useState({})
   const [logado, setLogado] = useState(false)
   const [usuarioUid, setUsuarioUid] = useState(null)
+  const [atualizaSaldo, setAtualizaSaldo] = useState(0)
 
 
   const auth = getAuth();
@@ -588,6 +589,19 @@ reader.readAsDataURL(armazenaInput);
 };
 //!_____FIM____Configuração do Firebase Storage___________________________________________________
 
+//! ____ Atualizando o SALDO____________________
+
+
+     
+  
+const handleAtualizaSaldo = async () => {
+    if (usuario) {
+      const docRef = doc(database,`userDb/user/${usuarioUid}/${usuario[0]}` );
+      const docData = { saldo: atualizaSaldo }; 
+      await updateDoc(docRef, docData);
+    }
+
+  }
 
 
 
@@ -692,7 +706,9 @@ const value = {
   //Baco de Dados
   foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb,
   //Para o Favoritos
-  usuarioUid, database, usuario, handleAdicionaItemNoFavoritoFirebase
+  usuarioUid, database, usuario, handleAdicionaItemNoFavoritoFirebase,
+  //Atualizar Saldo
+  atualizaSaldo, setAtualizaSaldo,handleAtualizaSaldo
 
 }
 

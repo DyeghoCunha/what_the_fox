@@ -8,6 +8,8 @@ import ModalCardPersonagem from '../../components/Feature/ModalCardPersonagem';
 import BotoesDoModalCard from '../../components/Feature/ModalCardPersonagem/BotoesDoModalCard';
 import Produtos from '../../components/Produtos';
 import BoasVindasCard from '../../components/Modais/ModalLoginFirebase/BoasVindasCard';
+import CompraFoxCoin from '../../components/Modais/ModalCompraFoxCoin/CompraFoxCoin';
+import ModalCompraFoxCoin from '../../components/Modais/ModalCompraFoxCoin';
 
 
 
@@ -25,9 +27,7 @@ export default function PaginaTeste() {
     <>
       <div className={styles.container_paginaTeste}>
         
-      <BoasVindasCard/> 
-
-
+ <ModalCompraFoxCoin/> 
 
       </div>
     </>
