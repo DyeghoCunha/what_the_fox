@@ -8,17 +8,37 @@ const CarrinhoContext = createContext()
 
 const CarrinhoProvider = ({ children }) => {
 
-  const { usuario, database, usuarioUid } = useContext(FirebaseContext)
+  const { usuario, database, usuarioUid, saldoDaConta, setSaldoDaConta} = useContext(FirebaseContext)
   const { valorFinalDoCard } = useContext(ModalCardContext)
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(0)
   const [carrinhoProdutos, setCarrinhoProdutos] = useState([])
   const [valorTotalDoCarrinho, setValorTotalDoCarrinho] = useState(0)
-  const [saldo, setSaldo] = useState(0)
+  const [saldo, setSaldo] = useState(saldoDaConta)
+
+
+useEffect(()=>{
+
+   const getArrayLength = async () => {
+      if (usuario) {
+      const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);
+            const docSnap = await getDoc(docToUpdate);
+            if (docSnap.exists()) {
+              const data = docSnap.data();
+              setSaldoDaConta(data.saldo)
+              const saldo = docSnap.data().saldo;
+              setSaldo(saldo);
+            }
+          };
+          getArrayLength();
+
+        }
+},[])
+
+
+
 
   function handleAdicionaItemNoCarrinhoFirebase(objeto) {
     const objetoAtualizado = { ...objeto, valor: valorFinalDoCard }
-
-
     if (usuario) {
       //console.log("UPDATE ID: ", usuario[0]);
       const docToUpdate = doc(database, `userDb/user/${usuarioUid}`, usuario[0]);

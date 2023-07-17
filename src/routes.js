@@ -17,6 +17,7 @@ import { CarrinhoProvider } from './common/context/Carrinho';
 import PaginaCarrinho from './Paginas/PaginaCarrinho';
 import { BuscaProvider } from './common/context/Busca';
 import PaginaFavoritos from './Paginas/PaginaFavoritos';
+import PaginaCompraSaldo from './Paginas/PaginaCompraSaldo';
 
 
 
@@ -30,21 +31,20 @@ export default function AppRoutes() {
               <FavoritoProvider>
               <Cabecalho />
 
-                <BannerProvider>
+              {/*   <BannerProvider>
                   <Banner />
-                </BannerProvider> 
-
-
+                </BannerProvider>  */}
 
                 <Routes>
                   <Route path="/" element={<PaginaInicial />} />
                   <Route path="/carrinho" element={<PaginaCarrinho />} />
-                  <Route path="/teste" element={<PaginaTeste />} />
+                  <Route path="/2" element={<PaginaTeste />} />
                   <Route path="/favorito" element={<PaginaFavoritos/>} />
+                  <Route path="/compraSaldo" element={<PaginaCompraSaldo/>} />
                 </Routes>
 
-                <Footer id="Artistas#1" />
-
+              {/*   <Footer id="Artistas#1" />
+ */}
               </FavoritoProvider>
             </CarrinhoProvider>
           </ModalCardProvider>

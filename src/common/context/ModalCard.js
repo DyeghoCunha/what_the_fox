@@ -11,8 +11,8 @@ const ModalCardProvider = ({ children }) => {
   const [cartaoSelecionado, setCartaoSelecionado] = useState({})
   const [valorDoCartaoSelecionado, setValorDoCartaoSelecionado] = useState(0);
   const [valorCartao, setValorCartao] = useState(0)
-
-  
+ const [menuHamburger, setMenuHamburger] = useState(false)
+ const [ modalCompraSaldo, setModalCompraSaldo] = useState(false) 
 
   //!!___Valores Definitivos Finais_____
 
@@ -63,7 +63,8 @@ const ModalCardProvider = ({ children }) => {
   const value = {
     modalAberto, setModalAberto, valorAdicional, setValorAdicional, setValorFinalDoCard,
     setCartaoSelecionado, handleAdicionalDeItens, setValorDoCartaoSelecionado, valorAdicional,
-    valorFinalDoCard,valorDoCartaoSelecionado,valorCartao, setValorCartao
+    valorFinalDoCard,valorDoCartaoSelecionado,valorCartao, setValorCartao, menuHamburger, setMenuHamburger
+    , modalCompraSaldo, setModalCompraSaldo
   }
 
 

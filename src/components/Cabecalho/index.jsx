@@ -1,7 +1,7 @@
 import styles from './Cabecalho.module.scss'
 import logo from "./image/logoWTF.png"
 
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CabecalhoLink from './CabecalhoLink'
 import Busca from './Busca';
 import Hamburger from './Hamburger';
@@ -17,6 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCartShopping, faHeart, faX, faXmark } from '@fortawesome/free-solid-svg-icons';
 import BotaoNeomorph from '../BotaoNeomorph';
 import FavoritosCarrinho from './FavoritosCarrinho';
+import { ModalCardContext } from '../../common/context/ModalCard';
 
 
 export default function Cabecalho() {
@@ -25,7 +26,13 @@ export default function Cabecalho() {
   const [modalRegistrar, setModalRegistrar] = useState(false)
   const logado = localStorage.getItem('Logado');
 
-  const [menuHamburger, setMenuHamburger] = useState(false)
+  const { menuHamburger, setMenuHamburger } = useContext(ModalCardContext)
+
+  useEffect(()=>{
+    if(modalLogar || modalRegistrar){
+      setMenuHamburger(false)
+    }
+  })
 
   const handleMenuHamburger = () => {
     setMenuHamburger(prev => !prev)
@@ -37,15 +44,15 @@ export default function Cabecalho() {
 
   function handleClickLogar() {
     setModalLogar(prev => !prev)
+    console.log("menu", menuHamburger)
+  
   }
 
   function handleClickRegistrar() {
     setModalRegistrar(prev => !prev)
     console.log(modalRegistrar)
   }
-  if (logado) {
-    //console.log("Cabecalho:Logado")
-  }
+  
 
   return (
     <nav className={styles.cabecalho_container}>
@@ -59,7 +66,7 @@ export default function Cabecalho() {
             <div>Home</div>
           </CabecalhoLink>
 
-          <CabecalhoLink  to={"/artistas"}>
+          <CabecalhoLink to={"/artistas"}>
             <div>Os Artistas</div>
           </CabecalhoLink>
 
@@ -73,7 +80,7 @@ export default function Cabecalho() {
 
         </div>
 
-       <FavoritosCarrinho/>
+        <FavoritosCarrinho />
 
         <div className={`${styles.logar} ${styles.aparece}`} onClick={handleMenuHamburger}>
 

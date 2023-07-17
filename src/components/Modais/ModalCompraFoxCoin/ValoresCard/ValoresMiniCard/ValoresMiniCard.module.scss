@@ -1,0 +1,60 @@
+@import "../../../../../styles/variaveis";
+
+
+
+
+.container{
+
+&_valores {
+    width: fit-content;
+    height: fit-content;
+    @include cardInternoSemBlur($colorBg-WTF);
+    border-radius: 8px;
+
+    &_titulo {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include tituloPadrao();
+      margin: 0px;
+      padding: 10px 0px 1px 0px;
+      border-radius: 8px 8px 0px 0px;
+      @include cardExternoSemBlur($colorBg-WTF);
+
+    }
+
+    &_valor {
+      width: fit-content;
+      height: fit-content;
+      margin: 5px 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include cardExternoSemBlur($colorBg-WTF);
+      border-radius: 8px;
+
+      &_imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include cardInternoSemBlur($colorBg-WTF-Verde);
+        border-radius: 8px;
+
+        & img{
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      &_icone {
+        height: 100%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

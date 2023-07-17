@@ -7,20 +7,26 @@ import { faCartArrowDown, faHand, faMoneyBillTransfer, faTrashArrowUp } from '@f
 import FotoCard from '../ModalCardPersonagem/FotoCard';
 import imagem from "../Carrinho/image/macaco.jpg"
 import { CarrinhoContext } from '../../../common/context/Carrinho';
+import { ModalCardContext } from '../../../common/context/ModalCard';
 
 
 
 
-export default function Carrinho({ card, onClick ,valorDoCarrinho }) {
+export default function Carrinho({ card, onClick, valorDoCarrinho }) {
 
-  
+
   const [podeComprar, setPodeComprar] = useState(null)
-  const {handleLimpaCarrinhoFirebase,saldo,diminuirSaldo , setSaldo} = useContext(CarrinhoContext)
+  const { handleLimpaCarrinhoFirebase, saldo, diminuirSaldo, setSaldo } = useContext(CarrinhoContext)
+  const { setModalCompraSaldo } = useContext(ModalCardContext)
 
-  const valor = 580;
   const semSaldo = {
+    
     nome: "Você está sem grana !",
     imagem: imagem
+  }
+
+  const handleModalCompraSaldo = () => {
+    setModalCompraSaldo(true)
   }
 
   const pagamento = saldo - valorDoCarrinho
@@ -52,7 +58,7 @@ export default function Carrinho({ card, onClick ,valorDoCarrinho }) {
         )}
 
         <div className={styles.container_botoes}>
-          <BotoesDoModalCard onClickIcone1={handleLimpaCarrinhoFirebase} onClickIcone2={podeComprar ? diminuirSaldo : ""} icone2={!podeComprar ? <FontAwesomeIcon icon={faHand} /> : <FontAwesomeIcon icon={faCartArrowDown} />} icone1={<FontAwesomeIcon icon={faTrashArrowUp} />} />
+          <BotoesDoModalCard onClickIcone1={handleLimpaCarrinhoFirebase} onClickIcone2={podeComprar ? diminuirSaldo : handleModalCompraSaldo} icone2={!podeComprar ? <FontAwesomeIcon icon={faHand} /> : <FontAwesomeIcon icon={faCartArrowDown} />} icone1={<FontAwesomeIcon icon={faTrashArrowUp} />} />
         </div>
       </section>
     </>

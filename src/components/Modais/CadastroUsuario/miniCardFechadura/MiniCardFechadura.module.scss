@@ -62,7 +62,7 @@ opacity: 1;
 
 .apagar{
   opacity: 0;
-   animation: 2s linear opacidade;
+   animation: 1s ease-in opacidade;
 }
 
 @keyframes opacidade{
