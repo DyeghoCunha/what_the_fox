@@ -8,7 +8,7 @@ import BotoesDoModalCard from "../../../Feature/ModalCardPersonagem/BotoesDoModa
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard, faTrashArrowUp } from "@fortawesome/free-solid-svg-icons";
 import FotoCard from "../../../Feature/ModalCardPersonagem/FotoCard";
-import imagem from "../../../../assets/images/personagem/et/Et.png"
+import imagem from "../image/qrCode.png"
 
 export default function CompraFoxCoin() {
   const { atualizaSaldo, setAtualizaSaldo, handleArmazenaValorDoSaldoComprado,
