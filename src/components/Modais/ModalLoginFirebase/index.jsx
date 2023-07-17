@@ -49,7 +49,7 @@ export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
 
                 {logado && (
                   <div className={styles.container_fomrulario_BoasVindasCard}>
-                   <BoasVindasCard/>
+                   <BoasVindasCard aoFechar={aoFechar}/>
                   </div> 
                 )}
                 {!logado && (

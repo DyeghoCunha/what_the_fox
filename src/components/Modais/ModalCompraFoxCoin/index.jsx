@@ -5,13 +5,15 @@ import { ModalCardContext } from "../../../common/context/ModalCard"
 import BotaoNeomorph from "../../BotaoNeomorph"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FirebaseContext } from "../../../common/context/FirebaseConfig"
 
 export default function ModalCompraFoxCoin() {
   const { setModalCompraSaldo } = useContext(ModalCardContext)
+  const { setAtualizaSaldo } = useContext(FirebaseContext)
 
   const handleCompraFoxCoinModal = () => {
     setModalCompraSaldo(false)
-    
+    setAtualizaSaldo(0) 
   }
   return (
     <>

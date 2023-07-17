@@ -27,7 +27,7 @@ export default function PaginaTeste() {
     <>
       <div className={styles.container_paginaTeste}>
         
- <ModalCompraFoxCoin/> 
+
 
       </div>
     </>

@@ -7,25 +7,31 @@ import Divisoria from '../../components/Decks/Divisoria';
 import { FirebaseContext } from '../../common/context/FirebaseConfig';
 import Produtos from '../../components/Produtos';
 import { BuscaContext } from '../../common/context/Busca';
+import ModalCompraFoxCoin from '../../components/Modais/ModalCompraFoxCoin';
+import { ModalCardContext } from '../../common/context/ModalCard';
 
 
 export default function PaginaInicial() {
 
   const { foxDb, goblinDb, apesDb, bladeMasterDb, hempDb, emoteDb, } = useContext(FirebaseContext)
   const { objetos } = useContext(BuscaContext);
-  useEffect(()=>{
+  const { modalCompraSaldo } = useContext(ModalCardContext)
+  useEffect(() => {
 
     window.scrollTo(0, 300);
-     },[])
+  }, [])
   //console.log("Pagina Inicial: ", objetos)
   return (
     <>
+      {modalCompraSaldo && (
+        <ModalCompraFoxCoin />
+      )}
 
       <div className={styles.container}>
 
-{!objetos &&(
-  <Produtos id="Pesquisa#1" estiloCard={"CardBusca"} miniCard={"miniCardBusca"} titulo={"Resultado"} tribo={objetos} />
-)}
+        {!objetos && (
+          <Produtos id="Pesquisa#1" estiloCard={"CardBusca"} miniCard={"miniCardBusca"} titulo={"Resultado"} tribo={objetos} />
+        )}
 
         {objetos && (
           <>
