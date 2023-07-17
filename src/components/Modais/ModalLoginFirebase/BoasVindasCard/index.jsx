@@ -23,7 +23,6 @@ export default function BoasVindasCard() {
 
   const handleCompraSaldo = ()=>{
     setModalCompraSaldo(prev=>!prev)
-    console.log("CompraSaldo: ", modalCompraSaldo)
   }
 
   return (
@@ -34,13 +33,12 @@ export default function BoasVindasCard() {
         <FotoPersonagemCarrinho imagem={imagem} />
         <p className={styles.container_usuario_nome}>Ola! <strong className={styles.container_usuario_nome_realce}>{usuarioNome}</strong></p>
       </div>
-      
       <div className={styles.container_saldo}>
         <div className={styles.container_saldo_valor}>
           <p>Seu Saldo é:</p>
           <p className={styles.container_saldo_valor_icone}><FontAwesomeIcon icon={faSackDollar} />{saldo}</p>
         </div>
-        { saldo > 100 && (
+        {saldo > 90 && (
         <div className={styles.container_saldo_card}>
             <p>Divirta-se!!</p>
         </div>
@@ -52,7 +50,6 @@ export default function BoasVindasCard() {
           </div>
         )} 
       </div>
-
     </section>
   )
 }

@@ -7,6 +7,7 @@ import MiniCardFechadura from "../CadastroUsuario/miniCardFechadura"
 import FormularioDeLogin from "../../FormularioDeLogin"
 import BotoesDeLogin from "../../BotoesDeLogin"
 import { FirebaseContext } from "../../../common/context/FirebaseConfig"
+import BoasVindasCard from "./BoasVindasCard"
 
 export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
 
@@ -35,7 +36,6 @@ export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
 
       <>
         <div onClick={event => aoFechar(prev => !prev)} className={styles.fundoModal} />
-
         <div className={styles.janelaModal}>
           <button onClick={event => aoFechar(prev => !prev)} className={styles.botaoFecharModal}>X
           </button>
@@ -48,10 +48,11 @@ export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
               <form className={styles.container_formulario}>
 
                 {logado && (
-                  <h1 className={styles.container_formulario_titulo}>Faça seu Login</h1>
+                  <div className={styles.container_fomrulario_BoasVindasCard}>
+                   <BoasVindasCard/>
+                  </div> 
                 )}
                 {!logado && (
-
                   <>
                     <h1 className={styles.container_formulario_titulo}>Faça seu Login</h1>
                     <div className={styles.container_formulario_nomeEmail}>
@@ -61,8 +62,8 @@ export default function ModalLoginFirebase({ aberta, aoFechar, titulo }) {
                       <BotoesDeLogin githubLogin={handleSubmitGithub} googleLogin={handleSubmitGoogle} normalLogin={handleSignUpComBandoDeDados} />
                     </div>
                   </>
-
                 )}
+              
               </form>
             </section>
           </ContainerRGB>
